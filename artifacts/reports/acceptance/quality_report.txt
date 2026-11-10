@@ -1,0 +1,14 @@
+数据质量报告（软件流程验证，不是科研结论）
+run_id: 7b0e94cb01574237989e9f42f75cecfd
+dry_run: False
+dataset_kind: synthetic_demo
+total=1 / curated=1 / staged=0 / duplicate=0
+lines:2-2 → curated [7b0e94cb01574237989e9f42f75cecfd:1]
+  warning source_identifier_incomplete source.doi: 缺少DOI；须核查文献标识
+  warning value_not_reported test.stabilization_time: 保留原缺失/未知/无效语义，不填零
+  warning value_not_reported test.time_on_stream: 保留原缺失/未知/无效语义，不填零
+  warning value_not_reported observations[0].time_on_stream: 保留原缺失/未知/无效语义，不填零
+  warning value_not_reported observations[0].carbon_balance: 保留原缺失/未知/无效语义，不填零
+  warning value_not_reported observations[1].time_on_stream: 保留原缺失/未知/无效语义，不填零
+  warning value_not_reported observations[1].carbon_balance: 保留原缺失/未知/无效语义，不填零
+  warning unit_not_normalized synthesis.steps[0].parameters.temperature: 暂不规范此单位，原值保留

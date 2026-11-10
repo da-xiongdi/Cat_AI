@@ -1,0 +1,193 @@
+{
+  "created_at": "2026-11-09T07:59:03.508196+00:00",
+  "dataset_kind": "synthetic_demo",
+  "result": "passed",
+  "steps_passed": 14,
+  "steps": [
+    {
+      "arguments": [
+        "status"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "{\n  \"version\": \"0.1.0\",\n  \"scope\": \"Task A/B minimal slice\",\n  \"database_exists\": false,\n  \"models\": \"未实现\",\n  \"optimization\": \"未实现\",\n  \"scientific_results\": \"无\",\n  \"batch_capacity\": 4\n}\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "ingest",
+        "--input",
+        "D:\\work\\Cat_AI\\data\\examples\\synthetic_demo.csv",
+        "--source",
+        "literature",
+        "--dry-run"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "{\n  \"run_id\": \"3ab1d25717514812badc97048297b5bd\",\n  \"created_at\": \"2026-11-09T07:58:57.900573+00:00\",\n  \"dry_run\": true,\n  \"input_name\": \"synthetic_demo.csv\",\n  \"input_sha256\": \"bd0864e39a040731645b3a6a8d90009bba99885917e411ebe27d95ba7e251170\",\n  \"metadata\": {\n    \"package_version\": \"0.1.0\",\n    \"code_revision\": \"unversioned\",\n    \"code_sha256\": \"6b9e737997b60a9b999b1ad5df6059062ddb0dce61a0f2734859915a13ec343a\",\n    \"config_sha256\": \"536ef0f4a7362f1f5e90a74e8fb30132692deec35ba7179f4f29cc04156ff77b\",\n    \"config\": {\n      \"database\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\data\\\\catalog.sqlite\",\n      \"data_dir\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\data\",\n      \"report_dir\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\reports\",\n      \"batch_capacity\": 4,\n      \"closure_tolerance_pct\": 0.5,\n      \"governance_version\": \"1\"\n    },\n    \"model_run_id\": null,\n    \"governance_version\": \"1\"\n  },\n  \"dataset_kinds\": [\n    \"synthetic_demo\"\n  ],\n  \"rows\": [\n    {\n      \"record_id\": \"3ab1d25717514812badc97048297b5bd:1\",\n      \"input_locator\": \"lines:2-2\",\n      \"fingerprint\": \"7331486779711bbe5e17344adf72d71c5d7183bc1e2301d78109503a2b785fcd\",\n      \"dataset_kind\": \"synthetic_demo\",\n      \"status\": \"curated\",\n      \"review_status\": \"pending\",\n      \"governed_sha256\": \"6a9555f9f6dd6c963d8673736b15ca025bc14e815b69043b3beaaec3c5def6ff\",\n      \"issues\": [\n        {\n          \"code\": \"source_identifier_incomplete\",\n          \"severity\": \"warning\",\n          \"path\": \"source.doi\",\n          \"message\": \"缺少DOI；须核查文献标识\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"test.stabilization_time\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"test.time_on_stream\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[0].time_on_stream\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[0].carbon_balance\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[1].time_on_stream\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[1].carbon_balance\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"unit_not_normalized\",\n          \"severity\": \"warning\",\n          \"path\": \"synthesis.steps[0].parameters.temperature\",\n          \"message\": \"暂不规范此单位，原值保留\"\n        }\n      ]\n    }\n  ],\n  \"counts\": {\n    \"total\": 1,\n    \"curated\": 1,\n    \"staged\": 0,\n    \"duplicate\": 0\n  }\n}\n",
+      "stderr": "数据质量报告（软件流程验证，不是科研结论）\nrun_id: 3ab1d25717514812badc97048297b5bd\ndry_run: True\ndataset_kind: synthetic_demo\ntotal=1 / curated=1 / staged=0 / duplicate=0\nlines:2-2 → curated [3ab1d25717514812badc97048297b5bd:1]\n  warning source_identifier_incomplete source.doi: 缺少DOI；须核查文献标识\n  warning value_not_reported test.stabilization_time: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported test.time_on_stream: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[0].time_on_stream: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[0].carbon_balance: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[1].time_on_stream: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[1].carbon_balance: 保留原缺失/未知/无效语义，不填零\n  warning unit_not_normalized synthesis.steps[0].parameters.temperature: 暂不规范此单位，原值保留\n"
+    },
+    {
+      "arguments": [
+        "init"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "{\n  \"database\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\data\\\\catalog.sqlite\",\n  \"business_records_created\": 0\n}\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "init"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "{\n  \"database\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\data\\\\catalog.sqlite\",\n  \"business_records_created\": 0\n}\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "ingest",
+        "--input",
+        "D:\\work\\Cat_AI\\data\\examples\\synthetic_demo.csv",
+        "--source",
+        "literature"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "{\n  \"run_id\": \"35145092ca934b3bbbc9ac0fb898180c\",\n  \"created_at\": \"2026-11-09T07:58:59.322691+00:00\",\n  \"dry_run\": false,\n  \"input_name\": \"synthetic_demo.csv\",\n  \"input_sha256\": \"bd0864e39a040731645b3a6a8d90009bba99885917e411ebe27d95ba7e251170\",\n  \"metadata\": {\n    \"package_version\": \"0.1.0\",\n    \"code_revision\": \"unversioned\",\n    \"code_sha256\": \"6b9e737997b60a9b999b1ad5df6059062ddb0dce61a0f2734859915a13ec343a\",\n    \"config_sha256\": \"536ef0f4a7362f1f5e90a74e8fb30132692deec35ba7179f4f29cc04156ff77b\",\n    \"config\": {\n      \"database\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\data\\\\catalog.sqlite\",\n      \"data_dir\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\data\",\n      \"report_dir\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\reports\",\n      \"batch_capacity\": 4,\n      \"closure_tolerance_pct\": 0.5,\n      \"governance_version\": \"1\"\n    },\n    \"model_run_id\": null,\n    \"governance_version\": \"1\"\n  },\n  \"dataset_kinds\": [\n    \"synthetic_demo\"\n  ],\n  \"rows\": [\n    {\n      \"record_id\": \"35145092ca934b3bbbc9ac0fb898180c:1\",\n      \"input_locator\": \"lines:2-2\",\n      \"fingerprint\": \"7331486779711bbe5e17344adf72d71c5d7183bc1e2301d78109503a2b785fcd\",\n      \"dataset_kind\": \"synthetic_demo\",\n      \"status\": \"curated\",\n      \"review_status\": \"pending\",\n      \"governed_sha256\": \"6a9555f9f6dd6c963d8673736b15ca025bc14e815b69043b3beaaec3c5def6ff\",\n      \"issues\": [\n        {\n          \"code\": \"source_identifier_incomplete\",\n          \"severity\": \"warning\",\n          \"path\": \"source.doi\",\n          \"message\": \"缺少DOI；须核查文献标识\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"test.stabilization_time\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"test.time_on_stream\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[0].time_on_stream\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[0].carbon_balance\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[1].time_on_stream\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[1].carbon_balance\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"unit_not_normalized\",\n          \"severity\": \"warning\",\n          \"path\": \"synthesis.steps[0].parameters.temperature\",\n          \"message\": \"暂不规范此单位，原值保留\"\n        }\n      ]\n    }\n  ],\n  \"counts\": {\n    \"total\": 1,\n    \"curated\": 1,\n    \"staged\": 0,\n    \"duplicate\": 0\n  },\n  \"raw_path\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\data\\\\raw\\\\bd0864e39a040731645b3a6a8d90009bba99885917e411ebe27d95ba7e251170.csv\"\n}\n",
+      "stderr": "数据质量报告（软件流程验证，不是科研结论）\nrun_id: 35145092ca934b3bbbc9ac0fb898180c\ndry_run: False\ndataset_kind: synthetic_demo\ntotal=1 / curated=1 / staged=0 / duplicate=0\nlines:2-2 → curated [35145092ca934b3bbbc9ac0fb898180c:1]\n  warning source_identifier_incomplete source.doi: 缺少DOI；须核查文献标识\n  warning value_not_reported test.stabilization_time: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported test.time_on_stream: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[0].time_on_stream: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[0].carbon_balance: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[1].time_on_stream: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[1].carbon_balance: 保留原缺失/未知/无效语义，不填零\n  warning unit_not_normalized synthesis.steps[0].parameters.temperature: 暂不规范此单位，原值保留\n"
+    },
+    {
+      "arguments": [
+        "validate",
+        "--run-id",
+        "35145092ca934b3bbbc9ac0fb898180c",
+        "--report",
+        "C:\\Users\\dzy\\AppData\\Local\\Temp\\catalyst-ai-synthetic-demo-sv0vj7qa\\quality.json"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "{\n  \"run_id\": \"35145092ca934b3bbbc9ac0fb898180c\",\n  \"created_at\": \"2026-11-09T07:58:59.322691+00:00\",\n  \"dry_run\": false,\n  \"input_name\": \"synthetic_demo.csv\",\n  \"input_sha256\": \"bd0864e39a040731645b3a6a8d90009bba99885917e411ebe27d95ba7e251170\",\n  \"metadata\": {\n    \"package_version\": \"0.1.0\",\n    \"code_revision\": \"unversioned\",\n    \"code_sha256\": \"6b9e737997b60a9b999b1ad5df6059062ddb0dce61a0f2734859915a13ec343a\",\n    \"config_sha256\": \"536ef0f4a7362f1f5e90a74e8fb30132692deec35ba7179f4f29cc04156ff77b\",\n    \"config\": {\n      \"database\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\data\\\\catalog.sqlite\",\n      \"data_dir\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\data\",\n      \"report_dir\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\reports\",\n      \"batch_capacity\": 4,\n      \"closure_tolerance_pct\": 0.5,\n      \"governance_version\": \"1\"\n    },\n    \"model_run_id\": null,\n    \"governance_version\": \"1\"\n  },\n  \"dataset_kinds\": [\n    \"synthetic_demo\"\n  ],\n  \"rows\": [\n    {\n      \"record_id\": \"35145092ca934b3bbbc9ac0fb898180c:1\",\n      \"input_locator\": \"lines:2-2\",\n      \"fingerprint\": \"7331486779711bbe5e17344adf72d71c5d7183bc1e2301d78109503a2b785fcd\",\n      \"dataset_kind\": \"synthetic_demo\",\n      \"status\": \"curated\",\n      \"review_status\": \"pending\",\n      \"governed_sha256\": \"6a9555f9f6dd6c963d8673736b15ca025bc14e815b69043b3beaaec3c5def6ff\",\n      \"issues\": [\n        {\n          \"code\": \"source_identifier_incomplete\",\n          \"severity\": \"warning\",\n          \"path\": \"source.doi\",\n          \"message\": \"缺少DOI；须核查文献标识\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"test.stabilization_time\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"test.time_on_stream\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[0].time_on_stream\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[0].carbon_balance\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[1].time_on_stream\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[1].carbon_balance\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"unit_not_normalized\",\n          \"severity\": \"warning\",\n          \"path\": \"synthesis.steps[0].parameters.temperature\",\n          \"message\": \"暂不规范此单位，原值保留\"\n        }\n      ]\n    }\n  ],\n  \"counts\": {\n    \"total\": 1,\n    \"curated\": 1,\n    \"staged\": 0,\n    \"duplicate\": 0\n  },\n  \"raw_path\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\data\\\\raw\\\\bd0864e39a040731645b3a6a8d90009bba99885917e411ebe27d95ba7e251170.csv\"\n}\n",
+      "stderr": "数据质量报告（软件流程验证，不是科研结论）\nrun_id: 35145092ca934b3bbbc9ac0fb898180c\ndry_run: False\ndataset_kind: synthetic_demo\ntotal=1 / curated=1 / staged=0 / duplicate=0\nlines:2-2 → curated [35145092ca934b3bbbc9ac0fb898180c:1]\n  warning source_identifier_incomplete source.doi: 缺少DOI；须核查文献标识\n  warning value_not_reported test.stabilization_time: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported test.time_on_stream: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[0].time_on_stream: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[0].carbon_balance: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[1].time_on_stream: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[1].carbon_balance: 保留原缺失/未知/无效语义，不填零\n  warning unit_not_normalized synthesis.steps[0].parameters.temperature: 暂不规范此单位，原值保留\n"
+    },
+    {
+      "arguments": [
+        "ingest",
+        "--input",
+        "D:\\work\\Cat_AI\\data\\examples\\synthetic_demo.json"
+      ],
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "stdout": "{\n  \"run_id\": \"568d457bf2cd4058b4d21ffa1e4b65f2\",\n  \"created_at\": \"2026-11-09T07:59:00.270512+00:00\",\n  \"dry_run\": false,\n  \"input_name\": \"synthetic_demo.json\",\n  \"input_sha256\": \"f662b9a2fd3fb81053cdc4894af19c4731b989f514ae5f0a7109d9ebaaac6571\",\n  \"metadata\": {\n    \"package_version\": \"0.1.0\",\n    \"code_revision\": \"unversioned\",\n    \"code_sha256\": \"6b9e737997b60a9b999b1ad5df6059062ddb0dce61a0f2734859915a13ec343a\",\n    \"config_sha256\": \"536ef0f4a7362f1f5e90a74e8fb30132692deec35ba7179f4f29cc04156ff77b\",\n    \"config\": {\n      \"database\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\data\\\\catalog.sqlite\",\n      \"data_dir\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\data\",\n      \"report_dir\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\reports\",\n      \"batch_capacity\": 4,\n      \"closure_tolerance_pct\": 0.5,\n      \"governance_version\": \"1\"\n    },\n    \"model_run_id\": null,\n    \"governance_version\": \"1\"\n  },\n  \"dataset_kinds\": [\n    \"synthetic_demo\"\n  ],\n  \"rows\": [\n    {\n      \"record_id\": \"568d457bf2cd4058b4d21ffa1e4b65f2:1\",\n      \"input_locator\": \"$[0]\",\n      \"fingerprint\": \"7331486779711bbe5e17344adf72d71c5d7183bc1e2301d78109503a2b785fcd\",\n      \"dataset_kind\": \"synthetic_demo\",\n      \"status\": \"duplicate\",\n      \"review_status\": \"pending\",\n      \"governed_sha256\": \"6a9555f9f6dd6c963d8673736b15ca025bc14e815b69043b3beaaec3c5def6ff\",\n      \"issues\": [\n        {\n          \"code\": \"source_identifier_incomplete\",\n          \"severity\": \"warning\",\n          \"path\": \"source.doi\",\n          \"message\": \"缺少DOI；须核查文献标识\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"test.stabilization_time\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"test.time_on_stream\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[0].time_on_stream\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[0].carbon_balance\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[1].time_on_stream\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"value_not_reported\",\n          \"severity\": \"warning\",\n          \"path\": \"observations[1].carbon_balance\",\n          \"message\": \"保留原缺失/未知/无效语义，不填零\"\n        },\n        {\n          \"code\": \"unit_not_normalized\",\n          \"severity\": \"warning\",\n          \"path\": \"synthesis.steps[0].parameters.temperature\",\n          \"message\": \"暂不规范此单位，原值保留\"\n        },\n        {\n          \"code\": \"duplicate_record\",\n          \"severity\": \"block\",\n          \"path\": \"$\",\n          \"message\": \"与本文件/历史导入完全重复；保留导入事件，不重复实体\"\n        }\n      ]\n    }\n  ],\n  \"counts\": {\n    \"total\": 1,\n    \"curated\": 0,\n    \"staged\": 0,\n    \"duplicate\": 1\n  },\n  \"raw_path\": \"C:\\\\Users\\\\dzy\\\\AppData\\\\Local\\\\Temp\\\\catalyst-ai-synthetic-demo-sv0vj7qa\\\\data\\\\raw\\\\f662b9a2fd3fb81053cdc4894af19c4731b989f514ae5f0a7109d9ebaaac6571.json\"\n}\n",
+      "stderr": "数据质量报告（软件流程验证，不是科研结论）\nrun_id: 568d457bf2cd4058b4d21ffa1e4b65f2\ndry_run: False\ndataset_kind: synthetic_demo\ntotal=1 / curated=0 / staged=0 / duplicate=1\n$[0] → duplicate [568d457bf2cd4058b4d21ffa1e4b65f2:1]\n  warning source_identifier_incomplete source.doi: 缺少DOI；须核查文献标识\n  warning value_not_reported test.stabilization_time: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported test.time_on_stream: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[0].time_on_stream: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[0].carbon_balance: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[1].time_on_stream: 保留原缺失/未知/无效语义，不填零\n  warning value_not_reported observations[1].carbon_balance: 保留原缺失/未知/无效语义，不填零\n  warning unit_not_normalized synthesis.steps[0].parameters.temperature: 暂不规范此单位，原值保留\n  block duplicate_record $: 与本文件/历史导入完全重复；保留导入事件，不重复实体\n"
+    },
+    {
+      "arguments": [
+        "batch",
+        "check"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "{\n  \"capacity\": 4,\n  \"candidate_ids\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "batch",
+        "check",
+        "--capacity",
+        "6",
+        "--candidate-id",
+        "synthetic_demo-slot"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "{\n  \"capacity\": 6,\n  \"candidate_ids\": [\n    \"synthetic_demo-slot\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "batch",
+        "check",
+        "--capacity",
+        "7"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "stdout": "",
+      "stderr": "错误: 1 validation error for ExperimentBatch\ncapacity\n  Input should be less than or equal to 6 [type=less_than_equal, input_value=7, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.14/v/less_than_equal\n"
+    },
+    {
+      "arguments": [
+        "batch",
+        "check",
+        "--candidate-id",
+        "demo-0",
+        "--candidate-id",
+        "demo-1",
+        "--candidate-id",
+        "demo-2",
+        "--candidate-id",
+        "demo-3",
+        "--candidate-id",
+        "demo-4"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "stdout": "",
+      "stderr": "错误: 1 validation error for ExperimentBatch\n  Value error, batch exceeds configured capacity [type=value_error, input_value={'capacity': 4, 'candidat...2', 'demo-3', 'demo-4']}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\n"
+    },
+    {
+      "arguments": [
+        "dataset",
+        "build",
+        "--target",
+        "co2_conversion"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "stdout": "",
+      "stderr": "错误: 没有真实研究记录；synthetic_demo禁止进入已核验研究快照\n"
+    },
+    {
+      "arguments": [
+        "dataset",
+        "build",
+        "--target",
+        "co2_conversion",
+        "--demo"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "stdout": "",
+      "stderr": "错误: 记录尚未人工核验或已拒绝: 35145092ca934b3bbbc9ac0fb898180c:1\n"
+    },
+    {
+      "arguments": [
+        "status"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "{\n  \"version\": \"0.1.0\",\n  \"scope\": \"Task A/B minimal slice\",\n  \"database_exists\": true,\n  \"models\": \"未实现\",\n  \"optimization\": \"未实现\",\n  \"scientific_results\": \"无\",\n  \"batch_capacity\": 4,\n  \"counts\": {\n    \"import_run\": 2,\n    \"staged_record\": 2,\n    \"curated_record\": 1\n  },\n  \"verified_research\": 0\n}\n",
+      "stderr": ""
+    }
+  ],
+  "metadata": {
+    "package_version": "0.1.0",
+    "code_revision": "unversioned",
+    "code_sha256": "6b9e737997b60a9b999b1ad5df6059062ddb0dce61a0f2734859915a13ec343a",
+    "config_sha256": "536ef0f4a7362f1f5e90a74e8fb30132692deec35ba7179f4f29cc04156ff77b",
+    "config": {
+      "database": "C:\\Users\\dzy\\AppData\\Local\\Temp\\catalyst-ai-synthetic-demo-sv0vj7qa\\data\\catalog.sqlite",
+      "data_dir": "C:\\Users\\dzy\\AppData\\Local\\Temp\\catalyst-ai-synthetic-demo-sv0vj7qa\\data",
+      "report_dir": "C:\\Users\\dzy\\AppData\\Local\\Temp\\catalyst-ai-synthetic-demo-sv0vj7qa\\reports",
+      "batch_capacity": 4,
+      "closure_tolerance_pct": 0.5,
+      "governance_version": "1"
+    },
+    "model_run_id": null,
+    "governance_version": "1"
+  },
+  "notes": "Isolated temporary database removed. No review approvals were created."
+}

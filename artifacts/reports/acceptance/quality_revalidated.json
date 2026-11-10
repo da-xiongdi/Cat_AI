@@ -1,0 +1,94 @@
+{
+  "run_id": "7b0e94cb01574237989e9f42f75cecfd",
+  "created_at": "2026-11-09T07:59:53.349428+00:00",
+  "dry_run": false,
+  "input_name": "synthetic_demo.csv",
+  "input_sha256": "bd0864e39a040731645b3a6a8d90009bba99885917e411ebe27d95ba7e251170",
+  "metadata": {
+    "package_version": "0.1.0",
+    "code_revision": "unversioned",
+    "code_sha256": "6b9e737997b60a9b999b1ad5df6059062ddb0dce61a0f2734859915a13ec343a",
+    "config_sha256": "19fc717cee3b84a8dcc79d79f6f588ce35a6831069504253a36a3425d87dd0fa",
+    "config": {
+      "database": "data\\catalog.sqlite",
+      "data_dir": "data",
+      "report_dir": "artifacts\\reports",
+      "batch_capacity": 4,
+      "closure_tolerance_pct": 0.5,
+      "governance_version": "1"
+    },
+    "model_run_id": null,
+    "governance_version": "1"
+  },
+  "dataset_kinds": [
+    "synthetic_demo"
+  ],
+  "rows": [
+    {
+      "record_id": "7b0e94cb01574237989e9f42f75cecfd:1",
+      "input_locator": "lines:2-2",
+      "fingerprint": "7331486779711bbe5e17344adf72d71c5d7183bc1e2301d78109503a2b785fcd",
+      "dataset_kind": "synthetic_demo",
+      "status": "curated",
+      "review_status": "pending",
+      "governed_sha256": "6a9555f9f6dd6c963d8673736b15ca025bc14e815b69043b3beaaec3c5def6ff",
+      "issues": [
+        {
+          "code": "source_identifier_incomplete",
+          "severity": "warning",
+          "path": "source.doi",
+          "message": "缺少DOI；须核查文献标识"
+        },
+        {
+          "code": "value_not_reported",
+          "severity": "warning",
+          "path": "test.stabilization_time",
+          "message": "保留原缺失/未知/无效语义，不填零"
+        },
+        {
+          "code": "value_not_reported",
+          "severity": "warning",
+          "path": "test.time_on_stream",
+          "message": "保留原缺失/未知/无效语义，不填零"
+        },
+        {
+          "code": "value_not_reported",
+          "severity": "warning",
+          "path": "observations[0].time_on_stream",
+          "message": "保留原缺失/未知/无效语义，不填零"
+        },
+        {
+          "code": "value_not_reported",
+          "severity": "warning",
+          "path": "observations[0].carbon_balance",
+          "message": "保留原缺失/未知/无效语义，不填零"
+        },
+        {
+          "code": "value_not_reported",
+          "severity": "warning",
+          "path": "observations[1].time_on_stream",
+          "message": "保留原缺失/未知/无效语义，不填零"
+        },
+        {
+          "code": "value_not_reported",
+          "severity": "warning",
+          "path": "observations[1].carbon_balance",
+          "message": "保留原缺失/未知/无效语义，不填零"
+        },
+        {
+          "code": "unit_not_normalized",
+          "severity": "warning",
+          "path": "synthesis.steps[0].parameters.temperature",
+          "message": "暂不规范此单位，原值保留"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "total": 1,
+    "curated": 1,
+    "staged": 0,
+    "duplicate": 0
+  },
+  "raw_path": "D:\\work\\Cat_AI\\data\\raw\\bd0864e39a040731645b3a6a8d90009bba99885917e411ebe27d95ba7e251170.csv"
+}

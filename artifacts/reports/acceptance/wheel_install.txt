@@ -1,0 +1,17 @@
+D:\work\Cat_AI\build\wheel-check\Lib\site-packages\catalyst_ai\__init__.py
+0.1.0
+{
+  "version": "0.1.0",
+  "scope": "Task A/B minimal slice",
+  "database_exists": true,
+  "models": "未实现",
+  "optimization": "未实现",
+  "scientific_results": "无",
+  "batch_capacity": 4,
+  "counts": {
+    "import_run": 1,
+    "staged_record": 1,
+    "curated_record": 1
+  },
+  "verified_research": 0
+}

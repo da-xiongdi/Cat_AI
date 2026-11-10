@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.env
+*.sqlite*
+data/raw/*
+data/staged/*
+data/curated/*
+data/snapshots/*
+artifacts/reports/*
+!**/.gitkeep
+!artifacts/reports/acceptance/

@@ -1,0 +1,6 @@
+database: data/catalog.sqlite
+data_dir: data
+report_dir: artifacts/reports
+batch_capacity: 4
+closure_tolerance_pct: 0.5
+governance_version: "1"
