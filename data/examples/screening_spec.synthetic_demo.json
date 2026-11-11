@@ -1,0 +1,45 @@
+{
+  "description": "synthetic_demo only: fictional values and evidence, never use as real constraints",
+  "capacity": 4,
+  "allowed_species": ["A", "B"],
+  "condition_bounds": {
+    "temperature_k": [450, 550],
+    "pressure_bar_abs": [10, 30],
+    "catalyst_mass_g": [0.1, 1.0],
+    "h2_co2_ratio": [2, 4],
+    "reactants_flow_nl_g_h": [5, 20]
+  },
+  "constraint_evidence": {
+    "equipment": "synthetic_demo: fictional equipment bounds",
+    "chemistry_compatibility": "synthetic_demo: no actual compatibility evidence",
+    "precursors": "synthetic_demo: no actual precursor evidence",
+    "cost_risk": "synthetic_demo: no actual cost or risk evidence"
+  },
+  "fixed_test": {
+    "temperature": {"state": "reported", "normalized_value": 500, "normalized_unit": "K"},
+    "pressure": {"state": "reported", "normalized_value": 20, "normalized_unit": "bar(abs)"},
+    "pressure_type": "absolute",
+    "catalyst_mass": {"state": "reported", "normalized_value": 0.5, "normalized_unit": "g"},
+    "reactant_ratio": {
+      "numerator": "H2", "denominator": "CO2",
+      "value": {"state": "reported", "normalized_value": 3, "normalized_unit": "1"}
+    },
+    "mass_normalized_volume_flow": {
+      "mass_basis": "catalyst", "gas_scope": "reactants_only", "reference_pressure_type": "absolute",
+      "reference_temperature": {"state": "reported", "normalized_value": 293.15, "normalized_unit": "K"},
+      "reference_pressure": {"state": "reported", "normalized_value": 1.01325, "normalized_unit": "bar(abs)"},
+      "value": {"state": "reported", "normalized_value": 10, "normalized_unit": "NL/g_cat/h"}
+    }
+  },
+  "candidates": [{
+    "candidate_id": "synthetic-demo-only",
+    "recipe": {
+      "composition_basis": "mol_pct", "composition_scope": "whole catalyst material",
+      "components": [
+        {"species": "A", "role": "compound", "amount": {"state": "reported", "normalized_value": 40, "normalized_unit": "%"}},
+        {"species": "B", "role": "support", "amount": {"state": "reported", "normalized_value": 60, "normalized_unit": "%"}}
+      ]
+    },
+    "planned_synthesis": {"route": "synthetic_demo only", "evidence": "synthetic_demo only", "parameters": {}}
+  }]
+}

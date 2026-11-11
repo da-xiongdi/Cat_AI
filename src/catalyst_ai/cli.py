@@ -97,6 +97,36 @@ def make_parser():
     features.add_argument("--qualification", type=Path, required=True)
     features.add_argument("--split", type=Path, required=True)
     features.add_argument("--report", type=Path, required=True)
+    baseline = dataset_commands.add_parser(
+        "baseline", help="Run paper-held-out exploratory baselines"
+    )
+    baseline.add_argument("--snapshot", type=Path, required=True)
+    baseline.add_argument("--qualification", type=Path, required=True)
+    baseline.add_argument("--split", type=Path, required=True)
+    baseline.add_argument("--features", type=Path, required=True)
+    baseline.add_argument("--output", type=Path, required=True)
+    baseline.add_argument("--seed", type=int, default=42)
+    diagnose = dataset_commands.add_parser("diagnose", help="Explain and assess a frozen baseline")
+    diagnose.add_argument("--snapshot", type=Path, required=True)
+    diagnose.add_argument("--qualification", type=Path, required=True)
+    diagnose.add_argument("--split", type=Path, required=True)
+    diagnose.add_argument("--features", type=Path, required=True)
+    diagnose.add_argument("--baseline", type=Path, required=True)
+    diagnose.add_argument("--model", type=Path, required=True)
+    diagnose.add_argument("--report", type=Path, required=True)
+    diagnose.add_argument("--seed", type=int, default=42)
+    screen = dataset_commands.add_parser(
+        "screen", help="Screen explicitly specified candidate designs"
+    )
+    screen.add_argument("--snapshot", type=Path, required=True)
+    screen.add_argument("--qualification", type=Path, required=True)
+    screen.add_argument("--split", type=Path, required=True)
+    screen.add_argument("--features", type=Path, required=True)
+    screen.add_argument("--baseline", type=Path, required=True)
+    screen.add_argument("--model", type=Path, required=True)
+    screen.add_argument("--diagnostic", type=Path, required=True)
+    screen.add_argument("--spec", type=Path, required=True)
+    screen.add_argument("--report", type=Path, required=True)
     batch = commands.add_parser("batch", help="仅批次容量契约校验，无推荐算法")
     check = batch.add_subparsers(dest="batch_command", required=True).add_parser("check")
     check.add_argument("--capacity", type=int)
@@ -217,6 +247,83 @@ def execute(args, settings):
                 evidence=args.evidence,
                 acknowledge_warnings=args.acknowledge_warnings,
             )
+        )
+    elif args.command == "dataset" and args.dataset_command == "screen":
+        if args.report.suffix.lower() != ".json" or args.report.exists():
+            raise ValueError("Screening report must be a new .json file")
+        try:
+            from catalyst_ai.modeling.screening import screen
+        except ImportError as exc:
+            raise ValueError(
+                "Install dependencies: uv sync --extra modeling --extra explain"
+            ) from exc
+        from catalyst_ai.reporting.evidence import digest
+
+        content = screen(
+            load_json(args.spec),
+            load_json(args.diagnostic),
+            load_json(args.baseline),
+            args.model,
+            load_json(args.snapshot),
+            load_json(args.qualification),
+            load_json(args.split),
+            load_json(args.features),
+        )
+        h = digest(content)
+        result = {"screening_id": "screening-" + h, "content_sha256": h, "content": content}
+        write_json(args.report, result)
+        emit(
+            {
+                "screening_id": result["screening_id"],
+                "path": str(args.report),
+                "proposed_count": len(content["selected"]),
+            }
+        )
+    elif args.command == "dataset" and args.dataset_command == "diagnose":
+        if args.report.suffix.lower() != ".json" or args.report.exists():
+            raise ValueError("Diagnostic report must be a new .json file")
+        try:
+            from catalyst_ai.modeling.diagnostics import analyze
+        except ImportError as exc:
+            raise ValueError(
+                "Install dependencies: uv sync --extra modeling --extra explain"
+            ) from exc
+        from catalyst_ai.reporting.evidence import digest
+
+        content = analyze(
+            load_json(args.baseline),
+            args.model,
+            load_json(args.snapshot),
+            load_json(args.qualification),
+            load_json(args.split),
+            load_json(args.features),
+            seed=args.seed,
+        )
+        h = digest(content)
+        result = {"diagnostic_id": "diagnostic-" + h, "content_sha256": h, "content": content}
+        write_json(args.report, result)
+        emit({"diagnostic_id": result["diagnostic_id"], "path": str(args.report)})
+    elif args.command == "dataset" and args.dataset_command == "baseline":
+        if args.output.exists():
+            raise ValueError("Output directory already exists")
+        try:
+            from catalyst_ai.modeling.baseline import save_run, train_baselines
+        except ImportError as exc:
+            raise ValueError("Install modeling dependencies: uv sync --extra modeling") from exc
+        report, models = train_baselines(
+            load_json(args.snapshot),
+            load_json(args.qualification),
+            load_json(args.split),
+            load_json(args.features),
+            seed=args.seed,
+        )
+        report = save_run(args.output, report, models, lock_path=Path("uv.lock"))
+        emit(
+            {
+                "run_id": report["run_id"],
+                "selected": report["model_selection"]["selected"],
+                "report": str(args.output / "report.json"),
+            }
         )
     elif args.command == "dataset" and args.dataset_command == "features":
         if args.report.suffix.lower() != ".json" or args.report.exists():

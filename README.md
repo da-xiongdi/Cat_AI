@@ -1,12 +1,14 @@
 # AI辅助CO₂加氢制甲醇催化剂开发平台
 
-当前交付为 **Task A + Task B 最小切片，以及 I1 目标资格视图**：数据契约、CSV/JSON 导入、保守治理、人工核验事件、快照入口、目标准入/排除与覆盖清单。没有训练模型、预测排名或实验结论。
+当前已跑通 **数据接入与治理 → 目标冻结 → 论文分组 → 初版组成/工况特征 → 单目标基线 → 初步诊断**。对照总体A–F路线，当前聚焦 **C特征工程与预测能力完善，D辅助评价**。这是一条最小可运行路径，特征方案与预测模型尚未定型；E筛选和F实验反馈属于后期。
+
+TheMeCat已完成820条v2修订，609条通过治理，冻结593条CO₂转化率记录；按37个论文组划分训练/验证/测试集。已有Dummy/Ridge/Extra Trees模型、诊断及4项固定工况探索性组成输出。数据按用户决定接受公开来源，压力按用户假设视作绝压，尚未逐条原文核验；现有结果不构成正式实验推荐或甲醇性能/合成工艺优化结论。当前证据和下一步研究入口见[进度汇总](docs/progress.md)。
 
 需求与科研边界唯一基准：[开发指引](docs/project_development_guide.md)。原文件 `docs/architecture/AI_CO2_MeOH_Catalyst_Development_Guide_v0.2.md` 完整保留；约定路径是它的逐字节副本。首次审计仅发现该指引，无代码、真实数据或既有测试，见 [来源审计](docs/source_audit.md)。
 
-后续实施使用[论文评审补充的实施与验收清单](docs/implementation_amendment.md)：将有效建议接入原任务B–D。I1已实现并通过模拟数据软件验证；分组切分、设计特征和单目标基线仍为规划。
+后续实施使用[论文评审补充的实施与验收清单](docs/implementation_amendment.md)：I1–I4的单目标路径和I5初步诊断已有运行证据；样品/批次独立评价、工艺建模和正式实验闭环仍待完成。
 
-TheMeCat 专项执行依据见[数据库实施方案](docs/themecat_implementation_plan.md)：补充材料已归档，独立审计已运行；下一项先做数据语义与治理 v2，再做可追溯修订、原文核验与 I2–I4。补充说明中的训练/筛选命令属于规划，不代表已有功能。
+TheMeCat专项执行依据见[数据库实施方案](docs/themecat_implementation_plan.md)。B0–B2及B4/I1已完成首批执行，B3按用户决定暂缓。近期依照“先完善上游”的共识推进 **特征工程 → 模型比较与分组评价 → 独立预测入口**，按覆盖扩展甲醇相关目标。Extra Trees仅是当前一次基线比较选中的工作模型，不能视为最终预测方案；当前不推进实验候选或设备/批次准备。
 
 ## 安装与验收
 
@@ -20,6 +22,8 @@ uv run ruff check src tests scripts
 uv run ruff format --check src tests scripts
 uv run python scripts/smoke_test.py
 ```
+
+运行模型和解释模块时安装相应可选依赖：`uv sync --extra dev --extra modeling --extra explain`。入口为`catalyst-ai dataset split/features/baseline/diagnose/screen`各子命令（逐个用`--help`查看参数）；完整输入契约见[API契约](docs/api_contracts.md)。
 
 不用 uv 时：用 Python ≥3.11 创建虚拟环境，再运行 `python -m pip install -e ".[dev]"`。核心依赖仅 Pydantic、SQLAlchemy、PyYAML。pandas/pyarrow 是后期可选依赖，本轮不安装、不生成 Parquet。
 
@@ -52,9 +56,9 @@ uv run catalyst-ai review --record-id <record-id> --reviewer <复核人> --decis
 uv run catalyst-ai dataset build --target co2_conversion --record-id <record-id>
 ```
 
-上面的尖括号是占位符，不能原样执行。本轮没有可供研究快照使用的真实数据。研究快照默认拒绝 synthetic_demo；即使演示记录被显式审核也不能进入研究快照。仅为测试快照接口，可显式增加 `dataset build --demo`，它仍要求独立审核事件，产物标记 `synthetic_demo`、`scientific_use=false`，存放在 `snapshots/demo/`。本轮正式工作区没有创建审核批准事件。
+上面的尖括号是占位符，不能原样执行。默认人工核验路径要求独立审核；TheMeCat另有显式`--accept-themecat`来源接受策略及593条冻结记录，详见[专项方案](docs/themecat_implementation_plan.md)。这一路径不创建人工审核事件。研究快照拒绝synthetic_demo；仅为测试接口可显式增加`dataset build --demo`，仍要求独立审核，产物标记`synthetic_demo`、`scientific_use=false`并存放在`snapshots/demo/`。
 
-快照保存完整冻结记录、样本 ID、原文件/内容哈希、配置/代码哈希、目标口径、审核证据。JSON 是当前最小实现；不派生指标、不生成特征表、不执行训练切分。核验针对整条记录；保留输入层原始 `pending`，有效核验状态以不可覆盖的 review_event 为准。详见 [接口契约](docs/api_contracts.md)。
+快照保存完整冻结记录、样本ID、原文件/内容哈希、配置/代码哈希、目标口径及审核或来源接受证据。JSON是当前实现；特征、划分、模型和诊断由独立后续命令生成，不改写快照。人工核验针对整条记录；保留输入层原始`pending`，有效人工核验状态以不可覆盖的review_event为准。详见[接口契约](docs/api_contracts.md)。
 
 ## 目标资格与覆盖清单（I1）
 
@@ -79,9 +83,9 @@ import_run → staged_record → curated_record → review_event → dataset_sna
 
 材料体系标签、元素/化合物/载体/助剂开放；同配方支持多个制备批次，同批次支持多个测试工况，每个工况支持多个观测点。数值以 `Measurement` 结构保存原值、单位、语义、标准值、定义、定位、抽取状态、质量标志、误差和 provenance。CSV 的对象/数组单元格使用 JSON；字段详见 [数据字典](docs/data_dictionary.md) 与 [生成式 schema](configs/data_schema.yaml)。
 
-本轮仅进行明确的温度/绝压单位换算和单位识别，不统一不同工况的性能，不计算收率/STY。GHSV 参考状态和体积基准不明时不赋予标准值。表征不能放入配方契约；未来设计模型只允许 A+B 输入。
+仅进行有依据的单位换算，不统一不同工况的性能，不计算收率/STY标签。TheMeCat质量归一流量与体积GHSV分别建模；未报告基准不猜测。表征不能放入配方契约，现有设计模型使用组成和测试工况，不使用BET等制备后表征；合成参数因缺乏训练数据尚未建模。
 
-批次默认 4，`configs/project.yaml` 可设 1–6，命令可覆盖容量但硬上限 6；这是资源约束接口，还没有推荐、真实实验批次状态机或设备控制。
+批次默认4，`configs/project.yaml`可设1–6，命令可覆盖容量但硬上限6；已有候选筛选接口及探索性清单，尚未完成正式实验推荐、真实批次状态机或设备控制。
 
 ## 项目目录与证据
 
@@ -90,11 +94,14 @@ import_run → staged_record → curated_record → review_event → dataset_sna
 | `src/catalyst_ai/schemas` | Pydantic 契约与一对多关系校验 |
 | `src/catalyst_ai/sources` / `governance` | 本地适配器、保守质量规则 |
 | `src/catalyst_ai/storage` | SQLite 实体、事务、快照 |
+| `src/catalyst_ai/datasets` / `features` | 目标准入、论文划分与受限设计特征 |
+| `src/catalyst_ai/modeling` | 单目标基线、解释/经验适用域与条件化筛选 |
 | `src/catalyst_ai/reporting` | JSON/文本报告、代码/配置证据 |
 | `src/catalyst_ai/interfaces.py` | 未来特征/预测/推荐 Protocol，无算法实现 |
 | `data/raw` / `staged` / `curated` | 哈希原件、待治理档案、待核验治理结果 |
 | `data/examples` | 明确为 synthetic_demo 的 CSV/JSON |
-| `artifacts/reports/acceptance` | 本次实际验收日志、质量报告和运行清单 |
+| `artifacts/reports/acceptance` | 初次工程验收日志、质量报告和运行清单 |
+| `artifacts/reports/themecat-*` | 分阶段审计、治理、划分、特征、模型、诊断及组成探索证据 |
 | `tests/unit` / `tests/integration` | 契约、科学边界、导入、核验、CLI 测试 |
 
 [实际进度与待办](docs/progress.md) · [架构决策](docs/decisions.md) · [完整新增文件清单](docs/change_inventory.md)

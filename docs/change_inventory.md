@@ -5,6 +5,8 @@ The original development guide remains unchanged:
 
 - `docs/architecture/AI_CO2_MeOH_Catalyst_Development_Guide_v0.2.md`
 
+Current implementation and research status is summarized in [progress.md](progress.md). Earlier inventory entries describe their delivery date and do not represent the current database or model state.
+
 ## New project files and acceptance evidence
 
 - `.env.example`
@@ -102,3 +104,16 @@ Scientific results: none.
 - Added standard-library `scripts/validate_themecat.py` and boundary tests in `tests/unit/test_themecat_audit.py`; the archived script is not the production audit entry point.
 - Updated README, implementation_amendment, data_dictionary, themecat_v1_audit, api_contracts, decisions, progress and this inventory to link the coordinated route and distinguish planned contracts from current behavior.
 - New evidence is under `artifacts/reports/themecat-20261110/`; actual checks are recorded in progress and validation_manifest.json. Existing database, raw files, baseline guides and historical acceptance evidence are preserved. No model, candidate, research approval or research snapshot was created.
+
+## 2026-11-10: current progress and research entry documentation
+
+- Updated `docs/progress.md` with the A–F stage mapping, current data/model evidence, the preceding status-check results (106 tests passed, ruff and formatting passed), outstanding acceptance requirements and a proposed composition-versus-conditions research slice.
+- Synchronized `docs/themecat_implementation_plan.md`, `docs/implementation_amendment.md` and `README.md`: B0–B2 and B4/I1 have run; I2 paper grouping, I3 features, I4 exploratory CO2-conversion baselines and I5 initial diagnostics have run. B3 remains deferred; published-source acceptance and the pressure assumption are not manual row verification.
+- Recorded that E has an initial screening interface and exploratory compositions, while formal experimental recommendations, batch workflows and F feedback remain unfinished. Next-step research tasks are plans, not newly executed analyses.
+- Documentation only: no Python, baseline guide, raw data, database, snapshot, model or historical report changes; no new review approvals, training, screening or experiments. Documentation links and baseline guide hashes are checked separately from prior software tests.
+
+## 2026-11-10: upstream priority clarification
+
+- Updated progress, TheMeCat plan, implementation amendment and README to reflect the user's reiterated priority: improve feature engineering, predictive modeling/evaluation and an independent prediction entry point before downstream screening or experiments.
+- Added ADR-015 in `docs/decisions.md`: Extra Trees is the selected model for the initial baseline run, not the final platform model; feature/model selection remains open and E/F remain later-stage work.
+- Documentation only; no new feature implementation, training, prediction, screening or experimental result is claimed.

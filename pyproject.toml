@@ -15,6 +15,9 @@ snapshots = ["pandas>=2.2,<4", "pyarrow>=19,<24"]
 modeling = [
     "scikit-learn>=1.7,<2",
 ]
+explain = [
+    "shap>=0.49,<1",
+]
 
 [project.scripts]
 catalyst-ai = "catalyst_ai.cli:main"
