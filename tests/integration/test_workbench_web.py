@@ -197,6 +197,8 @@ def test_upgrade_v2_preserves_tasks_and_backup(tmp_path):
     )
     con = connect(db)
     for table in (
+        "prediction_event",
+        "prediction_job",
         "research_record",
         "model_run_revision",
         "model_run",

@@ -10,7 +10,7 @@ from pathlib import Path
 import uvicorn
 from playwright.sync_api import sync_playwright
 
-from catalyst_ai.storage.workbench import migrate
+from catalyst_ai.storage.workbench import SCHEMA_VERSION, migrate
 from catalyst_ai.web.app import create_app
 from catalyst_ai.workbench import backup, import_draft, index, research, service
 
@@ -101,7 +101,7 @@ def main():
         if previous:
             for ref in previous["evidence"]:
                 ref.pop("status", None)
-        if previous != content:
+        if not old:
             research.save(
                 db,
                 "cat-ai",
@@ -241,7 +241,7 @@ def main():
         protected_hashes=before,
         protected_unchanged=True,
         tasks=len(service.list_tasks(db, "cat-ai")),
-        schema=6,
+        schema=SCHEMA_VERSION,
     )
     (out / "verification.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"

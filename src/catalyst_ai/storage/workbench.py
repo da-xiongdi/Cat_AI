@@ -5,7 +5,7 @@ from contextlib import contextmanager
 from datetime import UTC, datetime
 from pathlib import Path
 
-SCHEMA_VERSION = 6
+SCHEMA_VERSION = 7
 
 
 def now():
@@ -188,6 +188,22 @@ def migrate(path: Path):
               PRIMARY KEY(project_id,kind,id,revision)
             );
             PRAGMA user_version=6;
+            COMMIT;
+            """)
+        if version < 7:
+            db.executescript("""
+            BEGIN IMMEDIATE;
+            CREATE TABLE prediction_job (
+              id TEXT PRIMARY KEY, project_id TEXT NOT NULL REFERENCES project(id),
+              status TEXT NOT NULL, revision INTEGER NOT NULL, payload TEXT NOT NULL,
+              actor TEXT NOT NULL, created_at TEXT NOT NULL, heartbeat TEXT,
+              lease TEXT, pid INTEGER, error TEXT, result TEXT
+            );
+            CREATE TABLE prediction_event (
+              id INTEGER PRIMARY KEY, job_id TEXT NOT NULL REFERENCES prediction_job(id),
+              created_at TEXT NOT NULL, message TEXT NOT NULL
+            );
+            PRAGMA user_version=7;
             COMMIT;
             """)
     finally:

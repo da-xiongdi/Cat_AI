@@ -30,6 +30,7 @@ from catalyst_ai.workbench import (
     foundation,
     index,
     model_runs,
+    predictions,
     research,
     samples,
     service,
@@ -37,6 +38,16 @@ from catalyst_ai.workbench import (
 
 HERE = Path(__file__).parent
 LABELS = {
+    "queued": "排队中",
+    "running": "执行中",
+    "succeeded": "执行完成",
+    "failed": "执行失败",
+    "interrupted": "执行中断",
+    "ok": "预测完成",
+    "invalid_input": "输入无效",
+    "unsupported_species_role": "物种或角色不支持",
+    "output_out_of_range": "预测值超出范围",
+    "nonfinite_prediction": "预测值无效",
     "planned": "待规划",
     "ready": "可开始",
     "in_progress": "进行中",
@@ -284,6 +295,85 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
                 body["expected_revision"],
                 request_id=body["request_id"],
                 actor=body["actor"],
+            )
+        except service.Conflict as exc:
+            return JSONResponse({"detail": str(exc)}, status_code=409)
+        except (ValueError, TypeError) as exc:
+            return JSONResponse({"detail": str(exc)}, status_code=422)
+
+    @app.get("/predictions", response_class=HTMLResponse)
+    async def prediction_page(request: Request):
+        models = [
+            index.get_artifact(db, a["id"])
+            for a in index.list_artifacts(db, project_id, limit=500)["items"]
+            if a["kind"] == "model"
+        ]
+        return render(
+            request, "predictions", models=models, jobs=predictions.list_jobs(db, project_id)
+        )
+
+    @app.get("/api/workbench/v1/prediction-jobs")
+    async def prediction_jobs():
+        return {"items": predictions.list_jobs(db, project_id)}
+
+    @app.get("/api/workbench/v1/prediction-jobs/{job_id}")
+    async def prediction_job(job_id: str):
+        return predictions.get(db, project_id, job_id)
+
+    @app.post("/api/workbench/v1/prediction-jobs")
+    async def enqueue_prediction_api(request: Request):
+        try:
+            data = await request.json()
+            if not isinstance(data, dict) or set(data) != {
+                "model_id",
+                "version",
+                "items",
+                "task_id",
+                "request_id",
+                "actor",
+            }:
+                raise ValueError("invalid prediction request fields")
+            return predictions.enqueue(
+                db,
+                project_id,
+                data["model_id"],
+                data["version"],
+                data["items"],
+                data["task_id"],
+                request_id=data["request_id"],
+                actor=data["actor"],
+            )
+        except service.Conflict as exc:
+            return JSONResponse({"detail": str(exc)}, status_code=409)
+        except (ValueError, TypeError) as exc:
+            return JSONResponse({"detail": str(exc)}, status_code=422)
+
+    @app.post("/api/workbench/v1/prediction-jobs/{job_id}/{operation}")
+    async def prediction_control(request: Request, job_id: str, operation: str):
+        try:
+            body = await request.json()
+            keys = (
+                {"request_id", "actor", "expected_revision"}
+                if operation == "cancel"
+                else {"request_id", "actor"}
+            )
+            if (
+                operation not in {"cancel", "retry"}
+                or not isinstance(body, dict)
+                or set(body) != keys
+            ):
+                raise ValueError("invalid prediction control request")
+            if operation == "cancel":
+                return predictions.cancel(
+                    db,
+                    project_id,
+                    job_id,
+                    body["expected_revision"],
+                    request_id=body["request_id"],
+                    actor=body["actor"],
+                )
+            return predictions.retry(
+                db, project_id, job_id, request_id=body["request_id"], actor=body["actor"]
             )
         except service.Conflict as exc:
             return JSONResponse({"detail": str(exc)}, status_code=409)
@@ -656,6 +746,32 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
         try:
             if not actor:
                 raise ValueError("请填写操作人")
+            if action == "enqueue-prediction":
+                model_id, version = data.get("model", "").split("|", 1)
+                predictions.enqueue(
+                    db,
+                    project_id,
+                    model_id,
+                    version,
+                    json.loads(data.get("items", "")),
+                    data.get("task_id") or None,
+                    request_id=rid,
+                    actor=actor,
+                )
+                return RedirectResponse("/predictions", status_code=303)
+            if action in {"cancel-prediction", "retry-prediction"}:
+                if action == "cancel-prediction":
+                    predictions.cancel(
+                        db,
+                        project_id,
+                        data["job_id"],
+                        int(data["revision"]),
+                        request_id=rid,
+                        actor=actor,
+                    )
+                else:
+                    predictions.retry(db, project_id, data["job_id"], request_id=rid, actor=actor)
+                return RedirectResponse("/predictions", status_code=303)
             if action == "save-research":
                 research.save(
                     db,

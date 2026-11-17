@@ -34,12 +34,22 @@ class RunContent(Model):
     evidence: list[EvidenceRef] = Field(min_length=1)
 
 
-def save(path, project_id, run_id, content, expected_revision, *, request_id, actor):
+def save(
+    path, project_id, run_id, content, expected_revision, *, request_id, actor, job_completion=None
+):
     run_id = _text(run_id, "run_id")
     value = RunContent.model_validate(content).model_dump()
     payload = [project_id, run_id, value, expected_revision]
 
     def run(db, actor):
+        if job_completion:
+            token, output = job_completion
+            lease = db.execute(
+                "SELECT lease,status FROM prediction_job WHERE id=? AND project_id=?",
+                (run_id, project_id),
+            ).fetchone()
+            if not lease or lease[0] != token or lease[1] != "running":
+                raise Conflict("prediction worker lease lost")
         if not db.execute("SELECT 1 FROM project WHERE id=?", (project_id,)).fetchone():
             raise Missing("project not found")
         row = db.execute("SELECT * FROM model_run WHERE id=?", (run_id,)).fetchone()
@@ -90,6 +100,16 @@ def save(path, project_id, run_id, content, expected_revision, *, request_id, ac
                 revision + 1,
             ),
         )
+        if job_completion:
+            db.execute(
+                "UPDATE prediction_job SET status='succeeded',revision=revision+1,"
+                "result=?,lease=NULL WHERE id=?",
+                (_json(output), run_id),
+            )
+            db.execute(
+                "INSERT INTO prediction_event(job_id,created_at,message) VALUES(?,?,?)",
+                (run_id, now(), "outputs indexed; execution completed"),
+            )
         return {"id": run_id, "revision": revision + 1}
 
     return _write(path, request_id, actor, "save_model_run", payload, run)

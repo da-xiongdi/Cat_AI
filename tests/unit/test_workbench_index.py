@@ -215,6 +215,8 @@ def test_v1_upgrade_preserves_data_and_creates_backup(tmp_path):
     service.create_project(db, "p", "project", request_id="p", actor="tester")
     con = connect(db)
     for table in (
+        "prediction_event",
+        "prediction_job",
         "research_record",
         "model_run_revision",
         "model_run",
