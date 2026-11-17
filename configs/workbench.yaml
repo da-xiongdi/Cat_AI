@@ -1,0 +1,5 @@
+﻿workspace: ..
+database: data/workbench.sqlite
+project_id: cat-ai
+project_name: Cat AI
+port: 8765

@@ -1,14 +1,26 @@
 # AI辅助CO₂加氢制甲醇催化剂开发平台
 
-当前已跑通 **数据接入与治理 → 目标冻结 → 论文分组 → 初版组成/工况特征 → 单目标基线 → 初步诊断**。对照总体A–F路线，当前聚焦 **C特征工程与预测能力完善，D辅助评价**。这是一条最小可运行路径，特征方案与预测模型尚未定型；E筛选和F实验反馈属于后期。
+项目面向多材料体系的CO₂加氢制甲醇催化剂研发，整体路线为 **证据化数据 → 特征与性能预测 → 约束下设计 → 实验验证与反馈**。系统组成、模块协作、数据和模型生命周期集中见[总体设计](docs/architecture/system_design.md)。
 
-TheMeCat已完成820条v2修订，609条通过治理，冻结593条CO₂转化率记录；按37个论文组划分训练/验证/测试集。已有Dummy/Ridge/Extra Trees模型、诊断及4项固定工况探索性组成输出。数据按用户决定接受公开来源，压力按用户假设视作绝压，尚未逐条原文核验；现有结果不构成正式实验推荐或甲醇性能/合成工艺优化结论。当前证据和下一步研究入口见[进度汇总](docs/progress.md)。
+当前聚焦 **C特征工程与预测，D辅助评价**：R1基础路径及S1-A数据准备与资格检查已验收，正式联合支持553/593条；下一步为S1-B物化计算，随后补齐R2及自定义训练配置。完整状态、指标、支持率及实际运行证据统一见[进度汇总](docs/progress.md)；E/F正式筛选与实验反馈后置。
 
-需求与科研边界唯一基准：[开发指引](docs/project_development_guide.md)。原文件 `docs/architecture/AI_CO2_MeOH_Catalyst_Development_Guide_v0.2.md` 完整保留；约定路径是它的逐字节副本。首次审计仅发现该指引，无代码、真实数据或既有测试，见 [来源审计](docs/source_audit.md)。
+TheMeCat已有593条CO₂转化率冻结记录，按37个论文组划分；来源按用户决定接受，绝压为用户假设，尚未逐条原文核验。工程验收不等于新材料泛化或甲醇性能/合成工艺优化已验证，特征方案和模型仍未定型。
 
-后续实施使用[论文评审补充的实施与验收清单](docs/implementation_amendment.md)：I1–I4的单目标路径和I5初步诊断已有运行证据；样品/批次独立评价、工艺建模和正式实验闭环仍待完成。
+推荐先读总体设计，再看进度，执行时只进入对应专项文档：
 
-TheMeCat专项执行依据见[数据库实施方案](docs/themecat_implementation_plan.md)。B0–B2及B4/I1已完成首批执行，B3按用户决定暂缓。近期依照“先完善上游”的共识推进 **特征工程 → 模型比较与分组评价 → 独立预测入口**，按覆盖扩展甲醇相关目标。Extra Trees仅是当前一次基线比较选中的工作模型，不能视为最终预测方案；当前不推进实验候选或设备/批次准备。
+| 需要了解 | 入口 |
+|---|---|
+| 系统整体如何工作、各阶段如何衔接 | [总体设计](docs/architecture/system_design.md) |
+| 项目管理Web工作台如何建设 | [工作台方案（规划草案）](docs/architecture/project_workbench_plan.md) |
+| 已完成什么、证据在哪里、下一步做什么 | [当前进度](docs/progress.md) |
+| 当前特征、数据准备与训练预测如何实施 | [特征工程与预测方案](docs/feature_engineering_plan_v0.1.md) |
+| 数据源如何接入、治理及接受 | [TheMeCat专项方案](docs/themecat_implementation_plan.md) |
+| 已有能力如何调用、如何验收 | [API契约](docs/api_contracts.md)、[增量验收清单](docs/implementation_amendment.md) |
+| 需求边界及重要决策 | [开发指引](docs/project_development_guide.md)、[架构决策](docs/decisions.md) |
+
+原开发指引及其`docs/architecture/`副本保持不变；初始仓库状态见[来源审计](docs/source_audit.md)。[物化属性思路](docs/phy_chem_features.md)是候选方法池，不自动扩大近期实施范围。
+
+已有R1入口为 `scripts/compare_r1.py` 和 `scripts/predict_r1.py`，安装需包含`modeling`依赖，参数用`--help`查看；[默认比较](docs/api_contracts.md#r1-默认比较32)及[独立预测](docs/api_contracts.md#r1-独立预测33)有完整调用说明。属性导入与资格检查见[S1目录接口](docs/s1_catalog_interface.md)及[S1-A验收](docs/s1_a_acceptance.md)；R2及自定义训练仍待实现。
 
 ## 安装与验收
 

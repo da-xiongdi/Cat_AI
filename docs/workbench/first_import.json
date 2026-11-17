@@ -1,0 +1,365 @@
+{
+  "schema_version": "1.0",
+  "project_id": "cat-ai",
+  "sources": [
+    {
+      "id": "design",
+      "path": "docs/architecture/system_design.md",
+      "section": "第5节",
+      "role": "document",
+      "note": "总体阶段及当前状态"
+    },
+    {
+      "id": "progress",
+      "path": "docs/progress.md",
+      "section": "当前汇总与下一步",
+      "role": "document",
+      "note": "历史进度与状态"
+    },
+    {
+      "id": "plan",
+      "path": "docs/feature_engineering_plan_v0.1.md",
+      "section": "第2.5、3.4、4节及实施顺序",
+      "role": "document",
+      "note": "特征与模型验收要求"
+    },
+    {
+      "id": "s1a",
+      "path": "docs/s1_a_acceptance.md",
+      "section": "全文",
+      "role": "document",
+      "note": "S1-A验收与资格边界"
+    },
+    {
+      "id": "s1b",
+      "path": "docs/s1_b_build.md",
+      "section": "全文",
+      "role": "document",
+      "note": "S1-B构建说明及命令"
+    },
+    {
+      "id": "snapshot",
+      "path": "data/snapshots/snapshot-76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da.json",
+      "section": "全文",
+      "role": "artifact",
+      "note": "冻结目标快照"
+    },
+    {
+      "id": "qualification",
+      "path": "data/snapshots/qualifications/qualification-b450e999aca00cd7e035b5bb1006a48d3fbd171520391710eb05a2490aa85967.json",
+      "section": "全文",
+      "role": "artifact",
+      "note": "资格快照"
+    },
+    {
+      "id": "split",
+      "path": "artifacts/reports/themecat-i2-20261110/split-verified.json",
+      "section": "全文",
+      "role": "artifact",
+      "note": "原DOI分区"
+    },
+    {
+      "id": "selection",
+      "path": "artifacts/reports/s1-b-20261113-v4/selection.json",
+      "section": "全文",
+      "role": "artifact",
+      "note": "S1-B逐条选择和分区"
+    },
+    {
+      "id": "features",
+      "path": "artifacts/reports/s1-b-20261113-v4/features.json",
+      "section": "全文",
+      "role": "artifact",
+      "note": "S1-B特征及绑定"
+    },
+    {
+      "id": "properties",
+      "path": "configs/s1_element_properties_v2.json",
+      "section": "全文",
+      "role": "artifact",
+      "note": "属性来源与版本"
+    },
+    {
+      "id": "mapping",
+      "path": "configs/s1_species_mapping_v2.json",
+      "section": "全文",
+      "role": "artifact",
+      "note": "物种映射"
+    },
+    {
+      "id": "review",
+      "path": "configs/s1_source_review_v2.json",
+      "section": "全文",
+      "role": "artifact",
+      "note": "记录级来源处置"
+    },
+    {
+      "id": "r1",
+      "path": "artifacts/reports/themecat-r1-comparison-20261112-verified/README.md",
+      "section": "全文",
+      "role": "artifact",
+      "note": "R1比较摘要"
+    },
+    {
+      "id": "prediction",
+      "path": "artifacts/reports/themecat-r1-prediction-20261112-final/prediction-verification.json",
+      "section": "全文",
+      "role": "artifact",
+      "note": "R1预测验证"
+    },
+    {
+      "id": "decisions",
+      "path": "docs/decisions.md",
+      "section": "ADR-017、ADR-019",
+      "role": "document",
+      "note": "历史架构决策"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "S1A-01",
+      "title": "属性、映射与资格",
+      "goal": "保留已验收的来源、版本及资格范围",
+      "milestone": "S1-A",
+      "stages": [
+        "B",
+        "A"
+      ],
+      "primary_stage": "B",
+      "status": "done",
+      "dependencies": [],
+      "criteria": [
+        {
+          "description": "核对属性、映射和记录级处置版本及553/593资格，保留40条排除原因",
+          "required": true
+        },
+        {
+          "description": "核对来源接受及压力假设边界",
+          "required": true
+        }
+      ],
+      "sources": [
+        "s1a",
+        "qualification",
+        "properties",
+        "mapping",
+        "review"
+      ],
+      "owner": null,
+      "planned_date": null
+    },
+    {
+      "id": "S1B-01",
+      "title": "物化特征构建验收",
+      "goal": "复核构建交付并记录正式验收结论",
+      "milestone": "S1-B",
+      "stages": [
+        "C",
+        "B"
+      ],
+      "primary_stage": "C",
+      "status": "in_review",
+      "dependencies": [
+        "S1A-01"
+      ],
+      "criteria": [
+        {
+          "description": "核对selection、features与快照、资格、DOI分区、属性映射及审核版本绑定",
+          "required": true
+        },
+        {
+          "description": "核对训练454、验证47、历史测试52及排除39、0、1，逐值与数据库一致",
+          "required": true
+        },
+        {
+          "description": "核对公式、缺失与不支持、换序和合并不变性及预测输入一致性测试证据",
+          "required": true
+        },
+        {
+          "description": "记录验收人、具体成果版本及未解决项",
+          "required": true
+        }
+      ],
+      "sources": [
+        "s1b",
+        "plan",
+        "snapshot",
+        "qualification",
+        "split",
+        "selection",
+        "features",
+        "properties",
+        "mapping",
+        "review"
+      ],
+      "owner": null,
+      "planned_date": null
+    },
+    {
+      "id": "S2-01",
+      "title": "训练配置与参数入口",
+      "goal": "交付独立配置schema、校验及Python和CLI入口",
+      "milestone": "S2",
+      "stages": [
+        "C"
+      ],
+      "primary_stage": "C",
+      "status": "planned",
+      "dependencies": [
+        "S1B-01"
+      ],
+      "criteria": [
+        {
+          "description": "支持已接入模型、特征和白名单参数，保存有效配置及来源",
+          "required": true
+        },
+        {
+          "description": "验证非法配置、指定模型训练及重载预测",
+          "required": true
+        }
+      ],
+      "sources": [
+        "plan",
+        "decisions"
+      ],
+      "owner": null,
+      "planned_date": null
+    },
+    {
+      "id": "S2-02",
+      "title": "增强训练与预测",
+      "goal": "将F1和F2接入训练与预测并固定输入版本",
+      "milestone": "S2",
+      "stages": [
+        "C",
+        "B"
+      ],
+      "primary_stage": "C",
+      "status": "planned",
+      "dependencies": [
+        "S1B-01",
+        "S2-01"
+      ],
+      "criteria": [
+        {
+          "description": "绑定属性、映射、资格及计算版本，不支持输入明确拒绝",
+          "required": true
+        },
+        {
+          "description": "保存并校验模型包，验证重载和预测一致性",
+          "required": true
+        }
+      ],
+      "sources": [
+        "plan",
+        "s1b"
+      ],
+      "owner": null,
+      "planned_date": null
+    },
+    {
+      "id": "S2-03",
+      "title": "家族对照资格",
+      "goal": "检查统一与单家族对照的数据条件",
+      "milestone": "S2",
+      "stages": [
+        "C",
+        "D"
+      ],
+      "primary_stage": "C",
+      "status": "planned",
+      "dependencies": [
+        "S1B-01"
+      ],
+      "criteria": [
+        {
+          "description": "核对家族标签及记录和DOI覆盖，不足时记录跳过原因",
+          "required": true
+        }
+      ],
+      "sources": [
+        "plan"
+      ],
+      "owner": null,
+      "planned_date": null
+    },
+    {
+      "id": "S3-01",
+      "title": "R2共同子集比较",
+      "goal": "按冻结规则开展配对比较并如实报告",
+      "milestone": "S3",
+      "stages": [
+        "C",
+        "D"
+      ],
+      "primary_stage": "C",
+      "status": "planned",
+      "dependencies": [
+        "S2-02"
+      ],
+      "criteria": [
+        {
+          "description": "同一快照、共同子集、原分区、相同CV折和配对参数比较F_base、F1、F2",
+          "required": true
+        },
+        {
+          "description": "报告覆盖、排除原因、论文等权误差及历史测试限制",
+          "required": true
+        }
+      ],
+      "sources": [
+        "plan",
+        "r1",
+        "split"
+      ],
+      "owner": null,
+      "planned_date": null
+    },
+    {
+      "id": "S3-02",
+      "title": "端到端验收",
+      "goal": "验证配置训练、模型包与预测链路",
+      "milestone": "S3",
+      "stages": [
+        "C",
+        "D"
+      ],
+      "primary_stage": "C",
+      "status": "planned",
+      "dependencies": [
+        "S2-02",
+        "S3-01"
+      ],
+      "criteria": [
+        {
+          "description": "验证默认和自定义运行、指定模型预测、重载一致性及失败路径",
+          "required": true
+        },
+        {
+          "description": "保存配置、输入、代码及产物身份和测试记录",
+          "required": true
+        }
+      ],
+      "sources": [
+        "plan",
+        "prediction"
+      ],
+      "owner": null,
+      "planned_date": null
+    }
+  ],
+  "differences": [
+    {
+      "id": "DIFF-S1B",
+      "summary": "总体设计及进度仍称S1-B待完成；构建说明和v4成果显示已有构建。",
+      "sources": [
+        "design",
+        "progress",
+        "s1b",
+        "selection",
+        "features"
+      ],
+      "proposed_disposition": "保留双方来源，任务设为待验收；核对交付范围与具体版本后由操作员记录结论。"
+    }
+  ]
+}

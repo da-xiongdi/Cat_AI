@@ -1,5 +1,12 @@
 # CLI 与后续接口契约
 
+2026-11-13状态更新：S1-A数据准备、版本化入库与记录级资格已验收，联合支持553/593条；39条InNi3O0.5及1条CoGaAlO4证据不足、保守隔离，无事实更正。下一任务为S1-B计算与特征构建，R2及自定义训练仍待完成。详见[收尾验收](s1_a_acceptance.md)。下文带日期的旧状态保留历史语境。
+
+
+模块及数据/模型生命周期见[总体设计](architecture/system_design.md)；本文件维护调用契约与失败行为，不另定总体路线。
+
+当前已实现R1默认DOI分组比较和独立预测，见下文3.2、3.3接口。物化属性准备、R2及自定义训练配置的扩展契约仍为规划，见“特征准备与可配置训练预测”；不改变现有命令的行为。
+
 ## B1 数据语义与治理 v2
 
 显式选择 `--adapter themecat-v2` 使用 schema_version `2`；`themecat-v1` 和版本 1 治理保持原有语义。v2 在 `test.mass_normalized_volume_flow` 保存质量归一体积流量及参考温压、催化剂质量分母、气体范围和定义来源；独立 `test.reactant_ratio` 保存 H2/CO2 比值与定义来源。`test.flow_mode=mass_normalized_reactants` 时这两个字段及其完整基准必需，允许完整进料未报告，不要求体积 GHSV；其余温度、绝压、来源、组成、指标定义和审核门禁仍生效。体积 GHSV 原字段与旧门禁继续适用于默认模式，禁止质量流量推算 h^-1。v2 初始材料放在 `synthesis.initial_materials`，不填实际前驱体；材料组成基准为全催化剂材料 mol%，不代表元素原子分数或逐行实测核验。数据集级证据在 provenance 中注明，不替代原论文行级证据。
@@ -138,3 +145,68 @@ catalyst-ai revise --parent-record-id <记录ID> --expected-parent-sha256 <父�
 [模拟筛选配置](../data/examples/screening_spec.synthetic_demo.json)仅展示字段形式，所有数值、材料及证据均为虚构，不能用于真实实验；真实配置须由操作者另行提供并审核。
 
 筛选拒绝未闭合组成、非允许或训练未见物种、无路线/证据、缺失或非正工况、超过所给边界或训练工况范围、超过距离阈值的候选。其余按固定工况下预测转化率降序排序，最多选取容量数量，余项保留；每项标记 `proposed` 和 `caution`、未校准树分散度、最近训练记录定位及已知限制。候选、配置、拒绝原因、输入哈希和代码哈希写入新报告，已有文件拒绝覆盖。操作者仍须独立确认所有约束和可操作性，模型输出不是实验批准或实测结果；输入不足时明确失败，不自动填补真实候选。
+
+## 特征准备与可配置训练预测（扩展规划）
+
+依据[方案v0.4](feature_engineering_plan_v0.1.md)及[ADR-017](decisions.md#adr-017先完善特征数据与计算再交付可配置训练预测框架2026-11-12)：先补齐物化特征所需导入/数据库/计算，再完善模型框架，同时交付用户参数入口。以下为属性导入、R2及自定义训练的扩展契约，尚未实现；其中R1固定默认训练比较及独立预测已有下文3.2/3.3接口，不能视为本节全部完成。未实现扩展不代表已有命令或HTTP服务；具体命令名以实现后的帮助为准，旧I3/I4行为不改。
+
+| 入口 | 输入 | 预期行为及产物 |
+|---|---|---|
+| 属性/映射导入 | 经核实CSV/JSON或显式载体、来源/版本/单位/证据 | dry-run仅校验；正式导入保留原件及哈希、幂等版本入库；同身份冲突阻断，不静默覆盖 |
+| 特征构建/查询 | 父目标快照、资格/划分、特征集、固定属性/映射版本 | 检查关联、调用计算模块，输出特征快照、selection、覆盖/原因及构建版本，派生值和事实分别追溯 |
+| 列出选项/配置校验 | 支持的模型/特征/参数schema或独立训练配置 | 返回选项、默认值和校验错误，不触发导入/训练；未知模型/字段、非法/冲突参数拒绝 |
+| 训练 | 独立训练配置，包含数据引用、特征、单/多模型及参数、DOI折数、seed、输出路径 | 解析有效配置并保存，折内拟合，评价/选模，生成报告和绑定模型包；默认基准与自定义运行分开编号 |
+| 增强独立预测 | R2或自定义训练生成的模型包，单条或批量完整组成与工况 | 延续已实现的R1逐条状态、预测或null及版本/拒绝原因契约，绑定新增属性和映射；无需重训、目标或DOI |
+
+项目配置和训练配置使用不同schema/加载器。训练初期至少支持Dummy均值基准、Ridge的alpha、ExtraTrees的n_estimators/min_samples_leaf/max_depth/max_features/n_jobs及统一seed。默认baseline_compare固定3折/参数，自定义custom_train支持合法模型/参数和至少2折DOI验证；折数超过训练DOI组数时报错，不随机拆行。配置不允许指定泄漏字段，物化消融须同样本同折同算法/参数。
+
+预测使用包内绑定处理器/词表/属性及映射版本，用户只选已有模型并给配方/工况；不能在预测时覆盖训练超参数或换特征规则。未见正含量物种、属性不支持、输入非法返回不可用，超出0–100%的目标值为null、raw_prediction保留原始有限值；非有限结果不写NaN/Infinity。模型/版本/哈希不一致时加载失败，不自动换模型或静默降级。
+
+新入口的退出码、批量部分失败的命令级汇总、CLI覆盖配置的精确规则在实现时补齐，沿用stdout JSON/stderr摘要的约定。验收至少包含自定义单模型训练、默认比较、配置错误、无需重训的单/批预测、拒绝逐项保留、模型重载一致和输入/配置/版本完整追踪。
+
+
+## R1 默认比较（3.2）
+
+安装依赖：`uv sync --extra modeling --extra dev`。在项目根目录执行（PowerShell）：
+
+```powershell
+uv run python scripts/compare_r1.py `
+  --snapshot data/snapshots/snapshot-76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da.json `
+  --qualification artifacts/reports/themecat-governance-20261110/qualification.json `
+  --split artifacts/reports/themecat-i2-20261110/split-verified.json `
+  --raw data/raw/46000f00323ac64a79f63777e54c05634e83d1a6476176c8b6569122bd03dfbd.csv `
+  --raw data/raw/bd0864e39a040731645b3a6a8d90009bba99885917e411ebe27d95ba7e251170.csv `
+  --output artifacts/reports/r1-new-run
+```
+
+`--raw` 可重复；研究快照所需每个原件均须提供，按哈希匹配。输出目录必须不存在。原件、资格、快照或 DOI 划分校验失败时停止；不足三个训练 DOI 组时不减少折数、不回退随机行拆分。`--help` 查看脚本参数。
+
+Python 接口：`compare_r1(snapshot, qualification, split, raw_files={sha256: path})` 返回 `(report, fitted)`，其中 `fitted` 是选中 F_base 模型及其特征转换器的内存对象。`write_r1_comparison(output, report)` 检查报告内容哈希后写入全新目录。此接口只比较固定默认参数；独立预测包已由下文3.3的`save_package`和脚本`--package`提供，自定义配置仍属3.4待实现范围。
+
+固定按记录 ID 排序，原 train 内三折 GroupKFold(shuffle=False)，比较 F_cond/F_base × Dummy(mean)、Ridge(alpha=1.0)、ExtraTrees(100棵树、min_samples_leaf=2、random_state=42、n_jobs=1)。每折重新拟合词表，Ridge 标准化仅拟合该折训练侧；无组成插补。以全部 OOF 预测的论文等权 MAE 在 F_base 三模型内选型，同分按 dummy、extra_trees、ridge 决胜。随后仅在原 train 重训；validation 为开发评价，已查看 test 为历史对照，两者都不参与选模。
+
+产物：
+
+- `report.json`：完整 OOF/留出预测、原始输出、各折分数、可用率、拒绝原因、共同支持子集、筛选前后记录/论文/组成签名数、实现哈希及依赖。
+- `selection.json`：继承原 DOI 分区的保留/排除清单及原因。
+- `configuration.json`：固定默认模型、特征、排序、交叉验证及选模配置。
+- `folds.json`：逐记录折归属、各折训练/留出 ID、词表及分数，关联报告内容哈希。
+- `README.md`：中文结果摘要及解释边界。
+
+全体诊断指标包括未见物种与输出越界记录；入口可用率单独计算，可用子集和共同支持子集不能替代 OOF 主指标。非有限输出使评价停止，并报告相关 ID。空可用子集指标为 null。组成签名消除排列和同角色同物种拆分差异，不证明样品独立性；无可靠组成的父记录另列 ID。来源接受不等于逐条核验，绝压沿用用户假设。
+
+本次[验收摘要](../artifacts/reports/themecat-r1-comparison-20261112-verified/README.md)及[完整报告](../artifacts/reports/themecat-r1-comparison-20261112-verified/report.json)可在工作区查看；真实数据产物按现有规则不纳入 Git。
+
+### R1 独立预测（3.3）
+
+状态（2026-11-12）：已实现并完成真实冻结数据验收。[验收结果](../artifacts/reports/themecat-r1-prediction-20261112-final/prediction-verification.json)记录47条验证输入中27条ok、2条caution、18条因未见物种角色拒绝；可用预测与同次训练报告一致。当前仅支持R1 F_base，尚无R2或自定义训练配置入口。
+
+`compare_r1.py` 可增加 `--package <新目录>` 保存选中的 F_base 模型包；使用 `python scripts/predict_r1.py --package <目录> --input <JSON文件>` 预测单个对象或对象数组。Python 接口为 `save_package`、`load_package`、`predict_one` 和 `predict_batch`（`catalyst_ai.modeling.predictor`）。包使用 pickle，只能加载可信来源；哈希用于检测意外修改，不提供来源认证。依赖版本或特征代码不一致时拒绝加载。
+
+输入示例（组成总和须为 100±0.5 材料 mol%，压力为绝压）：
+
+```json
+{"components":[{"role":"compound","species":"Cu","mol_pct":50},{"role":"support","species":"ZnO","mol_pct":50}],"temperature_k":523.15,"pressure_bar_abs":30,"h2_co2_ratio":3,"reactants_flow_nl_g_h":5}
+```
+
+流量为反应物体积流量按催化剂质量归一，参考状态 293.15 K、1.01325 bar(abs)。输入只接受上述字段；未知正含量物种角色、非法输入和输出越界均返回明确状态，不提供可用预测。训练范围之外返回 caution，不构成经验证的适用域。当前仅支持 3.2 的 R1 F_base 包，R2 与自定义训练仍待后续交付。

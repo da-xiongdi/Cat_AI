@@ -1,0 +1,1665 @@
+{
+  "schema_version": 1,
+  "kind": "properties",
+  "version": "mendeleev-bd4716b-cordero-pauling-v1",
+  "source": {
+    "name": "mendeleev elements.db pinned bd4716bff94c7acf22210d6ffb75dbd1fcc4f9bc",
+    "reference": "https://github.com/lmmentel/mendeleev/tree/bd4716bff94c7acf22210d6ffb75dbd1fcc4f9bc",
+    "license": "MIT software license; original data sources have their own terms; verify before redistribution",
+    "evidence": "data/raw/mendeleev-8a6312b57603e22c58ab28005bb8cacfbff721bc859eea8ddc2b784c17ffd717.sqlite sha256:8a6312b57603e22c58ab28005bb8cacfbff721bc859eea8ddc2b784c17ffd717; fields en_pauling and covalent_radius_cordero; https://mendeleev.readthedocs.io/en/stable/data.html; https://doi.org/10.1039/B801115J"
+  },
+  "entries": [
+    {
+      "element": "H",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.2
+    },
+    {
+      "element": "H",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 31.0
+    },
+    {
+      "element": "He",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "He",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 28.000000000000004
+    },
+    {
+      "element": "Li",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 0.98
+    },
+    {
+      "element": "Li",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 128.0
+    },
+    {
+      "element": "Be",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.57
+    },
+    {
+      "element": "Be",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 96.0
+    },
+    {
+      "element": "B",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.04
+    },
+    {
+      "element": "B",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 84.0
+    },
+    {
+      "element": "C",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.55
+    },
+    {
+      "element": "C",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 73.0
+    },
+    {
+      "element": "N",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 3.04
+    },
+    {
+      "element": "N",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 71.0
+    },
+    {
+      "element": "O",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 3.44
+    },
+    {
+      "element": "O",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 66.0
+    },
+    {
+      "element": "F",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 3.98
+    },
+    {
+      "element": "F",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 56.99999999999999
+    },
+    {
+      "element": "Ne",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Ne",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 57.99999999999999
+    },
+    {
+      "element": "Na",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 0.93
+    },
+    {
+      "element": "Na",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 166.0
+    },
+    {
+      "element": "Mg",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.31
+    },
+    {
+      "element": "Mg",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 141.0
+    },
+    {
+      "element": "Al",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.61
+    },
+    {
+      "element": "Al",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 121.0
+    },
+    {
+      "element": "Si",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.9
+    },
+    {
+      "element": "Si",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 111.00000000000001
+    },
+    {
+      "element": "P",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.19
+    },
+    {
+      "element": "P",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 107.0
+    },
+    {
+      "element": "S",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.58
+    },
+    {
+      "element": "S",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 105.0
+    },
+    {
+      "element": "Cl",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 3.16
+    },
+    {
+      "element": "Cl",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 102.0
+    },
+    {
+      "element": "Ar",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Ar",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 106.0
+    },
+    {
+      "element": "K",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 0.82
+    },
+    {
+      "element": "K",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 202.99999999999997
+    },
+    {
+      "element": "Ca",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.0
+    },
+    {
+      "element": "Ca",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 176.0
+    },
+    {
+      "element": "Sc",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.36
+    },
+    {
+      "element": "Sc",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 170.0
+    },
+    {
+      "element": "Ti",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.54
+    },
+    {
+      "element": "Ti",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 160.0
+    },
+    {
+      "element": "V",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.63
+    },
+    {
+      "element": "V",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 153.0
+    },
+    {
+      "element": "Cr",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.66
+    },
+    {
+      "element": "Cr",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 139.0
+    },
+    {
+      "element": "Mn",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.55
+    },
+    {
+      "element": "Mn",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 150.0
+    },
+    {
+      "element": "Fe",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.83
+    },
+    {
+      "element": "Fe",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 142.0
+    },
+    {
+      "element": "Co",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.88
+    },
+    {
+      "element": "Co",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 138.0
+    },
+    {
+      "element": "Ni",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.91
+    },
+    {
+      "element": "Ni",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 124.0
+    },
+    {
+      "element": "Cu",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.9
+    },
+    {
+      "element": "Cu",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 132.0
+    },
+    {
+      "element": "Zn",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.65
+    },
+    {
+      "element": "Zn",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 122.0
+    },
+    {
+      "element": "Ga",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.81
+    },
+    {
+      "element": "Ga",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 122.0
+    },
+    {
+      "element": "Ge",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.01
+    },
+    {
+      "element": "Ge",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 120.0
+    },
+    {
+      "element": "As",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.18
+    },
+    {
+      "element": "As",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 119.0
+    },
+    {
+      "element": "Se",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.55
+    },
+    {
+      "element": "Se",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 120.0
+    },
+    {
+      "element": "Br",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.96
+    },
+    {
+      "element": "Br",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 120.0
+    },
+    {
+      "element": "Kr",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Kr",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 115.99999999999999
+    },
+    {
+      "element": "Rb",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 0.82
+    },
+    {
+      "element": "Rb",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 220.00000000000003
+    },
+    {
+      "element": "Sr",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 0.95
+    },
+    {
+      "element": "Sr",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 195.0
+    },
+    {
+      "element": "Y",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.22
+    },
+    {
+      "element": "Y",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 190.0
+    },
+    {
+      "element": "Zr",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.33
+    },
+    {
+      "element": "Zr",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 175.0
+    },
+    {
+      "element": "Nb",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.6
+    },
+    {
+      "element": "Nb",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 164.0
+    },
+    {
+      "element": "Mo",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.16
+    },
+    {
+      "element": "Mo",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 154.0
+    },
+    {
+      "element": "Tc",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.1
+    },
+    {
+      "element": "Tc",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 147.0
+    },
+    {
+      "element": "Ru",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.2
+    },
+    {
+      "element": "Ru",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 146.0
+    },
+    {
+      "element": "Rh",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.28
+    },
+    {
+      "element": "Rh",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 142.0
+    },
+    {
+      "element": "Pd",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.2
+    },
+    {
+      "element": "Pd",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 139.0
+    },
+    {
+      "element": "Ag",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.93
+    },
+    {
+      "element": "Ag",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 145.0
+    },
+    {
+      "element": "Cd",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.69
+    },
+    {
+      "element": "Cd",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 144.0
+    },
+    {
+      "element": "In",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.78
+    },
+    {
+      "element": "In",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 142.0
+    },
+    {
+      "element": "Sn",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.96
+    },
+    {
+      "element": "Sn",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 139.0
+    },
+    {
+      "element": "Sb",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.05
+    },
+    {
+      "element": "Sb",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 139.0
+    },
+    {
+      "element": "Te",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.1
+    },
+    {
+      "element": "Te",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 138.0
+    },
+    {
+      "element": "I",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.66
+    },
+    {
+      "element": "I",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 139.0
+    },
+    {
+      "element": "Xe",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.6
+    },
+    {
+      "element": "Xe",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 140.0
+    },
+    {
+      "element": "Cs",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 0.79
+    },
+    {
+      "element": "Cs",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 244.0
+    },
+    {
+      "element": "Ba",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 0.89
+    },
+    {
+      "element": "Ba",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 215.0
+    },
+    {
+      "element": "La",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.1
+    },
+    {
+      "element": "La",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 206.99999999999997
+    },
+    {
+      "element": "Ce",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.12
+    },
+    {
+      "element": "Ce",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 204.0
+    },
+    {
+      "element": "Pr",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.13
+    },
+    {
+      "element": "Pr",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 202.99999999999997
+    },
+    {
+      "element": "Nd",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.14
+    },
+    {
+      "element": "Nd",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 200.99999999999997
+    },
+    {
+      "element": "Pm",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Pm",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 199.0
+    },
+    {
+      "element": "Sm",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.17
+    },
+    {
+      "element": "Sm",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 198.0
+    },
+    {
+      "element": "Eu",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Eu",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 198.0
+    },
+    {
+      "element": "Gd",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.2
+    },
+    {
+      "element": "Gd",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 196.0
+    },
+    {
+      "element": "Tb",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Tb",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 194.0
+    },
+    {
+      "element": "Dy",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.22
+    },
+    {
+      "element": "Dy",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 192.0
+    },
+    {
+      "element": "Ho",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.23
+    },
+    {
+      "element": "Ho",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 192.0
+    },
+    {
+      "element": "Er",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.24
+    },
+    {
+      "element": "Er",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 189.0
+    },
+    {
+      "element": "Tm",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.25
+    },
+    {
+      "element": "Tm",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 190.0
+    },
+    {
+      "element": "Yb",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Yb",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 187.0
+    },
+    {
+      "element": "Lu",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.0
+    },
+    {
+      "element": "Lu",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 187.0
+    },
+    {
+      "element": "Hf",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.3
+    },
+    {
+      "element": "Hf",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 175.0
+    },
+    {
+      "element": "Ta",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.5
+    },
+    {
+      "element": "Ta",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 170.0
+    },
+    {
+      "element": "W",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.7
+    },
+    {
+      "element": "W",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 162.0
+    },
+    {
+      "element": "Re",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.9
+    },
+    {
+      "element": "Re",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 151.0
+    },
+    {
+      "element": "Os",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.2
+    },
+    {
+      "element": "Os",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 144.0
+    },
+    {
+      "element": "Ir",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.2
+    },
+    {
+      "element": "Ir",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 141.0
+    },
+    {
+      "element": "Pt",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.2
+    },
+    {
+      "element": "Pt",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 136.0
+    },
+    {
+      "element": "Au",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.4
+    },
+    {
+      "element": "Au",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 136.0
+    },
+    {
+      "element": "Hg",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.9
+    },
+    {
+      "element": "Hg",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 132.0
+    },
+    {
+      "element": "Tl",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.8
+    },
+    {
+      "element": "Tl",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 145.0
+    },
+    {
+      "element": "Pb",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.8
+    },
+    {
+      "element": "Pb",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 146.0
+    },
+    {
+      "element": "Bi",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.9
+    },
+    {
+      "element": "Bi",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 148.0
+    },
+    {
+      "element": "Po",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.0
+    },
+    {
+      "element": "Po",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 140.0
+    },
+    {
+      "element": "At",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 2.2
+    },
+    {
+      "element": "At",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 150.0
+    },
+    {
+      "element": "Rn",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Rn",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 150.0
+    },
+    {
+      "element": "Fr",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 0.7
+    },
+    {
+      "element": "Fr",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 260.0
+    },
+    {
+      "element": "Ra",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 0.9
+    },
+    {
+      "element": "Ra",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 221.0
+    },
+    {
+      "element": "Ac",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.1
+    },
+    {
+      "element": "Ac",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 215.0
+    },
+    {
+      "element": "Th",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.3
+    },
+    {
+      "element": "Th",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 206.0
+    },
+    {
+      "element": "Pa",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.5
+    },
+    {
+      "element": "Pa",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 200.0
+    },
+    {
+      "element": "U",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.7
+    },
+    {
+      "element": "U",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 196.0
+    },
+    {
+      "element": "Np",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.3
+    },
+    {
+      "element": "Np",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 190.0
+    },
+    {
+      "element": "Pu",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "available",
+      "value": 1.3
+    },
+    {
+      "element": "Pu",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 187.0
+    },
+    {
+      "element": "Am",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Am",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 180.0
+    },
+    {
+      "element": "Cm",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Cm",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "available",
+      "value": 169.0
+    },
+    {
+      "element": "Bk",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Bk",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Cf",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Cf",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Es",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Es",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Fm",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Fm",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Md",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Md",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "No",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "No",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Lr",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Lr",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Rf",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Rf",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Db",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Db",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Sg",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Sg",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Bh",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Bh",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Hs",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Hs",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Mt",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Mt",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Ds",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Ds",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Rg",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Rg",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Cn",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Cn",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Nh",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Nh",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Fl",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Fl",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Mc",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Mc",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Lv",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Lv",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Ts",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Ts",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Og",
+      "property": "pauling_electronegativity",
+      "unit": "1",
+      "state": "unknown",
+      "value": null
+    },
+    {
+      "element": "Og",
+      "property": "covalent_radius",
+      "unit": "pm",
+      "state": "unknown",
+      "value": null
+    }
+  ]
+}

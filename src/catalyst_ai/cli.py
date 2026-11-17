@@ -29,6 +29,10 @@ def make_parser():
     parser.add_argument("--version", action="version", version=__version__)
     parser.add_argument("--config", type=Path, help="YAML配置；相对路径以工作目录为准")
     commands = parser.add_subparsers(dest="command", required=True)
+    workbench = commands.add_parser("workbench", help="本地项目管理工作台")
+    wb_commands = workbench.add_subparsers(dest="workbench_command", required=True)
+    serve = wb_commands.add_parser("serve", help="启动本地工作台")
+    serve.add_argument("--config", type=Path, default=Path("configs/workbench.yaml"))
     commands.add_parser("init", help="幂等初始化目录/SQLite，不生成业务数据")
     commands.add_parser("status", help="报告数据库数量及未实现范围")
     ingest_cmd = commands.add_parser("ingest", help="CSV/JSON导入、治理、来源追踪")
@@ -394,6 +398,21 @@ def main(argv=None):
             stream.reconfigure(encoding="utf-8")
     args = make_parser().parse_args(argv)
     try:
+        if args.command == "workbench":
+            try:
+                import uvicorn
+
+                from catalyst_ai.web.app import create_app
+                from catalyst_ai.web.config import load
+            except ImportError as exc:
+                raise ValueError("请安装 Web 可选依赖：pip install 'catalyst-ai[web]'") from exc
+            settings, root, db = load(args.config)
+            uvicorn.run(
+                create_app(db, root, settings.project_id, settings.project_name),
+                host="127.0.0.1",
+                port=settings.port,
+            )
+            return 0
         return execute(args, load_settings(args.config))
     except (ValueError, OSError, ValidationError, SQLAlchemyError) as exc:
         print(f"错误: {exc}", file=sys.stderr)

@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "kind": "species",
+  "version": "themecat-centers-v1",
+  "source": {
+    "name": "TheMeCat snapshot species and feature plan",
+    "reference": "docs/feature_engineering_plan_v0.1.md section 4.2",
+    "license": "Project-derived mapping; source snapshot retains its own provenance",
+    "evidence": "snapshot-76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da; explicit stoichiometric convention, composites unsupported"
+  },
+  "entries": [
+    {
+      "species": "Al2O3",
+      "state": "supported",
+      "centers": {
+        "Al": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "Au",
+      "state": "supported",
+      "centers": {
+        "Au": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "BaCO3",
+      "state": "supported",
+      "centers": {
+        "Ba": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "Ca",
+      "state": "supported",
+      "centers": {
+        "Ca": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "CeO2",
+      "state": "supported",
+      "centers": {
+        "Ce": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "Co3O4",
+      "state": "supported",
+      "centers": {
+        "Co": 3
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "Cr2O3",
+      "state": "supported",
+      "centers": {
+        "Cr": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "Cu",
+      "state": "supported",
+      "centers": {
+        "Cu": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "Fe3O4",
+      "state": "supported",
+      "centers": {
+        "Fe": 3
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "Ga2O3",
+      "state": "supported",
+      "centers": {
+        "Ga": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "In2O3",
+      "state": "supported",
+      "centers": {
+        "In": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "Ir",
+      "state": "supported",
+      "centers": {
+        "Ir": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "K",
+      "state": "supported",
+      "centers": {
+        "K": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "K2CO3",
+      "state": "supported",
+      "centers": {
+        "K": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "La2O3",
+      "state": "supported",
+      "centers": {
+        "La": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "MgO",
+      "state": "supported",
+      "centers": {
+        "Mg": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "Pd",
+      "state": "supported",
+      "centers": {
+        "Pd": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "Pt",
+      "state": "supported",
+      "centers": {
+        "Pt": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "SiO2",
+      "state": "supported",
+      "centers": {
+        "Si": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "TiO2",
+      "state": "supported",
+      "centers": {
+        "Ti": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "Y2O3",
+      "state": "supported",
+      "centers": {
+        "Y": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "Zn",
+      "state": "supported",
+      "centers": {
+        "Zn": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "ZnO",
+      "state": "supported",
+      "centers": {
+        "Zn": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "ZrO2",
+      "state": "supported",
+      "centers": {
+        "Zr": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2"
+    },
+    {
+      "species": "CoGaAlO4",
+      "state": "unsupported",
+      "centers": {},
+      "evidence": "Composite or noninteger formula; center semantics not independently confirmed"
+    },
+    {
+      "species": "InNi3O0.5",
+      "state": "unsupported",
+      "centers": {},
+      "evidence": "Composite or noninteger formula; center semantics not independently confirmed"
+    },
+    {
+      "species": "LaMn0.1Cu0.9O3",
+      "state": "unsupported",
+      "centers": {},
+      "evidence": "Composite or noninteger formula; center semantics not independently confirmed"
+    },
+    {
+      "species": "LaMn0.3Cu0.7O3",
+      "state": "unsupported",
+      "centers": {},
+      "evidence": "Composite or noninteger formula; center semantics not independently confirmed"
+    },
+    {
+      "species": "LaMn0.5Cu0.5O3",
+      "state": "unsupported",
+      "centers": {},
+      "evidence": "Composite or noninteger formula; center semantics not independently confirmed"
+    },
+    {
+      "species": "LaMn0.7Cu0.3O3",
+      "state": "unsupported",
+      "centers": {},
+      "evidence": "Composite or noninteger formula; center semantics not independently confirmed"
+    },
+    {
+      "species": "LaMnO3",
+      "state": "unsupported",
+      "centers": {},
+      "evidence": "Composite or noninteger formula; center semantics not independently confirmed"
+    }
+  ]
+}
