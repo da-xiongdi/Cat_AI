@@ -134,9 +134,11 @@ def _published(db, project_id):
     return row["scan_id"] if row else None
 
 
-def scan(path, project_id, *, max_bytes=64 * 1024 * 1024):
+def scan(path, project_id, *, max_bytes=64 * 1024 * 1024, document_ids=None):
+    """Refresh the project index, or publish observations for selected documents."""
     if not isinstance(max_bytes, int) or isinstance(max_bytes, bool) or max_bytes < 1:
         raise ValueError("max_bytes must be positive")
+    selected = None if document_ids is None else set(document_ids)
     scan_id = uuid.uuid4().hex
     with transaction(path) as db:
         workspace = db.execute(
@@ -146,6 +148,13 @@ def scan(path, project_id, *, max_bytes=64 * 1024 * 1024):
             raise Missing("workspace not configured")
         root = workspace["root"]
         scope = _scope(db, project_id)
+        targets = scope if selected is None else [item for item in scope if item["id"] in selected]
+        if selected is not None and (
+            not selected
+            or {item["id"] for item in targets} != selected
+            or any(item["kind"] not in {"document", "attachment"} for item in targets)
+        ):
+            raise ValueError("selected document or attachment is not registered in the project")
         previous = _published(db, project_id)
         db.execute(
             "INSERT INTO index_scan(id,project_id,started_at,status) VALUES(?,?,?,'running')",
@@ -153,7 +162,7 @@ def scan(path, project_id, *, max_bytes=64 * 1024 * 1024):
         )
     try:
         results = []
-        for item in scope:
+        for item in targets:
             result = {
                 **item,
                 "observed_at": now(),
@@ -199,6 +208,16 @@ def scan(path, project_id, *, max_bytes=64 * 1024 * 1024):
                 raise Conflict("scan is no longer running")
             if _scope(db, project_id) != scope or _published(db, project_id) != previous:
                 raise Conflict("index scope or published generation changed during scan")
+            if selected is not None and previous:
+                observations = db.execute(
+                    "SELECT artifact_id,path,status,file_sha256,error,observed_at "
+                    "FROM index_observation WHERE scan_id=?",
+                    (previous,),
+                ).fetchall()
+                db.executemany(
+                    "INSERT INTO index_observation VALUES(?,?,?,?,?,?,?)",
+                    ((scan_id, *row) for row in observations if row["artifact_id"] not in selected),
+                )
             for result in results:
                 info = result["inspection"]
                 db.execute(
@@ -274,10 +293,13 @@ def scan(path, project_id, *, max_bytes=64 * 1024 * 1024):
             db.execute(
                 "UPDATE index_scan SET status='complete',finished_at=? WHERE id=?", (now(), scan_id)
             )
+            summary = {"scan_id": scan_id}
+            if selected is not None:
+                summary["document_ids"] = sorted(selected)
             db.execute(
                 "INSERT INTO activity(project_id,action,actor,created_at,summary) "
                 "VALUES(?,?,?,?,?)",
-                (project_id, "index_published", "indexer", now(), _json({"scan_id": scan_id})),
+                (project_id, "index_published", "indexer", now(), _json(summary)),
             )
         return scan_id
     except Exception as exc:

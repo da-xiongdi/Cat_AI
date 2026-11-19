@@ -1,0 +1,399 @@
+{
+  "rehearsal": {
+    "parent": {
+      "status": "in_progress",
+      "revision": 3,
+      "criteria_version": 1,
+      "reviews": []
+    },
+    "children": {
+      "WB-13-01": {
+        "status": "done",
+        "revision": 5,
+        "criteria_version": 1,
+        "reviews": [
+          {
+            "id": 23,
+            "task_id": "WB-13-01",
+            "criteria_version": 1,
+            "kind": "submission",
+            "conclusion": "交付物与验收判据核对完成。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.365363+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-01-evidence",
+                "evidence_version": "74b3e1a7b8965516e0c4219e497d44e17b7f8f99915c93aacd1c4424171ac7a8",
+                "explanation": "已核对 WB-13-01 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          },
+          {
+            "id": 24,
+            "task_id": "WB-13-01",
+            "criteria_version": 1,
+            "kind": "acceptance",
+            "conclusion": "固定证据可用，必验项通过。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.365582+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-01-evidence",
+                "evidence_version": "74b3e1a7b8965516e0c4219e497d44e17b7f8f99915c93aacd1c4424171ac7a8",
+                "explanation": "已核对 WB-13-01 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          }
+        ]
+      },
+      "WB-13-02": {
+        "status": "done",
+        "revision": 6,
+        "criteria_version": 1,
+        "reviews": [
+          {
+            "id": 25,
+            "task_id": "WB-13-02",
+            "criteria_version": 1,
+            "kind": "submission",
+            "conclusion": "交付物与验收判据核对完成。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.366317+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-02-evidence",
+                "evidence_version": "094089f8d0b5156151de6e36884826b1eb7cc7c68a1a9c98dcabeaa31402d5bd",
+                "explanation": "已核对 WB-13-02 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          },
+          {
+            "id": 26,
+            "task_id": "WB-13-02",
+            "criteria_version": 1,
+            "kind": "acceptance",
+            "conclusion": "固定证据可用，必验项通过。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.366457+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-02-evidence",
+                "evidence_version": "094089f8d0b5156151de6e36884826b1eb7cc7c68a1a9c98dcabeaa31402d5bd",
+                "explanation": "已核对 WB-13-02 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          }
+        ]
+      },
+      "WB-13-03": {
+        "status": "done",
+        "revision": 6,
+        "criteria_version": 1,
+        "reviews": [
+          {
+            "id": 27,
+            "task_id": "WB-13-03",
+            "criteria_version": 1,
+            "kind": "submission",
+            "conclusion": "交付物与验收判据核对完成。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.367116+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-03-evidence",
+                "evidence_version": "c08332ba78fb5b78f58aa46672c15a4b774ad209d8574287a69ad0fa4ca34403",
+                "explanation": "已核对 WB-13-03 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          },
+          {
+            "id": 28,
+            "task_id": "WB-13-03",
+            "criteria_version": 1,
+            "kind": "acceptance",
+            "conclusion": "固定证据可用，必验项通过。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.367253+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-03-evidence",
+                "evidence_version": "c08332ba78fb5b78f58aa46672c15a4b774ad209d8574287a69ad0fa4ca34403",
+                "explanation": "已核对 WB-13-03 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          }
+        ]
+      },
+      "WB-13-04": {
+        "status": "done",
+        "revision": 6,
+        "criteria_version": 1,
+        "reviews": [
+          {
+            "id": 29,
+            "task_id": "WB-13-04",
+            "criteria_version": 1,
+            "kind": "submission",
+            "conclusion": "交付物与验收判据核对完成。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.367910+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-04-evidence",
+                "evidence_version": "48dfcd7ff7c53165eeae998cda325980b359efd5b54281deca78ebbbd40f0dfe",
+                "explanation": "已核对 WB-13-04 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          },
+          {
+            "id": 30,
+            "task_id": "WB-13-04",
+            "criteria_version": 1,
+            "kind": "acceptance",
+            "conclusion": "固定证据可用，必验项通过。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.368046+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-04-evidence",
+                "evidence_version": "48dfcd7ff7c53165eeae998cda325980b359efd5b54281deca78ebbbd40f0dfe",
+                "explanation": "已核对 WB-13-04 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          }
+        ]
+      },
+      "WB-13-05": {
+        "status": "done",
+        "revision": 6,
+        "criteria_version": 1,
+        "reviews": [
+          {
+            "id": 31,
+            "task_id": "WB-13-05",
+            "criteria_version": 1,
+            "kind": "submission",
+            "conclusion": "交付物与验收判据核对完成。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.368705+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-05-evidence",
+                "evidence_version": "d8fc83535d44fea5d52a3e8c4df670c77f6315018d251aaade43d8e1c5e2bc6e",
+                "explanation": "已核对 WB-13-05 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          },
+          {
+            "id": 32,
+            "task_id": "WB-13-05",
+            "criteria_version": 1,
+            "kind": "acceptance",
+            "conclusion": "固定证据可用，必验项通过。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.368836+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-05-evidence",
+                "evidence_version": "d8fc83535d44fea5d52a3e8c4df670c77f6315018d251aaade43d8e1c5e2bc6e",
+                "explanation": "已核对 WB-13-05 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          }
+        ]
+      },
+      "WB-13-06": {
+        "status": "done",
+        "revision": 6,
+        "criteria_version": 1,
+        "reviews": [
+          {
+            "id": 33,
+            "task_id": "WB-13-06",
+            "criteria_version": 1,
+            "kind": "submission",
+            "conclusion": "交付物与验收判据核对完成。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.369698+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-06-evidence",
+                "evidence_version": "b2833cb13deb718c83b212052332c4c18e1c8534f3b32763a387079b287f191c",
+                "explanation": "已核对 WB-13-06 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          },
+          {
+            "id": 34,
+            "task_id": "WB-13-06",
+            "criteria_version": 1,
+            "kind": "acceptance",
+            "conclusion": "固定证据可用，必验项通过。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.369864+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-06-evidence",
+                "evidence_version": "b2833cb13deb718c83b212052332c4c18e1c8534f3b32763a387079b287f191c",
+                "explanation": "已核对 WB-13-06 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          }
+        ]
+      },
+      "WB-13-07": {
+        "status": "done",
+        "revision": 9,
+        "criteria_version": 1,
+        "reviews": [
+          {
+            "id": 35,
+            "task_id": "WB-13-07",
+            "criteria_version": 1,
+            "kind": "submission",
+            "conclusion": "交付物与验收判据核对完成。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.370823+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-07-evidence",
+                "evidence_version": "3e2e54e01e309907e31a45589d58e6f96c25c2327af129eb97be6396ab822d01",
+                "explanation": "已核对 WB-13-07 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          },
+          {
+            "id": 36,
+            "task_id": "WB-13-07",
+            "criteria_version": 1,
+            "kind": "acceptance",
+            "conclusion": "固定证据可用，必验项通过。",
+            "actor": "Codex",
+            "created_at": "2026-11-18T14:58:44.370966+00:00",
+            "results": [
+              {
+                "criterion_id": "delivery",
+                "evidence_id": "WB-13-07-evidence",
+                "evidence_version": "3e2e54e01e309907e31a45589d58e6f96c25c2327af129eb97be6396ab822d01",
+                "explanation": "已核对 WB-13-07 对应的交付及固定证据。",
+                "passed": true
+              }
+            ]
+          }
+        ]
+      },
+      "WB-13-08": {
+        "status": "in_progress",
+        "revision": 4,
+        "criteria_version": 1,
+        "reviews": []
+      }
+    },
+    "plan_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b"
+  },
+  "formal_mode": false,
+  "before_restore": {
+    "path": "artifacts/wb13-closeout-20261118-225830-614488/before-bundle.zip",
+    "sha256": "cf52382c9a14f51334a964fcd1f2dc2d1f674f03c701b84c66197d366efd39b8",
+    "missing": [],
+    "files": 56,
+    "sources": {
+      "docs/architecture/project_workbench_plan.md": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "docs/architecture/system_design.md": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+      "docs/feature_engineering_plan_v0.1.md": "4251db86aeb53052c9b5d8afd833d46453fa6c32aebc2e3fc12c3de46fbc86b3",
+      "docs/s2_implementation_plan.md": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651"
+    },
+    "table_counts": {
+      "activity": 200,
+      "artifact": 50,
+      "artifact_location": 50,
+      "artifact_revision": 59,
+      "category_context": 0,
+      "category_context_revision": 0,
+      "category_recent_task": 0,
+      "category_recent_task_revision": 0,
+      "criterion": 40,
+      "decision": 0,
+      "decision_revision": 0,
+      "dependency": 15,
+      "document_purpose": 0,
+      "document_purpose_revision": 0,
+      "evidence": 59,
+      "foundation_import": 0,
+      "foundation_record": 0,
+      "index_observation": 685,
+      "index_scan": 25,
+      "index_workspace": 1,
+      "model_run": 4,
+      "model_run_revision": 5,
+      "prediction_event": 9,
+      "prediction_job": 3,
+      "project": 1,
+      "published_index": 1,
+      "request_log": 146,
+      "research_node": 14,
+      "research_node_revision": 16,
+      "research_record": 8,
+      "review": 22,
+      "task": 10,
+      "task_category_revision": 10,
+      "task_decision": 0,
+      "task_node_link": 8,
+      "task_node_link_revision": 8,
+      "task_plan_reference": 0,
+      "task_plan_reference_revision": 0,
+      "task_plan_verification": 0,
+      "workbench_delivery": 12,
+      "workbench_delivery_revision": 12
+    },
+    "rows_equal_except_relocated_workspace": true,
+    "integrity": "ok",
+    "foreign_key_errors": 0
+  },
+  "http": {
+    "/api/workbench/v1/query?category=workbench": 200,
+    "/": 200,
+    "/tasks": 200,
+    "/tasks/WB-13": 200,
+    "/tasks/WB-13-01": 200,
+    "/tasks/WB-13-02": 200,
+    "/tasks/WB-13-03": 200,
+    "/tasks/WB-13-04": 200,
+    "/tasks/WB-13-05": 200,
+    "/tasks/WB-13-06": 200,
+    "/tasks/WB-13-07": 200,
+    "/tasks/WB-13-08": 200,
+    "/tasks/S1A-01": 200,
+    "/artifacts": 200,
+    "/documents": 200,
+    "/decisions": 200,
+    "/api/workbench/v1/prediction-jobs": 200,
+    "/api/workbench/v1/exports/progress": 200
+  }
+}

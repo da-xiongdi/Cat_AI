@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "project_id": "cat-ai",
+  "sources": ["docs/feature_engineering_plan_v0.1.md", "docs/s2_implementation_plan.md", "docs/s1_b_acceptance.md"],
+  "tasks": [
+    {
+      "id": "S2-01", "title": "训练配置与参数契约",
+      "goal": "交付独立训练配置schema、加载校验、有效配置及参数说明，供Python和CLI共用",
+      "milestone": "S2", "stages": ["C"], "primary_stage": "C", "priority": "high", "owner": "Codex",
+      "target_status": "ready", "dependencies": ["S1B-01"],
+      "deliverables": ["modeling/config.py及独立schema/加载器", "默认与自定义配置示例、模型/特征/参数目录、只校验接口", "有效配置与默认/用户值来源、配置失败路径测试"],
+      "criteria": [
+        {"id": "C1", "description": "独立于项目Settings，支持快照/资格/分区、特征及属性映射版本、模型参数、seed、DOI折数和新输出目录；缺依赖明确提示"},
+        {"id": "C2", "description": "baseline_compare锁定默认三模型、3折及预设；custom_train支持单/多模型，至少2折且不超过训练DOI组数；不回退随机行拆分"},
+        {"id": "C3", "description": "Ridge alpha、ExtraTrees五项参数及seed有类型/范围/并行限制；Dummy仅mean；未知/泄漏字段、模型、非法值和参数冲突立即拒绝"},
+        {"id": "C4", "description": "参数目录、只校验、有效配置及来源可查询，配置示例通过真实加载器；具体要求见S2分解第3节S2-01"}
+      ]
+    },
+    {
+      "id": "S2-04", "title": "F1/F2特征适配与折内转换",
+      "goal": "复用S1计算器，将固定物化增量接入训练折与新输入预测的共同转换路径",
+      "milestone": "S2", "stages": ["C", "B"], "primary_stage": "C", "priority": "high", "owner": "Codex",
+      "target_status": "ready", "dependencies": ["S1B-01"],
+      "deliverables": ["pipeline的F1/F2训练及预测适配", "S1快照/资格/分区/目录/计算绑定校验", "553条固定增量一致性与折内拟合回归证据"],
+      "criteria": [
+        {"id": "C1", "description": "F1/F2在F_base上增加4/10项，553条增量与v4一致；复用S1计算、资格及缺席角色占位规则，不把数组0写为物性事实"},
+        {"id": "C2", "description": "每折独立fit词表和缩放；不复用全train词表；目标/DOI/样品名不入特征；固定物化计算可复用"},
+        {"id": "C3", "description": "换序/合并及规范预测输入转换一致；不支持组分不丢弃、不重归一；F1/F2仍受词表限制，F_base及旧F0/R1语义不变"}
+      ]
+    },
+    {
+      "id": "S2-05", "title": "可配置训练与R2评价框架",
+      "goal": "扩展现有experiments支持默认/自定义训练、DOI OOF选模、共同子集比较及运行追溯",
+      "milestone": "S2", "stages": ["C", "D"], "primary_stage": "C", "priority": "high", "owner": "Codex",
+      "target_status": "planned", "dependencies": ["S2-01", "S2-04"],
+      "deliverables": ["默认/自定义单模型和多模型训练API", "R2同子集同折配对比较与三层评价报告", "有效配置、CV折、OOF/留出逐条预测状态及版本哈希清单"],
+      "criteria": [
+        {"id": "C1", "description": "R1比较F_cond/F_base，R2在共同支持子集重训F_base/F1/F2；继承原分区，同CV折同算法/参数，不与R1全体分数直接相减"},
+        {"id": "C2", "description": "按全部OOF论文等权MAE选模，未见/越界诊断记录不删除；精确同分按既定特征/模型顺序决胜；最终仅原train重训，validation/test不重选模"},
+        {"id": "C3", "description": "输出输入覆盖、全体诊断、入口可用性及共同支持结果；非有限值不静默缩分母；保存配置来源、折归属、代码依赖参数哈希且拒绝覆盖历史"}
+      ]
+    },
+    {
+      "id": "S2-06", "title": "增强模型包与独立预测",
+      "goal": "扩展现有predictor，交付F1/F2及自定义模型包的绑定、校验、加载与单条批量预测",
+      "milestone": "S2", "stages": ["C", "B"], "primary_stage": "C", "priority": "high", "owner": "Codex",
+      "target_status": "planned", "dependencies": ["S2-05"],
+      "deliverables": ["增强及自定义模型包、manifest与加载校验", "单条/批量预测API及逐条状态", "旧R1兼容、篡改拒绝与重载一致性证据"],
+      "criteria": [
+        {"id": "C1", "description": "绑定schema、特征/词表/缩放、训练ID、属性/映射/资格规则/计算版本与哈希；修改参数生成新运行/model_id；保留旧R1包兼容"},
+        {"id": "C2", "description": "身份、文件或绑定版本不符时加载失败；训练及预测共用转换，重载前后预测一致；输入无需DOI或性能标签"},
+        {"id": "C3", "description": "不支持物种角色或属性映射明确拒绝、不静默降级；批量不删无效项；范围越界caution，非法/非有限/输出越界不可用，原始值与null规则及JSON有限数符合契约"}
+      ]
+    },
+    {
+      "id": "S2-02", "title": "增强训练与预测集成",
+      "goal": "集成S2-01/04/05/06，贯通Python和CLI并完成工程回归与交付清单",
+      "milestone": "S2", "stages": ["C", "B"], "primary_stage": "C", "priority": "high", "owner": "Codex",
+      "target_status": "planned", "dependencies": ["S1B-01", "S2-01", "S2-04", "S2-05", "S2-06"],
+      "deliverables": ["Python及配置文件+CLI训练预测入口", "帮助、参数说明、可运行训练配置及预测JSON示例", "S2工程交付清单、全量回归和接口文档"],
+      "criteria": [
+        {"id": "C1", "description": "贯通配置校验、指定单/多模型训练、保存/加载、单条/批量预测；baseline/custom独立编号及目录；不依赖Web训练UI"},
+        {"id": "C2", "description": "帮助/示例/接口与实际行为一致；非法配置、组数不足、篡改、不支持/零含量物种、越界及混合批量有回归；旧R1包重放通过"},
+        {"id": "C3", "description": "全量pytest、ruff check及格式检查通过并固定代码/测试证据；S2工程交付与S3正式比较分开，不以MAE改善为门槛"}
+      ]
+    },
+    {
+      "id": "S2-03", "title": "家族对照资格检查",
+      "goal": "检查可信家族标签及记录/DOI覆盖，形成可比较或跳过报告，不阻断统一模型",
+      "milestone": "S2", "stages": ["C", "D"], "primary_stage": "C", "priority": "normal", "owner": "Codex",
+      "target_status": "ready", "dependencies": ["S1B-01"],
+      "deliverables": ["家族标签来源与可信范围清单", "各家族/分区记录及DOI覆盖和资格/跳过报告"],
+      "criteria": [
+        {"id": "C1", "description": "核实标准化标签依据，不直接把名称派生的195个material_family原值当成标准分类"},
+        {"id": "C2", "description": "分数查看前冻结资格判据，报告各家族各分区记录/DOI数；满足既定分区和DOI CV条件再安排A/B1同特征对照"},
+        {"id": "C3", "description": "标签或覆盖不足输出明确跳过原因，不强行按样品名分类，不阻断统一模型，不提前引入B2或专家架构"}
+      ]
+    },
+    {
+      "id": "S3-01", "title": "R2共同子集正式比较",
+      "goal": "在S2交付后运行真实冻结输入的配对比较，报告物化增量及支持限制",
+      "milestone": "S3", "stages": ["C", "D"], "primary_stage": "C", "priority": "normal", "owner": "Codex",
+      "target_status": "planned", "dependencies": ["S2-02"],
+      "deliverables": ["固定真实输入的R1/R2默认预设运行与F_base/F1/F2比较报告", "OOF、validation和历史test逐条结果/状态、覆盖及配对增量结论"],
+      "criteria": [
+        {"id": "C1", "description": "同一事实快照、553条共同子集、原分区、相同CV折和配对算法/参数比较F_base/F1/F2；完整绑定校验通过"},
+        {"id": "C2", "description": "报告三层结果、共同可支持子集及筛选损失；按全部OOF论文等权MAE选模，validation不选模，test标明历史；F_base胜出如实报告未选用物化增强"}
+      ]
+    },
+    {
+      "id": "S3-02", "title": "训练预测端到端整体验收",
+      "goal": "复核默认及自定义训练、指定模型预测、失败路径和固定证据，记录整体验收",
+      "milestone": "S3", "stages": ["C", "D"], "primary_stage": "C", "priority": "normal", "owner": "Codex",
+      "target_status": "planned", "dependencies": ["S2-02", "S3-01"],
+      "deliverables": ["默认/自定义及指定模型预测端到端验收报告", "重载/重放、失败路径、版本配置及代码测试证据"],
+      "criteria": [
+        {"id": "C1", "description": "真实默认/自定义训练、单模型、指定包单条/批量预测、重载一致性及非法/未见/篡改/越界失败路径全部可核对"},
+        {"id": "C2", "description": "固定有效配置及来源、数据/特征/属性/映射/代码/依赖、折清单、产物哈希及测试记录；工程验收不升级为外推或机理验证"}
+      ]
+    }
+  ]
+}

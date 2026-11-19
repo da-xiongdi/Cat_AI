@@ -1,0 +1,22 @@
+INFO:     Started server process [32]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:58089 (Press CTRL+C to quit)
+INFO:     127.0.0.1:58090 - "GET /api/workbench/v1/query?category=workbench HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58093 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58094 - "GET /tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58095 - "GET /tasks/WB-13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58096 - "GET /tasks/WB-13-01 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58097 - "GET /tasks/WB-13-02 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58098 - "GET /tasks/WB-13-03 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58099 - "GET /tasks/WB-13-04 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58100 - "GET /tasks/WB-13-05 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58103 - "GET /tasks/WB-13-06 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58104 - "GET /tasks/WB-13-07 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58105 - "GET /tasks/WB-13-08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58106 - "GET /tasks/S1A-01 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58107 - "GET /artifacts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58108 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58109 - "GET /decisions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58110 - "GET /api/workbench/v1/prediction-jobs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58111 - "GET /api/workbench/v1/exports/progress HTTP/1.1" 200 OK

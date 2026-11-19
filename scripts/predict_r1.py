@@ -1,4 +1,4 @@
-"""Predict one JSON object or an array using a trusted R1 package."""
+"""Predict one JSON object or an array using a trusted R1 or S2 package."""
 
 import argparse
 import json

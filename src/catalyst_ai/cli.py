@@ -36,6 +36,11 @@ def make_parser():
     worker = wb_commands.add_parser("worker", help="执行持久化预测队列")
     worker.add_argument("--config", type=Path, default=Path("configs/workbench.yaml"))
     worker.add_argument("--once", action="store_true", help="处理一个任务后退出")
+    query = wb_commands.add_parser("query", help="只读查询分类任务与关联")
+    query.add_argument("--config", type=Path, default=Path("configs/workbench.yaml"))
+    query.add_argument(
+        "--category", choices=("all", "research", "workbench", "unclassified"), default="all"
+    )
     commands.add_parser("init", help="幂等初始化目录/SQLite，不生成业务数据")
     commands.add_parser("status", help="报告数据库数量及未实现范围")
     ingest_cmd = commands.add_parser("ingest", help="CSV/JSON导入、治理、来源追踪")
@@ -410,6 +415,15 @@ def main(argv=None):
             except ImportError as exc:
                 raise ValueError("请安装 Web 可选依赖：pip install 'catalyst-ai[web]'") from exc
             settings, root, db = load(args.config)
+            if args.workbench_command == "query":
+                from catalyst_ai.workbench.queries import query
+
+                print(
+                    json.dumps(
+                        query(db, settings.project_id, args.category), ensure_ascii=False, indent=2
+                    )
+                )
+                return 0
             if args.workbench_command == "worker":
                 from catalyst_ai.storage.workbench import migrate
                 from catalyst_ai.workbench.predictions import worker

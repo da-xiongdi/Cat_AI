@@ -1,0 +1,94 @@
+{
+  "schema": 8,
+  "integrity": "ok",
+  "foreign_keys": [],
+  "tasks": [
+    {
+      "id": "S1A-01",
+      "status": "done",
+      "revision": 11,
+      "criteria_version": 2,
+      "category": "research"
+    },
+    {
+      "id": "S1B-01",
+      "status": "done",
+      "revision": 7,
+      "criteria_version": 1,
+      "category": "research"
+    },
+    {
+      "id": "S2-01",
+      "status": "done",
+      "revision": 7,
+      "criteria_version": 2,
+      "category": "research"
+    },
+    {
+      "id": "S2-02",
+      "status": "done",
+      "revision": 10,
+      "criteria_version": 2,
+      "category": "research"
+    },
+    {
+      "id": "S2-03",
+      "status": "done",
+      "revision": 7,
+      "criteria_version": 2,
+      "category": "research"
+    },
+    {
+      "id": "S2-04",
+      "status": "done",
+      "revision": 7,
+      "criteria_version": 1,
+      "category": "research"
+    },
+    {
+      "id": "S2-05",
+      "status": "done",
+      "revision": 8,
+      "criteria_version": 1,
+      "category": "research"
+    },
+    {
+      "id": "S2-06",
+      "status": "done",
+      "revision": 7,
+      "criteria_version": 1,
+      "category": "research"
+    },
+    {
+      "id": "S3-01",
+      "status": "done",
+      "revision": 7,
+      "criteria_version": 2,
+      "category": "research"
+    },
+    {
+      "id": "S3-02",
+      "status": "done",
+      "revision": 7,
+      "criteria_version": 2,
+      "category": "research"
+    }
+  ],
+  "counts": {
+    "task_plan_reference": 0,
+    "category_context": 0,
+    "category_recent_task": 0,
+    "workbench_delivery": 12,
+    "research_node": 14,
+    "task_node_link": 8
+  },
+  "files": {
+    "configs/workbench.yaml": "2aa1ea98a33f0cf5c57b9921a9e17faa03d643945fc93d427a9864f34053cb59",
+    "docs/workbench/wb13_implementation_plan.md": "65cc2e26a41be0a763623be4883947e5ff7dbaefffe3d31ab33be51824fa90cd",
+    "docs/workbench/wb13.md": "f92077437b91af0c0c20f732fa38915782cdad5ff66ad15d31b2d7a86e9348ee",
+    "docs/architecture/project_workbench_plan.md": "7f074931515a05bde54f464163af2c54f8ee0c9d7cc2a3d807932ccd1eb44f9f",
+    "docs/architecture/system_design.md": "6ee52a336ff4423f8b2150214db8b8eec5ec393ac7ec3ab4553f10c0576cc731",
+    "docs/feature_engineering_plan_v0.1.md": "4251db86aeb53052c9b5d8afd833d46453fa6c32aebc2e3fc12c3de46fbc86b3",
+    "docs/s2_implementation_plan.md": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651"
+  }
+}

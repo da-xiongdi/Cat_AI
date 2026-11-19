@@ -1,0 +1,107 @@
+{
+  "effective_config": {
+    "schema_version": 1,
+    "mode": "baseline_compare",
+    "dataset": {
+      "snapshot": "../data/snapshots/snapshot-76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da.json",
+      "qualification": "../data/snapshots/qualifications/qualification-b450e999aca00cd7e035b5bb1006a48d3fbd171520391710eb05a2490aa85967.json",
+      "split": "../artifacts/reports/themecat-i2-20261110/split-verified.json",
+      "selection": "../artifacts/reports/s1-b-20261113-v4/selection.json",
+      "features": "../artifacts/reports/s1-b-20261113-v4/features.json",
+      "catalog_database": "../data/catalog.sqlite",
+      "evidence_root": ".."
+    },
+    "features": {
+      "preset": "R1",
+      "sets": [
+        "F_cond",
+        "F_base"
+      ],
+      "property_version": "mendeleev-data-665935bc-pauling-cordero-v2",
+      "species_mapping_version": "themecat-centers-v2"
+    },
+    "models": [
+      {
+        "name": "dummy",
+        "params": {}
+      },
+      {
+        "name": "extra_trees",
+        "params": {
+          "n_estimators": 100,
+          "min_samples_leaf": 2,
+          "max_depth": null,
+          "max_features": 1.0,
+          "n_jobs": 1
+        }
+      },
+      {
+        "name": "ridge",
+        "params": {
+          "alpha": 1.0
+        }
+      }
+    ],
+    "validation": {
+      "strategy": "group_kfold",
+      "group": "doi",
+      "n_splits": 3
+    },
+    "seed": 42,
+    "output": "../artifacts/runs/s3-20261118-01/r1"
+  },
+  "parameter_sources": {
+    "dummy": {},
+    "extra_trees": {
+      "n_estimators": "default",
+      "min_samples_leaf": "default",
+      "max_depth": "default",
+      "max_features": "default",
+      "n_jobs": "default"
+    },
+    "ridge": {
+      "alpha": "default"
+    }
+  },
+  "config_sources": {
+    "schema_version": "user",
+    "mode": "user",
+    "dataset": {
+      "snapshot": "user",
+      "qualification": "user",
+      "split": "user",
+      "selection": "user",
+      "features": "user",
+      "catalog_database": "user",
+      "evidence_root": "user"
+    },
+    "features": {
+      "preset": "user",
+      "sets": "user",
+      "property_version": "user",
+      "species_mapping_version": "user"
+    },
+    "models": [
+      {
+        "name": "default",
+        "params": "default"
+      },
+      {
+        "name": "default",
+        "params": "default"
+      },
+      {
+        "name": "default",
+        "params": "default"
+      }
+    ],
+    "validation": {
+      "strategy": "default",
+      "group": "default",
+      "n_splits": "default"
+    },
+    "seed": "default",
+    "output": "user"
+  },
+  "training_doi_groups": 26
+}

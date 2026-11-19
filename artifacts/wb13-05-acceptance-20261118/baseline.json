@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-11-18T14:38:57+08:00",
+  "head": "6b1e8786af3b73c046d9fd28d9b4f5363957fbd2",
+  "python": "3.14.3",
+  "sqlite": "3.50.4",
+  "source_sha256": {
+    "docs/workbench/wb13_implementation_plan.md": "76206e60ba42da7f9c4b00fa5e91c9fc4a2208db8b9771b5b60b88274d85a204",
+    "docs/workbench/wb13_01_baseline_contract.md": "74b3e1a7b8965516e0c4219e497d44e17b7f8f99915c93aacd1c4424171ac7a8",
+    "src/catalyst_ai/storage/workbench.py": "fd0001248ccde5aa97c5335da4fe0cf7503de2b2b9ffc589bebc8c1308ec7222",
+    "src/catalyst_ai/workbench/adapters.py": "da6d27f1f52e2d1536fcb909b8106ed91cd1a8904b60de04c7bb2c578af0e3a2",
+    "src/catalyst_ai/workbench/index.py": "3d0379ba480c234fa2f3a215f3fa25fae92aee7a7a6d96b6cd8d59d637e07fc1",
+    "src/catalyst_ai/workbench/plans.py": "a95af87b142d0e979e7478da54b023542915e75c6f38381afc92087a5e341f1e",
+    "src/catalyst_ai/workbench/research_nodes.py": "6d15142b5f8ba83e32b25d92845035f992f51d87a3b7f74b9d919dfcc093397c",
+    "src/catalyst_ai/workbench/service.py": "1acb128066cef1dab382594675acc7dc5137ea35cc64df3f50f4c8ed05f0306e",
+    "tests/unit/test_wb13_plans.py": "4c6a917bce476afe6254bf0998e9d4f34214368882048a4218201fc9970bfd84",
+    "artifacts/wb13-05-acceptance-20261118/test_wb13_05_acceptance.py": "eac3ba00fe1f53d7aa795193b86069dde84cc97e2e6bb1cc55449bb03bda9342"
+  },
+  "management_db": {
+    "database": "data/workbench.sqlite",
+    "mode": "read-only",
+    "schema": 8,
+    "integrity": "ok",
+    "foreign_key_errors": [],
+    "wb13_05_task_ids": [],
+    "row_counts": {
+      "document_purpose": 0,
+      "task_plan_reference": 0,
+      "task_plan_verification": 0
+    }
+  }
+}

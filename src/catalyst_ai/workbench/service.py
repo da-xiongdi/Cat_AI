@@ -52,6 +52,7 @@ class TaskCreate(Model):
     milestone: str | None = None
     stages: list[Literal["A", "B", "C", "D", "E", "F"]] = Field(default_factory=list)
     primary_stage: Literal["A", "B", "C", "D", "E", "F"] | None = None
+    category: Literal["research", "workbench"] | None = None
 
     @model_validator(mode="after")
     def stage_consistency(self):
@@ -142,8 +143,8 @@ def create_task(path, data, *, request_id, actor):
             raise Conflict("task already exists")
         db.execute(
             "INSERT INTO task(id,project_id,title,goal,deliverables,status,priority,owner,"
-            "planned_date,milestone,stages,primary_stage) "
-            "VALUES(?,?,?,?,?,'planned',?,?,?,?,?,?)",
+            "planned_date,milestone,stages,primary_stage,category) "
+            "VALUES(?,?,?,?,?,'planned',?,?,?,?,?,?,?)",
             (
                 data.id,
                 data.project_id,
@@ -156,6 +157,7 @@ def create_task(path, data, *, request_id, actor):
                 data.milestone,
                 _json(data.stages),
                 data.primary_stage,
+                data.category,
             ),
         )
         for c in data.criteria:
@@ -167,7 +169,10 @@ def create_task(path, data, *, request_id, actor):
         _event(db, row, "created", actor, data.model_dump())
         return {"id": data.id, "revision": 1}
 
-    return _write(path, request_id, actor, "create_task", data.model_dump(mode="json"), run)
+    payload = data.model_dump(mode="json")
+    if data.category is None:
+        payload.pop("category")
+    return _write(path, request_id, actor, "create_task", payload, run)
 
 
 def add_dependency(path, task_id, prerequisite_id, expected_revision, *, request_id, actor):
@@ -241,6 +246,16 @@ def update_task(path, task_id, expected_revision, changes, *, request_id, actor)
         )
         if any(not x.strip() for x in parsed.deliverables):
             raise ValueError("empty deliverable")
+        linked_stages = {
+            r["stage"]
+            for r in db.execute(
+                "SELECT n.stage FROM task_node_link l JOIN research_node n ON n.id=l.node_id "
+                "WHERE l.task_id=? AND l.active=1",
+                (task_id,),
+            )
+        }
+        if not linked_stages.issubset(parsed.stages):
+            raise Conflict("remove incompatible node links before changing stages")
         version = row["criteria_version"]
         if "criteria" in changes:
             criteria = [Criterion.model_validate(c) for c in changes["criteria"]]
@@ -605,3 +620,156 @@ def list_tasks(path: Path, project_id: str):
                 (project_id,),
             )
         ]
+
+
+def preview_task_categories(path, project_id, proposals):
+    """Review explicit evidence-based proposals without inferring from task IDs."""
+    with transaction(path) as db:
+        if not db.execute("SELECT 1 FROM project WHERE id=?", (project_id,)).fetchone():
+            raise Missing("project not found")
+        result = []
+        for row in db.execute("SELECT * FROM task WHERE project_id=? ORDER BY id", (project_id,)):
+            proposal = proposals.get(row["id"], {})
+            category = proposal.get("category")
+            evidence = proposal.get("evidence", "")
+            conflict = None
+            if category not in (None, "research", "workbench"):
+                conflict = "invalid category"
+            elif category is not None and not str(evidence).strip():
+                conflict = "evidence required"
+            elif row["category"] is not None and category not in (None, row["category"]):
+                conflict = "existing category differs"
+            result.append(
+                {
+                    "task_id": row["id"],
+                    "goal": row["goal"],
+                    "old_category": row["category"],
+                    "category": category,
+                    "evidence": evidence,
+                    "expected_revision": row["revision"],
+                    "conflict": conflict,
+                }
+            )
+        return result
+
+
+def set_task_category(
+    path, project_id, task_id, category, expected_revision, reason, *, request_id, actor
+):
+    if category not in (None, "research", "workbench"):
+        raise ValueError("invalid category")
+    reason = _text(reason, "reason")
+    payload = [project_id, task_id, category, expected_revision, reason]
+
+    def run(db, actor):
+        row = _task(db, task_id)
+        if row["project_id"] != project_id:
+            raise ValueError("task belongs to another project")
+        _revision(row, expected_revision)
+        if row["category"] == category:
+            return {"id": task_id, "revision": row["revision"], "changed": False}
+        if (
+            category != "research"
+            and db.execute(
+                "SELECT 1 FROM task_node_link WHERE task_id=? AND active=1", (task_id,)
+            ).fetchone()
+        ):
+            raise Conflict("remove node links before changing category")
+        db.execute(
+            "UPDATE task SET category=?, revision=revision+1 WHERE id=?", (category, task_id)
+        )
+        updated = _task(db, task_id)
+        db.execute(
+            "INSERT INTO task_category_revision VALUES(?,?,?,?,?,?,?,?)",
+            (
+                task_id,
+                project_id,
+                updated["revision"],
+                row["category"],
+                category,
+                reason,
+                actor,
+                now(),
+            ),
+        )
+        _event(
+            db,
+            updated,
+            "category_changed",
+            actor,
+            {"old": row["category"], "new": category, "reason": reason},
+        )
+        return {"id": task_id, "revision": updated["revision"], "changed": True}
+
+    return _write(path, request_id, actor, "set_task_category", payload, run)
+
+
+def list_tasks_by_category(path, project_id, category="all"):
+    if category not in ("all", "research", "workbench", "unclassified"):
+        raise ValueError("invalid category")
+    with transaction(path) as db:
+        if not db.execute("SELECT 1 FROM project WHERE id=?", (project_id,)).fetchone():
+            raise Missing("project not found")
+        rows = db.execute("SELECT * FROM task WHERE project_id=? ORDER BY id", (project_id,))
+        return [
+            dict(row)
+            for row in rows
+            if category == "all"
+            or (category == "unclassified" and row["category"] is None)
+            or row["category"] == category
+        ]
+
+
+def apply_task_categories(path, project_id, proposals, *, request_id, actor):
+    """Apply an explicitly reviewed batch atomically, after checking every revision."""
+    if len({p["task_id"] for p in proposals}) != len(proposals):
+        raise ValueError("duplicate task")
+    for item in proposals:
+        if item["category"] not in ("research", "workbench"):
+            raise ValueError("invalid category")
+        _text(item["evidence"], "evidence")
+
+    def run(db, actor):
+        rows = []
+        for item in proposals:
+            row = _task(db, item["task_id"])
+            if row["project_id"] != project_id:
+                raise ValueError("task belongs to another project")
+            _revision(row, item["expected_revision"])
+            if row["category"] not in (None, item["category"]):
+                raise Conflict("existing category differs")
+            rows.append(row)
+        results = []
+        for item, row in zip(proposals, rows, strict=True):
+            if row["category"] != item["category"]:
+                db.execute(
+                    "UPDATE task SET category=?,revision=revision+1 WHERE id=?",
+                    (item["category"], row["id"]),
+                )
+                updated = _task(db, row["id"])
+                db.execute(
+                    "INSERT INTO task_category_revision VALUES(?,?,?,?,?,?,?,?)",
+                    (
+                        row["id"],
+                        project_id,
+                        updated["revision"],
+                        row["category"],
+                        item["category"],
+                        item["evidence"],
+                        actor,
+                        now(),
+                    ),
+                )
+                _event(
+                    db,
+                    updated,
+                    "category_changed",
+                    actor,
+                    {"old": row["category"], "new": item["category"], "reason": item["evidence"]},
+                )
+                results.append({"id": row["id"], "revision": updated["revision"], "changed": True})
+            else:
+                results.append({"id": row["id"], "revision": row["revision"], "changed": False})
+        return results
+
+    return _write(path, request_id, actor, "apply_task_categories", [project_id, proposals], run)

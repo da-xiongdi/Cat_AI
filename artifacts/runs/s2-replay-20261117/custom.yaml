@@ -1,0 +1,28 @@
+schema_version: 1
+mode: custom_train
+dataset:
+  snapshot: D:\work\Cat_AI\data\snapshots\snapshot-76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da.json
+  qualification: D:\work\Cat_AI\data\snapshots\qualifications\qualification-b450e999aca00cd7e035b5bb1006a48d3fbd171520391710eb05a2490aa85967.json
+  split: D:\work\Cat_AI\artifacts\reports\themecat-i2-20261110\split-verified.json
+  selection: D:\work\Cat_AI\artifacts\reports\s1-b-20261113-v4\selection.json
+  features: D:\work\Cat_AI\artifacts\reports\s1-b-20261113-v4\features.json
+  catalog_database: D:\work\Cat_AI\data\catalog.sqlite
+  evidence_root: D:\work\Cat_AI
+features:
+  preset: R2
+  sets:
+  - F2
+  property_version: mendeleev-data-665935bc-pauling-cordero-v2
+  species_mapping_version: themecat-centers-v2
+models:
+- name: ridge
+  params:
+    alpha: 2.0
+- name: extra_trees
+  params:
+    n_estimators: 80
+    n_jobs: 1
+validation:
+  n_splits: 3
+seed: 42
+output: D:\work\Cat_AI\artifacts\runs\s2-replay-20261117\custom

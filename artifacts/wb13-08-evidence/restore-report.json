@@ -1,0 +1,237 @@
+{
+  "schema_before": 8,
+  "schema_after": 8,
+  "integrity": "ok",
+  "foreign_keys": [],
+  "bundle_sha256": "016c0ecabf165414a698aab898ea8cfa153b55dcf54bc98a75cd81c6ec5f7c59",
+  "bundle_missing": [],
+  "comparison": {
+    "project": {
+      "before": 1,
+      "after": 1,
+      "equal": true
+    },
+    "task": {
+      "before": 10,
+      "after": 10,
+      "equal": true
+    },
+    "dependency": {
+      "before": 15,
+      "after": 15,
+      "equal": true
+    },
+    "criterion": {
+      "before": 40,
+      "after": 40,
+      "equal": true
+    },
+    "evidence": {
+      "before": 59,
+      "after": 59,
+      "equal": true
+    },
+    "review": {
+      "before": 22,
+      "after": 22,
+      "equal": true
+    },
+    "activity": {
+      "before": 200,
+      "after": 200,
+      "equal": true
+    },
+    "request_log": {
+      "before": 146,
+      "after": 146,
+      "equal": true
+    },
+    "index_workspace": {
+      "before": 1,
+      "after": 1,
+      "equal": true
+    },
+    "artifact": {
+      "before": 50,
+      "after": 50,
+      "equal": true
+    },
+    "artifact_location": {
+      "before": 50,
+      "after": 50,
+      "equal": true
+    },
+    "artifact_revision": {
+      "before": 59,
+      "after": 59,
+      "equal": true
+    },
+    "index_scan": {
+      "before": 25,
+      "after": 25,
+      "equal": true
+    },
+    "index_observation": {
+      "before": 685,
+      "after": 685,
+      "equal": true
+    },
+    "published_index": {
+      "before": 1,
+      "after": 1,
+      "equal": true
+    },
+    "decision": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    },
+    "decision_revision": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    },
+    "task_decision": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    },
+    "foundation_import": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    },
+    "foundation_record": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    },
+    "model_run": {
+      "before": 4,
+      "after": 4,
+      "equal": true
+    },
+    "model_run_revision": {
+      "before": 5,
+      "after": 5,
+      "equal": true
+    },
+    "research_record": {
+      "before": 8,
+      "after": 8,
+      "equal": true
+    },
+    "prediction_job": {
+      "before": 3,
+      "after": 3,
+      "equal": true
+    },
+    "prediction_event": {
+      "before": 9,
+      "after": 9,
+      "equal": true
+    },
+    "task_category_revision": {
+      "before": 10,
+      "after": 10,
+      "equal": true
+    },
+    "workbench_delivery": {
+      "before": 12,
+      "after": 12,
+      "equal": true
+    },
+    "research_node": {
+      "before": 14,
+      "after": 14,
+      "equal": true
+    },
+    "task_node_link": {
+      "before": 8,
+      "after": 8,
+      "equal": true
+    },
+    "task_plan_reference": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    },
+    "task_plan_verification": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    },
+    "category_context": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    },
+    "category_recent_task": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    },
+    "document_purpose": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    },
+    "workbench_delivery_revision": {
+      "before": 12,
+      "after": 12,
+      "equal": true
+    },
+    "research_node_revision": {
+      "before": 16,
+      "after": 16,
+      "equal": true
+    },
+    "task_node_link_revision": {
+      "before": 8,
+      "after": 8,
+      "equal": true
+    },
+    "task_plan_reference_revision": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    },
+    "category_context_revision": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    },
+    "category_recent_task_revision": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    },
+    "document_purpose_revision": {
+      "before": 0,
+      "after": 0,
+      "equal": true
+    }
+  },
+  "references": [
+    {
+      "path": "docs/architecture/project_workbench_plan.md",
+      "status": "included",
+      "sha256": "c878b7893959646cb2fd44ee2b95a7c50f7069644f9d291eb0bc6b0dab14590c"
+    },
+    {
+      "path": "docs/architecture/system_design.md",
+      "status": "included",
+      "sha256": "0dbdc5ca51143e70570717f093483d79e076c86f1d56a1fb912295daa7b4a5ec"
+    },
+    {
+      "path": "docs/feature_engineering_plan_v0.1.md",
+      "status": "included",
+      "sha256": "4251db86aeb53052c9b5d8afd833d46453fa6c32aebc2e3fc12c3de46fbc86b3"
+    },
+    {
+      "path": "docs/s2_implementation_plan.md",
+      "status": "included",
+      "sha256": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651"
+    }
+  ]
+}

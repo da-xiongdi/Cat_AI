@@ -2,7 +2,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 import pytest
 
-from catalyst_ai.storage.workbench import connect, migrate
+from catalyst_ai.storage.workbench import atomic_operations, connect, migrate
 from catalyst_ai.workbench import service as s
 
 
@@ -49,6 +49,20 @@ def complete(db, task):
         actor="A",
     )
     s.accept_review(db, task, 4, "accepted", request_id=task + "-accept", actor="B")
+
+
+def test_operation_batch_rolls_back_tasks_and_idempotency_records(db):
+    with pytest.raises(s.Conflict, match="invalid state transition"):
+        with atomic_operations(db):
+            create(db, "a")
+            assert s.get_task(db, "a")["status"] == "planned"
+            move(db, "a", 1, "in_progress")
+    with pytest.raises(s.Missing):
+        s.get_task(db, "a")
+    with atomic_operations(db):
+        create(db, "a")
+        move(db, "a", 1, "ready")
+    assert s.get_task(db, "a")["status"] == "ready"
 
 
 def test_acceptance_and_changed_evidence_blocks_dependency(db):

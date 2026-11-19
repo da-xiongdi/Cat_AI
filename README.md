@@ -11,7 +11,7 @@ TheMeCat已有593条CO₂转化率冻结记录，按37个论文组划分；来�
 | 需要了解 | 入口 |
 |---|---|
 | 系统整体如何工作、各阶段如何衔接 | [总体设计](docs/architecture/system_design.md) |
-| 项目管理Web工作台如何建设 | [工作台方案（规划草案）](docs/architecture/project_workbench_plan.md) |
+| 项目管理 Web 工作台的能力与进展 | [建设方案](docs/architecture/project_workbench_plan.md) · [当前进度](docs/progress.md) |
 | 已完成什么、证据在哪里、下一步做什么 | [当前进度](docs/progress.md) |
 | 当前特征、数据准备与训练预测如何实施 | [特征工程与预测方案](docs/feature_engineering_plan_v0.1.md) |
 | 数据源如何接入、治理及接受 | [TheMeCat专项方案](docs/themecat_implementation_plan.md) |

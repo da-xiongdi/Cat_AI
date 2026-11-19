@@ -197,6 +197,26 @@ def test_upgrade_v2_preserves_tasks_and_backup(tmp_path):
     )
     con = connect(db)
     for table in (
+        "document_purpose_revision",
+        "category_recent_task_revision",
+        "category_context_revision",
+        "task_plan_reference_revision",
+        "task_node_link_revision",
+        "research_node_revision",
+        "workbench_delivery_revision",
+        "task_plan_verification",
+        "document_purpose",
+        "category_recent_task",
+        "category_context",
+        "task_plan_reference",
+        "task_node_link",
+        "research_node",
+        "workbench_delivery",
+        "task_category_revision",
+    ):
+        con.execute(f"DROP TABLE {table}")
+    con.execute("ALTER TABLE task DROP COLUMN category")
+    for table in (
         "prediction_event",
         "prediction_job",
         "research_record",
@@ -319,3 +339,265 @@ def test_historical_r1_registration_and_summary(tmp_path):
         assert len(changed["history"]) == 2
         assert changed["history"][0]["content"]["evidence"][0]["status"] == "invalid"
     assert len(index.list_artifacts(db, "cat-ai")["items"]) == 5
+
+
+def test_management_query_api(client):
+    response = client.get("/api/workbench/v1/query?category=unclassified")
+    assert response.status_code == 200
+    assert response.json()["scope"]["category"] == "unclassified"
+    assert response.json()["total"] == 0
+    assert client.get("/api/workbench/v1/query?category=invalid").status_code == 422
+    assert client.get("/tasks").status_code == 200
+
+
+def test_roadmap_tree_and_direct_children(tmp_path):
+    import hashlib
+
+    from catalyst_ai.workbench.research_nodes import save_research_node
+
+    db = tmp_path / "wb.sqlite"
+    app = create_app(db, tmp_path)
+    source = tmp_path / "source.md"
+    source.write_text("# Stage\n", encoding="utf-8")
+    fields = {
+        "stage": "A",
+        "sort_order": 0,
+        "source_path": "source.md",
+        "source_section": "Stage",
+        "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
+    }
+    for node_id, parent in (("root", None), ("child", "root"), ("deep", "child")):
+        save_research_node(
+            db,
+            "cat-ai",
+            node_id,
+            {**fields, "parent_id": parent},
+            0,
+            "test",
+            request_id=node_id,
+            actor="tester",
+        )
+    from catalyst_ai.workbench.category_context import set_category_focus
+    from catalyst_ai.workbench.research_nodes import save_task_node_link
+    from catalyst_ai.workbench.service import create_task
+
+    for task_id in ("linked", "pending"):
+        create_task(
+            db,
+            {
+                "id": task_id,
+                "project_id": "cat-ai",
+                "title": task_id,
+                "goal": "goal",
+                "category": "research",
+                "stages": ["A"],
+                "primary_stage": "A",
+            },
+            request_id="task-" + task_id,
+            actor="tester",
+        )
+    for link_id, node_id, role in (("primary", "child", "primary"), ("ref", "deep", "reference")):
+        save_task_node_link(
+            db,
+            "cat-ai",
+            link_id,
+            {"task_id": "linked", "node_id": node_id, "role": role},
+            0,
+            "test",
+            request_id=link_id,
+            actor="tester",
+        )
+    set_category_focus(
+        db, "cat-ai", "research", "linked", 0, "test", request_id="focus", actor="tester"
+    )
+    with TestClient(app, base_url="http://127.0.0.1:8765") as client:
+        assert "node=deep&amp;task=linked" in client.get("/tasks/linked?node=deep").text
+        assert "node=child&amp;task=linked" in client.get("/tasks/linked").text
+        assert "task=pending" in client.get("/tasks/pending").text
+        assert "定位焦点任务 linked" in client.get("/roadmap").text
+        assert 'id="selected-task"' in client.get("/roadmap?node=deep&task=linked").text
+        assert "定位失败" in client.get("/roadmap?node=root&task=linked").text
+        assert 'id="selected-task"' in client.get("/roadmap?task=pending").text
+        page = client.get("/roadmap")
+        assert page.status_code == 200
+        assert "科研路线图" in page.text and "尚未登记" in page.text
+        assert "node=child" in page.text and "node=deep" not in page.text
+        page = client.get("/roadmap?node=child")
+        assert "node=deep" in page.text and "固定 SHA-256" in page.text
+        response = client.get("/api/workbench/v1/roadmap/nodes/child/children")
+        assert [n["id"] for n in response.json()["items"]] == ["deep"]
+        assert client.get("/api/workbench/v1/roadmap/nodes/unknown/children").status_code == 404
+        assert "节点不存在" in client.get("/roadmap?node=unknown").text
+
+
+def test_roadmap_maintenance_atomic_and_web(tmp_path):
+    import hashlib
+
+    from catalyst_ai.storage.workbench import connect
+    from catalyst_ai.workbench.research_nodes import save_research_node, save_task_node_link
+    from catalyst_ai.workbench.service import create_task
+
+    db = tmp_path / "wb.sqlite"
+    app = create_app(db, tmp_path)
+    source = tmp_path / "source.md"
+    source.write_text("# Stage\n", encoding="utf-8")
+    fields = {
+        "stage": "A",
+        "sort_order": 0,
+        "source_path": "source.md",
+        "source_section": "Stage",
+        "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
+    }
+    for node, parent in (("root", None), ("one", "root"), ("two", "root")):
+        save_research_node(
+            db,
+            "cat-ai",
+            node,
+            {**fields, "parent_id": parent},
+            0,
+            "seed",
+            request_id="node-" + node,
+            actor="tester",
+        )
+    create_task(
+        db,
+        {
+            "id": "T",
+            "project_id": "cat-ai",
+            "title": "T",
+            "goal": "G",
+            "category": "research",
+            "stages": ["A"],
+            "primary_stage": "A",
+        },
+        request_id="task",
+        actor="tester",
+    )
+    for link, node, role in (("primary", "one", "primary"), ("reference", "two", "reference")):
+        save_task_node_link(
+            db,
+            "cat-ai",
+            link,
+            {"task_id": "T", "node_id": node, "role": role},
+            0,
+            "seed",
+            request_id=link,
+            actor="tester",
+        )
+    with TestClient(app, base_url="http://127.0.0.1:8765") as client:
+        token = csrf(client, "/roadmap?node=one")
+        branch = {
+            **fields,
+            "node_id": "new-branch",
+            "parent_id": "root",
+            "revision": "0",
+            "active": "1",
+            "reason": "new branch",
+        }
+        assert (
+            post(
+                client, "roadmap-node", {**branch, "source_sha256": "0" * 64}, token, "bad-source"
+            ).status_code
+            == 409
+        )
+        assert post(client, "roadmap-node", branch, "bad-token", "bad-csrf").status_code == 403
+        assert post(client, "roadmap-node", branch, token, "new-branch").status_code == 303
+        assert "new-branch" in client.get("/roadmap?node=root").text
+        assert (
+            post(
+                client, "roadmap-node", {**branch, "revision": "1", "active": "0"}, token, "retire"
+            ).status_code
+            == 303
+        )
+        assert (
+            post(
+                client,
+                "roadmap-node",
+                {
+                    **fields,
+                    "node_id": "one",
+                    "parent_id": "root",
+                    "revision": "1",
+                    "active": "0",
+                    "reason": "retire linked",
+                },
+                token,
+                "retire-linked",
+            ).status_code
+            == 422
+        )
+        move = {
+            "primary_id": "primary",
+            "primary_revision": "1",
+            "reference_id": "reference",
+            "reference_revision": "1",
+            "reason": "reviewed",
+        }
+        assert (
+            post(
+                client, "roadmap-move-primary", {**move, "reference_revision": "9"}, token, "bad"
+            ).status_code
+            == 409
+        )
+        with connect(db) as conn:
+            assert (
+                conn.execute("SELECT active FROM task_node_link WHERE id='reference'").fetchone()[0]
+                == 1
+            )
+            assert conn.execute("SELECT count(*) FROM task_node_link_revision").fetchone()[0] == 2
+        assert post(client, "roadmap-move-primary", move, token, "move").status_code == 303
+        assert post(client, "roadmap-move-primary", move, token, "move").status_code == 303
+        assert post(client, "roadmap-move-primary", move, token, "stale").status_code == 409
+        assert "reviewed" in client.get("/roadmap?node=one").text
+        assert "primary" in client.get("/roadmap?node=two").text
+        assert "node=two" in client.get("/tasks/T").text
+        node_data = {
+            **fields,
+            "node_id": "one",
+            "parent_id": "two",
+            "revision": "1",
+            "active": "1",
+            "reason": "move branch",
+        }
+        assert post(client, "roadmap-node", node_data, token, "move-node").status_code == 303
+        assert post(client, "roadmap-node", node_data, token, "stale-node").status_code == 409
+        assert (
+            post(
+                client,
+                "roadmap-node",
+                {**node_data, "node_id": "two", "parent_id": "one"},
+                token,
+                "cycle",
+            ).status_code
+            == 422
+        )
+        assert (
+            post(
+                client,
+                "roadmap-node",
+                {**node_data, "node_id": "root", "parent_id": "one"},
+                token,
+                "root-move",
+            ).status_code
+            == 422
+        )
+        assert (
+            post(
+                client,
+                "roadmap-link",
+                {
+                    "link_id": "new",
+                    "revision": "0",
+                    "task_id": "T",
+                    "node_id": "one",
+                    "role": "primary",
+                    "active": "1",
+                    "reason": "duplicate",
+                },
+                token,
+                "duplicate",
+            ).status_code
+            == 409
+        )
+        with connect(db) as conn:
+            assert conn.execute("SELECT count(*) FROM task_node_link_revision").fetchone()[0] == 4

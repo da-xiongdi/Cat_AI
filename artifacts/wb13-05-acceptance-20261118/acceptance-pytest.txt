@@ -1,0 +1,97 @@
+.......FF.                                                               [100%]
+================================== FAILURES ===================================
+__________ test_renamed_heading_is_not_replaced_by_a_fenced_example ___________
+
+workspace = (WindowsPath('C:/Users/dzy/AppData/Local/Temp/pytest-of-dzy/pytest-1103/test_renamed_heading_is_not_re0/acceptance.sql...th('C:/Users/dzy/AppData/Local/Temp/pytest-of-dzy/pytest-1103/test_renamed_heading_is_not_re0/workspace/docs/plan.md'))
+
+    def test_renamed_heading_is_not_replaced_by_a_fenced_example(workspace):
+        db_path, plan = workspace
+        old = verify_reference(db_path, inspect_reference(db_path)["current_sha256"], "verified")
+        plan.write_text("# Renamed\n\n```markdown\n# Plan\n```\n", encoding="utf-8")
+        detected = inspect_reference(db_path)
+        assert detected["last_verification"] == old
+        accepted = None
+        try:
+            accepted = verify_reference(db_path, detected["current_sha256"], "fenced-example")
+        except Conflict as exc:
+            assert "section_missing" in str(exc)
+>       assert (detected["status"], accepted) == ("section_missing", None)
+E       AssertionError: assert ('changed', {...2f36ba', ...}) == ('section_missing', None)
+E         
+E         At index 0 diff: 'changed' != 'section_missing'
+E         Use -v to get more diff
+
+artifacts\wb13-05-acceptance-20261118\test_wb13_05_acceptance.py:269: AssertionError
+_________ test_registered_path_with_escaped_directory_reports_status __________
+
+workspace = (WindowsPath('C:/Users/dzy/AppData/Local/Temp/pytest-of-dzy/pytest-1103/test_registered_path_with_esca0/acceptance.sql...th('C:/Users/dzy/AppData/Local/Temp/pytest-of-dzy/pytest-1103/test_registered_path_with_esca0/workspace/docs/plan.md'))
+tmp_path = WindowsPath('C:/Users/dzy/AppData/Local/Temp/pytest-of-dzy/pytest-1103/test_registered_path_with_esca0')
+
+    def test_registered_path_with_escaped_directory_reports_status(workspace, tmp_path):
+        db_path, plan = workspace
+        old = verify_reference(db_path, inspect_reference(db_path)["current_sha256"], "verified")
+        outside = tmp_path / "outside"
+        plan.parent.rename(outside)
+        if os.name == "nt":
+            subprocess.run(
+                ["cmd.exe", "/d", "/c", "mklink", "/J", str(plan.parent), str(outside)],
+                check=True,
+                capture_output=True,
+            )
+        else:
+            plan.parent.symlink_to(outside, target_is_directory=True)
+        try:
+            with pytest.raises(ValueError, match="path escapes workspace"):
+                save_reference(db_path, "escaped", REFERENCE)
+            assert list_plan_verifications(db_path, "p", "primary") == [old]
+>           detected = inspect_reference(db_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+artifacts\wb13-05-acceptance-20261118\test_wb13_05_acceptance.py:290: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+artifacts\wb13-05-acceptance-20261118\test_wb13_05_acceptance.py:70: in inspect_reference
+    return inspect_task_plan_reference(db_path, "p", "primary")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\catalyst_ai\workbench\plans.py:169: in inspect_task_plan_reference
+    return _detection(db, _get(db, project_id, reference_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\catalyst_ai\workbench\plans.py:144: in _detection
+    root = _document(db, row["project_id"], row["document_id"], row["path"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\catalyst_ai\workbench\plans.py:26: in _document
+    safe_path(workspace["root"], path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/dzy/AppData/Local/Temp/pytest-of-dzy/pytest-1103/test_registered_path_with_esca0/workspace')
+relative = 'docs/plan.md'
+
+    def safe_path(root, relative):
+        root = Path(root).resolve(strict=True)
+        p = Path(relative)
+        if p.is_absolute() or p.drive or not p.parts or ".." in p.parts:
+            raise ValueError("path must be relative to the workspace")
+        result = (root / p).resolve()
+        if not result.is_relative_to(root):
+>           raise ValueError("path escapes workspace")
+E           ValueError: path escapes workspace
+
+src\catalyst_ai\workbench\adapters.py:41: ValueError
+=================================== PASSES ====================================
+____________ test_multiple_documents_purposes_and_primary_conflict ____________
+---------------------------- Captured stdout call -----------------------------
+Isolated schema: 8 -> 8; integrity=ok; foreign keys=ok; {'task': 1, 'document_purpose': 1, 'document_purpose_revision': 1, 'task_plan_reference': 2, 'task_plan_reference_revision': 2, 'task_plan_verification': 0}
+____ test_actual_bytes_override_stale_available_index_and_history_survives ____
+---------------------------- Captured stdout call -----------------------------
+Isolated source SHA-256: original=f317ebf80fe0fa1ea476cb882d38a2eb6c6a426078cae78fbea440d7e061a3c4; updated=430f790c306153984293a958fb5e63b0658226d2c44711734b8670d0ea689e2d
+=========================== short test summary info ===========================
+PASSED artifacts/wb13-05-acceptance-20261118/test_wb13_05_acceptance.py::test_multiple_documents_purposes_and_primary_conflict
+PASSED artifacts/wb13-05-acceptance-20261118/test_wb13_05_acceptance.py::test_cross_project_task_document_purpose_and_history
+PASSED artifacts/wb13-05-acceptance-20261118/test_wb13_05_acceptance.py::test_actual_bytes_override_stale_available_index_and_history_survives
+PASSED artifacts/wb13-05-acceptance-20261118/test_wb13_05_acceptance.py::test_renamed_or_duplicate_heading_preserves_old_verification[# Renamed\n-section_missing]
+PASSED artifacts/wb13-05-acceptance-20261118/test_wb13_05_acceptance.py::test_renamed_or_duplicate_heading_preserves_old_verification[# Plan\n## Plan\n-section_ambiguous]
+PASSED artifacts/wb13-05-acceptance-20261118/test_wb13_05_acceptance.py::test_rejects_absolute_and_parent_paths_on_registration
+PASSED artifacts/wb13-05-acceptance-20261118/test_wb13_05_acceptance.py::test_concurrent_same_request_appends_once_and_stale_revision_conflicts
+PASSED artifacts/wb13-05-acceptance-20261118/test_wb13_05_acceptance.py::test_implementation_plan_section_can_be_referenced
+FAILED artifacts/wb13-05-acceptance-20261118/test_wb13_05_acceptance.py::test_renamed_heading_is_not_replaced_by_a_fenced_example
+FAILED artifacts/wb13-05-acceptance-20261118/test_wb13_05_acceptance.py::test_registered_path_with_escaped_directory_reports_status
+2 failed, 8 passed in 0.92s

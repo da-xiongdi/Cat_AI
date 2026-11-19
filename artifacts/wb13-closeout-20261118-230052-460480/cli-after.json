@@ -1,0 +1,746 @@
+{
+  "scope": {
+    "project_id": "cat-ai",
+    "category": "workbench"
+  },
+  "observed_at": "2026-11-18T15:01:15.611566+00:00",
+  "source": {
+    "schema_version": 8,
+    "file_detection": "live filesystem at observation time"
+  },
+  "tasks": [
+    {
+      "id": "WB-13",
+      "project_id": "cat-ai",
+      "title": "管理分类与关联基础",
+      "goal": "汇总 WB-13 八项交付和正式验收",
+      "deliverables": "[\"docs/workbench/wb13_implementation_plan.md · 5. 任务登记与交付约定\",\"固定交付及验收证据\"]",
+      "milestone": null,
+      "stages": "[]",
+      "primary_stage": null,
+      "status": "done",
+      "priority": "urgent",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 1,
+      "revision": 5,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "workbench"
+    },
+    {
+      "id": "WB-13-01",
+      "project_id": "cat-ai",
+      "title": "基线盘点与数据契约",
+      "goal": "固定管理库基线和数据契约",
+      "deliverables": "[\"docs/workbench/wb13_implementation_plan.md · WB-13-01：基线盘点与数据契约\",\"固定交付及验收证据\"]",
+      "milestone": null,
+      "stages": "[]",
+      "primary_stage": null,
+      "status": "done",
+      "priority": "urgent",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 1,
+      "revision": 5,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "workbench"
+    },
+    {
+      "id": "WB-13-02",
+      "project_id": "cat-ai",
+      "title": "增量迁移与任务分类",
+      "goal": "核对可重放迁移和旧任务兼容",
+      "deliverables": "[\"docs/workbench/wb13_implementation_plan.md · WB-13-02：增量迁移与任务分类\",\"固定交付及验收证据\"]",
+      "milestone": null,
+      "stages": "[]",
+      "primary_stage": null,
+      "status": "done",
+      "priority": "urgent",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 1,
+      "revision": 6,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "workbench"
+    },
+    {
+      "id": "WB-13-03",
+      "project_id": "cat-ai",
+      "title": "历史建设交付承接",
+      "goal": "核对历史交付范围、剩余项及版本",
+      "deliverables": "[\"docs/workbench/wb13_implementation_plan.md · WB-13-03：历史建设交付承接\",\"固定交付及验收证据\"]",
+      "milestone": null,
+      "stages": "[]",
+      "primary_stage": null,
+      "status": "done",
+      "priority": "urgent",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 1,
+      "revision": 6,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "workbench"
+    },
+    {
+      "id": "WB-13-04",
+      "project_id": "cat-ai",
+      "title": "科研节点与任务关联",
+      "goal": "核对节点层级、关联约束与去重",
+      "deliverables": "[\"docs/workbench/wb13_implementation_plan.md · WB-13-04：科研节点与任务关联\",\"固定交付及验收证据\"]",
+      "milestone": null,
+      "stages": "[]",
+      "primary_stage": null,
+      "status": "done",
+      "priority": "urgent",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 1,
+      "revision": 6,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "workbench"
+    },
+    {
+      "id": "WB-13-05",
+      "project_id": "cat-ai",
+      "title": "执行计划与文档引用",
+      "goal": "核对主计划、章节和版本历史",
+      "deliverables": "[\"docs/workbench/wb13_implementation_plan.md · WB-13-05：执行计划与文档引用\",\"固定交付及验收证据\"]",
+      "milestone": null,
+      "stages": "[]",
+      "primary_stage": null,
+      "status": "done",
+      "priority": "urgent",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 1,
+      "revision": 6,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "workbench"
+    },
+    {
+      "id": "WB-13-06",
+      "project_id": "cat-ai",
+      "title": "分类焦点与近期安排",
+      "goal": "核对分类隔离、旧焦点及近期顺序",
+      "deliverables": "[\"docs/workbench/wb13_implementation_plan.md · WB-13-06：分类焦点与近期安排\",\"固定交付及验收证据\"]",
+      "milestone": null,
+      "stages": "[]",
+      "primary_stage": null,
+      "status": "done",
+      "priority": "urgent",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 1,
+      "revision": 6,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "workbench"
+    },
+    {
+      "id": "WB-13-07",
+      "project_id": "cat-ai",
+      "title": "共用查询与兼容接入",
+      "goal": "核对分类查询、Web 和 CLI 兼容",
+      "deliverables": "[\"docs/workbench/wb13_implementation_plan.md · WB-13-07：共用查询与兼容接入\",\"固定交付及验收证据\"]",
+      "milestone": null,
+      "stages": "[]",
+      "primary_stage": null,
+      "status": "done",
+      "priority": "urgent",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 1,
+      "revision": 9,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "workbench"
+    },
+    {
+      "id": "WB-13-08",
+      "project_id": "cat-ai",
+      "title": "专项验收与部署收口",
+      "goal": "核对正式部署、恢复和既有数据保护",
+      "deliverables": "[\"docs/workbench/wb13_implementation_plan.md · WB-13-08：专项验收与部署收口\",\"固定交付及验收证据\"]",
+      "milestone": null,
+      "stages": "[]",
+      "primary_stage": null,
+      "status": "done",
+      "priority": "urgent",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 1,
+      "revision": 6,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "workbench"
+    }
+  ],
+  "counts": {
+    "research": {
+      "total": 0,
+      "by_status": {}
+    },
+    "workbench": {
+      "total": 9,
+      "by_status": {
+        "done": 9
+      }
+    },
+    "unclassified": {
+      "total": 0,
+      "by_status": {}
+    }
+  },
+  "total": 9,
+  "historical_deliveries": [
+    {
+      "id": "5c709679-cd53-4824-8a42-9f8f818870a4",
+      "project_id": "cat-ai",
+      "original_wb_id": "WB-01",
+      "delivered_scope": "[草案与对象契约](../workbench/README.md)已形成；实际项目导入后续由 WB-05 完成",
+      "remaining_scope": "保留原草案和导入历史，不重新初始化项目",
+      "source_path": "docs/architecture/project_workbench_plan.md",
+      "source_section": "2.1 既有建设进度承接",
+      "source_sha256": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-18T04:15:47.518185+00:00",
+      "task_id": null,
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "historical_pending_task_registration"
+    },
+    {
+      "id": "75aea674-a50a-486a-b3d6-9b29e4c2143e",
+      "project_id": "cat-ai",
+      "original_wb_id": "WB-02",
+      "delivered_scope": "[任务、依赖、状态、验收及事务服务](../workbench/wb02.md)已交付",
+      "remaining_scope": "直接复用，仅扩展类别及关联",
+      "source_path": "docs/architecture/project_workbench_plan.md",
+      "source_section": "2.1 既有建设进度承接",
+      "source_sha256": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-18T04:15:47.673960+00:00",
+      "task_id": null,
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "historical_pending_task_registration"
+    },
+    {
+      "id": "5231bac1-3381-4c86-9040-510dc140f3b2",
+      "project_id": "cat-ai",
+      "original_wb_id": "WB-03",
+      "delivered_scope": "[固定版本、哈希、检测及预览服务](../workbench/wb03.md)已交付",
+      "remaining_scope": "复用索引，不重建成果台账",
+      "source_path": "docs/architecture/project_workbench_plan.md",
+      "source_section": "2.1 既有建设进度承接",
+      "source_sha256": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-18T04:15:47.828227+00:00",
+      "task_id": null,
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "historical_pending_task_registration"
+    },
+    {
+      "id": "1f1945ce-c884-4a7a-ade8-922be0db4ea2",
+      "project_id": "cat-ai",
+      "original_wb_id": "WB-04",
+      "delivered_scope": "[页面及任务操作](../workbench/wb04.md)已交付；原待补浏览器主流程已由 WB-05 收口",
+      "remaining_scope": "保留已有页面与 URL，增量调整导航和视图",
+      "source_path": "docs/architecture/project_workbench_plan.md",
+      "source_section": "2.1 既有建设进度承接",
+      "source_sha256": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-18T04:15:48.002643+00:00",
+      "task_id": null,
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "historical_pending_task_registration"
+    },
+    {
+      "id": "6a4cc34d-1cf4-4f55-9318-cfdb22287304",
+      "project_id": "cat-ai",
+      "original_wb_id": "WB-05",
+      "delivered_scope": "[实际导入、重复导入、完整备份恢复及三种视口验证](../workbench/wb05.md)已交付",
+      "remaining_scope": "继承原交付结论，本轮只验证新增改动和兼容性",
+      "source_path": "docs/architecture/project_workbench_plan.md",
+      "source_section": "2.1 既有建设进度承接",
+      "source_sha256": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-18T04:15:48.714605+00:00",
+      "task_id": null,
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "historical_pending_task_registration"
+    },
+    {
+      "id": "7f1b4d3a-ce2d-424f-8ecf-e3ca96c27b29",
+      "project_id": "cat-ai",
+      "original_wb_id": "WB-06",
+      "delivered_scope": "[固定模型预测、独立 worker、持久化队列、中断及重试](../workbench/wb06.md)已交付，管理库升至 schema 7",
+      "remaining_scope": "保持预测能力，不重复开发队列",
+      "source_path": "docs/architecture/project_workbench_plan.md",
+      "source_section": "2.1 既有建设进度承接",
+      "source_sha256": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-18T04:15:48.885680+00:00",
+      "task_id": null,
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "historical_pending_task_registration"
+    },
+    {
+      "id": "1f8940ee-2bff-4512-9b9a-d1e22a4bb9eb",
+      "project_id": "cat-ai",
+      "original_wb_id": "WB-07",
+      "delivered_scope": "原规划保留；本次核查未发现独立交付记录，不视为整体完成",
+      "remaining_scope": "继续作为原任务待接入范围，不借本轮实施科研能力",
+      "source_path": "docs/architecture/project_workbench_plan.md",
+      "source_section": "2.1 既有建设进度承接",
+      "source_sha256": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-18T04:15:48.984869+00:00",
+      "task_id": null,
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "historical_pending_task_registration"
+    },
+    {
+      "id": "e9c2afee-e3a4-4396-b7ce-98a45f05f94b",
+      "project_id": "cat-ai",
+      "original_wb_id": "WB-08",
+      "delivered_scope": "[四组十一入口、研究分类及技术问题](../workbench/wb08.md)已交付；部分科研模块入口仍待接入",
+      "remaining_scope": "保留已交付部分，只补管理视图与分类范围",
+      "source_path": "docs/architecture/project_workbench_plan.md",
+      "source_section": "2.1 既有建设进度承接",
+      "source_sha256": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-18T04:15:49.086038+00:00",
+      "task_id": null,
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "historical_pending_task_registration"
+    },
+    {
+      "id": "e5d5beac-5c26-416d-9d80-b55e39e26764",
+      "project_id": "cat-ai",
+      "original_wb_id": "WB-09",
+      "delivered_scope": "[来源、样本查询、字典、治理、JSON/CSV 迁移及备份恢复](../workbench/wb09.md)已交付",
+      "remaining_scope": "复用数据基础；不重新迁移原型数据",
+      "source_path": "docs/architecture/project_workbench_plan.md",
+      "source_section": "2.1 既有建设进度承接",
+      "source_sha256": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-18T04:15:49.194188+00:00",
+      "task_id": null,
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "historical_pending_task_registration"
+    },
+    {
+      "id": "6d28851a-f4b1-4db5-b02b-dcecd2042295",
+      "project_id": "cat-ai",
+      "original_wb_id": "WB-10",
+      "delivered_scope": "[模型证据台账及历史证据登记](../workbench/wb10.md)已交付；预测接 WB-06，配置训练仍需 WB-07 及领域接口",
+      "remaining_scope": "已有台账继续使用，不把未接入训练算为已完成",
+      "source_path": "docs/architecture/project_workbench_plan.md",
+      "source_section": "2.1 既有建设进度承接",
+      "source_sha256": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-18T04:15:49.302282+00:00",
+      "task_id": null,
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "historical_pending_task_registration"
+    },
+    {
+      "id": "67e8b4f0-393a-4fc3-b66f-11a11da38fd2",
+      "project_id": "cat-ai",
+      "original_wb_id": "WB-11",
+      "delivered_scope": "保留原规划；已有导航/迁移记录不等于完整业务交付",
+      "remaining_scope": "后续按对应领域契约接入，不纳入本轮",
+      "source_path": "docs/architecture/project_workbench_plan.md",
+      "source_section": "2.1 既有建设进度承接",
+      "source_sha256": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-18T04:15:49.413108+00:00",
+      "task_id": null,
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "historical_pending_task_registration"
+    },
+    {
+      "id": "ad60ba57-bc99-469a-9536-32927864d522",
+      "project_id": "cat-ai",
+      "original_wb_id": "WB-12",
+      "delivered_scope": "保留原规划；已有占位/数据契约不等于实验闭环交付",
+      "remaining_scope": "后续按领域服务和设备条件接入，不纳入本轮",
+      "source_path": "docs/architecture/project_workbench_plan.md",
+      "source_section": "2.1 既有建设进度承接",
+      "source_sha256": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-18T04:15:49.535414+00:00",
+      "task_id": null,
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "historical_pending_task_registration"
+    }
+  ],
+  "research_nodes": {
+    "nodes": [],
+    "links": [],
+    "pending": []
+  },
+  "contexts": {
+    "workbench": {
+      "context": {
+        "id": "f3719c6f21a84861a58c08dc2c4dcf90",
+        "project_id": "cat-ai",
+        "category": "workbench",
+        "focus_task_id": null,
+        "revision": 2
+      },
+      "recent": [
+        {
+          "id": "040e407d80f64859a081984c0e59bcd1",
+          "project_id": "cat-ai",
+          "context_id": "f3719c6f21a84861a58c08dc2c4dcf90",
+          "task_id": "WB-13-08",
+          "sort_order": 0,
+          "revision": 2,
+          "active": 0,
+          "title": "专项验收与部署收口",
+          "status": "done",
+          "category": "workbench",
+          "priority": "urgent",
+          "planned_date": null,
+          "needs_review": true
+        }
+      ],
+      "default_order": [
+        {
+          "id": "WB-13",
+          "title": "管理分类与关联基础",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-01",
+          "title": "基线盘点与数据契约",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-02",
+          "title": "增量迁移与任务分类",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-03",
+          "title": "历史建设交付承接",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-04",
+          "title": "科研节点与任务关联",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-05",
+          "title": "执行计划与文档引用",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-06",
+          "title": "分类焦点与近期安排",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-07",
+          "title": "共用查询与兼容接入",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-08",
+          "title": "专项验收与部署收口",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        }
+      ],
+      "focus_needs_review": false,
+      "legacy_focus_task_id": null,
+      "legacy_needs_review": false,
+      "legacy_needs_migration": false
+    }
+  },
+  "primary_plans": {
+    "WB-13": {
+      "reference": {
+        "id": "WB-13-primary-plan",
+        "project_id": "cat-ai",
+        "task_id": "WB-13",
+        "document_id": "WB-13-execution-plan",
+        "path": "docs/workbench/wb13_implementation_plan.md",
+        "section_locator": "5. 任务登记与交付约定",
+        "purpose": "execution_plan",
+        "is_primary": 1,
+        "revision": 1,
+        "active": 1
+      },
+      "status": "valid",
+      "current_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+      "last_verification": {
+        "id": "1fd42fcb044840d6a555ca63910c9784",
+        "project_id": "cat-ai",
+        "reference_id": "WB-13-primary-plan",
+        "file_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+        "actor": "Codex",
+        "created_at": "2026-11-18T15:01:11.093712+00:00",
+        "reference_revision": 1
+      }
+    },
+    "WB-13-01": {
+      "reference": {
+        "id": "WB-13-01-primary-plan",
+        "project_id": "cat-ai",
+        "task_id": "WB-13-01",
+        "document_id": "WB-13-execution-plan",
+        "path": "docs/workbench/wb13_implementation_plan.md",
+        "section_locator": "WB-13-01：基线盘点与数据契约",
+        "purpose": "execution_plan",
+        "is_primary": 1,
+        "revision": 1,
+        "active": 1
+      },
+      "status": "valid",
+      "current_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+      "last_verification": {
+        "id": "ffe9b40c3a66439e91d190ae4f6b3f45",
+        "project_id": "cat-ai",
+        "reference_id": "WB-13-01-primary-plan",
+        "file_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+        "actor": "Codex",
+        "created_at": "2026-11-18T15:01:11.094911+00:00",
+        "reference_revision": 1
+      }
+    },
+    "WB-13-02": {
+      "reference": {
+        "id": "WB-13-02-primary-plan",
+        "project_id": "cat-ai",
+        "task_id": "WB-13-02",
+        "document_id": "WB-13-execution-plan",
+        "path": "docs/workbench/wb13_implementation_plan.md",
+        "section_locator": "WB-13-02：增量迁移与任务分类",
+        "purpose": "execution_plan",
+        "is_primary": 1,
+        "revision": 1,
+        "active": 1
+      },
+      "status": "valid",
+      "current_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+      "last_verification": {
+        "id": "3928351f09284711a9f26264e7dcb6d8",
+        "project_id": "cat-ai",
+        "reference_id": "WB-13-02-primary-plan",
+        "file_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+        "actor": "Codex",
+        "created_at": "2026-11-18T15:01:11.096001+00:00",
+        "reference_revision": 1
+      }
+    },
+    "WB-13-03": {
+      "reference": {
+        "id": "WB-13-03-primary-plan",
+        "project_id": "cat-ai",
+        "task_id": "WB-13-03",
+        "document_id": "WB-13-execution-plan",
+        "path": "docs/workbench/wb13_implementation_plan.md",
+        "section_locator": "WB-13-03：历史建设交付承接",
+        "purpose": "execution_plan",
+        "is_primary": 1,
+        "revision": 1,
+        "active": 1
+      },
+      "status": "valid",
+      "current_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+      "last_verification": {
+        "id": "46afc2c0f6854264ace85886ff4e2c6f",
+        "project_id": "cat-ai",
+        "reference_id": "WB-13-03-primary-plan",
+        "file_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+        "actor": "Codex",
+        "created_at": "2026-11-18T15:01:11.096983+00:00",
+        "reference_revision": 1
+      }
+    },
+    "WB-13-04": {
+      "reference": {
+        "id": "WB-13-04-primary-plan",
+        "project_id": "cat-ai",
+        "task_id": "WB-13-04",
+        "document_id": "WB-13-execution-plan",
+        "path": "docs/workbench/wb13_implementation_plan.md",
+        "section_locator": "WB-13-04：科研节点与任务关联",
+        "purpose": "execution_plan",
+        "is_primary": 1,
+        "revision": 1,
+        "active": 1
+      },
+      "status": "valid",
+      "current_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+      "last_verification": {
+        "id": "c550ab965dc649f684399beaf1d4256c",
+        "project_id": "cat-ai",
+        "reference_id": "WB-13-04-primary-plan",
+        "file_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+        "actor": "Codex",
+        "created_at": "2026-11-18T15:01:11.097923+00:00",
+        "reference_revision": 1
+      }
+    },
+    "WB-13-05": {
+      "reference": {
+        "id": "WB-13-05-primary-plan",
+        "project_id": "cat-ai",
+        "task_id": "WB-13-05",
+        "document_id": "WB-13-execution-plan",
+        "path": "docs/workbench/wb13_implementation_plan.md",
+        "section_locator": "WB-13-05：执行计划与文档引用",
+        "purpose": "execution_plan",
+        "is_primary": 1,
+        "revision": 1,
+        "active": 1
+      },
+      "status": "valid",
+      "current_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+      "last_verification": {
+        "id": "9efb212deba543949299eeefb36f14d1",
+        "project_id": "cat-ai",
+        "reference_id": "WB-13-05-primary-plan",
+        "file_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+        "actor": "Codex",
+        "created_at": "2026-11-18T15:01:11.098908+00:00",
+        "reference_revision": 1
+      }
+    },
+    "WB-13-06": {
+      "reference": {
+        "id": "WB-13-06-primary-plan",
+        "project_id": "cat-ai",
+        "task_id": "WB-13-06",
+        "document_id": "WB-13-execution-plan",
+        "path": "docs/workbench/wb13_implementation_plan.md",
+        "section_locator": "WB-13-06：分类焦点与近期安排",
+        "purpose": "execution_plan",
+        "is_primary": 1,
+        "revision": 1,
+        "active": 1
+      },
+      "status": "valid",
+      "current_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+      "last_verification": {
+        "id": "599710d675074f3f97929fa26e4a3a01",
+        "project_id": "cat-ai",
+        "reference_id": "WB-13-06-primary-plan",
+        "file_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+        "actor": "Codex",
+        "created_at": "2026-11-18T15:01:11.099892+00:00",
+        "reference_revision": 1
+      }
+    },
+    "WB-13-07": {
+      "reference": {
+        "id": "WB-13-07-primary-plan",
+        "project_id": "cat-ai",
+        "task_id": "WB-13-07",
+        "document_id": "WB-13-execution-plan",
+        "path": "docs/workbench/wb13_implementation_plan.md",
+        "section_locator": "WB-13-07：共用查询与兼容接入",
+        "purpose": "execution_plan",
+        "is_primary": 1,
+        "revision": 1,
+        "active": 1
+      },
+      "status": "valid",
+      "current_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+      "last_verification": {
+        "id": "3132e427a8b04a6ea3a4813f7f7c3339",
+        "project_id": "cat-ai",
+        "reference_id": "WB-13-07-primary-plan",
+        "file_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+        "actor": "Codex",
+        "created_at": "2026-11-18T15:01:11.101151+00:00",
+        "reference_revision": 1
+      }
+    },
+    "WB-13-08": {
+      "reference": {
+        "id": "WB-13-08-primary-plan",
+        "project_id": "cat-ai",
+        "task_id": "WB-13-08",
+        "document_id": "WB-13-execution-plan",
+        "path": "docs/workbench/wb13_implementation_plan.md",
+        "section_locator": "WB-13-08：专项验收与部署收口",
+        "purpose": "execution_plan",
+        "is_primary": 1,
+        "revision": 1,
+        "active": 1
+      },
+      "status": "valid",
+      "current_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+      "last_verification": {
+        "id": "8175026dca27488e8ad18862c4d309d7",
+        "project_id": "cat-ai",
+        "reference_id": "WB-13-08-primary-plan",
+        "file_sha256": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+        "actor": "Codex",
+        "created_at": "2026-11-18T15:01:11.102121+00:00",
+        "reference_revision": 1
+      }
+    }
+  },
+  "missing": []
+}

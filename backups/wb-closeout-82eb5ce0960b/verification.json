@@ -1,0 +1,26 @@
+{
+  "directory": "D:\\work\\Cat_AI\\backups\\wb-closeout-82eb5ce0960b",
+  "repeat_import": {
+    "tasks": 7,
+    "manifest_sha256": "82efcd0e7770688159c2f571c9699142a1be561df9f66671e05c0df2828618ea"
+  },
+  "bundle_sha256": "19f674c5e9a6a7da4e5c036785a5161cce4020eab7aee572bd84e4ec073ff60c",
+  "browser_viewports": [
+    1366,
+    1920,
+    390
+  ],
+  "browser_errors": [],
+  "protected_hashes": {
+    "data\\catalog.sqlite": "45b16131d2fc8febba0dcd3d6031d1204d3f00d315a5d887e624e2efaee855b0",
+    "data\\snapshots\\snapshot-76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da.json": "b66f6e63dedee0c1e9e4290b2f8406ca924d950317a00750146bdba0648cf2b4",
+    "data\\snapshots\\qualifications\\qualification-b450e999aca00cd7e035b5bb1006a48d3fbd171520391710eb05a2490aa85967.json": "755e95cfda65c9bee1e01f4c54d926152ffa8a4b792362a298c3659120f42945",
+    "artifacts\\models\\themecat-r1-prediction-20261112\\manifest.json": "ff08782697d23f5cc7ffa992e842780830506b95e87015c1725638ddfcdf7f6b",
+    "artifacts\\models\\themecat-r1-prediction-20261112\\model.pkl": "27562d61c127956df530795a90d3403319538c3b55a35b5f2a4c0160e782d4cf",
+    "artifacts\\models\\themecat-r1-prediction-20261112-final\\manifest.json": "627947a76735fc8a9b6e95638004116b42ea22040ec1b2c4d409761f4f180304",
+    "artifacts\\models\\themecat-r1-prediction-20261112-final\\model.pkl": "27562d61c127956df530795a90d3403319538c3b55a35b5f2a4c0160e782d4cf"
+  },
+  "protected_unchanged": true,
+  "tasks": 7,
+  "schema": 6
+}

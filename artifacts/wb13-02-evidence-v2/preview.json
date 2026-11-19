@@ -1,0 +1,92 @@
+[
+  {
+    "task_id": "S1A-01",
+    "goal": "保留已验收的来源、版本及资格范围",
+    "old_category": null,
+    "category": "research",
+    "evidence": "Goal: 保留已验收的来源、版本及资格范围; deliverables: [\"S1-A acceptance report and fixed qualification, property and mapping versions\"]",
+    "expected_revision": 10,
+    "conflict": null
+  },
+  {
+    "task_id": "S1B-01",
+    "goal": "复核构建交付并记录正式验收结论",
+    "old_category": null,
+    "category": "research",
+    "evidence": "Goal: 复核构建交付并记录正式验收结论; deliverables: [\"v4 selection/features, 5530 indexed values, replay verification\"]",
+    "expected_revision": 6,
+    "conflict": null
+  },
+  {
+    "task_id": "S2-01",
+    "goal": "交付独立训练配置schema、加载校验、有效配置及参数说明，供Python和CLI共用",
+    "old_category": null,
+    "category": "research",
+    "evidence": "Goal: 交付独立训练配置schema、加载校验、有效配置及参数说明，供Python和CLI共用; deliverables: [\"modeling/config.py及独立schema/加载器\",\"默认与自定义配置示例、模型/特征/参数目录、只校验接口\",\"有效配置与默认/用户值来源、配置失败路径测试\"]",
+    "expected_revision": 6,
+    "conflict": null
+  },
+  {
+    "task_id": "S2-02",
+    "goal": "集成S2-01/04/05/06，贯通Python和CLI并完成工程回归与交付清单",
+    "old_category": null,
+    "category": "research",
+    "evidence": "Goal: 集成S2-01/04/05/06，贯通Python和CLI并完成工程回归与交付清单; deliverables: [\"Python及配置文件+CLI训练预测入口\",\"帮助、参数说明、可运行训练配置及预测JSON示例\",\"S2工程交付清单、全量回归和接口文档\"]",
+    "expected_revision": 9,
+    "conflict": null
+  },
+  {
+    "task_id": "S2-03",
+    "goal": "检查可信家族标签及记录/DOI覆盖，形成可比较或跳过报告，不阻断统一模型",
+    "old_category": null,
+    "category": "research",
+    "evidence": "Goal: 检查可信家族标签及记录/DOI覆盖，形成可比较或跳过报告，不阻断统一模型; deliverables: [\"家族标签来源与可信范围清单\",\"各家族/分区记录及DOI覆盖和资格/跳过报告\"]",
+    "expected_revision": 6,
+    "conflict": null
+  },
+  {
+    "task_id": "S2-04",
+    "goal": "复用S1计算器，将固定物化增量接入训练折与新输入预测的共同转换路径",
+    "old_category": null,
+    "category": "research",
+    "evidence": "Goal: 复用S1计算器，将固定物化增量接入训练折与新输入预测的共同转换路径; deliverables: [\"pipeline的F1/F2训练及预测适配\",\"S1快照/资格/分区/目录/计算绑定校验\",\"553条固定增量一致性与折内拟合回归证据\"]",
+    "expected_revision": 6,
+    "conflict": null
+  },
+  {
+    "task_id": "S2-05",
+    "goal": "扩展现有experiments支持默认/自定义训练、DOI OOF选模、共同子集比较及运行追溯",
+    "old_category": null,
+    "category": "research",
+    "evidence": "Goal: 扩展现有experiments支持默认/自定义训练、DOI OOF选模、共同子集比较及运行追溯; deliverables: [\"默认/自定义单模型和多模型训练API\",\"R2同子集同折配对比较与三层评价报告\",\"有效配置、CV折、OOF/留出逐条预测状态及版本哈希清单\"]",
+    "expected_revision": 7,
+    "conflict": null
+  },
+  {
+    "task_id": "S2-06",
+    "goal": "扩展现有predictor，交付F1/F2及自定义模型包的绑定、校验、加载与单条批量预测",
+    "old_category": null,
+    "category": "research",
+    "evidence": "Goal: 扩展现有predictor，交付F1/F2及自定义模型包的绑定、校验、加载与单条批量预测; deliverables: [\"增强及自定义模型包、manifest与加载校验\",\"单条/批量预测API及逐条状态\",\"旧R1兼容、篡改拒绝与重载一致性证据\"]",
+    "expected_revision": 6,
+    "conflict": null
+  },
+  {
+    "task_id": "S3-01",
+    "goal": "在S2交付后运行真实冻结输入的配对比较，报告物化增量及支持限制",
+    "old_category": null,
+    "category": "research",
+    "evidence": "Goal: 在S2交付后运行真实冻结输入的配对比较，报告物化增量及支持限制; deliverables: [\"固定真实输入的R1/R2默认预设运行与F_base/F1/F2比较报告\",\"OOF、validation和历史test逐条结果/状态、覆盖及配对增量结论\"]",
+    "expected_revision": 2,
+    "conflict": null
+  },
+  {
+    "task_id": "S3-02",
+    "goal": "复核默认及自定义训练、指定模型预测、失败路径和固定证据，记录整体验收",
+    "old_category": null,
+    "category": "research",
+    "evidence": "Goal: 复核默认及自定义训练、指定模型预测、失败路径和固定证据，记录整体验收; deliverables: [\"默认/自定义及指定模型预测端到端验收报告\",\"重载/重放、失败路径、版本配置及代码测试证据\"]",
+    "expected_revision": 2,
+    "conflict": null
+  }
+]

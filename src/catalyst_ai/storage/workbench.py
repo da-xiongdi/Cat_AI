@@ -1,11 +1,16 @@
 """Versioned SQLite storage for the workbench management service."""
 
+import os
 import sqlite3
 from contextlib import contextmanager
+from contextvars import ContextVar
 from datetime import UTC, datetime
 from pathlib import Path
 
-SCHEMA_VERSION = 7
+SCHEMA_VERSION = 8
+_operation_batch: ContextVar[tuple[Path, sqlite3.Connection] | None] = ContextVar(
+    "workbench_operation_batch", default=None
+)
 
 
 def now():
@@ -34,8 +39,8 @@ def migrate(path: Path):
             return
         if existed:
             backup_path = path.with_name(path.name + f".v{version}.backup")
-            if backup_path.exists():
-                raise FileExistsError(f"backup already exists: {backup_path}")
+            fd = os.open(backup_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
+            os.close(fd)
             backup = sqlite3.connect(str(backup_path))
             try:
                 db.backup(backup)
@@ -206,12 +211,147 @@ def migrate(path: Path):
             PRAGMA user_version=7;
             COMMIT;
             """)
+        if version < 8:
+            db.executescript("""
+            BEGIN IMMEDIATE;
+            ALTER TABLE task ADD COLUMN category TEXT
+              CHECK(category IS NULL OR category IN ('research','workbench'));
+            CREATE TABLE task_category_revision (
+              task_id TEXT NOT NULL REFERENCES task(id),
+              project_id TEXT NOT NULL REFERENCES project(id), revision INTEGER NOT NULL,
+              old_category TEXT, new_category TEXT, reason TEXT NOT NULL,
+              actor TEXT NOT NULL, created_at TEXT NOT NULL,
+              PRIMARY KEY(task_id, revision)
+            );
+            CREATE TABLE workbench_delivery (
+              id TEXT PRIMARY KEY, project_id TEXT NOT NULL REFERENCES project(id),
+            original_wb_id TEXT NOT NULL, delivered_scope TEXT NOT NULL,
+              remaining_scope TEXT NOT NULL,
+              source_path TEXT NOT NULL, source_section TEXT NOT NULL, source_sha256 TEXT NOT NULL,
+            original_delivered_at TEXT, registered_at TEXT NOT NULL, task_id TEXT
+              REFERENCES task(id),
+              revision INTEGER NOT NULL, active INTEGER NOT NULL CHECK(active IN (0,1)),
+              UNIQUE(project_id,original_wb_id)
+            );
+            CREATE TABLE research_node (
+            id TEXT PRIMARY KEY, project_id TEXT NOT NULL REFERENCES project(id),
+              stage TEXT NOT NULL,
+              parent_id TEXT REFERENCES research_node(id), sort_order INTEGER NOT NULL,
+              source_path TEXT NOT NULL, source_section TEXT NOT NULL, source_sha256 TEXT NOT NULL,
+              revision INTEGER NOT NULL, active INTEGER NOT NULL CHECK(active IN (0,1))
+            );
+            CREATE TABLE task_node_link (
+              id TEXT PRIMARY KEY, project_id TEXT NOT NULL REFERENCES project(id),
+            task_id TEXT NOT NULL REFERENCES task(id), node_id TEXT NOT NULL
+              REFERENCES research_node(id),
+              role TEXT NOT NULL CHECK(role IN ('primary','reference')),
+              revision INTEGER NOT NULL, active INTEGER NOT NULL CHECK(active IN (0,1))
+            );
+            CREATE UNIQUE INDEX task_node_active ON
+              task_node_link(task_id,node_id,role) WHERE active=1;
+            CREATE UNIQUE INDEX task_node_primary ON task_node_link(task_id) WHERE
+              active=1 AND role='primary';
+            CREATE TABLE task_plan_reference (
+              id TEXT PRIMARY KEY, project_id TEXT NOT NULL REFERENCES project(id),
+            task_id TEXT NOT NULL REFERENCES task(id), document_id TEXT NOT NULL
+              REFERENCES artifact(id),
+              path TEXT NOT NULL, section_locator TEXT NOT NULL, purpose TEXT NOT NULL,
+              is_primary INTEGER NOT NULL CHECK(is_primary IN (0,1)), revision INTEGER NOT NULL,
+              active INTEGER NOT NULL CHECK(active IN (0,1))
+            );
+            CREATE UNIQUE INDEX task_plan_active ON
+              task_plan_reference(task_id,document_id,path,section_locator,purpose)
+              WHERE active=1;
+            CREATE UNIQUE INDEX task_plan_primary ON task_plan_reference(task_id)
+              WHERE active=1 AND is_primary=1;
+            CREATE TABLE task_plan_verification (
+              id TEXT PRIMARY KEY, project_id TEXT NOT NULL REFERENCES project(id),
+            reference_id TEXT NOT NULL REFERENCES task_plan_reference(id),
+              file_sha256 TEXT NOT NULL,
+              actor TEXT NOT NULL, created_at TEXT NOT NULL, reference_revision INTEGER NOT NULL
+            );
+            CREATE TABLE category_context (
+              id TEXT PRIMARY KEY, project_id TEXT NOT NULL REFERENCES project(id),
+              category TEXT NOT NULL CHECK(category IN ('research','workbench')),
+            focus_task_id TEXT REFERENCES task(id), revision INTEGER NOT NULL,
+              UNIQUE(project_id,category)
+            );
+            CREATE TABLE category_recent_task (
+              id TEXT PRIMARY KEY, project_id TEXT NOT NULL REFERENCES project(id),
+            context_id TEXT NOT NULL REFERENCES category_context(id), task_id TEXT
+              NOT NULL REFERENCES task(id),
+            sort_order INTEGER NOT NULL, revision INTEGER NOT NULL, active INTEGER
+              NOT NULL CHECK(active IN (0,1))
+            );
+            CREATE UNIQUE INDEX category_recent_active ON
+              category_recent_task(context_id,task_id) WHERE active=1;
+            CREATE TABLE document_purpose (
+              id TEXT PRIMARY KEY, project_id TEXT NOT NULL REFERENCES project(id),
+              document_id TEXT NOT NULL REFERENCES artifact(id),
+            purpose TEXT NOT NULL CHECK(purpose IN
+              ('construction_plan','research_plan','execution_plan','acceptance')),
+              category TEXT CHECK(category IS NULL OR category IN ('research','workbench')),
+              revision INTEGER NOT NULL, active INTEGER NOT NULL CHECK(active IN (0,1))
+            );
+            CREATE UNIQUE INDEX document_purpose_active ON
+              document_purpose(project_id,document_id,purpose,coalesce(category,''))
+              WHERE active=1;
+            CREATE TABLE workbench_delivery_revision (entity_id TEXT NOT NULL
+              REFERENCES workbench_delivery(id), project_id TEXT NOT NULL
+              REFERENCES project(id), revision INTEGER NOT NULL, old_value TEXT,
+              new_value TEXT NOT NULL, reason TEXT NOT NULL, actor TEXT NOT NULL,
+              created_at TEXT NOT NULL, PRIMARY KEY(entity_id,revision));
+            CREATE TABLE research_node_revision (entity_id TEXT NOT NULL
+              REFERENCES research_node(id), project_id TEXT NOT NULL REFERENCES
+              project(id), revision INTEGER NOT NULL, old_value TEXT, new_value
+              TEXT NOT NULL, reason TEXT NOT NULL, actor TEXT NOT NULL, created_at
+              TEXT NOT NULL, PRIMARY KEY(entity_id,revision));
+            CREATE TABLE task_node_link_revision (entity_id TEXT NOT NULL
+              REFERENCES task_node_link(id), project_id TEXT NOT NULL REFERENCES
+              project(id), revision INTEGER NOT NULL, old_value TEXT, new_value
+              TEXT NOT NULL, reason TEXT NOT NULL, actor TEXT NOT NULL, created_at
+              TEXT NOT NULL, PRIMARY KEY(entity_id,revision));
+            CREATE TABLE task_plan_reference_revision (entity_id TEXT NOT NULL
+              REFERENCES task_plan_reference(id), project_id TEXT NOT NULL
+              REFERENCES project(id), revision INTEGER NOT NULL, old_value TEXT,
+              new_value TEXT NOT NULL, reason TEXT NOT NULL, actor TEXT NOT NULL,
+              created_at TEXT NOT NULL, PRIMARY KEY(entity_id,revision));
+            CREATE TABLE category_context_revision (entity_id TEXT NOT NULL
+              REFERENCES category_context(id), project_id TEXT NOT NULL REFERENCES
+              project(id), revision INTEGER NOT NULL, old_value TEXT, new_value
+              TEXT NOT NULL, reason TEXT NOT NULL, actor TEXT NOT NULL, created_at
+              TEXT NOT NULL, PRIMARY KEY(entity_id,revision));
+            CREATE TABLE category_recent_task_revision (entity_id TEXT NOT NULL
+              REFERENCES category_recent_task(id), project_id TEXT NOT NULL
+              REFERENCES project(id), revision INTEGER NOT NULL, old_value TEXT,
+              new_value TEXT NOT NULL, reason TEXT NOT NULL, actor TEXT NOT NULL,
+              created_at TEXT NOT NULL, PRIMARY KEY(entity_id,revision));
+            CREATE TABLE document_purpose_revision (entity_id TEXT NOT NULL
+              REFERENCES document_purpose(id), project_id TEXT NOT NULL REFERENCES
+              project(id), revision INTEGER NOT NULL, old_value TEXT, new_value
+              TEXT NOT NULL, reason TEXT NOT NULL, actor TEXT NOT NULL, created_at
+              TEXT NOT NULL, PRIMARY KEY(entity_id,revision));
+            PRAGMA user_version=8;
+            COMMIT;
+            """)
     finally:
         db.close()
 
 
 @contextmanager
 def transaction(path: Path):
+    batch = _operation_batch.get()
+    if batch is not None and Path(path).resolve() == batch[0]:
+        db = batch[1]
+        db.execute("SAVEPOINT workbench_operation")
+        try:
+            yield db
+        except BaseException:
+            db.execute("ROLLBACK TO workbench_operation")
+            raise
+        finally:
+            db.execute("RELEASE workbench_operation")
+        return
     if not Path(path).is_file():
         raise ValueError("workbench database does not exist; run migrate first")
     db = connect(path)
@@ -226,3 +366,17 @@ def transaction(path: Path):
         raise
     finally:
         db.close()
+
+
+@contextmanager
+def atomic_operations(path: Path):
+    """Run synchronous service operations on one store in the same write transaction."""
+    if _operation_batch.get() is not None:
+        raise RuntimeError("workbench operation batches cannot be nested")
+    path = Path(path).resolve()
+    with transaction(path) as db:
+        token = _operation_batch.set((path, db))
+        try:
+            yield db
+        finally:
+            _operation_batch.reset(token)

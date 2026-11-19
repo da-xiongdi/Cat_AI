@@ -1,0 +1,406 @@
+{
+  "preview": {
+    "nodes": [
+      {
+        "id": "cat-ai:stage:A",
+        "stage": "A",
+        "parent_id": null,
+        "sort_order": 0,
+        "source_path": "docs/architecture/system_design.md",
+        "source_section": "5. 一条实施主线与三种编号",
+        "source_sha256": "0dbdc5ca51143e70570717f093483d79e076c86f1d56a1fb912295daa7b4a5ec",
+        "expected_revision": 0,
+        "registration": "pending"
+      },
+      {
+        "id": "cat-ai:stage:B",
+        "stage": "B",
+        "parent_id": null,
+        "sort_order": 1,
+        "source_path": "docs/architecture/system_design.md",
+        "source_section": "5. 一条实施主线与三种编号",
+        "source_sha256": "0dbdc5ca51143e70570717f093483d79e076c86f1d56a1fb912295daa7b4a5ec",
+        "expected_revision": 0,
+        "registration": "pending"
+      },
+      {
+        "id": "cat-ai:stage:C",
+        "stage": "C",
+        "parent_id": null,
+        "sort_order": 2,
+        "source_path": "docs/architecture/system_design.md",
+        "source_section": "5. 一条实施主线与三种编号",
+        "source_sha256": "0dbdc5ca51143e70570717f093483d79e076c86f1d56a1fb912295daa7b4a5ec",
+        "expected_revision": 0,
+        "registration": "pending"
+      },
+      {
+        "id": "cat-ai:stage:D",
+        "stage": "D",
+        "parent_id": null,
+        "sort_order": 3,
+        "source_path": "docs/architecture/system_design.md",
+        "source_section": "5. 一条实施主线与三种编号",
+        "source_sha256": "0dbdc5ca51143e70570717f093483d79e076c86f1d56a1fb912295daa7b4a5ec",
+        "expected_revision": 0,
+        "registration": "pending"
+      },
+      {
+        "id": "cat-ai:stage:E",
+        "stage": "E",
+        "parent_id": null,
+        "sort_order": 4,
+        "source_path": "docs/architecture/system_design.md",
+        "source_section": "5. 一条实施主线与三种编号",
+        "source_sha256": "0dbdc5ca51143e70570717f093483d79e076c86f1d56a1fb912295daa7b4a5ec",
+        "expected_revision": 0,
+        "registration": "pending"
+      },
+      {
+        "id": "cat-ai:stage:F",
+        "stage": "F",
+        "parent_id": null,
+        "sort_order": 5,
+        "source_path": "docs/architecture/system_design.md",
+        "source_section": "5. 一条实施主线与三种编号",
+        "source_sha256": "0dbdc5ca51143e70570717f093483d79e076c86f1d56a1fb912295daa7b4a5ec",
+        "expected_revision": 0,
+        "registration": "pending"
+      },
+      {
+        "id": "cat-ai:task-branch:S2-01",
+        "stage": "C",
+        "parent_id": "cat-ai:stage:C",
+        "sort_order": 0,
+        "source_path": "docs/s2_implementation_plan.md",
+        "source_section": "S2-01：配置与参数",
+        "source_sha256": "92f77e437531c2bf77446464214fe6548dc06a34e8cc1c9ee736bff1ee0ce472",
+        "expected_revision": 0,
+        "registration": "pending"
+      },
+      {
+        "id": "cat-ai:task-branch:S2-02",
+        "stage": "C",
+        "parent_id": "cat-ai:stage:C",
+        "sort_order": 4,
+        "source_path": "docs/s2_implementation_plan.md",
+        "source_section": "S2-02：入口集成与工程交付",
+        "source_sha256": "92f77e437531c2bf77446464214fe6548dc06a34e8cc1c9ee736bff1ee0ce472",
+        "expected_revision": 0,
+        "registration": "pending"
+      },
+      {
+        "id": "cat-ai:task-branch:S2-03",
+        "stage": "C",
+        "parent_id": "cat-ai:stage:C",
+        "sort_order": 5,
+        "source_path": "docs/s2_implementation_plan.md",
+        "source_section": "S2-03：家族对照资格",
+        "source_sha256": "92f77e437531c2bf77446464214fe6548dc06a34e8cc1c9ee736bff1ee0ce472",
+        "expected_revision": 0,
+        "registration": "pending"
+      },
+      {
+        "id": "cat-ai:task-branch:S2-04",
+        "stage": "C",
+        "parent_id": "cat-ai:stage:C",
+        "sort_order": 1,
+        "source_path": "docs/s2_implementation_plan.md",
+        "source_section": "S2-04：特征适配",
+        "source_sha256": "92f77e437531c2bf77446464214fe6548dc06a34e8cc1c9ee736bff1ee0ce472",
+        "expected_revision": 0,
+        "registration": "pending"
+      },
+      {
+        "id": "cat-ai:task-branch:S2-05",
+        "stage": "C",
+        "parent_id": "cat-ai:stage:C",
+        "sort_order": 2,
+        "source_path": "docs/s2_implementation_plan.md",
+        "source_section": "S2-05：训练、评价与追溯",
+        "source_sha256": "92f77e437531c2bf77446464214fe6548dc06a34e8cc1c9ee736bff1ee0ce472",
+        "expected_revision": 0,
+        "registration": "pending"
+      },
+      {
+        "id": "cat-ai:task-branch:S2-06",
+        "stage": "C",
+        "parent_id": "cat-ai:stage:C",
+        "sort_order": 3,
+        "source_path": "docs/s2_implementation_plan.md",
+        "source_section": "S2-06：模型包与预测",
+        "source_sha256": "92f77e437531c2bf77446464214fe6548dc06a34e8cc1c9ee736bff1ee0ce472",
+        "expected_revision": 0,
+        "registration": "pending"
+      },
+      {
+        "id": "cat-ai:task-branch:S3-01",
+        "stage": "C",
+        "parent_id": "cat-ai:stage:C",
+        "sort_order": 6,
+        "source_path": "docs/s3_implementation_plan.md",
+        "source_section": "3. S3-01：正式共同子集比较",
+        "source_sha256": "c81dca4c545386860a00291ea1db8c61cae678b466978f611cb4aac805e0f40b",
+        "expected_revision": 0,
+        "registration": "pending"
+      },
+      {
+        "id": "cat-ai:task-branch:S3-02",
+        "stage": "C",
+        "parent_id": "cat-ai:stage:C",
+        "sort_order": 7,
+        "source_path": "docs/s3_implementation_plan.md",
+        "source_section": "4. S3-02：训练预测端到端整体验收",
+        "source_sha256": "c81dca4c545386860a00291ea1db8c61cae678b466978f611cb4aac805e0f40b",
+        "expected_revision": 0,
+        "registration": "pending"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "S1A-01",
+        "title": "属性、映射与资格",
+        "category": "research",
+        "stages": [
+          "B",
+          "A"
+        ],
+        "primary_stage": "B",
+        "revision": 11
+      },
+      {
+        "id": "S1B-01",
+        "title": "物化特征构建验收",
+        "category": "research",
+        "stages": [
+          "C",
+          "B"
+        ],
+        "primary_stage": "C",
+        "revision": 7
+      },
+      {
+        "id": "S2-01",
+        "title": "训练配置与参数契约",
+        "category": "research",
+        "stages": [
+          "C"
+        ],
+        "primary_stage": "C",
+        "revision": 7
+      },
+      {
+        "id": "S2-02",
+        "title": "增强训练与预测集成",
+        "category": "research",
+        "stages": [
+          "C",
+          "B"
+        ],
+        "primary_stage": "C",
+        "revision": 10
+      },
+      {
+        "id": "S2-03",
+        "title": "家族对照资格检查",
+        "category": "research",
+        "stages": [
+          "C",
+          "D"
+        ],
+        "primary_stage": "C",
+        "revision": 7
+      },
+      {
+        "id": "S2-04",
+        "title": "F1/F2特征适配与折内转换",
+        "category": "research",
+        "stages": [
+          "C",
+          "B"
+        ],
+        "primary_stage": "C",
+        "revision": 7
+      },
+      {
+        "id": "S2-05",
+        "title": "可配置训练与R2评价框架",
+        "category": "research",
+        "stages": [
+          "C",
+          "D"
+        ],
+        "primary_stage": "C",
+        "revision": 8
+      },
+      {
+        "id": "S2-06",
+        "title": "增强模型包与独立预测",
+        "category": "research",
+        "stages": [
+          "C",
+          "B"
+        ],
+        "primary_stage": "C",
+        "revision": 7
+      },
+      {
+        "id": "S3-01",
+        "title": "R2共同子集正式比较",
+        "category": "research",
+        "stages": [
+          "C",
+          "D"
+        ],
+        "primary_stage": "C",
+        "revision": 7
+      },
+      {
+        "id": "S3-02",
+        "title": "训练预测端到端整体验收",
+        "category": "research",
+        "stages": [
+          "C",
+          "D"
+        ],
+        "primary_stage": "C",
+        "revision": 3
+      }
+    ],
+    "link_candidates": [
+      {
+        "task_id": "S2-01",
+        "node_id": "cat-ai:task-branch:S2-01",
+        "role": "primary",
+        "task_revision": 7,
+        "basis": "Task ID and C stage match the plan section; review required"
+      },
+      {
+        "task_id": "S2-02",
+        "node_id": "cat-ai:task-branch:S2-02",
+        "role": "primary",
+        "task_revision": 10,
+        "basis": "Task ID and C stage match the plan section; review required"
+      },
+      {
+        "task_id": "S2-03",
+        "node_id": "cat-ai:task-branch:S2-03",
+        "role": "primary",
+        "task_revision": 7,
+        "basis": "Task ID and C stage match the plan section; review required"
+      },
+      {
+        "task_id": "S2-04",
+        "node_id": "cat-ai:task-branch:S2-04",
+        "role": "primary",
+        "task_revision": 7,
+        "basis": "Task ID and C stage match the plan section; review required"
+      },
+      {
+        "task_id": "S2-05",
+        "node_id": "cat-ai:task-branch:S2-05",
+        "role": "primary",
+        "task_revision": 8,
+        "basis": "Task ID and C stage match the plan section; review required"
+      },
+      {
+        "task_id": "S2-06",
+        "node_id": "cat-ai:task-branch:S2-06",
+        "role": "primary",
+        "task_revision": 7,
+        "basis": "Task ID and C stage match the plan section; review required"
+      },
+      {
+        "task_id": "S3-01",
+        "node_id": "cat-ai:task-branch:S3-01",
+        "role": "primary",
+        "task_revision": 7,
+        "basis": "Task ID and C stage match the plan section; review required"
+      },
+      {
+        "task_id": "S3-02",
+        "node_id": "cat-ai:task-branch:S3-02",
+        "role": "primary",
+        "task_revision": 3,
+        "basis": "Task ID and C stage match the plan section; review required"
+      }
+    ],
+    "warnings": [],
+    "note": "Review candidates manually; no changes are applied automatically"
+  },
+  "links": [
+    {
+      "task_id": "S2-01",
+      "node_id": "cat-ai:task-branch:S2-01",
+      "role": "primary",
+      "task_revision": 7,
+      "basis": "Task ID and C stage match the plan section; review required",
+      "id": "cat-ai:node-primary:S2-01",
+      "expected_revision": 0
+    },
+    {
+      "task_id": "S2-02",
+      "node_id": "cat-ai:task-branch:S2-02",
+      "role": "primary",
+      "task_revision": 10,
+      "basis": "Task ID and C stage match the plan section; review required",
+      "id": "cat-ai:node-primary:S2-02",
+      "expected_revision": 0
+    },
+    {
+      "task_id": "S2-03",
+      "node_id": "cat-ai:task-branch:S2-03",
+      "role": "primary",
+      "task_revision": 7,
+      "basis": "Task ID and C stage match the plan section; review required",
+      "id": "cat-ai:node-primary:S2-03",
+      "expected_revision": 0
+    },
+    {
+      "task_id": "S2-04",
+      "node_id": "cat-ai:task-branch:S2-04",
+      "role": "primary",
+      "task_revision": 7,
+      "basis": "Task ID and C stage match the plan section; review required",
+      "id": "cat-ai:node-primary:S2-04",
+      "expected_revision": 0
+    },
+    {
+      "task_id": "S2-05",
+      "node_id": "cat-ai:task-branch:S2-05",
+      "role": "primary",
+      "task_revision": 8,
+      "basis": "Task ID and C stage match the plan section; review required",
+      "id": "cat-ai:node-primary:S2-05",
+      "expected_revision": 0
+    },
+    {
+      "task_id": "S2-06",
+      "node_id": "cat-ai:task-branch:S2-06",
+      "role": "primary",
+      "task_revision": 7,
+      "basis": "Task ID and C stage match the plan section; review required",
+      "id": "cat-ai:node-primary:S2-06",
+      "expected_revision": 0
+    },
+    {
+      "task_id": "S3-01",
+      "node_id": "cat-ai:task-branch:S3-01",
+      "role": "primary",
+      "task_revision": 7,
+      "basis": "Task ID and C stage match the plan section; review required",
+      "id": "cat-ai:node-primary:S3-01",
+      "expected_revision": 0
+    },
+    {
+      "task_id": "S3-02",
+      "node_id": "cat-ai:task-branch:S3-02",
+      "role": "primary",
+      "task_revision": 3,
+      "basis": "Task ID and C stage match the plan section; review required",
+      "id": "cat-ai:node-primary:S3-02",
+      "expected_revision": 0
+    }
+  ],
+  "request_id": "wb13-04-init-c964a47c-60d9-43cf-aec8-62002f9479af"
+}

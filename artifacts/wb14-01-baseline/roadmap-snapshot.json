@@ -1,0 +1,1061 @@
+{
+  "scope": {
+    "project_id": "cat-ai",
+    "category": "research"
+  },
+  "observed_at": "2026-11-19T05:50:07.765960+00:00",
+  "source": {
+    "schema_version": 8,
+    "file_detection": "live filesystem at observation time"
+  },
+  "stages": [
+    {
+      "stage": "A",
+      "name": "工程骨架",
+      "root_ids": [
+        "cat-ai:stage:A"
+      ],
+      "registered": true
+    },
+    {
+      "stage": "B",
+      "name": "治理",
+      "root_ids": [
+        "cat-ai:stage:B"
+      ],
+      "registered": true
+    },
+    {
+      "stage": "C",
+      "name": "预测",
+      "root_ids": [
+        "cat-ai:stage:C"
+      ],
+      "registered": true
+    },
+    {
+      "stage": "D",
+      "name": "诊断",
+      "root_ids": [
+        "cat-ai:stage:D"
+      ],
+      "registered": true
+    },
+    {
+      "stage": "E",
+      "name": "推荐",
+      "root_ids": [
+        "cat-ai:stage:E"
+      ],
+      "registered": true
+    },
+    {
+      "stage": "F",
+      "name": "实验反馈",
+      "root_ids": [
+        "cat-ai:stage:F"
+      ],
+      "registered": true
+    }
+  ],
+  "nodes": {
+    "cat-ai:stage:A": {
+      "id": "cat-ai:stage:A",
+      "project_id": "cat-ai",
+      "stage": "A",
+      "parent_id": null,
+      "sort_order": 0,
+      "source_path": "docs/architecture/system_design.md",
+      "source_section": "5. 一条实施主线与三种编号",
+      "source_sha256": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "工程骨架",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [],
+      "direct_task_ids": [],
+      "summary": {
+        "task_ids": [],
+        "active_task_ids": [],
+        "cancelled_task_ids": [],
+        "counts": {},
+        "status": null,
+        "valid_completed_task_ids": [],
+        "evidence_review_task_ids": [],
+        "valid_total": 0,
+        "valid_completed": 0,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": "undecomposed"
+    },
+    "cat-ai:stage:B": {
+      "id": "cat-ai:stage:B",
+      "project_id": "cat-ai",
+      "stage": "B",
+      "parent_id": null,
+      "sort_order": 1,
+      "source_path": "docs/architecture/system_design.md",
+      "source_section": "5. 一条实施主线与三种编号",
+      "source_sha256": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "治理",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [],
+      "direct_task_ids": [],
+      "summary": {
+        "task_ids": [],
+        "active_task_ids": [],
+        "cancelled_task_ids": [],
+        "counts": {},
+        "status": null,
+        "valid_completed_task_ids": [],
+        "evidence_review_task_ids": [],
+        "valid_total": 0,
+        "valid_completed": 0,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": "undecomposed"
+    },
+    "cat-ai:task-branch:S2-01": {
+      "id": "cat-ai:task-branch:S2-01",
+      "project_id": "cat-ai",
+      "stage": "C",
+      "parent_id": "cat-ai:stage:C",
+      "sort_order": 0,
+      "source_path": "docs/s2_implementation_plan.md",
+      "source_section": "S2-01：配置与参数",
+      "source_sha256": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "S2-01：配置与参数",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [],
+      "direct_task_ids": [
+        "S2-01"
+      ],
+      "summary": {
+        "task_ids": [
+          "S2-01"
+        ],
+        "active_task_ids": [
+          "S2-01"
+        ],
+        "cancelled_task_ids": [],
+        "counts": {
+          "done": 1
+        },
+        "status": null,
+        "valid_completed_task_ids": [
+          "S2-01"
+        ],
+        "evidence_review_task_ids": [],
+        "valid_total": 1,
+        "valid_completed": 1,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": null
+    },
+    "cat-ai:task-branch:S2-04": {
+      "id": "cat-ai:task-branch:S2-04",
+      "project_id": "cat-ai",
+      "stage": "C",
+      "parent_id": "cat-ai:stage:C",
+      "sort_order": 1,
+      "source_path": "docs/s2_implementation_plan.md",
+      "source_section": "S2-04：特征适配",
+      "source_sha256": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "S2-04：特征适配",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [],
+      "direct_task_ids": [
+        "S2-04"
+      ],
+      "summary": {
+        "task_ids": [
+          "S2-04"
+        ],
+        "active_task_ids": [
+          "S2-04"
+        ],
+        "cancelled_task_ids": [],
+        "counts": {
+          "done": 1
+        },
+        "status": null,
+        "valid_completed_task_ids": [
+          "S2-04"
+        ],
+        "evidence_review_task_ids": [],
+        "valid_total": 1,
+        "valid_completed": 1,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": null
+    },
+    "cat-ai:stage:C": {
+      "id": "cat-ai:stage:C",
+      "project_id": "cat-ai",
+      "stage": "C",
+      "parent_id": null,
+      "sort_order": 2,
+      "source_path": "docs/architecture/system_design.md",
+      "source_section": "5. 一条实施主线与三种编号",
+      "source_sha256": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "预测",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [
+        "cat-ai:task-branch:S2-01",
+        "cat-ai:task-branch:S2-04",
+        "cat-ai:task-branch:S2-05",
+        "cat-ai:task-branch:S2-06",
+        "cat-ai:task-branch:S2-02",
+        "cat-ai:task-branch:S2-03",
+        "cat-ai:task-branch:S3-01",
+        "cat-ai:task-branch:S3-02"
+      ],
+      "direct_task_ids": [],
+      "summary": {
+        "task_ids": [
+          "S2-01",
+          "S2-02",
+          "S2-03",
+          "S2-04",
+          "S2-05",
+          "S2-06",
+          "S3-01",
+          "S3-02"
+        ],
+        "active_task_ids": [
+          "S2-01",
+          "S2-02",
+          "S2-03",
+          "S2-04",
+          "S2-05",
+          "S2-06",
+          "S3-01",
+          "S3-02"
+        ],
+        "cancelled_task_ids": [],
+        "counts": {
+          "done": 8
+        },
+        "status": null,
+        "valid_completed_task_ids": [
+          "S2-01",
+          "S2-02",
+          "S2-03",
+          "S2-04",
+          "S2-05",
+          "S2-06",
+          "S3-01",
+          "S3-02"
+        ],
+        "evidence_review_task_ids": [],
+        "valid_total": 8,
+        "valid_completed": 8,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": null
+    },
+    "cat-ai:task-branch:S2-05": {
+      "id": "cat-ai:task-branch:S2-05",
+      "project_id": "cat-ai",
+      "stage": "C",
+      "parent_id": "cat-ai:stage:C",
+      "sort_order": 2,
+      "source_path": "docs/s2_implementation_plan.md",
+      "source_section": "S2-05：训练、评价与追溯",
+      "source_sha256": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "S2-05：训练、评价与追溯",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [],
+      "direct_task_ids": [
+        "S2-05"
+      ],
+      "summary": {
+        "task_ids": [
+          "S2-05"
+        ],
+        "active_task_ids": [
+          "S2-05"
+        ],
+        "cancelled_task_ids": [],
+        "counts": {
+          "done": 1
+        },
+        "status": null,
+        "valid_completed_task_ids": [
+          "S2-05"
+        ],
+        "evidence_review_task_ids": [],
+        "valid_total": 1,
+        "valid_completed": 1,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": null
+    },
+    "cat-ai:task-branch:S2-06": {
+      "id": "cat-ai:task-branch:S2-06",
+      "project_id": "cat-ai",
+      "stage": "C",
+      "parent_id": "cat-ai:stage:C",
+      "sort_order": 3,
+      "source_path": "docs/s2_implementation_plan.md",
+      "source_section": "S2-06：模型包与预测",
+      "source_sha256": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "S2-06：模型包与预测",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [],
+      "direct_task_ids": [
+        "S2-06"
+      ],
+      "summary": {
+        "task_ids": [
+          "S2-06"
+        ],
+        "active_task_ids": [
+          "S2-06"
+        ],
+        "cancelled_task_ids": [],
+        "counts": {
+          "done": 1
+        },
+        "status": null,
+        "valid_completed_task_ids": [
+          "S2-06"
+        ],
+        "evidence_review_task_ids": [],
+        "valid_total": 1,
+        "valid_completed": 1,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": null
+    },
+    "cat-ai:task-branch:S2-02": {
+      "id": "cat-ai:task-branch:S2-02",
+      "project_id": "cat-ai",
+      "stage": "C",
+      "parent_id": "cat-ai:stage:C",
+      "sort_order": 4,
+      "source_path": "docs/s2_implementation_plan.md",
+      "source_section": "S2-02：入口集成与工程交付",
+      "source_sha256": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "S2-02：入口集成与工程交付",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [],
+      "direct_task_ids": [
+        "S2-02"
+      ],
+      "summary": {
+        "task_ids": [
+          "S2-02"
+        ],
+        "active_task_ids": [
+          "S2-02"
+        ],
+        "cancelled_task_ids": [],
+        "counts": {
+          "done": 1
+        },
+        "status": null,
+        "valid_completed_task_ids": [
+          "S2-02"
+        ],
+        "evidence_review_task_ids": [],
+        "valid_total": 1,
+        "valid_completed": 1,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": null
+    },
+    "cat-ai:task-branch:S2-03": {
+      "id": "cat-ai:task-branch:S2-03",
+      "project_id": "cat-ai",
+      "stage": "C",
+      "parent_id": "cat-ai:stage:C",
+      "sort_order": 5,
+      "source_path": "docs/s2_implementation_plan.md",
+      "source_section": "S2-03：家族对照资格",
+      "source_sha256": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "S2-03：家族对照资格",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [],
+      "direct_task_ids": [
+        "S2-03"
+      ],
+      "summary": {
+        "task_ids": [
+          "S2-03"
+        ],
+        "active_task_ids": [
+          "S2-03"
+        ],
+        "cancelled_task_ids": [],
+        "counts": {
+          "done": 1
+        },
+        "status": null,
+        "valid_completed_task_ids": [
+          "S2-03"
+        ],
+        "evidence_review_task_ids": [],
+        "valid_total": 1,
+        "valid_completed": 1,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": null
+    },
+    "cat-ai:task-branch:S3-01": {
+      "id": "cat-ai:task-branch:S3-01",
+      "project_id": "cat-ai",
+      "stage": "C",
+      "parent_id": "cat-ai:stage:C",
+      "sort_order": 6,
+      "source_path": "docs/feature_engineering_plan_v0.1.md",
+      "source_section": "S3-01：正式配对比较",
+      "source_sha256": "4251db86aeb53052c9b5d8afd833d46453fa6c32aebc2e3fc12c3de46fbc86b3",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "S3-01：正式配对比较",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [],
+      "direct_task_ids": [
+        "S3-01"
+      ],
+      "summary": {
+        "task_ids": [
+          "S3-01"
+        ],
+        "active_task_ids": [
+          "S3-01"
+        ],
+        "cancelled_task_ids": [],
+        "counts": {
+          "done": 1
+        },
+        "status": null,
+        "valid_completed_task_ids": [
+          "S3-01"
+        ],
+        "evidence_review_task_ids": [],
+        "valid_total": 1,
+        "valid_completed": 1,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": null
+    },
+    "cat-ai:task-branch:S3-02": {
+      "id": "cat-ai:task-branch:S3-02",
+      "project_id": "cat-ai",
+      "stage": "C",
+      "parent_id": "cat-ai:stage:C",
+      "sort_order": 7,
+      "source_path": "docs/feature_engineering_plan_v0.1.md",
+      "source_section": "S3-02：端到端整体验收",
+      "source_sha256": "4251db86aeb53052c9b5d8afd833d46453fa6c32aebc2e3fc12c3de46fbc86b3",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "S3-02：端到端整体验收",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [],
+      "direct_task_ids": [
+        "S3-02"
+      ],
+      "summary": {
+        "task_ids": [
+          "S3-02"
+        ],
+        "active_task_ids": [
+          "S3-02"
+        ],
+        "cancelled_task_ids": [],
+        "counts": {
+          "done": 1
+        },
+        "status": null,
+        "valid_completed_task_ids": [
+          "S3-02"
+        ],
+        "evidence_review_task_ids": [],
+        "valid_total": 1,
+        "valid_completed": 1,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": null
+    },
+    "cat-ai:stage:D": {
+      "id": "cat-ai:stage:D",
+      "project_id": "cat-ai",
+      "stage": "D",
+      "parent_id": null,
+      "sort_order": 3,
+      "source_path": "docs/architecture/system_design.md",
+      "source_section": "5. 一条实施主线与三种编号",
+      "source_sha256": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "诊断",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [],
+      "direct_task_ids": [],
+      "summary": {
+        "task_ids": [],
+        "active_task_ids": [],
+        "cancelled_task_ids": [],
+        "counts": {},
+        "status": null,
+        "valid_completed_task_ids": [],
+        "evidence_review_task_ids": [],
+        "valid_total": 0,
+        "valid_completed": 0,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": "undecomposed"
+    },
+    "cat-ai:stage:E": {
+      "id": "cat-ai:stage:E",
+      "project_id": "cat-ai",
+      "stage": "E",
+      "parent_id": null,
+      "sort_order": 4,
+      "source_path": "docs/architecture/system_design.md",
+      "source_section": "5. 一条实施主线与三种编号",
+      "source_sha256": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "推荐",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [],
+      "direct_task_ids": [],
+      "summary": {
+        "task_ids": [],
+        "active_task_ids": [],
+        "cancelled_task_ids": [],
+        "counts": {},
+        "status": null,
+        "valid_completed_task_ids": [],
+        "evidence_review_task_ids": [],
+        "valid_total": 0,
+        "valid_completed": 0,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": "undecomposed"
+    },
+    "cat-ai:stage:F": {
+      "id": "cat-ai:stage:F",
+      "project_id": "cat-ai",
+      "stage": "F",
+      "parent_id": null,
+      "sort_order": 5,
+      "source_path": "docs/architecture/system_design.md",
+      "source_section": "5. 一条实施主线与三种编号",
+      "source_sha256": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "display_name": "实验反馈",
+      "source_observed_at": "2026-11-19T05:50:07.765960+00:00",
+      "child_ids": [],
+      "direct_task_ids": [],
+      "summary": {
+        "task_ids": [],
+        "active_task_ids": [],
+        "cancelled_task_ids": [],
+        "counts": {},
+        "status": null,
+        "valid_completed_task_ids": [],
+        "evidence_review_task_ids": [],
+        "valid_total": 0,
+        "valid_completed": 0,
+        "scope_incomplete": true,
+        "source_needs_review": false,
+        "included_scope_complete": false
+      },
+      "empty_state": "undecomposed"
+    }
+  },
+  "links": [
+    {
+      "id": "cat-ai:node-primary:S2-01",
+      "project_id": "cat-ai",
+      "task_id": "S2-01",
+      "node_id": "cat-ai:task-branch:S2-01",
+      "role": "primary",
+      "revision": 1,
+      "active": 1,
+      "status": "done"
+    },
+    {
+      "id": "cat-ai:node-primary:S2-02",
+      "project_id": "cat-ai",
+      "task_id": "S2-02",
+      "node_id": "cat-ai:task-branch:S2-02",
+      "role": "primary",
+      "revision": 1,
+      "active": 1,
+      "status": "done"
+    },
+    {
+      "id": "cat-ai:node-primary:S2-03",
+      "project_id": "cat-ai",
+      "task_id": "S2-03",
+      "node_id": "cat-ai:task-branch:S2-03",
+      "role": "primary",
+      "revision": 1,
+      "active": 1,
+      "status": "done"
+    },
+    {
+      "id": "cat-ai:node-primary:S2-04",
+      "project_id": "cat-ai",
+      "task_id": "S2-04",
+      "node_id": "cat-ai:task-branch:S2-04",
+      "role": "primary",
+      "revision": 1,
+      "active": 1,
+      "status": "done"
+    },
+    {
+      "id": "cat-ai:node-primary:S2-05",
+      "project_id": "cat-ai",
+      "task_id": "S2-05",
+      "node_id": "cat-ai:task-branch:S2-05",
+      "role": "primary",
+      "revision": 1,
+      "active": 1,
+      "status": "done"
+    },
+    {
+      "id": "cat-ai:node-primary:S2-06",
+      "project_id": "cat-ai",
+      "task_id": "S2-06",
+      "node_id": "cat-ai:task-branch:S2-06",
+      "role": "primary",
+      "revision": 1,
+      "active": 1,
+      "status": "done"
+    },
+    {
+      "id": "cat-ai:node-primary:S3-01",
+      "project_id": "cat-ai",
+      "task_id": "S3-01",
+      "node_id": "cat-ai:task-branch:S3-01",
+      "role": "primary",
+      "revision": 1,
+      "active": 1,
+      "status": "done"
+    },
+    {
+      "id": "cat-ai:node-primary:S3-02",
+      "project_id": "cat-ai",
+      "task_id": "S3-02",
+      "node_id": "cat-ai:task-branch:S3-02",
+      "role": "primary",
+      "revision": 1,
+      "active": 1,
+      "status": "done"
+    }
+  ],
+  "tasks": {
+    "S1A-01": {
+      "id": "S1A-01",
+      "project_id": "cat-ai",
+      "title": "属性、映射与资格",
+      "goal": "保留已验收的来源、版本及资格范围",
+      "deliverables": "[\"S1-A acceptance report and fixed qualification, property and mapping versions\"]",
+      "milestone": "S1-A",
+      "stages": "[\"B\",\"A\"]",
+      "primary_stage": "B",
+      "status": "done",
+      "priority": "normal",
+      "owner": null,
+      "planned_date": null,
+      "criteria_version": 2,
+      "revision": 11,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "research",
+      "evidence_needs_review": false,
+      "acceptance_id": 4
+    },
+    "S1B-01": {
+      "id": "S1B-01",
+      "project_id": "cat-ai",
+      "title": "物化特征构建验收",
+      "goal": "复核构建交付并记录正式验收结论",
+      "deliverables": "[\"v4 selection/features, 5530 indexed values, replay verification\"]",
+      "milestone": "S1-B",
+      "stages": "[\"C\",\"B\"]",
+      "primary_stage": "C",
+      "status": "done",
+      "priority": "normal",
+      "owner": null,
+      "planned_date": null,
+      "criteria_version": 1,
+      "revision": 7,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "research",
+      "evidence_needs_review": false,
+      "acceptance_id": 6
+    },
+    "S2-01": {
+      "id": "S2-01",
+      "project_id": "cat-ai",
+      "title": "训练配置与参数契约",
+      "goal": "交付独立训练配置schema、加载校验、有效配置及参数说明，供Python和CLI共用",
+      "deliverables": "[\"modeling/config.py及独立schema/加载器\",\"默认与自定义配置示例、模型/特征/参数目录、只校验接口\",\"有效配置与默认/用户值来源、配置失败路径测试\"]",
+      "milestone": "S2",
+      "stages": "[\"C\"]",
+      "primary_stage": "C",
+      "status": "done",
+      "priority": "high",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 2,
+      "revision": 7,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "research",
+      "evidence_needs_review": false,
+      "acceptance_id": 8
+    },
+    "S2-02": {
+      "id": "S2-02",
+      "project_id": "cat-ai",
+      "title": "增强训练与预测集成",
+      "goal": "集成S2-01/04/05/06，贯通Python和CLI并完成工程回归与交付清单",
+      "deliverables": "[\"Python及配置文件+CLI训练预测入口\",\"帮助、参数说明、可运行训练配置及预测JSON示例\",\"S2工程交付清单、全量回归和接口文档\"]",
+      "milestone": "S2",
+      "stages": "[\"C\",\"B\"]",
+      "primary_stage": "C",
+      "status": "done",
+      "priority": "high",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 2,
+      "revision": 10,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "research",
+      "evidence_needs_review": false,
+      "acceptance_id": 16
+    },
+    "S2-03": {
+      "id": "S2-03",
+      "project_id": "cat-ai",
+      "title": "家族对照资格检查",
+      "goal": "检查可信家族标签及记录/DOI覆盖，形成可比较或跳过报告，不阻断统一模型",
+      "deliverables": "[\"家族标签来源与可信范围清单\",\"各家族/分区记录及DOI覆盖和资格/跳过报告\"]",
+      "milestone": "S2",
+      "stages": "[\"C\",\"D\"]",
+      "primary_stage": "C",
+      "status": "done",
+      "priority": "normal",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 2,
+      "revision": 7,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "research",
+      "evidence_needs_review": false,
+      "acceptance_id": 18
+    },
+    "S2-04": {
+      "id": "S2-04",
+      "project_id": "cat-ai",
+      "title": "F1/F2特征适配与折内转换",
+      "goal": "复用S1计算器，将固定物化增量接入训练折与新输入预测的共同转换路径",
+      "deliverables": "[\"pipeline的F1/F2训练及预测适配\",\"S1快照/资格/分区/目录/计算绑定校验\",\"553条固定增量一致性与折内拟合回归证据\"]",
+      "milestone": "S2",
+      "stages": "[\"C\",\"B\"]",
+      "primary_stage": "C",
+      "status": "done",
+      "priority": "high",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 1,
+      "revision": 7,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "research",
+      "evidence_needs_review": false,
+      "acceptance_id": 10
+    },
+    "S2-05": {
+      "id": "S2-05",
+      "project_id": "cat-ai",
+      "title": "可配置训练与R2评价框架",
+      "goal": "扩展现有experiments支持默认/自定义训练、DOI OOF选模、共同子集比较及运行追溯",
+      "deliverables": "[\"默认/自定义单模型和多模型训练API\",\"R2同子集同折配对比较与三层评价报告\",\"有效配置、CV折、OOF/留出逐条预测状态及版本哈希清单\"]",
+      "milestone": "S2",
+      "stages": "[\"C\",\"D\"]",
+      "primary_stage": "C",
+      "status": "done",
+      "priority": "high",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 1,
+      "revision": 8,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "research",
+      "evidence_needs_review": false,
+      "acceptance_id": 12
+    },
+    "S2-06": {
+      "id": "S2-06",
+      "project_id": "cat-ai",
+      "title": "增强模型包与独立预测",
+      "goal": "扩展现有predictor，交付F1/F2及自定义模型包的绑定、校验、加载与单条批量预测",
+      "deliverables": "[\"增强及自定义模型包、manifest与加载校验\",\"单条/批量预测API及逐条状态\",\"旧R1兼容、篡改拒绝与重载一致性证据\"]",
+      "milestone": "S2",
+      "stages": "[\"C\",\"B\"]",
+      "primary_stage": "C",
+      "status": "done",
+      "priority": "high",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 1,
+      "revision": 7,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "research",
+      "evidence_needs_review": false,
+      "acceptance_id": 14
+    },
+    "S3-01": {
+      "id": "S3-01",
+      "project_id": "cat-ai",
+      "title": "R2共同子集正式比较",
+      "goal": "在S2交付后运行真实冻结输入的配对比较，报告物化增量及支持限制",
+      "deliverables": "[\"固定真实输入的R1/R2默认预设运行与F_base/F1/F2比较报告\",\"OOF、validation和历史test逐条结果/状态、覆盖及配对增量结论\"]",
+      "milestone": "S3",
+      "stages": "[\"C\",\"D\"]",
+      "primary_stage": "C",
+      "status": "done",
+      "priority": "normal",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 2,
+      "revision": 7,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "research",
+      "evidence_needs_review": false,
+      "acceptance_id": 20
+    },
+    "S3-02": {
+      "id": "S3-02",
+      "project_id": "cat-ai",
+      "title": "训练预测端到端整体验收",
+      "goal": "复核默认及自定义训练、指定模型预测、失败路径和固定证据，记录整体验收",
+      "deliverables": "[\"默认/自定义及指定模型预测端到端验收报告\",\"重载/重放、失败路径、版本配置及代码测试证据\"]",
+      "milestone": "S3",
+      "stages": "[\"C\",\"D\"]",
+      "primary_stage": "C",
+      "status": "done",
+      "priority": "normal",
+      "owner": "Codex",
+      "planned_date": null,
+      "criteria_version": 2,
+      "revision": 7,
+      "blocker": null,
+      "recovery_condition": null,
+      "recovery_date": null,
+      "category": "research",
+      "evidence_needs_review": false,
+      "acceptance_id": 22
+    }
+  },
+  "pending_task_ids": [
+    "S1A-01",
+    "S1B-01"
+  ],
+  "unclassified_tasks": [],
+  "focus": {
+    "context": null,
+    "recent": [],
+    "default_order": [
+      {
+        "id": "S2-01",
+        "title": "训练配置与参数契约",
+        "status": "done",
+        "priority": "high",
+        "planned_date": null
+      },
+      {
+        "id": "S2-02",
+        "title": "增强训练与预测集成",
+        "status": "done",
+        "priority": "high",
+        "planned_date": null
+      },
+      {
+        "id": "S2-04",
+        "title": "F1/F2特征适配与折内转换",
+        "status": "done",
+        "priority": "high",
+        "planned_date": null
+      },
+      {
+        "id": "S2-05",
+        "title": "可配置训练与R2评价框架",
+        "status": "done",
+        "priority": "high",
+        "planned_date": null
+      },
+      {
+        "id": "S2-06",
+        "title": "增强模型包与独立预测",
+        "status": "done",
+        "priority": "high",
+        "planned_date": null
+      },
+      {
+        "id": "S1A-01",
+        "title": "属性、映射与资格",
+        "status": "done",
+        "priority": "normal",
+        "planned_date": null
+      },
+      {
+        "id": "S1B-01",
+        "title": "物化特征构建验收",
+        "status": "done",
+        "priority": "normal",
+        "planned_date": null
+      },
+      {
+        "id": "S2-03",
+        "title": "家族对照资格检查",
+        "status": "done",
+        "priority": "normal",
+        "planned_date": null
+      },
+      {
+        "id": "S3-01",
+        "title": "R2共同子集正式比较",
+        "status": "done",
+        "priority": "normal",
+        "planned_date": null
+      },
+      {
+        "id": "S3-02",
+        "title": "训练预测端到端整体验收",
+        "status": "done",
+        "priority": "normal",
+        "planned_date": null
+      }
+    ],
+    "focus_needs_review": false,
+    "legacy_focus_task_id": null,
+    "legacy_needs_review": false,
+    "legacy_needs_migration": false
+  },
+  "summary": {
+    "task_ids": [
+      "S2-01",
+      "S2-02",
+      "S2-03",
+      "S2-04",
+      "S2-05",
+      "S2-06",
+      "S3-01",
+      "S3-02"
+    ],
+    "active_task_ids": [
+      "S2-01",
+      "S2-02",
+      "S2-03",
+      "S2-04",
+      "S2-05",
+      "S2-06",
+      "S3-01",
+      "S3-02"
+    ],
+    "cancelled_task_ids": [],
+    "counts": {
+      "done": 8
+    },
+    "status": null,
+    "valid_completed_task_ids": [
+      "S2-01",
+      "S2-02",
+      "S2-03",
+      "S2-04",
+      "S2-05",
+      "S2-06",
+      "S3-01",
+      "S3-02"
+    ],
+    "evidence_review_task_ids": [],
+    "valid_total": 8,
+    "valid_completed": 8,
+    "scope_incomplete": true,
+    "source_needs_review": false,
+    "included_scope_complete": false
+  }
+}

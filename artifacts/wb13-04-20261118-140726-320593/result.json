@@ -1,0 +1,22 @@
+{
+  "integrity": "ok",
+  "foreign_keys": [],
+  "nodes": 14,
+  "links": 8,
+  "backup": "backups\\wb13-04-before-20261118-140726-320593.sqlite",
+  "rehearsal_protected_before": {
+    "task": "21ea1c1d5210e72b40801444bfdd2c5a34263b58cb7fbb593bb12e61148450c2",
+    "dependency": "34206ea553912566ac492e8fc1a8537193196fd3df8171c2262033c3bf77a4fd",
+    "criterion": "28624780930f2c3d3568651f18c59e155ac7b0ddcb7379ac0e1cf9bc782b7463",
+    "review": "39991d870ea715d697c99889b1f460f10abd17fcb043718065427523fdd7d586",
+    "evidence": "e3a8d633f328606aee4b800ec3370db018725d7000025bc592ace6b7cfbe454c"
+  },
+  "live_protected_after": {
+    "task": "21ea1c1d5210e72b40801444bfdd2c5a34263b58cb7fbb593bb12e61148450c2",
+    "dependency": "34206ea553912566ac492e8fc1a8537193196fd3df8171c2262033c3bf77a4fd",
+    "criterion": "28624780930f2c3d3568651f18c59e155ac7b0ddcb7379ac0e1cf9bc782b7463",
+    "review": "39991d870ea715d697c99889b1f460f10abd17fcb043718065427523fdd7d586",
+    "evidence": "e3a8d633f328606aee4b800ec3370db018725d7000025bc592ace6b7cfbe454c"
+  },
+  "request_id": "wb13-04-init-c964a47c-60d9-43cf-aec8-62002f9479af"
+}

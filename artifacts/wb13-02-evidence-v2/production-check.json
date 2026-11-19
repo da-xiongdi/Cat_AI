@@ -1,0 +1,56 @@
+{
+  "task": {
+    "before": 10,
+    "after": 10,
+    "preserved": true
+  },
+  "dependency": {
+    "before": 15,
+    "after": 15,
+    "preserved": true
+  },
+  "criterion": {
+    "before": 40,
+    "after": 40,
+    "preserved": true
+  },
+  "review": {
+    "before": 18,
+    "after": 18,
+    "preserved": true
+  },
+  "evidence": {
+    "before": 55,
+    "after": 55,
+    "preserved": true
+  },
+  "artifact": {
+    "before": 48,
+    "after": 48,
+    "preserved": true
+  },
+  "artifact_location": {
+    "before": 48,
+    "after": 48,
+    "preserved": true
+  },
+  "artifact_revision": {
+    "before": 55,
+    "after": 55,
+    "preserved": true
+  },
+  "activity": {
+    "before": 142,
+    "after": 152,
+    "preserved": true
+  },
+  "request_log": {
+    "before": 120,
+    "after": 121,
+    "preserved": true
+  },
+  "schema": 8,
+  "integrity": "ok",
+  "foreign_key_errors": 0,
+  "category_history": 10
+}

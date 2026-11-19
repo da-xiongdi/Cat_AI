@@ -1,0 +1,23 @@
+ M docs/api_contracts.md
+ M docs/architecture/system_design.md
+ M docs/feature_engineering_plan_v0.1.md
+ M docs/implementation_amendment.md
+ M docs/progress.md
+ M src/catalyst_ai/modeling/experiments.py
+?? artifacts/runs/
+?? artifacts/workbench-predictions/
+?? backups/
+?? configs/s2_baseline.example.yaml
+?? configs/s2_custom.example.yaml
+?? docs/s2_implementation_plan.md
+?? docs/workbench/s2_deployment.md
+?? docs/workbench/s2_tasks.json
+?? scripts/deploy_s2_tasks.py
+?? scripts/validate_training_config.py
+?? src/catalyst_ai/features/enhanced.py
+?? src/catalyst_ai/modeling/config.py
+?? tests/unit/test_enhanced_features.py
+?? tests/unit/test_s2_experiments.py
+?? tests/unit/test_training_config.py
+
+HEAD: 6b1e8786af3b73c046d9fd28d9b4f5363957fbd2

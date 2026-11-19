@@ -431,3 +431,199 @@ def write_r1_comparison(output, report):
         ]
     )
     (output / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def run_configured(path):
+    """Run a validated S2 experiment and persist its evidence in a fresh directory.
+
+    The returned fitted estimators are development objects, not prediction packages.
+    """
+    import json
+
+    from catalyst_ai.features.enhanced import EnhancedFeatures
+    from catalyst_ai.modeling.config import load_config
+    from catalyst_ai.storage.feature_catalog import get_catalog
+
+    path = Path(path).resolve()
+    validated = load_config(path)
+    config = validated["effective_config"]
+    base = path.parent
+    dataset = config["dataset"]
+    docs = {
+        name: json.loads((base / dataset[name]).read_text(encoding="utf-8"))
+        for name in ("snapshot", "qualification", "split", "selection", "features")
+    }
+    snapshot, selection = docs["snapshot"], docs["selection"]
+    if config["features"]["preset"] == "R1":
+        selection = select_inputs(snapshot, docs["qualification"], docs["split"])
+    binding = docs["selection"]["content"]["binding"]
+    database = (base / dataset["catalog_database"]).resolve()
+    properties = get_catalog(database, "properties", binding["property_version"])
+    species = get_catalog(database, "species", binding["mapping_version"])
+    content = snapshot["content"]
+    if content.get("target") != "co2_conversion" or content.get("target_unit") != "%":
+        raise ValueError("training requires CO2 conversion target in percent")
+    records = {r["record_id"]: r for r in content["records"]}
+    partitions = {
+        part: [records[i] for i in sorted(selection["content"]["retained"][part])]
+        for part in ("train", "validation", "test")
+    }
+    if any(not rows for rows in partitions.values()):
+        raise ValueError("train, validation and test must contain selected records")
+    train = partitions["train"]
+    groups = np.asarray([normalize_doi(r["payload"]["source"]["doi"]) for r in train])
+    targets = np.asarray([target_value(r, content) for r in train], dtype=float)
+    features = config["features"]["sets"]
+    models = {m["name"]: m["params"] for m in config["models"]}
+    order = [name for name in MODEL_ORDER if name in models]
+
+    def transformer(rows, feature):
+        payloads = [r["payload"] for r in rows]
+        if feature in ("F1", "F2"):
+            return EnhancedFeatures.fit(payloads, feature, properties=properties, species=species)
+        return R1Features.fit(payloads, feature)
+
+    def estimator(name):
+        params = models[name]
+        if name == "dummy":
+            return DummyRegressor(strategy="mean")
+        if name == "ridge":
+            return make_pipeline(StandardScaler(), Ridge(**params))
+        return ExtraTreesRegressor(random_state=config["seed"], **params)
+
+    def rows_for(transform, model, rows, indices, fold=None):
+        predictions = _predict(transform, model, rows, indices)
+        return [
+            {
+                "record_id": rows[i]["record_id"],
+                "doi": normalize_doi(rows[i]["payload"]["source"]["doi"]),
+                "observed": float(target_value(rows[i], content)),
+                **({"fold": fold} if fold is not None else {}),
+                **prediction,
+            }
+            for i, prediction in zip(indices, predictions, strict=True)
+        ]
+
+    oof = {(f, n): [] for f in features for n in order}
+    folds = []
+    for fold, (fit_idx, hold_idx) in enumerate(
+        GroupKFold(n_splits=config["validation"]["n_splits"]).split(
+            np.arange(len(train)), groups=groups
+        )
+    ):
+        detail = {
+            "fold": fold,
+            "training_record_ids": [train[i]["record_id"] for i in fit_idx],
+            "held_out_record_ids": [train[i]["record_id"] for i in hold_idx],
+            "features": {},
+        }
+        for feature in features:
+            transform = transformer([train[i] for i in fit_idx], feature)
+            vocabulary = (
+                transform.base.vocabulary if feature in ("F1", "F2") else transform.vocabulary
+            )
+            matrix = [transform.transform_one(train[i]["payload"])["values"] for i in fit_idx]
+            detail["features"][feature] = {"vocabulary": [list(k) for k in vocabulary]}
+            for name in order:
+                model = estimator(name).fit(matrix, targets[fit_idx])
+                oof[feature, name].extend(rows_for(transform, model, train, hold_idx, fold))
+        folds.append(detail)
+    scores = {f: {n: _score(oof[f, n]) for n in order} for f in features}
+    feature_order = [f for f in ("F_base", "F1", "F2", "F_cond") if f in features]
+    if config["mode"] == "baseline_compare" and config["features"]["preset"] == "R1":
+        feature_order = ["F_base"]
+    selected_feature, selected_name = min(
+        ((f, n) for f in feature_order for n in order),
+        key=lambda pair: scores[pair[0]][pair[1]]["paper_equal_mae"],
+    )
+    fitted = {}
+    heldout = {part: {} for part in ("validation", "test")}
+    for feature in features:
+        transform = transformer(train, feature)
+        matrix = [transform.transform_one(r["payload"])["values"] for r in train]
+        for name in order:
+            model = estimator(name).fit(matrix, targets)
+            fitted[feature, name] = (transform, model)
+            for part in heldout:
+                rows = rows_for(transform, model, partitions[part], range(len(partitions[part])))
+                heldout[part][f"{feature}/{name}"] = rows
+    report = {
+        "schema_version": "s2-experiment-v1",
+        "selection": selection,
+        "input_coverage": _coverage(snapshot, docs["split"], selection),
+        "configuration": validated,
+        "binding": binding,
+        "input_hashes": {k: v["content_sha256"] for k, v in docs.items()},
+        "implementation_sha256": {
+            str(p.relative_to(Path(__file__).parents[1])): hashlib.sha256(
+                p.read_bytes()
+            ).hexdigest()
+            for p in (
+                Path(__file__),
+                Path(__file__).parents[1] / "features" / "pipeline.py",
+                Path(__file__).parents[1] / "features" / "enhanced.py",
+                Path(__file__).parents[1] / "features" / "physchem.py",
+                Path(__file__).parent / "config.py",
+            )
+        },
+        "dependencies": {
+            "python": platform.python_version(),
+            **{
+                n: importlib.metadata.version(n)
+                for n in ("numpy", "scikit-learn", "pydantic", "PyYAML")
+            },
+        },
+        "fold_details": folds,
+        "fold_assignments": [
+            {"record_id": train[i]["record_id"], "doi": str(groups[i]), "fold": fold["fold"]}
+            for fold in folds
+            for i in range(len(train))
+            if train[i]["record_id"] in fold["held_out_record_ids"]
+        ],
+        "oof_scores": scores,
+        "oof_predictions": {
+            f: {n: sorted(oof[f, n], key=lambda r: r["record_id"]) for n in order} for f in features
+        },
+        "oof_availability": {f: {n: _availability(oof[f, n]) for n in order} for f in features},
+        "oof_common_support_all_candidates": _common_support(
+            {f"{f}/{n}": oof[f, n] for f in features for n in order}
+        ),
+        "selected": {"feature_set": selected_feature, "model": selected_name},
+        "limitations": [
+            "Diagnostic scores include unavailable predictions.",
+            "Historical test has previously been viewed; it is not confirmation.",
+            "R2 uses the S1 common subset; do not subtract R1 full-set results.",
+        ],
+    }
+    for part, candidates in heldout.items():
+        report[part] = {
+            "purpose": "development"
+            if part == "validation"
+            else "previously viewed historical comparison",
+            "candidates": {
+                key: {
+                    "metrics": _score(rows),
+                    "availability": _availability(rows),
+                    "predictions": rows,
+                }
+                for key, rows in candidates.items()
+            },
+            "common_support": _common_support(candidates),
+        }
+    import pickle
+
+    report["fitted_sha256"] = {
+        f"{feature}/{name}": hashlib.sha256(
+            pickle.dumps({"features": transform, "model": model}, protocol=4)
+        ).hexdigest()
+        for (feature, name), (transform, model) in fitted.items()
+    }
+    report["target_definition"] = content.get("target_definition") or "CO2 conversion"
+    report["content_sha256"] = digest(report)
+    output = (base / config["output"]).resolve()
+    output.mkdir(parents=True, exist_ok=False)
+    write_json(output / "report.json", report)
+    write_json(output / "configuration.json", validated)
+    write_json(output / "folds.json", {"assignments": report["fold_assignments"], "details": folds})
+    write_json(output / "selection.json", selection)
+    return report, fitted

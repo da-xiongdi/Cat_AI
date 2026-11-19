@@ -31,7 +31,10 @@ from catalyst_ai.workbench import (
     index,
     model_runs,
     predictions,
+    queries,
     research,
+    research_nodes,
+    roadmap,
     samples,
     service,
 )
@@ -172,6 +175,82 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
     @app.exception_handler(service.Missing)
     async def missing(request, exc):
         return render(request, "message", status_code=404, message=str(exc))
+
+    @app.get("/api/workbench/v1/query")
+    async def management_query(category: str = "all"):
+        if category not in queries.SCOPES:
+            return JSONResponse({"detail": "invalid category scope"}, status_code=422)
+        return queries.query(db, project_id, category)
+
+    @app.get("/api/workbench/v1/roadmap/nodes/{node_id}/children")
+    async def roadmap_children(node_id: str):
+        data = roadmap.snapshot(db, project_id)
+        parent = data["nodes"].get(node_id)
+        if parent is None:
+            raise service.Missing("路线节点不存在")
+        return {"parent_id": node_id, "items": [data["nodes"][i] for i in parent["child_ids"]]}
+
+    @app.get("/roadmap", response_class=HTMLResponse)
+    async def roadmap_page(request: Request, node: str = "", task: str = "", view: str = ""):
+        data = roadmap.snapshot(db, project_id)
+        with transaction(db) as conn:
+            node_history = (
+                [
+                    dict(r)
+                    for r in conn.execute(
+                        "SELECT * FROM research_node_revision WHERE project_id=? "
+                        "AND entity_id=? ORDER BY revision DESC",
+                        (project_id, node),
+                    )
+                ]
+                if node
+                else []
+            )
+            link_history = (
+                [
+                    dict(r)
+                    for r in conn.execute(
+                        "SELECT r.* FROM task_node_link_revision r WHERE r.project_id=? AND "
+                        "(json_extract(r.old_value, '$.node_id')=? OR "
+                        "json_extract(r.new_value, '$.node_id')=?) ORDER BY r.created_at DESC",
+                        (project_id, node, node),
+                    )
+                ]
+                if node
+                else []
+            )
+        selected = data["nodes"].get(node) if node else None
+        task_links = [link for link in data["links"] if link["task_id"] == task]
+        if task and not node and task_links:
+            node = next((link["node_id"] for link in task_links if link["role"] == "primary"), "")
+            selected = data["nodes"].get(node)
+        path = []
+        cursor = selected
+        while cursor:
+            path.insert(0, cursor)
+            cursor = data["nodes"].get(cursor["parent_id"])
+        initial_ids = {i for stage in data["stages"] for i in stage["root_ids"]}
+        initial_ids |= {child for i in initial_ids for child in data["nodes"][i]["child_ids"]}
+        return render(
+            request,
+            "roadmap",
+            roadmap=data,
+            initial_nodes={i: data["nodes"][i] for i in initial_ids},
+            selected=selected,
+            missing_node=bool(node and not selected),
+            missing_task=bool(
+                task
+                and (
+                    task not in data["tasks"]
+                    or (node and not any(link["node_id"] == node for link in task_links))
+                )
+            ),
+            selected_task=task,
+            node_path=path,
+            roadmap_view=view,
+            node_history=node_history,
+            link_history=link_history,
+        )
 
     @app.get("/", response_class=HTMLResponse)
     async def overview(request: Request):
@@ -577,8 +656,17 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
         return render(request, "task_form", task=None)
 
     @app.get("/tasks/{task_id}", response_class=HTMLResponse)
-    async def task_detail(request: Request, task_id: str):
+    async def task_detail(request: Request, task_id: str, node: str = ""):
         task = task_for(task_id)
+        road = roadmap.snapshot(db, project_id)
+        task_links = [link for link in road["links"] if link["task_id"] == task_id]
+        return_node = next(
+            (link["node_id"] for link in task_links if link["node_id"] == node), None
+        )
+        if not return_node:
+            return_node = next(
+                (link["node_id"] for link in task_links if link["role"] == "primary"), None
+            )
         artifacts = []
         for row in index.list_artifacts(db, project_id, limit=500)["items"]:
             item = index.get_artifact(db, row["id"])
@@ -602,6 +690,7 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
             all_tasks=tasks(),
             artifacts=artifacts,
             related_decisions=related_decisions,
+            roadmap_return_node=return_node,
             related_runs=[
                 run
                 for run in model_runs.list_runs(db, project_id)
@@ -746,6 +835,59 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
         try:
             if not actor:
                 raise ValueError("请填写操作人")
+            if action == "roadmap-node":
+                node_id = data.get("node_id", "").strip()
+                if not data.get("parent_id") and int(data.get("revision", "0")) == 0:
+                    raise ValueError("新分支必须指定父节点")
+                research_nodes.save_research_node(
+                    db,
+                    project_id,
+                    node_id,
+                    {
+                        "stage": data.get("stage"),
+                        "parent_id": data.get("parent_id") or None,
+                        "sort_order": int(data.get("sort_order", "0")),
+                        "source_path": data.get("source_path"),
+                        "source_section": data.get("source_section"),
+                        "source_sha256": data.get("source_sha256"),
+                        "active": int(data.get("active", "1")),
+                    },
+                    int(data.get("revision", "0")),
+                    data.get("reason", ""),
+                    request_id=rid,
+                    actor=actor,
+                )
+                return RedirectResponse("/roadmap?view=tree", status_code=303)
+            if action == "roadmap-link":
+                research_nodes.save_task_node_link(
+                    db,
+                    project_id,
+                    data.get("link_id", ""),
+                    {
+                        "task_id": data.get("task_id"),
+                        "node_id": data.get("node_id"),
+                        "role": data.get("role"),
+                        "active": int(data.get("active", "1")),
+                    },
+                    int(data.get("revision", "0")),
+                    data.get("reason", ""),
+                    request_id=rid,
+                    actor=actor,
+                )
+                return RedirectResponse("/roadmap?view=tree", status_code=303)
+            if action == "roadmap-move-primary":
+                research_nodes.move_primary_to_reference(
+                    db,
+                    project_id,
+                    data.get("primary_id", ""),
+                    int(data.get("primary_revision", "0")),
+                    data.get("reference_id", ""),
+                    int(data.get("reference_revision", "0")),
+                    data.get("reason", ""),
+                    request_id=rid,
+                    actor=actor,
+                )
+                return RedirectResponse("/roadmap?view=tree", status_code=303)
             if action == "enqueue-prediction":
                 model_id, version = data.get("model", "").split("|", 1)
                 predictions.enqueue(

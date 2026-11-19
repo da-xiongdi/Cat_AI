@@ -60,6 +60,30 @@ def test_versions_preview_corruption_and_missing(setup_index):
     assert index.get_scan(db, first)["status"] == "complete"
 
 
+def test_document_scan_preserves_previous_observations_and_evidence(setup_index):
+    db, root = setup_index
+    (root / "research.md").write_text("# Original", encoding="utf-8")
+    register(db, "old", "document", "research.md")
+    index.scan(db, "p")
+    previous = index.get_artifact(db, "old")
+    (root / "research.md").write_text("# Changed", encoding="utf-8")
+    (root / "deployment.md").write_text("# Deployment", encoding="utf-8")
+    register(db, "new", "document", "deployment.md")
+
+    published = index.scan(db, "p", document_ids=["new"])
+
+    old = index.get_artifact(db, "old")
+    assert old["scan_id"] == published
+    assert old["revisions"] == previous["revisions"]
+    assert [{k: v for k, v in r.items() if k != "scan_id"} for r in old["observations"]] == [
+        {k: v for k, v in r.items() if k != "scan_id"} for r in previous["observations"]
+    ]
+    current = index.get_artifact(db, "new")["revisions"][0]
+    assert index.preview(db, "new", current["file_sha256"])["text"] == "# Deployment"
+    index.scan(db, "p")
+    assert index.get_artifact(db, "old")["revisions"][1]["status"] == "changed"
+
+
 def test_interrupted_scan_does_not_publish(setup_index, monkeypatch):
     db, root = setup_index
     snapshot(root / "s.json", [1])
@@ -214,6 +238,26 @@ def test_v1_upgrade_preserves_data_and_creates_backup(tmp_path):
     migrate(db)
     service.create_project(db, "p", "project", request_id="p", actor="tester")
     con = connect(db)
+    for table in (
+        "document_purpose_revision",
+        "category_recent_task_revision",
+        "category_context_revision",
+        "task_plan_reference_revision",
+        "task_node_link_revision",
+        "research_node_revision",
+        "workbench_delivery_revision",
+        "task_plan_verification",
+        "document_purpose",
+        "category_recent_task",
+        "category_context",
+        "task_plan_reference",
+        "task_node_link",
+        "research_node",
+        "workbench_delivery",
+        "task_category_revision",
+    ):
+        con.execute(f"DROP TABLE {table}")
+    con.execute("ALTER TABLE task DROP COLUMN category")
     for table in (
         "prediction_event",
         "prediction_job",

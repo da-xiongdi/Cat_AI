@@ -1,6 +1,7 @@
+<!-- S3-02 ????????????????? s3_02_acceptance.md? -->
 # CLI 与后续接口契约
 
-2026-11-13状态更新：S1-A数据准备、版本化入库与记录级资格已验收，联合支持553/593条；39条InNi3O0.5及1条CoGaAlO4证据不足、保守隔离，无事实更正。下一任务为S1-B计算与特征构建，R2及自定义训练仍待完成。详见[收尾验收](s1_a_acceptance.md)。下文带日期的旧状态保留历史语境。
+2026-11-18接口更新：S1-A及S1-B工程交付均已验收，v4保留553/593条，分区为454/47/52条，40条继续隔离且无事实更正。[S2配置训练与增强预测](s2_implementation_plan.md)已接入 Python 和 CLI，自定义训练、F1/F2模型包及增强预测调用见本文末尾，已有R1接口继续有效。下文带日期的旧状态保留历史语境。
 
 
 模块及数据/模型生命周期见[总体设计](architecture/system_design.md)；本文件维护调用契约与失败行为，不另定总体路线。
@@ -210,3 +211,30 @@ Python 接口：`compare_r1(snapshot, qualification, split, raw_files={sha256: p
 ```
 
 流量为反应物体积流量按催化剂质量归一，参考状态 293.15 K、1.01325 bar(abs)。输入只接受上述字段；未知正含量物种角色、非法输入和输出越界均返回明确状态，不提供可用预测。训练范围之外返回 caution，不构成经验证的适用域。当前仅支持 3.2 的 R1 F_base 包，R2 与自定义训练仍待后续交付。
+
+## S2-01 训练配置校验
+
+训练配置独立于项目 Settings；校验接口不训练，训练和增强预测使用下节的 S2-05/S2-06 接口。示例依赖本机已导入的 S1 v4 冻结数据与目录库：[固定基准](../configs/s2_baseline.example.yaml)、[自定义训练](../configs/s2_custom.example.yaml)。相对路径以配置文件所在目录为基准；缺少依赖时需先导入或计算。输出路径必须不存在，校验不会创建输出；每次实际运行须指定独立的新路径，保留已有报告。
+
+```powershell
+.venv/Scripts/python.exe scripts/validate_training_config.py --catalog
+.venv/Scripts/python.exe scripts/validate_training_config.py --schema
+.venv/Scripts/python.exe scripts/validate_training_config.py --validate configs/s2_baseline.example.yaml
+.venv/Scripts/python.exe scripts/validate_training_config.py --validate configs/s2_custom.example.yaml
+```
+
+Python 接口为 `catalyst_ai.modeling.config.load_config(path)`、`catalog()` 和 `TrainingConfig.model_json_schema()`。校验重放 S1 构建，检查快照、资格、分区、属性/映射、来源证据及实现绑定；返回有效配置、配置字段和模型参数的 default/user 来源及训练 DOI 组数。`baseline_compare` 固定 seed 42、3 折、三模型默认参数及 R1/R2 对应特征集合；`custom_train` 可选择模型和特征集合，DOI 折数至少 2 且不超过训练组数。Dummy 为 mean；Ridge alpha 为非负有限数；ExtraTrees 的 n_estimators、min_samples_leaf 和可选 max_depth 为正整数，max_features 可为 null、sqrt、log2、正整数或 (0,1] 浮点数，n_jobs 限 1–8。随机种子统一通过顶层 seed 指定。未知字段、重复键、模型参数冲突以及目标等未允许字段被拒绝。
+
+## S2 配置化训练与预测
+
+`python scripts/validate_training_config.py --catalog` 查看参数目录，`--schema` 查看 schema，`--validate configs/s2_custom.example.yaml` 校验配置及依赖。配置中的路径相对于配置文件；每次运行需使用新的 output 目录。默认基准及自定义示例分别为 `configs/s2_baseline.example.yaml` 和 `configs/s2_custom.example.yaml`。
+
+`python scripts/train_s2.py --config configs/s2_custom.example.yaml --package artifacts/models/my-s2 --candidate F2 ridge` 执行校验、训练和保存；省略 `--candidate` 保存 OOF 选中候选。包目录必须不存在。报告的 selected 是 OOF 选中项，指定 candidate 可以不同。`python scripts/predict_r1.py --package artifacts/models/my-s2 --input configs/s2_prediction.example.json` 接受单对象或数组。只加载可信来源的 pickle 包。
+
+Python 使用 `load_config(path)`、`report, fitted = run_configured(path)`、`save_package(path, report, fitted, candidate=("F2", "ridge"))`、`load_package(path)`、`predict_one(package, item)` 或 `predict_batch(package, items)`。输入组成与四个工况示例见 JSON；输出包含逐条状态、原始预测和正式预测。训练输出及模型包各自使用新目录。
+
+`run_configured` 位于 `catalyst_ai.modeling.experiments`；包和预测函数位于 `catalyst_ai.modeling.predictor`。单模型可将 custom 配置的 models 设为 `[{name: ridge, params: {alpha: 2.0}}]`，多模型按示例列出多个条目。指定打包候选必须已经参加本次训练。模型包绑定输入 schema、训练记录、有效配置、属性/映射、资格和计算实现，加载时校验清单、文件哈希、特征身份与依赖版本。
+
+预测输入示例：[JSON](../configs/s2_prediction.example.json)。只需要组成和四项工况；不接受 DOI 或性能标签。未见正含量物种或属性映射不支持时返回原因及空正式预测；零含量未知项不影响预测。混合批次保留每一项及顺序。训练范围越界返回 caution；若原始输出超出 0–100%，状态为 output_out_of_range、保留 raw_prediction，正式值 co2_conversion_pct 为 null；非有限输出也不可用，JSON 不含 NaN/Infinity。
+
+工程验收重放：`.venv/Scripts/python.exe scripts/accept_s2.py` 在新的独立目录生成训练、预测、R1旧包回放、测试日志及代码快照；加 `--register` 会在全部检查通过后备份管理库、在副本演练，再依次登记 S2-06/S2-02。该脚本的登记用于首次验收，已完成任务不会重复验收。工程烟测不代表 S3 正式配对比较。

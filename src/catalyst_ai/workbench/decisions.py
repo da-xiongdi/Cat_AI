@@ -167,6 +167,36 @@ def set_focus(path, project_id, task_id, *, request_id, actor):
             raise Missing("task not found in project")
         if not db.execute("SELECT 1 FROM project WHERE id=?", (project_id,)).fetchone():
             raise Missing("project not found")
+        # Categorized legacy writes update the same context used by the new service.
+        from catalyst_ai.workbench.category_context import _context, _set_focus
+
+        previous = db.execute(
+            "SELECT focus_task_id FROM project WHERE id=?", (project_id,)
+        ).fetchone()[0]
+        # Preserve a categorized pre-migration focus before the legacy pointer changes.
+        prior = db.execute(
+            "SELECT category FROM task WHERE id=? AND project_id=?", (previous, project_id)
+        ).fetchone()
+        if previous and previous != task_id and prior and prior[0]:
+            prior_context = _context(db, project_id, prior[0])
+            if not prior_context:
+                _set_focus(db, project_id, prior[0], previous, 0, "legacy focus migration", actor)
+        selected = task_id or previous
+        task = db.execute(
+            "SELECT category FROM task WHERE id=? AND project_id=?", (selected, project_id)
+        ).fetchone()
+        if task and task[0]:
+            context = _context(db, project_id, task[0])
+            if task_id or (context and context["focus_task_id"] == previous):
+                _set_focus(
+                    db,
+                    project_id,
+                    task[0],
+                    task_id or None,
+                    context["revision"] if context else 0,
+                    "legacy focus entry",
+                    actor,
+                )
         db.execute("UPDATE project SET focus_task_id=? WHERE id=?", (task_id or None, project_id))
         db.execute(
             "INSERT INTO activity(project_id,task_id,action,actor,created_at,summary) "

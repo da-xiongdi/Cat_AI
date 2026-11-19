@@ -1,0 +1,33 @@
+{
+  "schema_before": 7,
+  "schema_after": 8,
+  "tables": {
+    "project": true,
+    "task": true,
+    "dependency": true,
+    "criterion": true,
+    "evidence": true,
+    "review": true,
+    "activity": true,
+    "request_log": true,
+    "index_workspace": true,
+    "artifact": true,
+    "artifact_location": true,
+    "artifact_revision": true,
+    "index_scan": true,
+    "index_observation": true,
+    "published_index": true,
+    "decision": true,
+    "decision_revision": true,
+    "task_decision": true,
+    "foundation_import": true,
+    "foundation_record": true,
+    "model_run": true,
+    "model_run_revision": true,
+    "research_record": true,
+    "prediction_job": true,
+    "prediction_event": true
+  },
+  "integrity": "ok",
+  "foreign_keys": []
+}

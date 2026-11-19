@@ -16,11 +16,15 @@ def _sha(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def save_package(path, report, fitted):
+def save_package(path, report, fitted, *, candidate=None):
     if report.get("content_sha256") != digest(
         {k: v for k, v in report.items() if k != "content_sha256"}
     ):
         raise ValueError("comparison report hash mismatch")
+    if report.get("schema_version") == "s2-experiment-v1":
+        return _save_s2(path, report, fitted, candidate=candidate)
+    if candidate is not None:
+        raise ValueError("candidate selection requires an S2 report")
     features, model = fitted["features"], fitted["model"]
     if features.feature_set != "F_base" or report["selected"]["feature_set"] != "F_base":
         raise ValueError("unsupported feature set")
@@ -76,6 +80,8 @@ def save_package(path, report, fitted):
 def load_package(path):
     path = Path(path)
     metadata = json.loads((path / "manifest.json").read_text(encoding="utf-8"))
+    if metadata.get("schema_version") == "s2-prediction-package-v1":
+        return _load_s2(path, metadata)
     identifier = metadata.get("model_id")
     if identifier != "r1-" + digest({k: v for k, v in metadata.items() if k != "model_id"}):
         raise ValueError("manifest hash mismatch")
@@ -100,6 +106,120 @@ def load_package(path):
     ):
         raise ValueError("unsupported package version")
     return metadata, pickle.loads(data)
+
+
+def _save_s2(path, report, fitted, *, candidate=None):
+    feature, name = candidate or (report["selected"]["feature_set"], report["selected"]["model"])
+    root = Path(__file__).parents[1]
+    for filename, expected in report["implementation_sha256"].items():
+        if _sha((root / filename).read_bytes()) != expected:
+            raise ValueError("training implementation hash mismatch")
+    if isinstance(fitted, dict) and "features" not in fitted:
+        transform, model = fitted[(feature, name)]
+    else:
+        transform, model = fitted["features"], fitted["model"]
+    if feature not in ("F_base", "F1", "F2") or transform.feature_set != feature:
+        raise ValueError("unsupported or mismatched feature set")
+    data = pickle.dumps({"features": transform, "model": model}, protocol=4)
+    if _sha(data) != report["fitted_sha256"].get(f"{feature}/{name}"):
+        raise ValueError("fitted model does not match training report")
+    binding = report["binding"]
+    if feature in ("F1", "F2"):
+        for catalog, key in (
+            (transform.properties, "property_sha256"),
+            (transform.species, "mapping_sha256"),
+        ):
+            if catalog.get("sha256") != binding.get(key):
+                raise ValueError("catalog binding mismatch")
+    files = [
+        "pipeline.py",
+        "design.py",
+        "enhanced.py",
+        "physchem.py",
+        "qualification.py",
+        "build.py",
+    ]
+    root = Path(__file__).parents[1] / "features"
+    metadata = {
+        "schema_version": "s2-prediction-package-v1",
+        "input_schema": "r1-prediction-input-v1",
+        "feature_set_id": feature,
+        "model_name": name,
+        "training_record_ids": report["selection"]["content"]["retained"]["train"],
+        "binding": binding,
+        "catalog_content_sha256": (
+            {
+                "properties": digest(transform.properties["catalog"]),
+                "species": digest(transform.species["catalog"]),
+            }
+            if feature in ("F1", "F2")
+            else None
+        ),
+        "configuration": report["configuration"],
+        "report_sha256": report["content_sha256"],
+        "target_definition": report["target_definition"],
+        "dependencies": report["dependencies"],
+        "implementation_sha256": {n: _sha((root / n).read_bytes()) for n in files},
+        "artifact_sha256": _sha(data),
+    }
+    metadata["model_id"] = "s2-" + digest(metadata)
+    path = Path(path)
+    path.mkdir(parents=True, exist_ok=False)
+    (path / "model.pkl").write_bytes(data)
+    (path / "manifest.json").write_text(
+        json.dumps(metadata, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    return metadata
+
+
+def _load_s2(path, metadata):
+    if metadata.get("model_id") != "s2-" + digest(
+        {k: v for k, v in metadata.items() if k != "model_id"}
+    ):
+        raise ValueError("manifest hash mismatch")
+    data = (path / "model.pkl").read_bytes()
+    if _sha(data) != metadata["artifact_sha256"]:
+        raise ValueError("model hash mismatch")
+    dependencies = {
+        "python": platform.python_version(),
+        **{
+            n: importlib.metadata.version(n)
+            for n in ("numpy", "scikit-learn", "pydantic", "PyYAML")
+        },
+    }
+    if dependencies != metadata["dependencies"]:
+        raise ValueError("dependency version mismatch")
+    root = Path(__file__).parents[1] / "features"
+    expected = {
+        n: _sha((root / n).read_bytes())
+        for n in (
+            "pipeline.py",
+            "design.py",
+            "enhanced.py",
+            "physchem.py",
+            "qualification.py",
+            "build.py",
+        )
+    }
+    if metadata["implementation_sha256"] != expected:
+        raise ValueError("feature implementation hash mismatch")
+    fitted = pickle.loads(data)
+    transform = fitted["features"]
+    if transform.feature_set != metadata["feature_set_id"]:
+        raise ValueError("feature identity mismatch")
+    if transform.feature_set in ("F1", "F2"):
+        for catalog, key in (
+            (transform.properties, "property_sha256"),
+            (transform.species, "mapping_sha256"),
+        ):
+            if catalog.get("sha256") != metadata["binding"].get(key):
+                raise ValueError("catalog binding mismatch")
+        if metadata["catalog_content_sha256"] != {
+            "properties": digest(transform.properties["catalog"]),
+            "species": digest(transform.species["catalog"]),
+        }:
+            raise ValueError("catalog content mismatch")
+    return metadata, fitted
 
 
 def _measurement(value, unit):
@@ -185,7 +305,11 @@ def predict_one(package, item):
     if transformed["values"] is None:
         result["validation"] = ["unsupported_species_role"]
         return result
-    value = float(fitted["model"].predict([transformed["values"]])[0])
+    try:
+        value = float(fitted["model"].predict([transformed["values"]])[0])
+    except (ValueError, TypeError, OverflowError) as error:
+        result.update(status="invalid_input", validation=[str(error)])
+        return result
     if not math.isfinite(value):
         result.update(status="nonfinite_prediction", validation=["nonfinite_prediction"])
     elif not 0 <= value <= 100:
