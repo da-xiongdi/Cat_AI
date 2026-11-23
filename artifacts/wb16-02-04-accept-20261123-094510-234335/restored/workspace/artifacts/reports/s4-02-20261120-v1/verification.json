@@ -1,0 +1,25 @@
+{
+  "result": "passed",
+  "byte_identical_rebuild": {
+    "all-view.json": "5d195d8724faf267828d06e162405d5d573fb5c06983c4cf0b8e17da5d236e4e",
+    "cu-view.json": "46add11505e9b4afbcf4125c58f7af2612859948bfbcece6209270dab089bf6b",
+    "distributions.json": "78e8e2c2eed5df119420c66a607fe3932fb713dfc30966fe307c67cabef0d33a",
+    "ledger.json": "d8d4563e152bedf21668f316012a8a791fc64bdbf80e6a15ec0c9b94f8502740"
+  },
+  "parent_rows": 593,
+  "unresolved_excluded": 15,
+  "all_target": 578,
+  "all_common": 542,
+  "cu_target": 211,
+  "cu_common": 211,
+  "independent_checks": [
+    "S4-01 CSV identity and candidates",
+    "S1-B selection",
+    "member subset and row exclusions",
+    "DOI and composition counts",
+    "numeric minima maxima and non-null counts",
+    "canonical manifest hashes",
+    "byte-identical rebuild"
+  ],
+  "verification_script_sha256": "8640d916b015adc8b625acb6378d0a428c0fa19ff10cfb730a34c36c7c7deae0"
+}

@@ -1,0 +1,318 @@
+{
+  "manifest_sha256": "b24f9e86a4d49180fc6777dd46119bbc918db405c0771d1f644b979e9299ac65",
+  "sources": {
+    "docs/feature_engineering_plan_v0.1.md": "261f3e42f88a0518ef5bf7d925f53635eacb9b3b0bd514ddef73f8d6d8d10ddc",
+    "docs/s2_implementation_plan.md": "7cba3b9197c8fae0901505550cab9e9e6040036a9ba16902f8f3f1795b490782",
+    "docs/s1_b_acceptance.md": "4975f3565ac7b7fb4e386233123e43446f318593a3d10387ad850edd9978525e"
+  },
+  "changes": [
+    {
+      "id": "S2-01",
+      "revision": 1,
+      "create": false,
+      "changes": {
+        "title": "训练配置与参数契约",
+        "goal": "交付独立训练配置schema、加载校验、有效配置及参数说明，供Python和CLI共用",
+        "deliverables": [
+          "modeling/config.py及独立schema/加载器",
+          "默认与自定义配置示例、模型/特征/参数目录、只校验接口",
+          "有效配置与默认/用户值来源、配置失败路径测试"
+        ],
+        "priority": "high",
+        "owner": "Codex",
+        "criteria": [
+          {
+            "id": "C1",
+            "description": "独立于项目Settings，支持快照/资格/分区、特征及属性映射版本、模型参数、seed、DOI折数和新输出目录；缺依赖明确提示",
+            "required": true
+          },
+          {
+            "id": "C2",
+            "description": "baseline_compare锁定默认三模型、3折及预设；custom_train支持单/多模型，至少2折且不超过训练DOI组数；不回退随机行拆分",
+            "required": true
+          },
+          {
+            "id": "C3",
+            "description": "Ridge alpha、ExtraTrees五项参数及seed有类型/范围/并行限制；Dummy仅mean；未知/泄漏字段、模型、非法值和参数冲突立即拒绝",
+            "required": true
+          },
+          {
+            "id": "C4",
+            "description": "参数目录、只校验、有效配置及来源可查询，配置示例通过真实加载器；具体要求见S2分解第3节S2-01",
+            "required": true
+          }
+        ]
+      },
+      "dependencies": [
+        "S1B-01"
+      ],
+      "target_status": "ready"
+    },
+    {
+      "id": "S2-02",
+      "revision": 1,
+      "create": false,
+      "changes": {
+        "title": "增强训练与预测集成",
+        "goal": "集成S2-01/04/05/06，贯通Python和CLI并完成工程回归与交付清单",
+        "deliverables": [
+          "Python及配置文件+CLI训练预测入口",
+          "帮助、参数说明、可运行训练配置及预测JSON示例",
+          "S2工程交付清单、全量回归和接口文档"
+        ],
+        "priority": "high",
+        "owner": "Codex",
+        "criteria": [
+          {
+            "id": "C1",
+            "description": "贯通配置校验、指定单/多模型训练、保存/加载、单条/批量预测；baseline/custom独立编号及目录；不依赖Web训练UI",
+            "required": true
+          },
+          {
+            "id": "C2",
+            "description": "帮助/示例/接口与实际行为一致；非法配置、组数不足、篡改、不支持/零含量物种、越界及混合批量有回归；旧R1包重放通过",
+            "required": true
+          },
+          {
+            "id": "C3",
+            "description": "全量pytest、ruff check及格式检查通过并固定代码/测试证据；S2工程交付与S3正式比较分开，不以MAE改善为门槛",
+            "required": true
+          }
+        ]
+      },
+      "dependencies": [
+        "S1B-01",
+        "S2-01",
+        "S2-04",
+        "S2-05",
+        "S2-06"
+      ],
+      "target_status": "planned"
+    },
+    {
+      "id": "S2-03",
+      "revision": 1,
+      "create": false,
+      "changes": {
+        "title": "家族对照资格检查",
+        "goal": "检查可信家族标签及记录/DOI覆盖，形成可比较或跳过报告，不阻断统一模型",
+        "deliverables": [
+          "家族标签来源与可信范围清单",
+          "各家族/分区记录及DOI覆盖和资格/跳过报告"
+        ],
+        "owner": "Codex",
+        "criteria": [
+          {
+            "id": "C1",
+            "description": "核实标准化标签依据，不直接把名称派生的195个material_family原值当成标准分类",
+            "required": true
+          },
+          {
+            "id": "C2",
+            "description": "分数查看前冻结资格判据，报告各家族各分区记录/DOI数；满足既定分区和DOI CV条件再安排A/B1同特征对照",
+            "required": true
+          },
+          {
+            "id": "C3",
+            "description": "标签或覆盖不足输出明确跳过原因，不强行按样品名分类，不阻断统一模型，不提前引入B2或专家架构",
+            "required": true
+          }
+        ]
+      },
+      "dependencies": [
+        "S1B-01"
+      ],
+      "target_status": "ready"
+    },
+    {
+      "id": "S2-04",
+      "revision": null,
+      "create": true,
+      "changes": {},
+      "dependencies": [
+        "S1B-01"
+      ],
+      "target_status": "ready"
+    },
+    {
+      "id": "S2-05",
+      "revision": null,
+      "create": true,
+      "changes": {},
+      "dependencies": [
+        "S2-01",
+        "S2-04"
+      ],
+      "target_status": "planned"
+    },
+    {
+      "id": "S2-06",
+      "revision": null,
+      "create": true,
+      "changes": {},
+      "dependencies": [
+        "S2-05"
+      ],
+      "target_status": "planned"
+    },
+    {
+      "id": "S3-01",
+      "revision": 1,
+      "create": false,
+      "changes": {
+        "title": "R2共同子集正式比较",
+        "goal": "在S2交付后运行真实冻结输入的配对比较，报告物化增量及支持限制",
+        "deliverables": [
+          "固定真实输入的R1/R2默认预设运行与F_base/F1/F2比较报告",
+          "OOF、validation和历史test逐条结果/状态、覆盖及配对增量结论"
+        ],
+        "owner": "Codex",
+        "criteria": [
+          {
+            "id": "C1",
+            "description": "同一事实快照、553条共同子集、原分区、相同CV折和配对算法/参数比较F_base/F1/F2；完整绑定校验通过",
+            "required": true
+          },
+          {
+            "id": "C2",
+            "description": "报告三层结果、共同可支持子集及筛选损失；按全部OOF论文等权MAE选模，validation不选模，test标明历史；F_base胜出如实报告未选用物化增强",
+            "required": true
+          }
+        ]
+      },
+      "dependencies": [
+        "S2-02"
+      ],
+      "target_status": "planned"
+    },
+    {
+      "id": "S3-02",
+      "revision": 1,
+      "create": false,
+      "changes": {
+        "title": "训练预测端到端整体验收",
+        "goal": "复核默认及自定义训练、指定模型预测、失败路径和固定证据，记录整体验收",
+        "deliverables": [
+          "默认/自定义及指定模型预测端到端验收报告",
+          "重载/重放、失败路径、版本配置及代码测试证据"
+        ],
+        "owner": "Codex",
+        "criteria": [
+          {
+            "id": "C1",
+            "description": "真实默认/自定义训练、单模型、指定包单条/批量预测、重载一致性及非法/未见/篡改/越界失败路径全部可核对",
+            "required": true
+          },
+          {
+            "id": "C2",
+            "description": "固定有效配置及来源、数据/特征/属性/映射/代码/依赖、折清单、产物哈希及测试记录；工程验收不升级为外推或机理验证",
+            "required": true
+          }
+        ]
+      },
+      "dependencies": [
+        "S2-02",
+        "S3-01"
+      ],
+      "target_status": "planned"
+    }
+  ],
+  "tasks": {
+    "S2-01": {
+      "title": "训练配置与参数契约",
+      "status": "ready",
+      "revision": 3,
+      "criteria_version": 2,
+      "dependencies": [
+        "S1B-01"
+      ]
+    },
+    "S2-04": {
+      "title": "F1/F2特征适配与折内转换",
+      "status": "ready",
+      "revision": 3,
+      "criteria_version": 1,
+      "dependencies": [
+        "S1B-01"
+      ]
+    },
+    "S2-05": {
+      "title": "可配置训练与R2评价框架",
+      "status": "planned",
+      "revision": 3,
+      "criteria_version": 1,
+      "dependencies": [
+        "S2-01",
+        "S2-04"
+      ]
+    },
+    "S2-06": {
+      "title": "增强模型包与独立预测",
+      "status": "planned",
+      "revision": 2,
+      "criteria_version": 1,
+      "dependencies": [
+        "S2-05"
+      ]
+    },
+    "S2-02": {
+      "title": "增强训练与预测集成",
+      "status": "planned",
+      "revision": 5,
+      "criteria_version": 2,
+      "dependencies": [
+        "S1B-01",
+        "S2-01",
+        "S2-04",
+        "S2-05",
+        "S2-06"
+      ]
+    },
+    "S2-03": {
+      "title": "家族对照资格检查",
+      "status": "ready",
+      "revision": 3,
+      "criteria_version": 2,
+      "dependencies": [
+        "S1B-01"
+      ]
+    },
+    "S3-01": {
+      "title": "R2共同子集正式比较",
+      "status": "planned",
+      "revision": 2,
+      "criteria_version": 2,
+      "dependencies": [
+        "S2-02"
+      ]
+    },
+    "S3-02": {
+      "title": "训练预测端到端整体验收",
+      "status": "planned",
+      "revision": 2,
+      "criteria_version": 2,
+      "dependencies": [
+        "S2-02",
+        "S3-01"
+      ]
+    }
+  },
+  "backup": {
+    "path": "D:\\work\\Cat_AI\\artifacts\\reports\\s2-task-deployment-20261117-a16ac69b2cd1\\before.sqlite",
+    "sha256": "adcbe1aa5c1b40b0c438372d08c300e6891ff30d15badfe5115aa82c869f1f45"
+  },
+  "research_files_unchanged": {
+    "data/catalog.sqlite": "45b16131d2fc8febba0dcd3d6031d1204d3f00d315a5d887e624e2efaee855b0",
+    "data/snapshots/snapshot-76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da.json": "b66f6e63dedee0c1e9e4290b2f8406ca924d950317a00750146bdba0648cf2b4",
+    "data/snapshots/qualifications/qualification-b450e999aca00cd7e035b5bb1006a48d3fbd171520391710eb05a2490aa85967.json": "755e95cfda65c9bee1e01f4c54d926152ffa8a4b792362a298c3659120f42945",
+    "artifacts/models/themecat-r1-prediction-20261112/manifest.json": "ff08782697d23f5cc7ffa992e842780830506b95e87015c1725638ddfcdf7f6b",
+    "artifacts/models/themecat-r1-prediction-20261112/model.pkl": "27562d61c127956df530795a90d3403319538c3b55a35b5f2a4c0160e782d4cf",
+    "artifacts/models/themecat-r1-prediction-20261112-final/manifest.json": "627947a76735fc8a9b6e95638004116b42ea22040ec1b2c4d409761f4f180304",
+    "artifacts/models/themecat-r1-prediction-20261112-final/model.pkl": "27562d61c127956df530795a90d3403319538c3b55a35b5f2a4c0160e782d4cf",
+    "artifacts/reports/s1-b-20261113-v4/features.json": "9fa35bf4b59607a41a02e83d40ada79ef6565b09fa7a09d740ba8ecf7caf734e",
+    "artifacts/reports/s1-b-20261113-v4/selection.json": "dec7556d54673d34f4b36d556b12dd9fc720d588b550d7cbe8b2db7189abb707"
+  },
+  "reviews_unchanged": true,
+  "rehearsal_passed": true,
+  "repeat_changes": []
+}

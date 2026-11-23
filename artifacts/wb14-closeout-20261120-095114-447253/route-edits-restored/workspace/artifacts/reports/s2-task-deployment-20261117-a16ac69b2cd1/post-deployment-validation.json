@@ -1,0 +1,28 @@
+{
+  "http_pages": {
+    "/tasks/S2-01": 200,
+    "/tasks/S2-04": 200,
+    "/tasks/S2-05": 200,
+    "/tasks/S2-06": 200,
+    "/tasks/S2-02": 200,
+    "/tasks/S2-03": 200,
+    "/tasks/S3-01": 200,
+    "/tasks/S3-02": 200,
+    "/tasks": 200,
+    "/documents": 200,
+    "/artifacts": 200
+  },
+  "dependency_rejections": [
+    "dependency not complete or evidence unavailable: S2-01",
+    "cyclic dependency"
+  ],
+  "local_links_checked": 145,
+  "local_link_errors": 0,
+  "management_regression_tests": {
+    "passed": 23,
+    "warning": "existing Starlette TestClient/httpx deprecation"
+  },
+  "ruff_check": "passed",
+  "ruff_format_check": "passed",
+  "repeat_apply_changes": 0
+}

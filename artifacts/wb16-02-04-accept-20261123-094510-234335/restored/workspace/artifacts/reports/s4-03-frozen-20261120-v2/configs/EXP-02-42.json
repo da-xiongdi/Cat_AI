@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "view": "artifacts/reports/s4-02-20261120-v1/all-view.json",
+  "snapshot": "data/snapshots/snapshot-76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da.json",
+  "split": "artifacts/reports/s4-03-frozen-20261120-v2/EXP-02-42.json",
+  "split_sha256": "1c60e3f012c464bc31d12741bd0b6134c920479d40e21754848cf3c6c2028126",
+  "target": "co2_conversion",
+  "candidates": [
+    {
+      "feature": "F_base",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_depth": null,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F1",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_depth": null,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F2",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_depth": null,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    }
+  ],
+  "model_seed": 42
+}

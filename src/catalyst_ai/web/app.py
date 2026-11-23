@@ -8,9 +8,10 @@ import sqlite3
 import uuid
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import quote, urlencode
 from zoneinfo import ZoneInfo
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Query, Request
 from fastapi.responses import (
     HTMLResponse,
     JSONResponse,
@@ -27,9 +28,12 @@ from catalyst_ai.workbench import (
     adapters,
     backup,
     decisions,
+    deliveries,
     foundation,
     index,
+    listings,
     model_runs,
+    plans,
     predictions,
     queries,
     research,
@@ -65,6 +69,59 @@ LABELS = {
     "invalid": "无效",
     "read_error": "读取失败",
 }
+PLAN_LABELS = {
+    "valid": "已核对",
+    "changed": "计划待核对 · 文件或引用已变化",
+    "unverified": "计划待核对 · 尚未核对",
+    "section_missing": "章节缺失",
+    "section_ambiguous": "章节存在歧义",
+    "missing_or_invalid": "文件缺失或无效",
+    "path_escape": "路径超出工作区",
+    "invalid_reference": "任务或登记路径不匹配",
+}
+NEXT_WORK_CATEGORIES = ("research", "workbench")
+CATEGORY_LABELS = {
+    "all": "全部",
+    "research": "科研",
+    "workbench": "工作台建设",
+    "unclassified": "待核对",
+}
+PURPOSE_LABELS = {
+    "construction_plan": "建设方案",
+    "research_plan": "科研方案",
+    "execution_plan": "执行计划",
+    "acceptance": "验收文档",
+}
+LIST_LABELS = {"tasks": "任务", "documents": "文档", "artifacts": "成果"}
+
+
+def with_query(path, params):
+    return path + ("?" + urlencode(params) if params else "")
+
+
+def detail_context(request, *, allow_task=True):
+    query = request.query_params
+    source = query.get("list_source")
+    if source not in ("documents", "artifacts"):
+        source = "tasks" if allow_task and query.get("from_list") == "1" else None
+    params = {
+        key: query[key]
+        for key in ("category", "status", "stage", "q")
+        if query.get(key) and (source == "tasks" or key in ("category", "q"))
+    }
+    if params.get("category") not in queries.SCOPES:
+        params.pop("category", None)
+    if not source:
+        return None, {}, {key: params[key] for key in ("category",) if key in params}
+    context = {"from_list": 1} if source == "tasks" else {"list_source": source}
+    context.update(params)
+    for key in ("offset", "limit"):
+        value = query.get("list_" + key)
+        if value and value.isascii() and value.isdecimal() and len(value) <= 18:
+            number = int(value)
+            if key == "offset" or 1 <= number <= 500:
+                params[key] = context["list_" + key] = number
+    return source, params, context
 
 
 def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI"):
@@ -106,7 +163,11 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
 
     templates.env.filters["localtime"] = localtime
     templates.env.filters["label"] = lambda value: LABELS.get(value, value)
+    templates.env.filters["plan_label"] = lambda value: PLAN_LABELS.get(value, value)
     templates.env.filters["pretty"] = lambda value: json.dumps(value, ensure_ascii=False, indent=2)
+    templates.env.globals.update(
+        category_labels=CATEGORY_LABELS, purpose_labels=PURPOSE_LABELS, list_labels=LIST_LABELS
+    )
 
     @app.middleware("http")
     async def security(request, call_next):
@@ -172,6 +233,70 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
             raise service.Missing("成果不存在")
         return artifact
 
+    def related_task_url(request):
+        task_id = request.query_params.get("task")
+        if not task_id:
+            return None
+        try:
+            task_for(task_id)
+        except service.Missing:
+            return None
+        _, _, context = detail_context(request)
+        return with_query("/tasks/" + quote(task_id, safe=""), context)
+
+    def render_listing(request, name, category, offset, limit, q, *, status="", stage=""):
+        if category is not None and category not in queries.SCOPES:
+            return PlainTextResponse("invalid category scope", status_code=422)
+        scope = category or "all"
+        if name == "tasks" and offset and not category and not limit:
+            limit = 30
+        size = limit or (30 if category else 500 if name != "tasks" else None)
+        path = "/" + name
+        params = {
+            k: v
+            for k, v in (("category", category), ("status", status), ("stage", stage), ("q", q))
+            if v
+        }
+        if name == "tasks":
+            result = listings.tasks(
+                db, project_id, scope, q=q, stage=stage, status=status, offset=offset, limit=size
+            )
+            context = {"from_list": 1, **params}
+        else:
+            result = listings.assets(
+                db, project_id, scope, documents=name == "documents", q=q, offset=offset, limit=size
+            )
+            context = {"list_source": name, **params}
+        if offset:
+            context["list_offset"] = offset
+        if limit:
+            context["list_limit"] = limit
+            params["limit"] = limit
+        previous = following = None
+        if size and offset:
+            last = max(0, (result["total"] - 1) // size * size)
+            previous = with_query(path, {**params, "offset": min(last, max(0, offset - size))})
+        if size and offset + size < result["total"]:
+            following = with_query(path, {**params, "offset": offset + size})
+        return render(
+            request,
+            name,
+            result=result,
+            scope=scope,
+            category=category,
+            status=status,
+            stage=stage,
+            q=q,
+            offset=offset,
+            limit=limit,
+            list_path=path,
+            detail_query=urlencode(context),
+            scope_query=urlencode({"category": scope}),
+            previous=previous,
+            following=following,
+            clear_url=with_query(path, {"category": category} if category else {}),
+        )
+
     @app.exception_handler(service.Missing)
     async def missing(request, exc):
         return render(request, "message", status_code=404, message=str(exc))
@@ -182,18 +307,50 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
             return JSONResponse({"detail": "invalid category scope"}, status_code=422)
         return queries.query(db, project_id, category)
 
+    @app.get("/next-work", response_class=HTMLResponse)
+    async def next_work_page(request: Request, category: str = "research"):
+        if category not in NEXT_WORK_CATEGORIES:
+            return PlainTextResponse("invalid category", status_code=422)
+        data = queries.query(db, project_id, category)
+        return render(
+            request,
+            "next_work",
+            category=category,
+            view=data["next_work"][category],
+            task_categories={t["id"]: t["category"] for t in tasks()},
+        )
+
     @app.get("/api/workbench/v1/roadmap/nodes/{node_id}/children")
     async def roadmap_children(node_id: str):
         data = roadmap.snapshot(db, project_id)
         parent = data["nodes"].get(node_id)
         if parent is None:
             raise service.Missing("路线节点不存在")
-        return {"parent_id": node_id, "items": [data["nodes"][i] for i in parent["child_ids"]]}
+        items = [data["nodes"][i] for i in parent["child_ids"]]
+        for item in items:
+            item["summary_labels"] = roadmap.summary_labels(
+                item["summary"], LABELS, item["empty_state"]
+            )
+        return {"parent_id": node_id, "items": items}
 
     @app.get("/roadmap", response_class=HTMLResponse)
     async def roadmap_page(request: Request, node: str = "", task: str = "", view: str = ""):
         data = roadmap.snapshot(db, project_id)
+        selected = data["nodes"].get(node) if node else None
+        task_links = [link for link in data["links"] if link["task_id"] == task]
+        if task and not node and task_links:
+            node = next((link["node_id"] for link in task_links if link["role"] == "primary"), "")
+            selected = data["nodes"].get(node)
         with transaction(db) as conn:
+            source_document = (
+                conn.execute(
+                    "SELECT a.id FROM artifact_location l JOIN artifact a ON a.id=l.artifact_id "
+                    "WHERE a.project_id=? AND a.kind='document' AND l.path=? ORDER BY a.id LIMIT 1",
+                    (project_id, selected["source_path"]),
+                ).fetchone()
+                if selected
+                else None
+            )
             node_history = (
                 [
                     dict(r)
@@ -219,11 +376,10 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
                 if node
                 else []
             )
-        selected = data["nodes"].get(node) if node else None
-        task_links = [link for link in data["links"] if link["task_id"] == task]
-        if task and not node and task_links:
-            node = next((link["node_id"] for link in task_links if link["role"] == "primary"), "")
-            selected = data["nodes"].get(node)
+        for item in data["nodes"].values():
+            item["summary_labels"] = roadmap.summary_labels(
+                item["summary"], LABELS, item["empty_state"]
+            )
         path = []
         cursor = selected
         while cursor:
@@ -235,8 +391,10 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
             request,
             "roadmap",
             roadmap=data,
+            roadmap_summary=roadmap.summary_labels(data["summary"], LABELS),
             initial_nodes={i: data["nodes"][i] for i in initial_ids},
             selected=selected,
+            source_document=source_document["id"] if source_document else None,
             missing_node=bool(node and not selected),
             missing_task=bool(
                 task
@@ -254,17 +412,31 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
 
     @app.get("/", response_class=HTMLResponse)
     async def overview(request: Request):
-        rows = tasks()
-        milestones = []
-        for milestone in ("S1-A", "S1-B", "S2", "S3"):
-            subset = [t for t in rows if t["milestone"] == milestone]
-            milestones.append(
-                {
-                    "name": milestone,
-                    "total": len(subset),
-                    "done": sum(t["status"] == "done" for t in subset),
-                }
-            )
+        research_view = queries.query(db, project_id, "research")
+        workbench_view = queries.query(db, project_id, "workbench")
+        road = roadmap.snapshot(db, project_id)
+        for stage in road["stages"]:
+            stage["root_summaries"] = [
+                (
+                    road["nodes"][node_id],
+                    roadmap.summary_labels(road["nodes"][node_id]["summary"], LABELS),
+                )
+                for node_id in stage["root_ids"]
+            ]
+        rows = research_view["tasks"]
+        completed = [
+            t for t in research_view["next_work"]["research"]["history"] if t["status"] == "done"
+        ]
+        completed.sort(
+            key=lambda t: max(
+                (r["created_at"] for r in t["reviews"] if r["kind"] == "acceptance"), default=""
+            ),
+            reverse=True,
+        )
+        try:
+            sample_stats = samples.list_samples(root / "data/catalog.sqlite", limit=1)
+        except (ValueError, sqlite3.Error, json.JSONDecodeError):
+            sample_stats = {"status": "unavailable", "total": None}
         with transaction(db) as conn:
             activity = [
                 dict(r)
@@ -289,7 +461,12 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
             request,
             "overview",
             tasks=rows,
-            milestones=milestones,
+            completed=completed[:5],
+            research_view=research_view,
+            workbench_view=workbench_view,
+            road=road,
+            road_summary=roadmap.summary_labels(road["summary"], LABELS),
+            sample_stats=sample_stats,
             activity=activity,
             artifacts=index.list_artifacts(db, project_id, limit=10)["items"],
             decisions=decisions.list_decisions(db, project_id)[:5],
@@ -303,6 +480,25 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
             },
             snapshot_stats=snapshots,
             research_records=claims,
+        )
+
+    @app.get("/workbench-maintenance", response_class=HTMLResponse)
+    async def workbench_maintenance(request: Request):
+        data = queries.query(db, project_id, "workbench")
+        history = data["next_work"]["workbench"]["history"]
+        completed = [t for t in history if any(r["kind"] == "acceptance" for r in t["reviews"])]
+        completed.sort(
+            key=lambda t: max(
+                (r["created_at"] for r in t["reviews"] if r["kind"] == "acceptance"), default=""
+            ),
+            reverse=True,
+        )
+        return render(
+            request,
+            "maintenance",
+            view=data,
+            completed=completed[:10],
+            deliveries=deliveries.list_historical_deliveries(db, project_id),
         )
 
     @app.get("/pending/{module}", response_class=HTMLResponse)
@@ -320,8 +516,17 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
     async def research_page(request: Request, kind: str = "claims"):
         if kind not in {"claims", "issues"}:
             raise service.Missing("研究台账不存在")
+        _, _, context = detail_context(request, allow_task=False)
+        scope = {"category": context["category"]} if "category" in context else {}
         return render(
-            request, "research", kind=kind, records=research.list_records(db, project_id, kind)
+            request,
+            "research",
+            kind=kind,
+            records=research.list_records(db, project_id, kind),
+            task_list_url=with_query("/tasks", scope),
+            claims_url=with_query("/research", {"kind": "claims", **scope}),
+            issues_url=with_query("/research", {"kind": "issues", **scope}),
+            related_task_url=related_task_url(request),
         )
 
     @app.get("/api/workbench/v1/exports/progress")
@@ -641,32 +846,42 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
             return render(request, "message", status_code=409, message=str(exc))
 
     @app.get("/tasks", response_class=HTMLResponse)
-    async def task_list(request: Request, status: str = "", stage: str = "", q: str = ""):
-        rows = [
-            t
-            for t in tasks()
-            if (not status or t["status"] == status)
-            and (not stage or stage in t["stages"])
-            and (not q or q.casefold() in (t["title"] + " " + t["id"]).casefold())
-        ]
-        return render(request, "tasks", tasks=rows, status=status, stage=stage, q=q, labels=LABELS)
+    async def task_list(
+        request: Request,
+        status: str = "",
+        stage: str = "",
+        q: str = "",
+        category: str | None = None,
+        offset: int = Query(0, ge=0),
+        limit: int | None = Query(None, ge=1, le=500),
+    ):
+        return render_listing(
+            request, "tasks", category, offset, limit, q, status=status, stage=stage
+        )
 
     @app.get("/tasks/new", response_class=HTMLResponse)
     async def task_new(request: Request):
         return render(request, "task_form", task=None)
 
     @app.get("/tasks/{task_id}", response_class=HTMLResponse)
-    async def task_detail(request: Request, task_id: str, node: str = ""):
+    async def task_detail(
+        request: Request,
+        task_id: str,
+        node: str = "",
+        category: str = "",
+    ):
         task = task_for(task_id)
-        road = roadmap.snapshot(db, project_id)
-        task_links = [link for link in road["links"] if link["task_id"] == task_id]
-        return_node = next(
-            (link["node_id"] for link in task_links if link["node_id"] == node), None
-        )
-        if not return_node:
+        return_node = None
+        if task["category"] == "research":
+            road = roadmap.snapshot(db, project_id)
+            task_links = [link for link in road["links"] if link["task_id"] == task_id]
             return_node = next(
-                (link["node_id"] for link in task_links if link["role"] == "primary"), None
+                (link["node_id"] for link in task_links if link["node_id"] == node), None
             )
+            if not return_node:
+                return_node = next(
+                    (link["node_id"] for link in task_links if link["role"] == "primary"), None
+                )
         artifacts = []
         for row in index.list_artifacts(db, project_id, limit=500)["items"]:
             item = index.get_artifact(db, row["id"])
@@ -679,18 +894,42 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
                 for r in conn.execute(
                     "SELECT d.id,r.title FROM task_decision td "
                     "JOIN decision d ON d.id=td.decision_id JOIN decision_revision r "
-                    "ON r.decision_id=d.id AND r.revision=d.revision WHERE td.task_id=?",
-                    (task_id,),
+                    "ON r.decision_id=d.id AND r.revision=d.revision "
+                    "WHERE td.task_id=? AND d.project_id=? ORDER BY d.id",
+                    (task_id, project_id),
                 )
             ]
+        source, params, context = detail_context(request)
+        all_tasks = tasks()
+        related_issues = {}
+        for record in research.list_records(db, project_id, "issues"):
+            related_issues.setdefault(record["id"], record["content"])
+        related_query = urlencode({"task": task_id, **context})
         return render(
             request,
             "task",
             task=task,
-            all_tasks=tasks(),
+            task_return_url=with_query("/" + (source or "tasks"), params if source else context),
+            task_return_label=LIST_LABELS[source or "tasks"],
+            task_context=urlencode(context),
+            related_query=related_query,
+            all_tasks=all_tasks,
+            task_categories={t["id"]: queries.task_category(t) for t in all_tasks},
             artifacts=artifacts,
             related_decisions=related_decisions,
+            related_issues=[
+                {"id": i, "title": c["title"]}
+                for i, c in related_issues.items()
+                if c.get("task_id") == task_id
+            ],
             roadmap_return_node=return_node,
+            historical_deliveries=[
+                d
+                for d in deliveries.list_historical_deliveries(db, project_id)
+                if d["task_id"] == task_id
+            ],
+            plan_references=plans.list_task_plan_references(db, project_id, task_id),
+            next_work_category=category if category in NEXT_WORK_CATEGORIES else None,
             related_runs=[
                 run
                 for run in model_runs.list_runs(db, project_id)
@@ -698,23 +937,63 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
             ],
         )
 
+    def render_plan_preview(request, task_id, reference_id, category, document_id=None):
+        result = plans.open_task_plan(
+            db, project_id, task_id, reference_id, document_id=document_id
+        )
+        task = task_for(task_id)
+        artifact = artifact_for(result["reference"]["document_id"])
+        if category not in NEXT_WORK_CATEGORIES:
+            category = task["category"]
+        source, params, context = detail_context(request)
+        if "category" not in context and category in NEXT_WORK_CATEGORIES:
+            context["category"] = category
+        return render(
+            request,
+            "artifact",
+            artifact=artifact,
+            plan=result,
+            task=task,
+            plan_task_url=with_query("/tasks/" + quote(task_id, safe=""), context),
+            list_return_url=with_query("/" + source, params) if source else None,
+            list_return_label=LIST_LABELS.get(source),
+            next_work_category=category if category in NEXT_WORK_CATEGORIES else None,
+            preview={"text": result["content"], "line": result["line"]} if result["line"] else None,
+            error=None,
+        )
+
+    @app.get("/tasks/{task_id}/plans/{reference_id}", response_class=HTMLResponse)
+    async def task_plan(request: Request, task_id: str, reference_id: str, category: str = ""):
+        return render_plan_preview(request, task_id, reference_id, category)
+
     @app.get("/tasks/{task_id}/edit", response_class=HTMLResponse)
     async def task_edit(request: Request, task_id: str):
         return render(request, "task_form", task=task_for(task_id))
 
     @app.get("/artifacts", response_class=HTMLResponse)
-    async def artifacts(request: Request):
-        rows = index.list_artifacts(db, project_id, limit=500)
-        return render(
-            request,
-            "artifacts",
-            artifacts=[index.get_artifact(db, row["id"]) for row in rows["items"]],
-        )
+    async def artifacts(
+        request: Request,
+        category: str | None = None,
+        q: str = "",
+        offset: int = Query(0, ge=0),
+        limit: int | None = Query(None, ge=1, le=500),
+    ):
+        return render_listing(request, "artifacts", category, offset, limit, q)
 
     @app.get("/artifacts/{artifact_id}", response_class=HTMLResponse)
     async def artifact_detail(
-        request: Request, artifact_id: str, version: str = "", offset: int = 0
+        request: Request,
+        artifact_id: str,
+        version: str = "",
+        offset: int = 0,
+        task: str = "",
+        reference: str = "",
+        category: str = "",
     ):
+        if task or reference:
+            if not task or not reference:
+                raise service.Missing("计划引用不存在")
+            return render_plan_preview(request, task, reference, category, artifact_id)
         artifact = artifact_for(artifact_id)
         preview, error = None, None
         if version:
@@ -722,6 +1001,9 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
                 preview = index.preview(db, artifact_id, version, offset=offset, limit=30)
             except (ValueError, OSError) as exc:
                 error = str(exc)
+        source, params, context = detail_context(request, allow_task=False)
+        if not source and category in queries.SCOPES:
+            params["category"] = category
         return render(
             request,
             "artifact",
@@ -730,6 +1012,9 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
             error=error,
             version=version,
             offset=offset,
+            list_return_url=with_query("/" + (source or "artifacts"), params),
+            list_return_label=LIST_LABELS[source or "artifacts"],
+            asset_context=urlencode(context),
         )
 
     @app.get("/artifacts/{artifact_id}/download/{version}")
@@ -759,7 +1044,15 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
 
     @app.get("/decisions", response_class=HTMLResponse)
     async def decision_list(request: Request):
-        return render(request, "decisions", decisions=decisions.list_decisions(db, project_id))
+        _, _, context = detail_context(request, allow_task=False)
+        scope = {"category": context["category"]} if "category" in context else {}
+        return render(
+            request,
+            "decisions",
+            decisions=decisions.list_decisions(db, project_id),
+            task_list_url=with_query("/tasks", scope) if scope else None,
+            decision_context=with_query("", scope),
+        )
 
     @app.get("/decisions/new", response_class=HTMLResponse)
     async def decision_new(request: Request):
@@ -767,11 +1060,15 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
 
     @app.get("/decisions/{decision_id}", response_class=HTMLResponse)
     async def decision_detail(request: Request, decision_id: str):
+        _, _, context = detail_context(request)
+        scope = {"category": context["category"]} if "category" in context else {}
         return render(
             request,
             "decision",
             decision=decisions.get_decision(db, project_id, decision_id),
             all_tasks=tasks(),
+            decision_list_url=with_query("/decisions", scope),
+            related_task_url=related_task_url(request),
         )
 
     @app.get("/decisions/{decision_id}/edit", response_class=HTMLResponse)
@@ -792,13 +1089,14 @@ def create_app(db: Path, root: Path, project_id="cat-ai", project_name="Cat AI")
         )
 
     @app.get("/documents", response_class=HTMLResponse)
-    async def documents(request: Request):
-        items = [
-            index.get_artifact(db, r["id"])
-            for r in index.list_artifacts(db, project_id, limit=500)["items"]
-            if r["kind"] == "document"
-        ]
-        return render(request, "documents", artifacts=items)
+    async def documents(
+        request: Request,
+        category: str | None = None,
+        q: str = "",
+        offset: int = Query(0, ge=0),
+        limit: int | None = Query(None, ge=1, le=500),
+    ):
+        return render_listing(request, "documents", category, offset, limit, q)
 
     @app.get("/search", response_class=HTMLResponse)
     async def search(request: Request, q: str = ""):

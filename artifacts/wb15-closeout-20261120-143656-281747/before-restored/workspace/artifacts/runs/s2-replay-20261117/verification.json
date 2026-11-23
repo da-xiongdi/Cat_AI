@@ -1,0 +1,255 @@
+{
+  "baseline": {
+    "report_sha256": "2e237916b589dcc26acef06f96b8022339c160c3de9d49ee82637e2125136ac3",
+    "selected": {
+      "feature_set": "F_base",
+      "model": "extra_trees"
+    },
+    "records": {
+      "train": 454,
+      "validation": 47,
+      "test": 52
+    },
+    "folds": {
+      "0": 152,
+      "1": 151,
+      "2": 151
+    },
+    "statuses": {
+      "OOF F_base/dummy": {
+        "caution": 172,
+        "unsupported_species_role": 180,
+        "ok": 102
+      },
+      "OOF F_base/extra_trees": {
+        "caution": 172,
+        "unsupported_species_role": 180,
+        "ok": 102
+      },
+      "OOF F_base/ridge": {
+        "caution": 130,
+        "unsupported_species_role": 134,
+        "caution+output_out_of_range": 42,
+        "unsupported_species_role+output_out_of_range": 46,
+        "ok": 96,
+        "output_out_of_range": 6
+      },
+      "OOF F1/dummy": {
+        "caution": 172,
+        "unsupported_species_role": 180,
+        "ok": 102
+      },
+      "OOF F1/extra_trees": {
+        "caution": 172,
+        "unsupported_species_role": 180,
+        "ok": 102
+      },
+      "OOF F1/ridge": {
+        "caution": 114,
+        "unsupported_species_role": 136,
+        "caution+output_out_of_range": 58,
+        "ok": 93,
+        "output_out_of_range": 9,
+        "unsupported_species_role+output_out_of_range": 44
+      },
+      "OOF F2/dummy": {
+        "caution": 172,
+        "unsupported_species_role": 180,
+        "ok": 102
+      },
+      "OOF F2/extra_trees": {
+        "caution": 172,
+        "unsupported_species_role": 180,
+        "ok": 102
+      },
+      "OOF F2/ridge": {
+        "caution": 129,
+        "unsupported_species_role": 162,
+        "caution+output_out_of_range": 43,
+        "ok": 90,
+        "unsupported_species_role+output_out_of_range": 18,
+        "output_out_of_range": 12
+      },
+      "validation F_base/dummy": {
+        "ok": 26,
+        "unsupported_species_role": 19,
+        "caution": 2
+      },
+      "validation F_base/extra_trees": {
+        "ok": 26,
+        "unsupported_species_role": 19,
+        "caution": 2
+      },
+      "validation F_base/ridge": {
+        "ok": 25,
+        "output_out_of_range": 1,
+        "unsupported_species_role": 17,
+        "caution": 2,
+        "unsupported_species_role+output_out_of_range": 2
+      },
+      "validation F1/dummy": {
+        "ok": 26,
+        "unsupported_species_role": 19,
+        "caution": 2
+      },
+      "validation F1/extra_trees": {
+        "ok": 26,
+        "unsupported_species_role": 19,
+        "caution": 2
+      },
+      "validation F1/ridge": {
+        "ok": 25,
+        "output_out_of_range": 1,
+        "unsupported_species_role": 15,
+        "unsupported_species_role+output_out_of_range": 4,
+        "caution": 2
+      },
+      "validation F2/dummy": {
+        "ok": 26,
+        "unsupported_species_role": 19,
+        "caution": 2
+      },
+      "validation F2/extra_trees": {
+        "ok": 26,
+        "unsupported_species_role": 19,
+        "caution": 2
+      },
+      "validation F2/ridge": {
+        "ok": 25,
+        "output_out_of_range": 1,
+        "unsupported_species_role": 11,
+        "unsupported_species_role+output_out_of_range": 8,
+        "caution": 2
+      },
+      "test F_base/dummy": {
+        "unsupported_species_role": 26,
+        "ok": 25,
+        "caution": 1
+      },
+      "test F_base/extra_trees": {
+        "unsupported_species_role": 26,
+        "ok": 25,
+        "caution": 1
+      },
+      "test F_base/ridge": {
+        "unsupported_species_role": 26,
+        "ok": 25,
+        "caution": 1
+      },
+      "test F1/dummy": {
+        "unsupported_species_role": 26,
+        "ok": 25,
+        "caution": 1
+      },
+      "test F1/extra_trees": {
+        "unsupported_species_role": 26,
+        "ok": 25,
+        "caution": 1
+      },
+      "test F1/ridge": {
+        "unsupported_species_role": 26,
+        "ok": 25,
+        "caution": 1
+      },
+      "test F2/dummy": {
+        "unsupported_species_role": 26,
+        "ok": 25,
+        "caution": 1
+      },
+      "test F2/extra_trees": {
+        "unsupported_species_role": 26,
+        "ok": 25,
+        "caution": 1
+      },
+      "test F2/ridge": {
+        "unsupported_species_role": 26,
+        "ok": 25,
+        "caution": 1
+      }
+    },
+    "input_hashes": {
+      "snapshot": "76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da",
+      "qualification": "b450e999aca00cd7e035b5bb1006a48d3fbd171520391710eb05a2490aa85967",
+      "split": "c03854b0d5bfb3230d8ca800f74d3ef2c50d60eb0f74995c3feec8a8ed09124a",
+      "selection": "5bcda7982b43de85d3ca3c8434b5cf880a753d3cc3b5eab65b542263210c6bb0",
+      "features": "d1a338cc64f403c263e2677a498adc6e05d0ad66e98889d00082b59fcdc42050"
+    },
+    "implementation_sha256": {
+      "modeling\\experiments.py": "2a37abeab72ff34eb1bbba87eae53781804ce388474d10b54f7b18b4d2cb0ea1",
+      "features\\pipeline.py": "d002691eb1db7ec53ea3ef7b49f419d4976c3b7a865ccd9ecddd5dc2889c502b",
+      "features\\enhanced.py": "dace0a09edc17f8050546942574bfd5d11f53884b93f9474bfb30a7876c9bdac",
+      "features\\physchem.py": "6dcae856dca5c6eba1d2e927c0511453d179b0f5463ca021cbeca20fbc7d785f",
+      "modeling\\config.py": "d7b87602f9c23273a482bf46aeb0b27915e49ac33a3bf86888db86663a446e29"
+    },
+    "result": "passed"
+  },
+  "custom": {
+    "report_sha256": "3dc4e31951921a5c840590aac89beaa8ffd9ed48998be7e9f638da39c9c6dbaf",
+    "selected": {
+      "feature_set": "F2",
+      "model": "extra_trees"
+    },
+    "records": {
+      "train": 454,
+      "validation": 47,
+      "test": 52
+    },
+    "folds": {
+      "0": 152,
+      "1": 151,
+      "2": 151
+    },
+    "statuses": {
+      "OOF F2/extra_trees": {
+        "caution": 172,
+        "unsupported_species_role": 180,
+        "ok": 102
+      },
+      "OOF F2/ridge": {
+        "caution": 131,
+        "unsupported_species_role": 162,
+        "caution+output_out_of_range": 41,
+        "ok": 93,
+        "output_out_of_range": 9,
+        "unsupported_species_role+output_out_of_range": 18
+      },
+      "validation F2/extra_trees": {
+        "ok": 26,
+        "unsupported_species_role": 19,
+        "caution": 2
+      },
+      "validation F2/ridge": {
+        "ok": 25,
+        "output_out_of_range": 1,
+        "unsupported_species_role": 11,
+        "unsupported_species_role+output_out_of_range": 8,
+        "caution": 2
+      },
+      "test F2/extra_trees": {
+        "unsupported_species_role": 26,
+        "ok": 25,
+        "caution": 1
+      },
+      "test F2/ridge": {
+        "unsupported_species_role": 26,
+        "ok": 25,
+        "caution": 1
+      }
+    },
+    "input_hashes": {
+      "snapshot": "76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da",
+      "qualification": "b450e999aca00cd7e035b5bb1006a48d3fbd171520391710eb05a2490aa85967",
+      "split": "c03854b0d5bfb3230d8ca800f74d3ef2c50d60eb0f74995c3feec8a8ed09124a",
+      "selection": "5bcda7982b43de85d3ca3c8434b5cf880a753d3cc3b5eab65b542263210c6bb0",
+      "features": "d1a338cc64f403c263e2677a498adc6e05d0ad66e98889d00082b59fcdc42050"
+    },
+    "implementation_sha256": {
+      "modeling\\experiments.py": "2a37abeab72ff34eb1bbba87eae53781804ce388474d10b54f7b18b4d2cb0ea1",
+      "features\\pipeline.py": "d002691eb1db7ec53ea3ef7b49f419d4976c3b7a865ccd9ecddd5dc2889c502b",
+      "features\\enhanced.py": "dace0a09edc17f8050546942574bfd5d11f53884b93f9474bfb30a7876c9bdac",
+      "features\\physchem.py": "6dcae856dca5c6eba1d2e927c0511453d179b0f5463ca021cbeca20fbc7d785f",
+      "modeling\\config.py": "d7b87602f9c23273a482bf46aeb0b27915e49ac33a3bf86888db86663a446e29"
+    },
+    "result": "passed"
+  }
+}

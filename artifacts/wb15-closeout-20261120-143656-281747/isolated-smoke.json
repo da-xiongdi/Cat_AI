@@ -1,0 +1,21 @@
+{
+  "routes": {
+    "/": 200,
+    "/next-work": 200,
+    "/next-work?category=workbench": 200,
+    "/tasks": 200,
+    "/tasks/S1A-01": 200,
+    "/tasks/WB-15": 200,
+    "/tasks/WB-15-02/plans/WB-15-02-primary-plan": 200,
+    "/artifacts": 200,
+    "/artifacts/WB-15-plan": 200,
+    "/documents": 200,
+    "/decisions": 200,
+    "/predictions": 200,
+    "/roadmap": 200,
+    "/foundation": 200,
+    "/artifacts/WB-15-plan?version=46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e": 200,
+    "/artifacts/WB-15-plan?task=WB-15-03&reference=WB-15-03-primary-plan": 200
+  },
+  "browse_rows_equal": true
+}

@@ -1,0 +1,55 @@
+{
+  "scope": "S2-03 qualification check and justified skip; no family model training or S3",
+  "actor": "Codex",
+  "local_date": "2026-11-18",
+  "timezone": "Asia/Shanghai",
+  "initial_task": {
+    "id": "S2-03",
+    "project_id": "cat-ai",
+    "title": "家族对照资格检查",
+    "goal": "检查可信家族标签及记录/DOI覆盖，形成可比较或跳过报告，不阻断统一模型",
+    "deliverables": "[\"家族标签来源与可信范围清单\",\"各家族/分区记录及DOI覆盖和资格/跳过报告\"]",
+    "milestone": "S2",
+    "stages": "[\"C\",\"D\"]",
+    "primary_stage": "C",
+    "status": "ready",
+    "priority": "normal",
+    "owner": "Codex",
+    "planned_date": null,
+    "criteria_version": 2,
+    "revision": 3,
+    "blocker": null,
+    "recovery_condition": null,
+    "recovery_date": null
+  },
+  "sources": {
+    "artifacts/reports/s1-b-20261113-v4/selection.json": "dec7556d54673d34f4b36d556b12dd9fc720d588b550d7cbe8b2db7189abb707",
+    "data/snapshots/snapshot-76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da.json": "b66f6e63dedee0c1e9e4290b2f8406ca924d950317a00750146bdba0648cf2b4",
+    "artifacts/reports/themecat-i2-20261110/split-verified.json": "3f2990db59b9a64fb3aa0b7bb56ed3b03e7b28e19ba1fc5f6d91c8ff6e841dde",
+    "docs/s2_03_acceptance.md": "1870526cef200b709a1384cdc0428bdfbaca69da727fd18830ccefca61d6bd9d",
+    "scripts/accept_s2_03.py": "808c56a7bbce57eb663d9fa1c02d3712da996e06269c75db7997c1559f822d2e",
+    "src/catalyst_ai/sources/themecat.py": "11421e11c7f8e56f00127c03204cca39b18afebb78a93f2cb10a25b38232f220",
+    "src/catalyst_ai/schemas/domain.py": "851898235f40101d66bf0831971f7dc453df48c4bef5d66015a9a018040d04e8",
+    "configs/s1_species_mapping_v2.json": "b663ca79807cb135436525ebeb6ba0d1450a620844cb6a15b6d6509226b8eef8",
+    "configs/s1_source_review_v2.json": "d2343a5432ca3ea42a20080a7a374f3cb1027858ed76fe2c861057a7c1c5c028"
+  },
+  "protected_hashes": {
+    "data/catalog.sqlite": "45b16131d2fc8febba0dcd3d6031d1204d3f00d315a5d887e624e2efaee855b0",
+    "data/raw/46000f00323ac64a79f63777e54c05634e83d1a6476176c8b6569122bd03dfbd.csv": "46000f00323ac64a79f63777e54c05634e83d1a6476176c8b6569122bd03dfbd",
+    "data/raw/bd0864e39a040731645b3a6a8d90009bba99885917e411ebe27d95ba7e251170.csv": "bd0864e39a040731645b3a6a8d90009bba99885917e411ebe27d95ba7e251170",
+    "data/raw/mendeleev-8a6312b57603e22c58ab28005bb8cacfbff721bc859eea8ddc2b784c17ffd717.sqlite": "8a6312b57603e22c58ab28005bb8cacfbff721bc859eea8ddc2b784c17ffd717",
+    "data/raw/s1-a-crossref-131111.json": "0936df76b764391c414f70b37f307c77f44f8eca24a711168a79fc0b15b27c49",
+    "data/snapshots/snapshot-76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da.json": "b66f6e63dedee0c1e9e4290b2f8406ca924d950317a00750146bdba0648cf2b4",
+    "data/snapshots/qualifications/qualification-b450e999aca00cd7e035b5bb1006a48d3fbd171520391710eb05a2490aa85967.json": "755e95cfda65c9bee1e01f4c54d926152ffa8a4b792362a298c3659120f42945"
+  },
+  "coverage_sha256": "4c83bdd5d10c3dedc71d41d55f4a271b674fd2d7803905030bf41ad5474992e2",
+  "criterion_mapping": {
+    "C1": "Adapter copies catalyst_name into material_family; no verified family labels found in the reviewed snapshot, mapping and source dispositions. Raw names are not families.",
+    "C2": "No family comparison or family scores exist. Criteria are fixed before any future family comparison; prior R1/S2 overall scores were already seen. No claim of global preregistration. Verified family inventory is empty, so per-family coverage is unavailable; unclassified partition counts and DOI lists are retained instead of fabricated family zeros.",
+    "C3": "Skip all A/B1 family comparisons for missing verified labels. No name-based classification, B2 or experts; unified-model S3 remains unblocked."
+  },
+  "decision": "skip_all_A_B1_missing_verified_labels",
+  "unified_model_blocked": false,
+  "review_basis": "Manual source/schema/mapping/disposition review plus reproduced counts. Absence of trusted labels applies to reviewed inputs; not an exhaustive literature audit.",
+  "timing": "No family scores generated or consulted; historical R1/S2 overall scores seen. No assertion of preregistration before all model scores."
+}

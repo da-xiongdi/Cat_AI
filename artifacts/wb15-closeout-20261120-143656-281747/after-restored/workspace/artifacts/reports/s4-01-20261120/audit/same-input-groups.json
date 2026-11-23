@@ -1,0 +1,350 @@
+[
+  {
+    "id": "same-input-001",
+    "record_ids": [
+      "e574937bb21f47918d98898079bec796:1",
+      "e54fc299ef054a5886556f11c8616900:1",
+      "e4291ed25e27437c87a6b14cdff2cb83:1",
+      "16ee533b906e46b4817d0c3cb33f9656:1",
+      "76e858001b374820abaa128a99f01d01:1",
+      "48b407ab6a1e4338a91ae7fa42d62396:1",
+      "35bb6936c6874bba80fe1b5b4bacb7f0:1",
+      "9708c4f61bd84851a4f83086a8c80dc2:1",
+      "284fb042e2a54906a98385bfe0f915f0:1",
+      "c0efb22af0e44f3593b39df8c12269ab:1",
+      "d931828e796248c99f6164fc8b178b2a:1",
+      "f4786a03058a4a1da48307ce71af04a3:1",
+      "cbbf361f502f4ae5b559ec7148de8d75:1",
+      "91b3b30877ab41249ea01920139976c1:1",
+      "4e43e9523e634d45a18b1d4f98d9190d:1",
+      "9edf5fb840834ac493fa50ba7d282d32:1",
+      "2a16820d76df4d739865a638f8739734:1"
+    ]
+  },
+  {
+    "id": "same-input-002",
+    "record_ids": [
+      "9850a324501742ddb44486fccfb10541:1",
+      "b0d75275d09b4563915b35f3015bf9be:1"
+    ]
+  },
+  {
+    "id": "same-input-003",
+    "record_ids": [
+      "9487d73e997f45bc9c7d5b8f8b730bf2:1",
+      "9685df798e7448c6bef91f4c591de2d3:1",
+      "04bee669048e4e3d94fb0c40e6823b44:1",
+      "0a9d3bfd4e8e454c96b1629dce8f3971:1",
+      "d5ca49389c854395877dc13f4d36c5fe:1",
+      "abb7d6f5ec704f6f98c83744a581dae4:1",
+      "247edeb41ea84e61a6f83aae86d8813b:1",
+      "dd38d8535ceb4967882cd284e0a068e7:1",
+      "ea49a1fa72bf4082b84baf8c483336b2:1",
+      "a88db497928d4861a0f333abaa901db1:1",
+      "0d7b324c56ff4b159101cdc2af2eb686:1",
+      "9109f20428834d969c58c7ecde9558ab:1"
+    ]
+  },
+  {
+    "id": "same-input-004",
+    "record_ids": [
+      "83dc23de5ac640e885306a6dee54ed03:1",
+      "e0aed66fc3ac4e87b90fceb2aa2c260b:1"
+    ]
+  },
+  {
+    "id": "same-input-005",
+    "record_ids": [
+      "8cd5463f8b3c40fcb10132e39eb434ad:1",
+      "876fc23c47da4f37b3c91b785ac57cfd:1",
+      "f74d21f27fc048c3b2da934d889c4869:1"
+    ]
+  },
+  {
+    "id": "same-input-006",
+    "record_ids": [
+      "f2dfc223a93c44ab9118c1d9f1dba532:1",
+      "9b254c61972a4b9b8b316b49767d89ac:1",
+      "cba83783c50d450c98fa97a3e0e93720:1"
+    ]
+  },
+  {
+    "id": "same-input-007",
+    "record_ids": [
+      "b5036bbfcdba4a98bca40ef075d0f3ae:1",
+      "8c164c8b2ce64608ab5e3f27ad9ea689:1",
+      "65577a15a0d14139acccc51f476f7b3a:1",
+      "06f288b6d24b4742a4193c4fb5658b79:1",
+      "13f76c470acf4daca72bfd001bc4b642:1",
+      "46bccf1a8c584f92bf2981d20f428ffe:1",
+      "de3796eb3f2f4341903e084f33cb6130:1",
+      "42db544a5c344b8b87435dd513e6c236:1"
+    ]
+  },
+  {
+    "id": "same-input-008",
+    "record_ids": [
+      "5a35cc56df1045888fa70e06ef262f16:1",
+      "1cb360357a7749109953f0035d32f03b:1",
+      "a46b80a0f1714fe6b31c913123737387:1",
+      "f37f93a2eab74bf49cc3f193e5c83b48:1",
+      "cb018a71104d4053a05e360ac539506c:1",
+      "541a0f47a9904fbcb7f40a9c462fca10:1",
+      "dc79eb3a677f4105aab24bb386aadc2c:1"
+    ]
+  },
+  {
+    "id": "same-input-009",
+    "record_ids": [
+      "be9466d81ccb4314b7d7a52fac8aeb2e:1",
+      "fe02ffe6b63640ce883c19138cafde51:1",
+      "c63c2ff0fb944ac5839593dd6f2f70b9:1",
+      "c071f9a9016f4e87b2ab1b2d4d37c6ae:1",
+      "e18d2c1f3d064e9bb505d54d84272eb9:1"
+    ]
+  },
+  {
+    "id": "same-input-010",
+    "record_ids": [
+      "c645d159d44649e692b4dd4e4727824e:1",
+      "24c208a468c54e0fa7c2fecfce5fa2a5:1",
+      "bd23e6e5f6a044ea94c118fd7ade7b69:1",
+      "d8349513e42446fb8f5401f5146463db:1",
+      "8f0c4050660d4951a0b6ac537d25061d:1"
+    ]
+  },
+  {
+    "id": "same-input-011",
+    "record_ids": [
+      "0c7dcf9dbbb5473b9278b06fd06cf4d5:1",
+      "25b37bf0c4a147d3a4546d15d8fc7606:1"
+    ]
+  },
+  {
+    "id": "same-input-012",
+    "record_ids": [
+      "3325b03645464918979abdefce8e6b40:1",
+      "eb16c1f986814c42a66b6b5a749417f4:1"
+    ]
+  },
+  {
+    "id": "same-input-013",
+    "record_ids": [
+      "c07a2643c96242b1b366ce12bb19586d:1",
+      "c8fe01271991453c97117869eea41243:1"
+    ]
+  },
+  {
+    "id": "same-input-014",
+    "record_ids": [
+      "6296eb80631440e4ad4dbdd31fa7f5dd:1",
+      "11f2384408b84b0e8463c33144a999a9:1",
+      "61ddaec6713d4c7685a4c1f2d9e12c3c:1"
+    ]
+  },
+  {
+    "id": "same-input-015",
+    "record_ids": [
+      "e8440714b1674ff0810a58322e1251f3:1",
+      "142a72f7c32943438d1270964e023c60:1",
+      "ff0b79d53021478cbe26fe8026fd0c60:1"
+    ]
+  },
+  {
+    "id": "same-input-016",
+    "record_ids": [
+      "35ad3c25ad3a40838cffd0883de9283a:1",
+      "38cd6109974c4277aee6454c1d6f9e5f:1",
+      "4baaa5fc7fcc41fd8e7c30838f72175d:1"
+    ]
+  },
+  {
+    "id": "same-input-017",
+    "record_ids": [
+      "0283d77973dd4a3bb90fcf0c6a59da60:1",
+      "35e3725fb8e64f098c2b70af3cd23e4e:1",
+      "563c244bce2e4bb5b8254c43b7d1e60a:1"
+    ]
+  },
+  {
+    "id": "same-input-018",
+    "record_ids": [
+      "b671b4049cd54a80ae6d8fb97a2d44ed:1",
+      "a2821fdf2d824adca186974f8e60ce86:1",
+      "51300314f1464fde8951eb322b0c665e:1"
+    ]
+  },
+  {
+    "id": "same-input-019",
+    "record_ids": [
+      "3f6ea034ee04446a90f5c2d961c8b0f7:1",
+      "29ca1d9da98b4a45999dea4c535aa59b:1",
+      "49c6bffe8fb04775988f13d040549384:1"
+    ]
+  },
+  {
+    "id": "same-input-020",
+    "record_ids": [
+      "43c5b56d3e89454aa790d41f963afc73:1",
+      "8f39d0d924df49dea45b5abb4aaf8235:1",
+      "4a183d4ef2534812891bf31ad0e76bee:1"
+    ]
+  },
+  {
+    "id": "same-input-021",
+    "record_ids": [
+      "c7cb41bb7ca849a6b3f69143c7230217:1",
+      "90b1b1ffc287412aa041bef5ddfbd759:1",
+      "ab2faa708c6443618bd7be0288480e16:1"
+    ]
+  },
+  {
+    "id": "same-input-022",
+    "record_ids": [
+      "f02aa43b29934c3389ee45716996859b:1",
+      "1ac4dff4ad18442da56d8d95436b49ac:1",
+      "c8d49312f79f4c61939bccdecbcef7fe:1"
+    ]
+  },
+  {
+    "id": "same-input-023",
+    "record_ids": [
+      "ab31be884be548f1b60f47fdf56690df:1",
+      "fe29478fa6394ef3a0c7a42085621275:1",
+      "06b0e9dd0665467fa03f556407a0d108:1"
+    ]
+  },
+  {
+    "id": "same-input-024",
+    "record_ids": [
+      "0bee04ce656845f7a065571f8caf01ce:1",
+      "293ed4c694914bccb4e1f6d3f4ea4589:1",
+      "2ef7e99d480f4cb9b8f17775b7270809:1",
+      "4801af880fdf4d39965ecd4995b24c6c:1",
+      "9afd562912f04264bd415ae7d9b8139f:1",
+      "39c99c73caca4b9fa36e562c1436d300:1"
+    ]
+  },
+  {
+    "id": "same-input-025",
+    "record_ids": [
+      "777cf2c9fcb94cd5bcb219934c52917a:1",
+      "5eb6babcbe824c5caf09c25157635358:1",
+      "8d62cb659efb4c37b99f0d74fbeb11d1:1",
+      "8bcc1d56d6864ff2891867f036b96c1c:1",
+      "e639228647d84c83af5b9fcb11bad503:1",
+      "36ff4968ddd14ed7bc06317e8633a74f:1"
+    ]
+  },
+  {
+    "id": "same-input-026",
+    "record_ids": [
+      "4dd15afae19049ff84d4c6f8262fe49c:1",
+      "733a9faea0384516b537597bf32861ab:1",
+      "5f829e1f60d14dc19c6243d88a2fd344:1",
+      "53dbca55176047cc862f2ef479a545ff:1",
+      "222cd5add9264dc4b68faa31fa1a2822:1"
+    ]
+  },
+  {
+    "id": "same-input-027",
+    "record_ids": [
+      "ce2056b50a36456884152d436af1ee82:1",
+      "f53253ee0c294b6aaf4c39413caf4316:1",
+      "aeff1bda09fc4736ac00649eec93259a:1",
+      "98241089016c492bbebe146e86431432:1",
+      "2d9fbb87ee414136905592c804b291c2:1"
+    ]
+  },
+  {
+    "id": "same-input-028",
+    "record_ids": [
+      "088a1d6b6f7345a79f368e76452bf7f4:1",
+      "c301708af7e342d9971b2c11f08f7def:1"
+    ]
+  },
+  {
+    "id": "same-input-029",
+    "record_ids": [
+      "89781fbb357f4a979fc33187be76cb6c:1",
+      "18e57791233d4a0d967121c069e56d73:1",
+      "7d91be9a062343e6b61912c6c18db65c:1",
+      "b411ffc1793a4e05ac0a7d4b0ceaf7a4:1",
+      "99a7f42ae2074565a7d81015c6d5f47a:1"
+    ]
+  },
+  {
+    "id": "same-input-030",
+    "record_ids": [
+      "4ad07b4f9fe74bd3a35c1fcec07912ce:1",
+      "89e47811c66a4711bd81aebd0a4a4bc1:1",
+      "0774eb390e274e07be758d4d1d9ee994:1"
+    ]
+  },
+  {
+    "id": "same-input-031",
+    "record_ids": [
+      "64fbe0f739274529b788fbecebf1c993:1",
+      "3cfa54bad2de4d76b9fa504068597dea:1",
+      "62d04a0065fa4a7b9a0a0d7cf80d6ac8:1",
+      "e6993a955f1f4489a71fbe41fd591193:1"
+    ]
+  },
+  {
+    "id": "same-input-032",
+    "record_ids": [
+      "3a3d19df6a5c49c795f0a5e6ab75cbb9:1",
+      "a8fbf6e3f5f04245bc0bf846463b1493:1",
+      "76a5e62244814114971291730f25993c:1",
+      "2b3d644c943c46b1bd8c20dc28173f54:1"
+    ]
+  },
+  {
+    "id": "same-input-033",
+    "record_ids": [
+      "33662c5ed3f24beebc9c7b4c79494ec8:1",
+      "d59b43abaea3433880d5061b9deb1ab2:1",
+      "b59e2b9006f4493e811d8921dcfa3119:1"
+    ]
+  },
+  {
+    "id": "same-input-034",
+    "record_ids": [
+      "0452d89508d14a99a2199626916aa38c:1",
+      "57d07b1708374c5b8fcef7d6efab5c9c:1",
+      "8729ee2fb08e4fa6ada3953a1c73a52a:1"
+    ]
+  },
+  {
+    "id": "same-input-035",
+    "record_ids": [
+      "ca875727ddc64b428c611e6b48ca1fae:1",
+      "b7ebb0f602d84df2a0eb7a463fc91bff:1",
+      "b6de842251b340cd93e4057ec1f1e24f:1"
+    ]
+  },
+  {
+    "id": "same-input-036",
+    "record_ids": [
+      "c61031e74b03403bb4a961659e84ebd1:1",
+      "823dc34191034ae4a3282798ff72bbde:1",
+      "7c1f8b34d718444c88fe904f37780c63:1"
+    ]
+  },
+  {
+    "id": "same-input-037",
+    "record_ids": [
+      "d76f57a9b78d443f976ced355d712907:1",
+      "675717e911ca49d381e6f52d794ff4be:1",
+      "bc40253694d04b519b30ce1a77c1e7ae:1"
+    ]
+  },
+  {
+    "id": "same-input-038",
+    "record_ids": [
+      "17f06d327f734d439f43006305714742:1",
+      "31f4568980404365b4cb17ec8c7e71f4:1",
+      "f8a6bb57eed8400d921ce983d61550a6:1"
+    ]
+  }
+]

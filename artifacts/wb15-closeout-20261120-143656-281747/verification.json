@@ -1,0 +1,626 @@
+{
+  "formal": true,
+  "before_restore": {
+    "path": "artifacts/wb15-closeout-20261120-143656-281747/before-bundle.zip",
+    "sha256": "72975064a6e8beb7b699f44ed4d659b7273295bf6a40a18b3cc9076c1785717f",
+    "missing": [],
+    "files": 82,
+    "sources": {
+      "docs/Cat_AI_next_stage_execution_draft_20261120.md": "fbf8d46221083e6d467cd67322dc9841d71afb5462ff087cc196f98f22574547",
+      "docs/architecture/project_workbench_plan.md": "618619e1c88057cae6d0381fe5d007a73f275dcd4d8df3ff6f4e43c3d03a9c79",
+      "docs/architecture/system_design.md": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+      "docs/feature_engineering_plan_v0.1.md": "4251db86aeb53052c9b5d8afd833d46453fa6c32aebc2e3fc12c3de46fbc86b3",
+      "docs/s2_implementation_plan.md": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651",
+      "docs/workbench/wb13_implementation_plan.md": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+      "docs/workbench/wb14_implementation_plan.md": "cc59b6529ab06ab75f00e224a4c469d4b7f2045c1e59b140d36769bb3926f956",
+      "docs/workbench/wb15_implementation_plan.md": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e"
+    },
+    "table_counts": {
+      "activity": 451,
+      "artifact": 81,
+      "artifact_location": 81,
+      "artifact_revision": 90,
+      "category_context": 1,
+      "category_context_revision": 2,
+      "category_recent_task": 1,
+      "category_recent_task_revision": 2,
+      "criterion": 87,
+      "decision": 0,
+      "decision_revision": 0,
+      "dependency": 46,
+      "document_purpose": 4,
+      "document_purpose_revision": 4,
+      "evidence": 90,
+      "foundation_import": 0,
+      "foundation_record": 0,
+      "index_observation": 1163,
+      "index_scan": 32,
+      "index_workspace": 1,
+      "model_run": 4,
+      "model_run_revision": 5,
+      "prediction_event": 9,
+      "prediction_job": 3,
+      "project": 1,
+      "published_index": 1,
+      "request_log": 394,
+      "research_node": 14,
+      "research_node_revision": 28,
+      "research_record": 8,
+      "review": 60,
+      "task": 34,
+      "task_category_revision": 10,
+      "task_decision": 0,
+      "task_node_link": 10,
+      "task_node_link_revision": 10,
+      "task_plan_reference": 24,
+      "task_plan_reference_revision": 24,
+      "task_plan_verification": 24,
+      "workbench_delivery": 12,
+      "workbench_delivery_revision": 24
+    },
+    "rows_equal_except_relocated_workspace": true,
+    "integrity": "ok",
+    "foreign_key_errors": 0
+  },
+  "rehearsal_restore": {
+    "path": "artifacts/wb15-closeout-20261120-143656-281747/rehearsal-bundle.zip",
+    "sha256": "31775cef59337f056e7e3ffc1320a8298248f2d899e6c2856837937c9db8b95a",
+    "missing": [],
+    "files": 84,
+    "sources": {
+      "docs/Cat_AI_next_stage_execution_draft_20261120.md": "fbf8d46221083e6d467cd67322dc9841d71afb5462ff087cc196f98f22574547",
+      "docs/architecture/project_workbench_plan.md": "618619e1c88057cae6d0381fe5d007a73f275dcd4d8df3ff6f4e43c3d03a9c79",
+      "docs/architecture/system_design.md": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+      "docs/feature_engineering_plan_v0.1.md": "4251db86aeb53052c9b5d8afd833d46453fa6c32aebc2e3fc12c3de46fbc86b3",
+      "docs/s2_implementation_plan.md": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651",
+      "docs/workbench/wb13_implementation_plan.md": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+      "docs/workbench/wb14_implementation_plan.md": "cc59b6529ab06ab75f00e224a4c469d4b7f2045c1e59b140d36769bb3926f956",
+      "docs/workbench/wb15_implementation_plan.md": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e"
+    },
+    "table_counts": {
+      "activity": 482,
+      "artifact": 86,
+      "artifact_location": 86,
+      "artifact_revision": 95,
+      "category_context": 1,
+      "category_context_revision": 2,
+      "category_recent_task": 1,
+      "category_recent_task_revision": 2,
+      "criterion": 99,
+      "decision": 0,
+      "decision_revision": 0,
+      "dependency": 46,
+      "document_purpose": 4,
+      "document_purpose_revision": 4,
+      "evidence": 95,
+      "foundation_import": 0,
+      "foundation_record": 0,
+      "index_observation": 1249,
+      "index_scan": 33,
+      "index_workspace": 1,
+      "model_run": 4,
+      "model_run_revision": 5,
+      "prediction_event": 9,
+      "prediction_job": 3,
+      "project": 1,
+      "published_index": 1,
+      "request_log": 424,
+      "research_node": 14,
+      "research_node_revision": 28,
+      "research_record": 8,
+      "review": 70,
+      "task": 34,
+      "task_category_revision": 10,
+      "task_decision": 0,
+      "task_node_link": 10,
+      "task_node_link_revision": 10,
+      "task_plan_reference": 24,
+      "task_plan_reference_revision": 24,
+      "task_plan_verification": 24,
+      "workbench_delivery": 12,
+      "workbench_delivery_revision": 24
+    },
+    "rows_equal_except_relocated_workspace": true,
+    "integrity": "ok",
+    "foreign_key_errors": 0
+  },
+  "rehearsal_records": {
+    "WB-15-01": {
+      "status": "done",
+      "revision": 7,
+      "acceptance_id": 56,
+      "accepted_at": "2026-11-20T02:26:57.923893+00:00",
+      "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+      "evidence": [
+        {
+          "criterion_id": "report",
+          "evidence_id": "WB-15-01-report",
+          "evidence_version": "1b6466b0ab9291c5758c99853eff8ff814a1d044eeaabb2667f57a2fa0d8cb10",
+          "explanation": "已核对固定证据",
+          "passed": true
+        },
+        {
+          "criterion_id": "samples",
+          "evidence_id": "WB-15-01-samples",
+          "evidence_version": "e1ed4b6f8fd00046bd6da73a236f99a04e7d68ce8bb56aa4094ad578b08194d6",
+          "explanation": "已核对固定证据",
+          "passed": true
+        }
+      ]
+    },
+    "WB-15-02": {
+      "status": "done",
+      "revision": 7,
+      "acceptance_id": 62,
+      "accepted_at": "2026-11-20T06:37:50.764924+00:00",
+      "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+      "evidence": [
+        {
+          "criterion_id": "recent",
+          "evidence_id": "WB-15-02-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-02 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "readiness",
+          "evidence_id": "WB-15-02-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-02 对应的交付及固定证据。",
+          "passed": true
+        }
+      ]
+    },
+    "WB-15-03": {
+      "status": "done",
+      "revision": 7,
+      "acceptance_id": 64,
+      "accepted_at": "2026-11-20T06:37:50.766323+00:00",
+      "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+      "evidence": [
+        {
+          "criterion_id": "preview",
+          "evidence_id": "WB-15-03-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-03 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "scope",
+          "evidence_id": "WB-15-03-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-03 对应的交付及固定证据。",
+          "passed": true
+        }
+      ]
+    },
+    "WB-15-04": {
+      "status": "done",
+      "revision": 8,
+      "acceptance_id": 66,
+      "accepted_at": "2026-11-20T06:37:50.767563+00:00",
+      "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+      "evidence": [
+        {
+          "criterion_id": "integration",
+          "evidence_id": "WB-15-04-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-04 对应的交付及固定证据。",
+          "passed": true
+        }
+      ]
+    },
+    "WB-15-05": {
+      "status": "done",
+      "revision": 7,
+      "acceptance_id": 68,
+      "accepted_at": "2026-11-20T06:37:50.768808+00:00",
+      "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+      "evidence": [
+        {
+          "criterion_id": "regression",
+          "evidence_id": "WB-15-05-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-05 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "restore",
+          "evidence_id": "WB-15-05-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-05 对应的交付及固定证据。",
+          "passed": true
+        }
+      ]
+    },
+    "WB-15": {
+      "status": "done",
+      "revision": 7,
+      "acceptance_id": 70,
+      "accepted_at": "2026-11-20T06:37:50.770240+00:00",
+      "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+      "evidence": [
+        {
+          "criterion_id": "WB-15-01",
+          "evidence_id": "WB-15-01-report",
+          "evidence_version": "1b6466b0ab9291c5758c99853eff8ff814a1d044eeaabb2667f57a2fa0d8cb10",
+          "explanation": "已核对 WB-15-01 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "WB-15-02",
+          "evidence_id": "WB-15-02-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-02 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "WB-15-03",
+          "evidence_id": "WB-15-03-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-03 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "WB-15-04",
+          "evidence_id": "WB-15-04-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-04 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "WB-15-05",
+          "evidence_id": "WB-15-05-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-05 对应的交付及固定证据。",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "rehearsal_delta": {
+    "activity": {
+      "prior_rows_changed": 0,
+      "new_rows": 31
+    },
+    "artifact": {
+      "prior_rows_changed": 0,
+      "new_rows": 5
+    },
+    "artifact_location": {
+      "prior_rows_changed": 0,
+      "new_rows": 5
+    },
+    "artifact_revision": {
+      "prior_rows_changed": 0,
+      "new_rows": 5
+    },
+    "criterion": {
+      "prior_rows_changed": 0,
+      "new_rows": 12
+    },
+    "evidence": {
+      "prior_rows_changed": 0,
+      "new_rows": 5
+    },
+    "index_observation": {
+      "prior_rows_changed": 0,
+      "new_rows": 86
+    },
+    "index_scan": {
+      "prior_rows_changed": 0,
+      "new_rows": 1
+    },
+    "published_index": {
+      "prior_rows_changed": 1,
+      "new_rows": 1
+    },
+    "request_log": {
+      "prior_rows_changed": 0,
+      "new_rows": 30
+    },
+    "review": {
+      "prior_rows_changed": 0,
+      "new_rows": 10
+    },
+    "task": {
+      "prior_rows_changed": 5,
+      "new_rows": 5
+    }
+  },
+  "records": {
+    "WB-15-01": {
+      "status": "done",
+      "revision": 7,
+      "acceptance_id": 56,
+      "accepted_at": "2026-11-20T02:26:57.923893+00:00",
+      "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+      "evidence": [
+        {
+          "criterion_id": "report",
+          "evidence_id": "WB-15-01-report",
+          "evidence_version": "1b6466b0ab9291c5758c99853eff8ff814a1d044eeaabb2667f57a2fa0d8cb10",
+          "explanation": "已核对固定证据",
+          "passed": true
+        },
+        {
+          "criterion_id": "samples",
+          "evidence_id": "WB-15-01-samples",
+          "evidence_version": "e1ed4b6f8fd00046bd6da73a236f99a04e7d68ce8bb56aa4094ad578b08194d6",
+          "explanation": "已核对固定证据",
+          "passed": true
+        }
+      ]
+    },
+    "WB-15-02": {
+      "status": "done",
+      "revision": 7,
+      "acceptance_id": 62,
+      "accepted_at": "2026-11-20T06:37:53.399334+00:00",
+      "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+      "evidence": [
+        {
+          "criterion_id": "recent",
+          "evidence_id": "WB-15-02-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-02 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "readiness",
+          "evidence_id": "WB-15-02-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-02 对应的交付及固定证据。",
+          "passed": true
+        }
+      ]
+    },
+    "WB-15-03": {
+      "status": "done",
+      "revision": 7,
+      "acceptance_id": 64,
+      "accepted_at": "2026-11-20T06:37:53.400802+00:00",
+      "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+      "evidence": [
+        {
+          "criterion_id": "preview",
+          "evidence_id": "WB-15-03-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-03 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "scope",
+          "evidence_id": "WB-15-03-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-03 对应的交付及固定证据。",
+          "passed": true
+        }
+      ]
+    },
+    "WB-15-04": {
+      "status": "done",
+      "revision": 8,
+      "acceptance_id": 66,
+      "accepted_at": "2026-11-20T06:37:53.402184+00:00",
+      "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+      "evidence": [
+        {
+          "criterion_id": "integration",
+          "evidence_id": "WB-15-04-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-04 对应的交付及固定证据。",
+          "passed": true
+        }
+      ]
+    },
+    "WB-15-05": {
+      "status": "done",
+      "revision": 7,
+      "acceptance_id": 68,
+      "accepted_at": "2026-11-20T06:37:53.403463+00:00",
+      "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+      "evidence": [
+        {
+          "criterion_id": "regression",
+          "evidence_id": "WB-15-05-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-05 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "restore",
+          "evidence_id": "WB-15-05-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-05 对应的交付及固定证据。",
+          "passed": true
+        }
+      ]
+    },
+    "WB-15": {
+      "status": "done",
+      "revision": 7,
+      "acceptance_id": 70,
+      "accepted_at": "2026-11-20T06:37:53.404953+00:00",
+      "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+      "evidence": [
+        {
+          "criterion_id": "WB-15-01",
+          "evidence_id": "WB-15-01-report",
+          "evidence_version": "1b6466b0ab9291c5758c99853eff8ff814a1d044eeaabb2667f57a2fa0d8cb10",
+          "explanation": "已核对 WB-15-01 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "WB-15-02",
+          "evidence_id": "WB-15-02-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-02 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "WB-15-03",
+          "evidence_id": "WB-15-03-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-03 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "WB-15-04",
+          "evidence_id": "WB-15-04-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-04 对应的交付及固定证据。",
+          "passed": true
+        },
+        {
+          "criterion_id": "WB-15-05",
+          "evidence_id": "WB-15-05-evidence",
+          "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+          "explanation": "已核对 WB-15-05 对应的交付及固定证据。",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "formal_delta": {
+    "activity": {
+      "prior_rows_changed": 0,
+      "new_rows": 31
+    },
+    "artifact": {
+      "prior_rows_changed": 0,
+      "new_rows": 5
+    },
+    "artifact_location": {
+      "prior_rows_changed": 0,
+      "new_rows": 5
+    },
+    "artifact_revision": {
+      "prior_rows_changed": 0,
+      "new_rows": 5
+    },
+    "criterion": {
+      "prior_rows_changed": 0,
+      "new_rows": 12
+    },
+    "evidence": {
+      "prior_rows_changed": 0,
+      "new_rows": 5
+    },
+    "index_observation": {
+      "prior_rows_changed": 0,
+      "new_rows": 86
+    },
+    "index_scan": {
+      "prior_rows_changed": 0,
+      "new_rows": 1
+    },
+    "published_index": {
+      "prior_rows_changed": 1,
+      "new_rows": 1
+    },
+    "request_log": {
+      "prior_rows_changed": 0,
+      "new_rows": 30
+    },
+    "review": {
+      "prior_rows_changed": 0,
+      "new_rows": 10
+    },
+    "task": {
+      "prior_rows_changed": 5,
+      "new_rows": 5
+    }
+  },
+  "formal_runtime": {
+    "routes": {
+      "/": 200,
+      "/next-work": 200,
+      "/next-work?category=workbench": 200,
+      "/tasks": 200,
+      "/tasks/S1A-01": 200,
+      "/tasks/WB-15": 200,
+      "/tasks/WB-15-02/plans/WB-15-02-primary-plan": 200,
+      "/artifacts": 200,
+      "/artifacts/WB-15-plan": 200,
+      "/documents": 200,
+      "/decisions": 200,
+      "/predictions": 200,
+      "/roadmap": 200,
+      "/foundation": 200,
+      "/artifacts/WB-15-plan?version=46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e": 200,
+      "/artifacts/WB-15-plan?task=WB-15-03&reference=WB-15-03-primary-plan": 200
+    },
+    "browse_rows_equal": true
+  },
+  "startup_delta": {
+    "request_log": {
+      "prior_rows_changed": 0,
+      "new_rows": 1
+    }
+  },
+  "after_restore": {
+    "path": "artifacts/wb15-closeout-20261120-143656-281747/after-bundle.zip",
+    "sha256": "61db359f9df65b88062590ea333096eb22d9cef3024f4e9c84e32f836c6f450b",
+    "missing": [],
+    "files": 84,
+    "sources": {
+      "docs/Cat_AI_next_stage_execution_draft_20261120.md": "fbf8d46221083e6d467cd67322dc9841d71afb5462ff087cc196f98f22574547",
+      "docs/architecture/project_workbench_plan.md": "618619e1c88057cae6d0381fe5d007a73f275dcd4d8df3ff6f4e43c3d03a9c79",
+      "docs/architecture/system_design.md": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+      "docs/feature_engineering_plan_v0.1.md": "4251db86aeb53052c9b5d8afd833d46453fa6c32aebc2e3fc12c3de46fbc86b3",
+      "docs/s2_implementation_plan.md": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651",
+      "docs/workbench/wb13_implementation_plan.md": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+      "docs/workbench/wb14_implementation_plan.md": "cc59b6529ab06ab75f00e224a4c469d4b7f2045c1e59b140d36769bb3926f956",
+      "docs/workbench/wb15_implementation_plan.md": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e"
+    },
+    "table_counts": {
+      "activity": 482,
+      "artifact": 86,
+      "artifact_location": 86,
+      "artifact_revision": 95,
+      "category_context": 1,
+      "category_context_revision": 2,
+      "category_recent_task": 1,
+      "category_recent_task_revision": 2,
+      "criterion": 99,
+      "decision": 0,
+      "decision_revision": 0,
+      "dependency": 46,
+      "document_purpose": 4,
+      "document_purpose_revision": 4,
+      "evidence": 95,
+      "foundation_import": 0,
+      "foundation_record": 0,
+      "index_observation": 1249,
+      "index_scan": 33,
+      "index_workspace": 1,
+      "model_run": 4,
+      "model_run_revision": 5,
+      "prediction_event": 9,
+      "prediction_job": 3,
+      "project": 1,
+      "published_index": 1,
+      "request_log": 425,
+      "research_node": 14,
+      "research_node_revision": 28,
+      "research_record": 8,
+      "review": 70,
+      "task": 34,
+      "task_category_revision": 10,
+      "task_decision": 0,
+      "task_node_link": 10,
+      "task_node_link_revision": 10,
+      "task_plan_reference": 24,
+      "task_plan_reference_revision": 24,
+      "task_plan_verification": 24,
+      "workbench_delivery": 12,
+      "workbench_delivery_revision": 24
+    },
+    "rows_equal_except_relocated_workspace": true,
+    "integrity": "ok",
+    "foreign_key_errors": 0
+  },
+  "research_files_verified": 682,
+  "verified_at": "2026-11-20T14:37:59.528225+08:00"
+}

@@ -338,8 +338,9 @@ def _review_evidence_available(db, review):
     for result in json.loads(review["results"]):
         if result.get("evidence_id"):
             evidence = db.execute(
-                "SELECT status FROM evidence WHERE id=? AND version=?",
-                (result["evidence_id"], result["evidence_version"]),
+                "SELECT status FROM evidence WHERE id=? AND version=? "
+                "AND project_id=(SELECT project_id FROM task WHERE id=?)",
+                (result["evidence_id"], result["evidence_version"], review["task_id"]),
             ).fetchone()
             if not evidence or evidence["status"] != "available":
                 return False
@@ -538,6 +539,16 @@ def accept_review(path, task_id, expected_revision, conclusion, *, request_id, a
     return _write(path, request_id, actor, "accept_review", payload, run)
 
 
+def _task_evidence_needs_review(db, task):
+    if task["status"] != "done":
+        return False
+    acceptance = db.execute(
+        "SELECT * FROM review WHERE task_id=? AND kind='acceptance' ORDER BY id DESC LIMIT 1",
+        (task["id"],),
+    ).fetchone()
+    return not acceptance or not _review_evidence_available(db, acceptance)
+
+
 def get_task(path: Path, task_id: str):
     with transaction(path) as db:
         row = _task(db, task_id)
@@ -571,14 +582,7 @@ def get_task(path: Path, task_id: str):
         ]
         for review in data["reviews"]:
             review["results"] = json.loads(review["results"])
-        acceptance = db.execute(
-            "SELECT * FROM review WHERE task_id=? AND kind='acceptance' ORDER BY id DESC LIMIT 1",
-            (task_id,),
-        ).fetchone()
-        data["evidence_needs_review"] = bool(
-            row["status"] == "done"
-            and (not acceptance or not _review_evidence_available(db, acceptance))
-        )
+        data["evidence_needs_review"] = _task_evidence_needs_review(db, row)
         data["activity"] = [
             dict(e)
             for e in db.execute("SELECT * FROM activity WHERE task_id=? ORDER BY id", (task_id,))

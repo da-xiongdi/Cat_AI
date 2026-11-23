@@ -11,12 +11,12 @@
   function drawNode(id) {
     const n = nodes[id], box = document.createElement('div');
     box.className = 'roadmap-branch';
-    const card = document.createElement('div'); card.className = 'roadmap-card';
+    const card = document.createElement('div'); card.className = 'roadmap-card'; card.dataset.nodeId = id;
     if (id === selected) { card.classList.add('selected'); card.setAttribute('aria-current', 'true'); }
     const link = document.createElement('a'); link.href = '/roadmap?node=' + encodeURIComponent(id);
     link.textContent = n.display_name; card.append(link);
     const summary = document.createElement('small');
-    summary.textContent = `${id} · 已验收有效 ${n.summary.valid_completed}/${n.summary.valid_total}`;
+    summary.textContent = [id, ...n.summary_labels].join(' · ');
     card.append(summary);
     if (n.child_ids.length) {
       const toggle = document.createElement('button'); toggle.type = 'button';
@@ -38,6 +38,9 @@
     return box;
   }
   function draw() {
+    const focused = document.activeElement;
+    const focusedNode = focused.closest('.roadmap-card')?.dataset.nodeId;
+    const focusedControl = focused.tagName;
     content.replaceChildren();
     stages.forEach(stage => {
       const col = document.createElement('section'); col.className = 'roadmap-stage';
@@ -46,6 +49,10 @@
       stage.root_ids.forEach(id => col.append(drawNode(id))); content.append(col);
     });
     content.style.zoom = scale;
+    if (focusedNode) {
+      const card = content.querySelector(`[data-node-id="${CSS.escape(focusedNode)}"]`);
+      (card?.querySelector(focusedControl) || viewport).focus({preventScroll: true});
+    }
   }
   async function load(id) {
     if (loaded.has(id)) return true;

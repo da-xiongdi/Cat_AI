@@ -4,9 +4,10 @@ import hashlib
 import re
 import sqlite3
 import uuid
+from contextlib import closing
 
 from catalyst_ai.storage.workbench import connect, now
-from catalyst_ai.workbench.adapters import safe_path
+from catalyst_ai.workbench.adapters import read_limited, safe_path
 from catalyst_ai.workbench.research_nodes import _save
 from catalyst_ai.workbench.service import Conflict, Missing, _json, _text, _write
 
@@ -36,15 +37,15 @@ def _inspect(root, path, section):
     try:
         resolved = safe_path(root, path)
     except ValueError:
-        return "path_escape", None
+        return "path_escape", None, None, None
     except OSError:
-        return "missing_or_invalid", None
+        return "missing_or_invalid", None, None, None
     try:
-        raw = resolved.read_bytes()
+        raw = read_limited(resolved, 64 * 1024 * 1024)
         content = raw.decode("utf-8-sig")
         headings = []
         fence = None
-        for line in content.splitlines():
+        for line_number, line in enumerate(content.splitlines(), 1):
             if fence:
                 if re.match(
                     r"^ {0,3}" + re.escape(fence[0]) + "{" + str(len(fence)) + r",}[ \t]*$", line
@@ -57,12 +58,14 @@ def _inspect(root, path, section):
                 continue
             heading = re.match(r"^ {0,3}#{1,6}[ \t]+(.+?)[ \t]*#*[ \t]*$", line)
             if heading:
-                headings.append(heading[1])
-        count = headings.count(section)
+                headings.append((heading[1], line_number))
+        matches = [number for title, number in headings if title == section]
+        count = len(matches)
         status = "valid" if count == 1 else "section_missing" if count == 0 else "section_ambiguous"
-        return status, hashlib.sha256(raw).hexdigest()
+        digest = hashlib.sha256(raw).hexdigest()
+        return status, digest, content, matches[0] if count == 1 else None
     except (OSError, ValueError, UnicodeError):
-        return "missing_or_invalid", None
+        return "missing_or_invalid", None, None, None
 
 
 def save_document_purpose(
@@ -162,13 +165,17 @@ def _get(db, project_id, reference_id):
     return row
 
 
-def _detection(db, row):
+def _detection(db, row, *, preview=False):
     root = _document(db, row["project_id"], row["document_id"], row["path"], check_path=False)
-    status, digest = _inspect(root, row["path"], row["section_locator"])
-    last = db.execute(
-        "SELECT * FROM task_plan_verification WHERE reference_id=? ORDER BY rowid DESC LIMIT 1",
-        (row["id"],),
-    ).fetchone()
+    status, digest, content, line = _inspect(root, row["path"], row["section_locator"])
+    sql = (
+        "SELECT * FROM task_plan_verification WHERE project_id=? AND reference_id=? "
+        "ORDER BY rowid DESC"
+    )
+    history = db.execute(
+        sql if preview else sql + " LIMIT 1", (row["project_id"], row["id"])
+    ).fetchall()
+    last = history[0] if history else None
     if (
         status == "valid"
         and last
@@ -177,12 +184,19 @@ def _detection(db, row):
         status = "changed"
     elif status == "valid" and not last:
         status = "unverified"
-    return {
+    result = {
         "reference": dict(row),
         "status": status,
         "current_sha256": digest,
         "last_verification": dict(last) if last else None,
     }
+    if preview:
+        result.update(
+            history=[dict(record) for record in history],
+            content=content if line else None,
+            line=line,
+        )
+    return result
 
 
 def inspect_task_plan_reference(path, project_id, reference_id):
@@ -201,7 +215,7 @@ def verify_task_plan_reference(
         if row["revision"] != expected_revision or not row["active"]:
             raise Conflict("reference revision conflict or inactive")
         root = _document(db, project_id, row["document_id"], row["path"], check_path=False)
-        status, digest = _inspect(root, row["path"], row["section_locator"])
+        status, digest, _, _ = _inspect(root, row["path"], row["section_locator"])
         if status != "valid" or digest != expected_sha256:
             raise Conflict("source changed or invalid: " + status)
         record = {
@@ -274,3 +288,20 @@ def list_document_purposes(path, project_id):
         ]
     finally:
         db.close()
+
+
+def open_task_plan(path, project_id, task_id, reference_id, *, document_id=None):
+    """Inspect and return the exact content used for the current detection."""
+    with closing(connect(path)) as db:
+        db.execute("BEGIN")
+        row = _get(db, project_id, reference_id)
+        task = db.execute("SELECT project_id FROM task WHERE id=?", (task_id,)).fetchone()
+        if (
+            not task
+            or task["project_id"] != project_id
+            or row["task_id"] != task_id
+            or not row["active"]
+            or (document_id is not None and document_id != row["document_id"])
+        ):
+            raise Missing("plan reference not found")
+        return _detection(db, row, preview=True)

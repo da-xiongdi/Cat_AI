@@ -1,0 +1,14 @@
+{
+  "git_head": "db4ea20ddfb2712c08864d365a262c96957babe2",
+  "schema": 8,
+  "integrity": "ok",
+  "foreign_key_errors": [],
+  "wb14_tasks": [],
+  "sources": {
+    "docs/architecture/project_workbench_plan.md": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+    "docs/architecture/system_design.md": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+    "docs/feature_engineering_plan_v0.1.md": "4251db86aeb53052c9b5d8afd833d46453fa6c32aebc2e3fc12c3de46fbc86b3",
+    "docs/s2_implementation_plan.md": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651",
+    "docs/workbench/wb13_implementation_plan.md": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b"
+  }
+}

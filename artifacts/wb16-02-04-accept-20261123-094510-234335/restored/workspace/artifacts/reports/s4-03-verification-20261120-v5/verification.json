@@ -1,0 +1,211 @@
+{
+  "scope": "functional validation only; no S4-04 formal comparison",
+  "environment": {
+    "python": "3.14.3",
+    "scikit_learn": "1.9.1",
+    "numpy": "2.5.4",
+    "code_sha256": "3101069f67405f02c4280a4d9675b8ea3ef66b75d6a6e10bf1f6ea77ef105f4a",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "Jinja2": "3.1.6",
+      "MarkupSafe": "3.0.4",
+      "PyYAML": "6.0.3",
+      "Pygments": "2.21.0",
+      "SQLAlchemy": "2.1.8",
+      "annotated-doc": "0.0.6",
+      "annotated-types": "0.8.0",
+      "anyio": "4.16.0",
+      "catalyst-ai": "0.1.0",
+      "certifi": "2026.10.23",
+      "click": "8.5.1",
+      "cloudpickle": "3.1.2",
+      "colorama": "0.4.6",
+      "fastapi": "0.162.5",
+      "greenlet": "3.5.6",
+      "h11": "0.16.0",
+      "httpcore": "1.0.9",
+      "httpx": "0.28.1",
+      "idna": "3.20",
+      "iniconfig": "2.3.1",
+      "joblib": "1.6.0",
+      "narwhals": "2.28.0",
+      "numpy": "2.5.4",
+      "opentelemetry-api": "1.45.2",
+      "packaging": "26.3",
+      "pandas": "3.1.1",
+      "playwright": "1.65.2",
+      "pluggy": "1.7.0",
+      "pyarrow": "23.0.1",
+      "pydantic": "2.14.3",
+      "pydantic_core": "2.50.4",
+      "pytest": "9.2.0",
+      "python-dateutil": "4.0.0",
+      "python-multipart": "0.0.33",
+      "ruff": "0.17.4",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "shap": "0.54.1",
+      "slicer": "0.0.8",
+      "starlette": "1.10.0",
+      "threadpoolctl": "3.8.0",
+      "tqdm": "4.70.1",
+      "typing-inspection": "0.4.5",
+      "typing_extensions": "4.16.0",
+      "tzdata": "2026.6",
+      "uvicorn": "0.54.0"
+    }
+  },
+  "pytest": {
+    "exit_code": 0,
+    "tests": [
+      "tests/unit/test_research_plan.py",
+      "tests/unit/test_research_run.py",
+      "tests/unit/test_research_preflight.py",
+      "tests/unit/test_research_split.py",
+      "tests/unit/test_research_repeat_contract.py",
+      "tests/integration/test_research_end_to_end.py",
+      "tests/unit/test_predictor.py",
+      "tests/unit/test_s2_experiments.py"
+    ]
+  },
+  "coverage_replay": "content-identical",
+  "frozen_config_counts": {
+    "EXP-01-42": {
+      "train": 432,
+      "test": 110,
+      "folds": [
+        88,
+        86,
+        87,
+        86,
+        85
+      ]
+    },
+    "EXP-01-43": {
+      "train": 438,
+      "test": 104,
+      "folds": [
+        87,
+        89,
+        86,
+        88,
+        88
+      ]
+    },
+    "EXP-01-44": {
+      "train": 434,
+      "test": 108,
+      "folds": [
+        86,
+        88,
+        87,
+        86,
+        87
+      ]
+    },
+    "EXP-02-42": {
+      "train": 434,
+      "test": 108,
+      "folds": [
+        87,
+        87,
+        87,
+        87,
+        86
+      ]
+    },
+    "EXP-02-43": {
+      "train": 434,
+      "test": 108,
+      "folds": [
+        87,
+        87,
+        87,
+        87,
+        86
+      ]
+    },
+    "EXP-02-44": {
+      "train": 434,
+      "test": 108,
+      "folds": [
+        87,
+        87,
+        87,
+        87,
+        86
+      ]
+    },
+    "EXP-03-42": {
+      "train": 181,
+      "test": 30,
+      "folds": [
+        32,
+        39,
+        39,
+        34,
+        37
+      ]
+    },
+    "EXP-03-43": {
+      "train": 170,
+      "test": 41,
+      "folds": [
+        44,
+        34,
+        32,
+        34,
+        26
+      ]
+    },
+    "EXP-03-44": {
+      "train": 166,
+      "test": 45,
+      "folds": [
+        39,
+        32,
+        33,
+        33,
+        29
+      ]
+    }
+  },
+  "preflight_counts": {
+    "train": 434,
+    "test": 108,
+    "folds": [
+      87,
+      87,
+      87,
+      87,
+      86
+    ]
+  },
+  "historical_packages": [
+    {
+      "path": "artifacts/models/themecat-r1-prediction-20261112-final",
+      "model_id": "r1-b8bb65a0a44054918d3e85a5ff168723ea891ef51eaec796c22abce260dedd5a",
+      "record_id": "00326c4c9b054833be58736ba04d2225:1",
+      "status": "ok"
+    },
+    {
+      "path": "artifacts/models/s3-20261118-02a/single",
+      "model_id": "s2-5005819038495add4fba74e9856abdfd1aef13d19930a7f0f4df8e1cf927339c",
+      "record_id": "00326c4c9b054833be58736ba04d2225:1",
+      "status": "ok"
+    }
+  ],
+  "verification_files": {
+    "tests\\unit\\test_research_plan.py": "0445bf26285686ef1677e4769232c9a475db9c91bff4ccdb7cef51821c635c35",
+    "tests\\unit\\test_research_run.py": "e2d0a48dae965d0b67c81abba9216d17b5434258fe757b3ebb76ae059d2aa855",
+    "tests\\unit\\test_research_preflight.py": "272e18073326c62832dbd382643e14e572c407faeb9b936e00f6d9b3ebd3d809",
+    "tests\\unit\\test_research_split.py": "e95c601f72e6f5537140d81d5f25740a48cd3de7987c936f70d79a44813ea446",
+    "tests\\unit\\test_research_repeat_contract.py": "fe83f23495deb5e13368b4d9f888d20f19f9d1ee65b49a02cd1b27e6fcc64bf6",
+    "tests\\integration\\test_research_end_to_end.py": "274c8dca9cb917ce385e789f0262b4c95b171be29a1b56f86cbc57ebccaf24be",
+    "tests\\unit\\test_predictor.py": "88f5398276219e3017a03f2fb877e788b82ee4a0926e35e2a9f21a6cfb109ad5",
+    "tests\\unit\\test_s2_experiments.py": "b4ee9050179fdf90cffd8b647a7dfbec3202b51519aa698a93e87a5903d70a1e",
+    "scripts\\s4_03_verify.py": "93e8da9bc5c67ed075a63430581a2009e487a9cbd1ee8351afbe614d4babbef0",
+    "scripts\\s4_03_verify_splits.py": "29bcea15741b19a23cb95be4a26355c5f9cff3ab2d460b44937d56edddb79a84"
+  },
+  "result": "passed"
+}

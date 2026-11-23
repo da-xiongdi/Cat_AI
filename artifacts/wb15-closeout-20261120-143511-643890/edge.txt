@@ -1,0 +1,21 @@
+Edge 157.0.4341.60
+Traceback (most recent call last):
+  File "D:\work\Cat_AI\scripts\verify_wb15_browser.py", line 281, in <module>
+    main()
+    ~~~~^^
+  File "D:\work\Cat_AI\scripts\verify_wb15_browser.py", line 253, in main
+    fixture(db, root)
+    ~~~~~~~^^^^^^^^^^
+  File "D:\work\Cat_AI\scripts\verify_wb15_browser.py", line 71, in fixture
+    research_nodes.save_research_node(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        db,
+        ^^^
+    ...<10 lines>...
+        **auth("roadmap"),
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\work\Cat_AI\src\catalyst_ai\workbench\research_nodes.py", line 86, in save_research_node
+    raise ValueError("invalid node fields")
+ValueError: invalid node fields

@@ -42,6 +42,14 @@ def test_historical_delivery_preview_and_revision(tmp_path):
         db, "p", {**entry, "task_id": "t"}, 1, "link", request_id="link", actor="test"
     )
     assert linked["revision"] == 2
+    from catalyst_ai.workbench.queries import query
+
+    for scope in ("all", "workbench"):
+        history = query(db, "p", scope)["historical_deliveries"]
+        assert len(history) == 1
+        assert history[0]["task_id"] == "t"
+        assert history[0]["registration_status"] == "registered"
+    assert query(db, "p", "research")["historical_deliveries"] == []
     after = get_task(db, "t")
     assert {k: v for k, v in after.items() if k != "activity"} == {
         k: v for k, v in before.items() if k != "activity"

@@ -1,0 +1,12 @@
+{
+  "1366x768": "lazy expansion, keyboard focus, collapse, expand, zoom, drag, fit, reset, fullscreen, selection, reload, history",
+  "1920x1080": "lazy expansion, keyboard focus, collapse, expand, zoom, drag, fit, reset, fullscreen, selection, reload, history",
+  "390x844": "tree, keyboard navigation, main/reference/pending routes, invalid IDs",
+  "read_only_browsing": "all tables unchanged",
+  "failure_retry_and_no_javascript": "passed",
+  "edge_version": "157.0.4341.60",
+  "two_tabs": [
+    303,
+    409
+  ]
+}

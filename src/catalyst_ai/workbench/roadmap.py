@@ -21,6 +21,26 @@ STAGES = (
 PRIORITY = ("blocked", "in_progress", "in_review", "ready", "planned")
 
 
+def summary_labels(summary, status_labels, empty_state=None):
+    labels = [f"已验收有效 {summary['valid_completed']}/{summary['valid_total']}"]
+    if summary["status"]:
+        labels.append(status_labels[summary["status"]])
+    labels.extend(f"{status_labels[status]} {count}" for status, count in summary["counts"].items())
+    if summary["cancelled_task_ids"]:
+        labels.append(f"已取消 {len(summary['cancelled_task_ids'])}")
+    for show, label in (
+        (empty_state == "undecomposed", "尚未拆分"),
+        (empty_state == "cancelled_only", "仅含已取消任务"),
+        (summary["scope_incomplete"], "范围待补充"),
+        (summary["source_needs_review"], "来源待复核"),
+        (summary["evidence_review_task_ids"], "验收证据待复核"),
+        (summary["included_scope_complete"], "已纳入范围完成"),
+    ):
+        if show:
+            labels.append(label)
+    return labels
+
+
 def snapshot(path, project_id):
     """Return one project snapshot shared by roadmap views; never write to the source."""
     with tempfile.TemporaryDirectory(prefix="wb-roadmap-") as directory:

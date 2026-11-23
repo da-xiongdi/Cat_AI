@@ -1,0 +1,154 @@
+{
+  "WB-15-01": {
+    "status": "done",
+    "revision": 7,
+    "acceptance_id": 56,
+    "accepted_at": "2026-11-20T02:26:57.923893+00:00",
+    "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+    "evidence": [
+      {
+        "criterion_id": "report",
+        "evidence_id": "WB-15-01-report",
+        "evidence_version": "1b6466b0ab9291c5758c99853eff8ff814a1d044eeaabb2667f57a2fa0d8cb10",
+        "explanation": "已核对固定证据",
+        "passed": true
+      },
+      {
+        "criterion_id": "samples",
+        "evidence_id": "WB-15-01-samples",
+        "evidence_version": "e1ed4b6f8fd00046bd6da73a236f99a04e7d68ce8bb56aa4094ad578b08194d6",
+        "explanation": "已核对固定证据",
+        "passed": true
+      }
+    ]
+  },
+  "WB-15-02": {
+    "status": "done",
+    "revision": 7,
+    "acceptance_id": 62,
+    "accepted_at": "2026-11-20T06:37:53.399334+00:00",
+    "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+    "evidence": [
+      {
+        "criterion_id": "recent",
+        "evidence_id": "WB-15-02-evidence",
+        "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+        "explanation": "已核对 WB-15-02 对应的交付及固定证据。",
+        "passed": true
+      },
+      {
+        "criterion_id": "readiness",
+        "evidence_id": "WB-15-02-evidence",
+        "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+        "explanation": "已核对 WB-15-02 对应的交付及固定证据。",
+        "passed": true
+      }
+    ]
+  },
+  "WB-15-03": {
+    "status": "done",
+    "revision": 7,
+    "acceptance_id": 64,
+    "accepted_at": "2026-11-20T06:37:53.400802+00:00",
+    "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+    "evidence": [
+      {
+        "criterion_id": "preview",
+        "evidence_id": "WB-15-03-evidence",
+        "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+        "explanation": "已核对 WB-15-03 对应的交付及固定证据。",
+        "passed": true
+      },
+      {
+        "criterion_id": "scope",
+        "evidence_id": "WB-15-03-evidence",
+        "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+        "explanation": "已核对 WB-15-03 对应的交付及固定证据。",
+        "passed": true
+      }
+    ]
+  },
+  "WB-15-04": {
+    "status": "done",
+    "revision": 8,
+    "acceptance_id": 66,
+    "accepted_at": "2026-11-20T06:37:53.402184+00:00",
+    "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+    "evidence": [
+      {
+        "criterion_id": "integration",
+        "evidence_id": "WB-15-04-evidence",
+        "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+        "explanation": "已核对 WB-15-04 对应的交付及固定证据。",
+        "passed": true
+      }
+    ]
+  },
+  "WB-15-05": {
+    "status": "done",
+    "revision": 7,
+    "acceptance_id": 68,
+    "accepted_at": "2026-11-20T06:37:53.403463+00:00",
+    "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+    "evidence": [
+      {
+        "criterion_id": "regression",
+        "evidence_id": "WB-15-05-evidence",
+        "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+        "explanation": "已核对 WB-15-05 对应的交付及固定证据。",
+        "passed": true
+      },
+      {
+        "criterion_id": "restore",
+        "evidence_id": "WB-15-05-evidence",
+        "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+        "explanation": "已核对 WB-15-05 对应的交付及固定证据。",
+        "passed": true
+      }
+    ]
+  },
+  "WB-15": {
+    "status": "done",
+    "revision": 7,
+    "acceptance_id": 70,
+    "accepted_at": "2026-11-20T06:37:53.404953+00:00",
+    "plan_sha256": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e",
+    "evidence": [
+      {
+        "criterion_id": "WB-15-01",
+        "evidence_id": "WB-15-01-report",
+        "evidence_version": "1b6466b0ab9291c5758c99853eff8ff814a1d044eeaabb2667f57a2fa0d8cb10",
+        "explanation": "已核对 WB-15-01 对应的交付及固定证据。",
+        "passed": true
+      },
+      {
+        "criterion_id": "WB-15-02",
+        "evidence_id": "WB-15-02-evidence",
+        "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+        "explanation": "已核对 WB-15-02 对应的交付及固定证据。",
+        "passed": true
+      },
+      {
+        "criterion_id": "WB-15-03",
+        "evidence_id": "WB-15-03-evidence",
+        "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+        "explanation": "已核对 WB-15-03 对应的交付及固定证据。",
+        "passed": true
+      },
+      {
+        "criterion_id": "WB-15-04",
+        "evidence_id": "WB-15-04-evidence",
+        "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+        "explanation": "已核对 WB-15-04 对应的交付及固定证据。",
+        "passed": true
+      },
+      {
+        "criterion_id": "WB-15-05",
+        "evidence_id": "WB-15-05-evidence",
+        "evidence_version": "b2f93ce126abea41ec6ce01ce93e81c810a102774767137cda1881adc10042c5",
+        "explanation": "已核对 WB-15-05 对应的交付及固定证据。",
+        "passed": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+[{"components": [{"mol_pct": 1.9, "role": "support", "species": "Ca"}, {"mol_pct": 11.4, "role": "compound", "species": "Pd"}, {"mol_pct": 11.4, "role": "compound", "species": "Zn"}, {"mol_pct": 75.3, "role": "support", "species": "CeO2"}], "h2_co2_ratio": 3.0, "pressure_bar_abs": 20.0, "reactants_flow_nl_g_h": 12.0, "temperature_k": 503.0}, {}]

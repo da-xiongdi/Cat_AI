@@ -16,6 +16,17 @@ def client(tmp_path):
         yield client
 
 
+def test_overview_research_scope_and_empty_sources(client):
+    response = client.get("/")
+    assert response.status_code == 200
+    assert "科研路线 A–F" in response.text
+    assert "科研任务 0 项" in response.text
+    assert "工作台建设摘要" in response.text
+    assert "领域测试记录数据源未接入或读取失败" in response.text
+    assert "/next-work?category=research" in response.text
+    assert "/next-work?category=workbench" in response.text
+
+
 def csrf(client, url="/tasks/new"):
     body = client.get(url).text
     return re.search(r'name="csrf" value="([^"]+)"', body).group(1)
@@ -601,3 +612,274 @@ def test_roadmap_maintenance_atomic_and_web(tmp_path):
         )
         with connect(db) as conn:
             assert conn.execute("SELECT count(*) FROM task_node_link_revision").fetchone()[0] == 4
+
+
+def test_next_work_empty_and_category_navigation(client):
+    response = client.get("/next-work")
+    assert response.status_code == 200
+    assert "\u5f53\u524d\u6682\u65e0\u8fd1\u671f\u4efb\u52a1" in response.text
+    assert client.get("/next-work?category=workbench").status_code == 200
+    assert client.get("/next-work?category=invalid").status_code == 422
+
+
+def test_task_category_filters_and_return_context(tmp_path):
+    from catalyst_ai.workbench import service
+
+    db = tmp_path / "wb.sqlite"
+    app = create_app(db, tmp_path)
+    for ident, category in (("R1", "research"), ("W1", "workbench"), ("U1", None)):
+        service.create_task(
+            db,
+            {
+                "id": ident,
+                "project_id": "cat-ai",
+                "title": "Find " + ident,
+                "goal": "test",
+                "category": category,
+            },
+            actor="tester",
+            request_id=ident,
+        )
+    with TestClient(app, base_url="http://127.0.0.1:8765") as client:
+        page = client.get(
+            "/tasks", params={"category": "research", "q": "Find", "status": "planned"}
+        )
+        assert "Find R1" in page.text and "Find W1" not in page.text and "Find U1" not in page.text
+        assert "from_list=1&amp;category=research&amp;status=planned&amp;q=Find" in page.text
+        detail = client.get("/tasks/R1?from_list=1&category=research&status=planned&q=Find")
+        assert "/tasks?category=research&amp;status=planned&amp;q=Find" in detail.text
+        assert "Find U1" in client.get("/tasks?category=unclassified").text
+        assert client.get("/tasks?category=invalid").status_code == 422
+        assert "Find W1" in client.get("/tasks").text
+
+
+def test_next_work_tracks_prerequisite_evidence_and_review_entry(tmp_path):
+    from catalyst_ai.workbench import category_context, service
+
+    db = tmp_path / "wb.sqlite"
+    app = create_app(db, tmp_path)
+    for ident, category in (("R", "research"), ("W", "workbench")):
+        service.create_task(
+            db,
+            {
+                "id": ident,
+                "project_id": "cat-ai",
+                "title": ident,
+                "goal": "test",
+                "category": category,
+                "deliverables": ["report"],
+                "criteria": [{"id": "check", "description": "check"}],
+            },
+            actor="tester",
+            request_id=ident,
+        )
+    service.add_dependency(db, "W", "R", 1, actor="tester", request_id="dep")
+    category_context.set_category_focus(
+        db, "cat-ai", "workbench", "W", 0, "test", actor="tester", request_id="focus"
+    )
+    category_context.save_recent_task(
+        db, "cat-ai", "workbench", "W", 0, 1, 0, "test", actor="tester", request_id="recent"
+    )
+    service.transition(db, "R", 1, "ready", actor="tester", request_id="ready")
+    service.transition(db, "R", 2, "in_progress", actor="tester", request_id="start")
+    service.set_evidence(
+        db, "cat-ai", "E", "v1", "evidence", "available", actor="tester", request_id="e1"
+    )
+    service.submit_review(
+        db,
+        "R",
+        3,
+        [{"criterion_id": "check", "passed": True, "evidence_id": "E", "evidence_version": "v1"}],
+        "pass",
+        actor="tester",
+        request_id="review",
+    )
+    with TestClient(app, base_url="http://127.0.0.1:8765") as client:
+        research = client.get("/next-work").text
+        assert "/tasks/R?category=research#accept-review" in research
+        assert 'id="accept-review"' in client.get("/tasks/R?category=research").text
+        service.accept_review(db, "R", 4, "pass", actor="tester", request_id="accept")
+        workbench_url = "/next-work?category=workbench"
+        assert "前置未完成或证据待复核" not in client.get(workbench_url).text
+        service.set_evidence(
+            db, "cat-ai", "E", "v1", "evidence", "missing", actor="tester", request_id="e2"
+        )
+        page = client.get(workbench_url).text
+        assert "人工安排" in page and 'href="/tasks/R"' in page
+        assert "前置未完成或证据待复核：R" in page
+
+
+def test_next_work_plan_handoff_and_reverification(tmp_path):
+    from catalyst_ai.workbench import category_context, index, plans, service
+
+    db = tmp_path / "wb.sqlite"
+    app = create_app(db, tmp_path)
+    auth = {"actor": "tester", "request_id": "task-r"}
+    for category, task in (("research", "R"), ("workbench", "W")):
+        service.create_task(
+            db,
+            {
+                "id": task,
+                "project_id": "cat-ai",
+                "title": task,
+                "goal": "goal",
+                "category": category,
+                "deliverables": ["report"],
+                "criteria": [{"id": "c", "description": "check"}],
+            },
+            actor="tester",
+            request_id="task-" + task,
+        )
+    doc = tmp_path / "plan.md"
+    doc.write_text("# Research\ninitial\n# Workbench\ninitial\n", encoding="utf-8")
+    index.register(db, "cat-ai", "DOC", "document", "plan.md", **auth)
+    for task, section in (("R", "Research"), ("W", "Workbench")):
+        plans.save_task_plan_reference(
+            db,
+            "cat-ai",
+            "REF-" + task,
+            {
+                "task_id": task,
+                "document_id": "DOC",
+                "path": "plan.md",
+                "section_locator": section,
+                "purpose": "execution_plan",
+                "is_primary": 1,
+            },
+            0,
+            "test",
+            actor="tester",
+            request_id="ref-" + task,
+        )
+        check = plans.inspect_task_plan_reference(db, "cat-ai", "REF-" + task)
+        plans.verify_task_plan_reference(
+            db,
+            "cat-ai",
+            "REF-" + task,
+            1,
+            check["current_sha256"],
+            actor="tester",
+            request_id="verify-" + task,
+        )
+    service.add_dependency(db, "W", "R", 1, actor="tester", request_id="dependency")
+    category_context.set_category_focus(
+        db, "cat-ai", "workbench", "W", 0, "test", actor="tester", request_id="focus-W"
+    )
+    category_context.save_recent_task(
+        db,
+        "cat-ai",
+        "workbench",
+        "W",
+        0,
+        1,
+        0,
+        "test",
+        actor="tester",
+        request_id="recent-W",
+    )
+    other = tmp_path / "other.md"
+    other.write_text("# Reference\nreference text\n", encoding="utf-8")
+    index.register(db, "cat-ai", "DOC2", "document", "other.md", actor="tester", request_id="doc2")
+    plans.save_task_plan_reference(
+        db,
+        "cat-ai",
+        "REF-EXTRA",
+        {
+            "task_id": "R",
+            "document_id": "DOC2",
+            "path": "other.md",
+            "section_locator": "Reference",
+            "purpose": "execution_plan",
+            "is_primary": 0,
+        },
+        0,
+        "test",
+        actor="tester",
+        request_id="extra",
+    )
+    with TestClient(app, base_url="http://127.0.0.1:8765") as client:
+        for category, task, section in (
+            ("research", "R", "Research"),
+            ("workbench", "W", "Workbench"),
+        ):
+            page = client.get("/next-work", params={"category": category})
+            url = f"/artifacts/DOC?task={task}&reference=REF-{task}&category={category}"
+            assert url.replace("&", "&amp;") + "#plan-section" in page.text
+            detail = client.get(url)
+            assert 'id="plan-section"># ' + section in detail.text
+            assert f"/next-work?category={category}" in detail.text
+            assert f"task={task}&amp;reference=REF-{task}" in client.get(f"/tasks/{task}").text
+        assert "/tasks/R" in client.get("/next-work?category=workbench").text
+        assert "/artifacts/DOC2?task=R&amp;reference=REF-EXTRA" in client.get("/tasks/R").text
+        reference_page = client.get("/artifacts/DOC2?task=R&reference=REF-EXTRA")
+        assert "reference text" in reference_page.text
+        assert 'data-plan-status="unverified"' in reference_page.text
+        assert client.get("/artifacts/DOC?task=W&reference=REF-R").status_code == 404
+        assert client.get("/artifacts/DOC2?task=R&reference=REF-R").status_code == 404
+        assert client.get("/tasks/W/plans/REF-R").status_code == 404
+        plan_url = "/artifacts/DOC?task=R&reference=REF-R"
+        doc.write_text("# Research\nchanged\n# Workbench\ninitial\n", encoding="utf-8")
+        assert 'data-plan-status="changed"' in client.get(plan_url).text
+        check = plans.inspect_task_plan_reference(db, "cat-ai", "REF-R")
+        plans.verify_task_plan_reference(
+            db,
+            "cat-ai",
+            "REF-R",
+            1,
+            check["current_sha256"],
+            actor="tester",
+            request_id="verify-again",
+        )
+        page = client.get(plan_url)
+        assert 'data-plan-status="valid"' in page.text
+        assert page.text.count("data-plan-verification") == 2
+        doc.write_text("# Renamed\n", encoding="utf-8")
+        assert 'data-plan-status="section_missing"' in client.get(plan_url).text
+        plans.save_task_plan_reference(
+            db,
+            "cat-ai",
+            "REF-R",
+            {
+                "task_id": "R",
+                "document_id": "DOC",
+                "path": "plan.md",
+                "section_locator": "Renamed",
+                "purpose": "execution_plan",
+                "is_primary": 1,
+            },
+            1,
+            "correct section",
+            actor="tester",
+            request_id="correct-ref",
+        )
+        check = plans.inspect_task_plan_reference(db, "cat-ai", "REF-R")
+        plans.verify_task_plan_reference(
+            db,
+            "cat-ai",
+            "REF-R",
+            2,
+            check["current_sha256"],
+            actor="tester",
+            request_id="verify-corrected",
+        )
+        page = client.get(plan_url)
+        assert 'id="plan-section"># Renamed' in page.text
+        assert page.text.count("data-plan-verification") == 3
+        service.transition(
+            db, "R", 1, "cancelled", reason="test history", actor="tester", request_id="cancel-R"
+        )
+        history = client.get("/next-work?category=research").text.split("<h2>历史任务</h2>")[1]
+        assert "/artifacts/DOC?task=R&amp;reference=REF-R" in history
+
+        # A reclassified task stays in its previous manual arrangement for review.
+        revision = service.get_task(db, "W")["revision"]
+        service.set_task_category(
+            db, "cat-ai", "W", "research", revision, "test", actor="tester", request_id="move-W"
+        )
+        doc.write_text("# Workbench\nrestored\n", encoding="utf-8")
+        old_category = client.get("/next-work?category=workbench").text
+        assert "/artifacts/DOC?task=W&amp;reference=REF-W&amp;category=workbench" in old_category
+        assert "待复核" in old_category and "待关联主计划" not in old_category
+        moved_plan = client.get("/artifacts/DOC?task=W&reference=REF-W&category=workbench")
+        assert 'href="/next-work?category=workbench"' in moved_plan.text
+        assert 'href="/tasks/W?category=workbench"' in moved_plan.text

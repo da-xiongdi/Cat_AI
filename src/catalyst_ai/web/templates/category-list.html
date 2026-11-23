@@ -1,0 +1,152 @@
+{% set is_tasks = page == 'tasks' %}
+{% set is_documents = page == 'documents' %}
+<div class="heading">
+  <div><h1>{{ list_labels[page] }}<span class="dot">.</span></h1></div>
+  {% if is_tasks %}<a class="button primary" href="/tasks/new">＋ 创建任务</a>{% endif %}
+  {% if is_documents %}<a class="button" href="/artifacts?{{ scope_query }}#register-source">登记文档</a>{% endif %}
+</div>
+<nav class="inline list-links" aria-label="相关台账">
+  {% for name, label in list_labels.items() if name != page %}
+  <a href="/{{ name }}?{{ scope_query }}">{{ label }}</a>
+  {% endfor %}
+  {% if not is_documents %}
+  <a href="/research?kind=issues&amp;{{ scope_query }}">技术问题</a>
+  <a href="/decisions?{{ scope_query }}">决策</a>
+  {% endif %}
+  {% if is_tasks %}<a href="/research?kind=claims&amp;{{ scope_query }}">研究证据分类</a>{% endif %}
+  {% if page == 'artifacts' %}<a href="/foundation">备份与恢复</a>{% endif %}
+</nav>
+<section class="panel">
+  <form class="filters list-filters" action="{{ list_path }}">
+    <label>类别
+      <select name="category">
+        {% for value, label in category_labels.items() %}
+        <option value="{{ value }}"{% if scope == value %} selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>{{ '任务编号或标题' if is_tasks else '编号或路径' }}
+      <input name="q" value="{{ q }}" type="search">
+    </label>
+    {% if is_tasks %}
+    <label>状态
+      <select name="status">
+        <option value="">全部状态</option>
+        {% for value in ['planned','ready','in_progress','in_review','done','blocked','cancelled'] %}
+        <option value="{{ value }}"{% if status == value %} selected{% endif %}>{{ value|label }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>阶段
+      <select name="stage">
+        <option value="">全部阶段</option>
+        {% for value in 'ABCDEF' %}<option{% if stage == value %} selected{% endif %}>{{ value }}</option>{% endfor %}
+      </select>
+    </label>
+    {% endif %}
+    {% if limit %}<input type="hidden" name="limit" value="{{ limit }}">{% endif %}
+    <button>筛选</button>
+    <a href="{{ clear_url }}">清除筛选</a>
+  </form>
+  <p>{{ '项目级' if category is none else category_labels[scope] }} · 当前结果 {{ result.total }} 项
+    {% if result["items"]|length < result.total and result["items"] %}
+    · 显示第 {{ offset + 1 }}–{{ offset + result["items"]|length }} 项
+    {% endif %}
+  </p>
+  {% if scope == 'all' %}
+  <p>分类小计 · {% for kind, count in result.counts.items() %}{{ category_labels[kind] }} {{ count }} 项{% if not loop.last %} · {% endif %}{% endfor %}</p>
+  {% if not is_tasks %}<p class="muted">总计按编号去重。共用项及包含待核对依据的项目可计入多个小计。</p>{% endif %}
+  {% endif %}
+  {% if is_tasks %}
+  <p>已取消 {{ result.states.get('cancelled', 0) }} 项 · {% for kind in result.counts if scope in ['all', kind] %}{{ category_labels[kind] }}有效完成 {{ result.effective[kind] }} 项，证据待复核 {{ result.needs_review[kind] }} 项{% if not loop.last %} · {% endif %}{% endfor %}</p>
+  <p class="muted">按符合筛选条件的任务编号计数 · 来源为任务登记、最新验收及证据索引 · {{ result.observed_at|localtime }}</p>
+  {% endif %}
+
+  {% if not result["items"] %}
+  <p class="empty">{{ '此页无记录，请返回上一页。' if result.total else '当前范围内没有符合条件的' ~ list_labels[page] ~ '。' }}</p>
+  {% elif is_tasks %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>任务</th><th>阶段 / 里程碑</th><th>状态</th><th>优先级</th><th>负责人</th><th>计划日期</th><th>依赖</th></tr></thead>
+    <tbody>
+    {% for t in result["items"] %}
+    <tr>
+      <td><a href="/tasks/{{ t.id|urlencode }}?{{ detail_query }}"><strong>{{ t.title }}</strong><small>{{ t.id }} · {{ category_labels[t.category or 'unclassified'] }}</small></a></td>
+      <td>{{ t.stages|join(' / ') or '未设置' }}<small>{{ t.milestone or '未设置' }}</small></td>
+      <td>{{ badge(t.status) }}{% if t.evidence_needs_review %}<small>证据需复核</small>{% endif %}</td>
+      <td>{{ t.priority }}</td><td>{{ t.owner or '未设置' }}</td><td>{{ t.planned_date or '未设置' }}</td><td>{{ t.dependency_count }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+  {% else %}
+  {% if not is_documents %}<p class="muted">固定证据状态结合发布索引及文件检测 · {{ result.observed_at|localtime }}</p>{% endif %}
+  {% for a in result["items"] %}
+  <article class="history">
+    <h2><a href="/artifacts/{{ a.id|urlencode }}?{{ detail_query }}">{{ a.id }}</a></h2>
+    <p>{{ a.locations|join('、') }} · 最新索引 {{ badge(a.status) }}</p>
+    <p>适用范围 · {% for kind in category_labels if kind in a.categories %}{{ category_labels[kind] }}{% if not loop.last %} · {% endif %}{% endfor %}</p>
+    {% if is_documents %}
+      {% for p in a.purposes %}
+      <p>用途登记 {{ p.id }} · {{ purpose_labels[p.purpose] }} · {{ category_labels[p.category] if p.category else '类别未登记' }}{% if p.needs_review %} · 用途待核对{% endif %}</p>
+      {% endfor %}
+      {% for p in a.plans %}
+      <p>计划引用 {{ p.reference.id }} · {{ purpose_labels[p.reference.purpose] }} · {{ category_labels[p.category] }}
+        {% if p.linkable %}
+        · <a href="/tasks/{{ p.reference.task_id|urlencode }}?{{ detail_query }}">任务 {{ p.reference.task_id }}</a>
+        · <a href="{{ plan_url(p.reference, context=detail_query) }}">{{ p.reference.section_locator }}</a>
+        {% else %}· 任务 {{ p.reference.task_id }} · {{ p.reference.section_locator }}{% endif %}
+        · {{ p.status|plan_label }}{% if p.purpose_mismatch %} · 用途与任务类别待核对{% endif %}
+      </p>
+      {% endfor %}
+      {% if not a.purposes and not a.plans %}<p>待核对 · 尚无活动用途或计划引用。</p>{% endif %}
+    {% else %}
+      {% set sources = {'acceptance':'验收', 'submission':'提交检查', 'model_run':'模型运行', 'claims':'研究证据', 'issues':'技术问题'} %}
+      {% for group in a.links|groupby('task.id', case_sensitive=true) %}
+      {% set task = group.list[0].task %}
+      <div class="history">
+        <p><a href="/tasks/{{ task.id|urlencode }}?{{ detail_query }}">{{ task.id }}</a> · {{ category_labels[task.category or 'unclassified'] }}</p>
+        <p>任务交付范围 · {{ task.deliverables|join('、') or '未登记' }}</p>
+        {% for version in group.list|groupby('version', case_sensitive=true) %}
+        {% set evidence = version.list[0] %}
+        <div class="history">
+          <p>固定版本 {{ badge(evidence.status) }}{% if evidence.status != 'available' %} · 证据待复核{% endif %}</p>
+          {% if evidence.matched %}
+          <a href="/artifacts/{{ a.id|urlencode }}?version={{ evidence.version|urlencode }}&amp;{{ detail_query }}"><code>{{ evidence.version }}</code></a>
+          {% else %}<code>{{ evidence.version or '未登记' }}</code><p>成果与证据版本未配对。</p>{% endif %}
+          <details><summary>关联记录</summary>
+          <ul>{% for link in version.list %}<li>{{ sources[link.kind] }} {{ link.source_id }} · {{ link.role }}</li>{% endfor %}</ul>
+          </details>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}<p>待核对 · 尚无任务和固定证据的关联记录。</p>{% endfor %}
+    {% endif %}
+  </article>
+  {% endfor %}
+  {% endif %}
+
+  {% if previous or following %}
+  <nav class="inline list-links" aria-label="列表分页">
+    {% if previous %}<a href="{{ previous }}">← 上一页</a>{% endif %}
+    {% if following %}<a href="{{ following }}">下一页 →</a>{% endif %}
+  </nav>
+  {% endif %}
+</section>
+{% if page == 'artifacts' %}
+<div class="grid list-index-actions">
+  <section class="panel">
+    <h2>来源索引</h2>
+    <form action="/actions/scan" method="post" class="inline">{{ hidden() }}{{ actor() }}<button class="primary">刷新索引</button></form>
+  </section>
+  <section class="panel" id="register-source">
+    <h2>登记来源</h2>
+    <p class="muted">路径相对工作区。登记后刷新索引。</p>
+    <form action="/actions/register" method="post">{{ hidden() }}
+      <label>成果编号<input name="artifact_id" required></label>
+      <label>类型<select name="kind">{% for k in ['snapshot','qualification','split','selection','features','report','model','document','attachment'] %}<option>{{ k }}</option>{% endfor %}</select></label>
+      <label>文件路径<input name="path" required placeholder="docs/example.md"></label>
+      {{ actor() }}<button>登记成果</button>
+    </form>
+  </section>
+</div>
+{% endif %}

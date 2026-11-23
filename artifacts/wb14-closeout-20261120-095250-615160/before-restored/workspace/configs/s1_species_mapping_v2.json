@@ -1,0 +1,427 @@
+{
+  "schema_version": 2,
+  "kind": "species",
+  "version": "themecat-centers-v2",
+  "source": {
+    "name": "TheMeCat snapshot species and feature plan",
+    "reference": "docs/feature_engineering_plan_v0.1.md section 4.2",
+    "license": "Project-derived mapping; source snapshot retains its own provenance",
+    "evidence": "Feature plan sections 2.5/4.2; explicit nominal formula units; source-accepted dataset, not row-verified. La family checked against Crossref title for 10.1016/S1002-0721(09)60193-9; unresolved InNi3O0.5 and CoGaAlO4 remain unsupported."
+  },
+  "entries": [
+    {
+      "species": "Al2O3",
+      "state": "supported",
+      "centers": {
+        "Al": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Al": 2.0,
+        "O": 3.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "Au",
+      "state": "supported",
+      "centers": {
+        "Au": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Au": 1.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "BaCO3",
+      "state": "supported",
+      "centers": {
+        "Ba": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Ba": 1.0,
+        "C": 1.0,
+        "O": 3.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "Ca",
+      "state": "supported",
+      "centers": {
+        "Ca": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Ca": 1.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "CeO2",
+      "state": "supported",
+      "centers": {
+        "Ce": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Ce": 1.0,
+        "O": 2.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "Co3O4",
+      "state": "supported",
+      "centers": {
+        "Co": 3
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Co": 3.0,
+        "O": 4.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "Cr2O3",
+      "state": "supported",
+      "centers": {
+        "Cr": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Cr": 2.0,
+        "O": 3.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "Cu",
+      "state": "supported",
+      "centers": {
+        "Cu": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Cu": 1.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "Fe3O4",
+      "state": "supported",
+      "centers": {
+        "Fe": 3
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Fe": 3.0,
+        "O": 4.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "Ga2O3",
+      "state": "supported",
+      "centers": {
+        "Ga": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Ga": 2.0,
+        "O": 3.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "In2O3",
+      "state": "supported",
+      "centers": {
+        "In": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "In": 2.0,
+        "O": 3.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "Ir",
+      "state": "supported",
+      "centers": {
+        "Ir": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Ir": 1.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "K",
+      "state": "supported",
+      "centers": {
+        "K": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "K": 1.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "K2CO3",
+      "state": "supported",
+      "centers": {
+        "K": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "K": 2.0,
+        "C": 1.0,
+        "O": 3.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "La2O3",
+      "state": "supported",
+      "centers": {
+        "La": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "La": 2.0,
+        "O": 3.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "MgO",
+      "state": "supported",
+      "centers": {
+        "Mg": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Mg": 1.0,
+        "O": 1.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "Pd",
+      "state": "supported",
+      "centers": {
+        "Pd": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Pd": 1.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "Pt",
+      "state": "supported",
+      "centers": {
+        "Pt": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Pt": 1.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "SiO2",
+      "state": "supported",
+      "centers": {
+        "Si": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Si": 1.0,
+        "O": 2.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "TiO2",
+      "state": "supported",
+      "centers": {
+        "Ti": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Ti": 1.0,
+        "O": 2.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "Y2O3",
+      "state": "supported",
+      "centers": {
+        "Y": 2
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Y": 2.0,
+        "O": 3.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "Zn",
+      "state": "supported",
+      "centers": {
+        "Zn": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Zn": 1.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "ZnO",
+      "state": "supported",
+      "centers": {
+        "Zn": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Zn": 1.0,
+        "O": 1.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "ZrO2",
+      "state": "supported",
+      "centers": {
+        "Zr": 1
+      },
+      "evidence": "Explicit elemental or stoichiometric formula; carbonate C excluded per feature plan section 4.2",
+      "elements": {
+        "Zr": 1.0,
+        "O": 2.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "CoGaAlO4",
+      "state": "unsupported",
+      "centers": {},
+      "evidence": "Evidence insufficient for source identity/formula correspondence; quarantine. Parsed elemental counts are syntax only, no effective correction or formal descriptor eligibility.",
+      "elements": {
+        "Co": 1.0,
+        "Ga": 1.0,
+        "Al": 1.0,
+        "O": 4.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "InNi3O0.5",
+      "state": "unsupported",
+      "centers": {},
+      "evidence": "Evidence insufficient for source identity/formula correspondence; quarantine. Parsed elemental counts are syntax only, no effective correction or formal descriptor eligibility.",
+      "elements": {
+        "In": 1.0,
+        "Ni": 3.0,
+        "O": 0.5
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "LaMn0.1Cu0.9O3",
+      "state": "supported",
+      "centers": {
+        "La": 1.0,
+        "Mn": 0.1,
+        "Cu": 0.9
+      },
+      "evidence": "Reviewed nominal descriptor convention: La/Mn/Cu centers, oxygen excluded; dataset sample name equals explicit formula; paper title reports LaMn1-xCuxO3 family; material mol% basis accepted from dataset. No phase/active-site or row verification claim.",
+      "elements": {
+        "La": 1.0,
+        "Mn": 0.1,
+        "Cu": 0.9,
+        "O": 3.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "LaMn0.3Cu0.7O3",
+      "state": "supported",
+      "centers": {
+        "La": 1.0,
+        "Mn": 0.3,
+        "Cu": 0.7
+      },
+      "evidence": "Reviewed nominal descriptor convention: La/Mn/Cu centers, oxygen excluded; dataset sample name equals explicit formula; paper title reports LaMn1-xCuxO3 family; material mol% basis accepted from dataset. No phase/active-site or row verification claim.",
+      "elements": {
+        "La": 1.0,
+        "Mn": 0.3,
+        "Cu": 0.7,
+        "O": 3.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "LaMn0.5Cu0.5O3",
+      "state": "supported",
+      "centers": {
+        "La": 1.0,
+        "Mn": 0.5,
+        "Cu": 0.5
+      },
+      "evidence": "Reviewed nominal descriptor convention: La/Mn/Cu centers, oxygen excluded; dataset sample name equals explicit formula; paper title reports LaMn1-xCuxO3 family; material mol% basis accepted from dataset. No phase/active-site or row verification claim.",
+      "elements": {
+        "La": 1.0,
+        "Mn": 0.5,
+        "Cu": 0.5,
+        "O": 3.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "LaMn0.7Cu0.3O3",
+      "state": "supported",
+      "centers": {
+        "La": 1.0,
+        "Mn": 0.7,
+        "Cu": 0.3
+      },
+      "evidence": "Reviewed nominal descriptor convention: La/Mn/Cu centers, oxygen excluded; dataset sample name equals explicit formula; paper title reports LaMn1-xCuxO3 family; material mol% basis accepted from dataset. No phase/active-site or row verification claim.",
+      "elements": {
+        "La": 1.0,
+        "Mn": 0.7,
+        "Cu": 0.3,
+        "O": 3.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    },
+    {
+      "species": "LaMnO3",
+      "state": "supported",
+      "centers": {
+        "La": 1.0,
+        "Mn": 1.0
+      },
+      "evidence": "Reviewed nominal descriptor convention: La/Mn/Cu centers, oxygen excluded; dataset sample name equals explicit formula; paper title reports LaMn1-xCuxO3 family; material mol% basis accepted from dataset. No phase/active-site or row verification claim.",
+      "elements": {
+        "La": 1.0,
+        "Mn": 1.0,
+        "O": 3.0
+      },
+      "formula_unit_basis": "one nominal formula unit exactly as the dataset species string; retain whole-catalyst material mol%; no scaling"
+    }
+  ]
+}

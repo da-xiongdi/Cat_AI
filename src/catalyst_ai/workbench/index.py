@@ -380,9 +380,9 @@ def get_artifact(path, artifact_id):
             dict(r)
             for r in db.execute(
                 "SELECT r.*,e.status,e.observed_at FROM artifact_revision r LEFT JOIN evidence e "
-                "ON e.id=r.artifact_id AND e.version=r.file_sha256 "
+                "ON e.id=r.artifact_id AND e.version=r.file_sha256 AND e.project_id=? "
                 "WHERE r.artifact_id=? ORDER BY r.created_at DESC",
-                (artifact_id,),
+                (row["project_id"], artifact_id),
             )
         ]
         for revision in data["revisions"]:

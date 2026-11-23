@@ -1,0 +1,104 @@
+{
+  "tasks": {
+    "WB-15-02": {
+      "recent": "分类、焦点、去重、历史及人工安排复核",
+      "readiness": "依赖、固定证据与验收入口"
+    },
+    "WB-15-03": {
+      "preview": "共用文档预览、章节定位与实时核对",
+      "scope": "项目和引用身份、工作区边界及写入并发"
+    },
+    "WB-15-04": {
+      "integration": "两类任务往返、科研路线与异常修正复核"
+    },
+    "WB-15-05": {
+      "regression": "专项验收、兼容回归及版本清单",
+      "restore": "隔离部署、备份恢复和科研数据保护"
+    },
+    "WB-15": {
+      "WB-15-01": "基线与展示规则",
+      "WB-15-02": "分类近期任务视图",
+      "WB-15-03": "任务与计划章节关联",
+      "WB-15-04": "联调与异常复核",
+      "WB-15-05": "专项验收与交付"
+    }
+  },
+  "result": "passed",
+  "files_sha256": {
+    "artifacts/wb15-closeout-20261120-143656-281747/baseline.json": "fbd06e86f2ef729c342ba614ed3971c483edb3471621deace86827492f89cbb5",
+    "artifacts/wb15-closeout-20261120-143656-281747/edge-1366x768.png": "7e4a29c8ba84c17497c5b14bb10dcc28228396a3fcf0b03a71a62fedb0883353",
+    "artifacts/wb15-closeout-20261120-143656-281747/edge-1920x1080.png": "b55c3280dfa2ee2ce62d59bb1ba674a01e264ee1ce5b8eded5ccf766a9c85465",
+    "artifacts/wb15-closeout-20261120-143656-281747/edge-390x844.png": "cf4eb50d92aa3fa6fc848aac37a2cbcaf286d832b88d7d5de0e29850a81e5515",
+    "artifacts/wb15-closeout-20261120-143656-281747/edge.json": "4658141713f06d4b5125bde9a57c054b602d95553efa1f1bec705711e5cf5588",
+    "artifacts/wb15-closeout-20261120-143656-281747/edge.txt": "18fc4ef7740310b91053b184df96b37a942fc314248ed695ecce69c891a920dc",
+    "artifacts/wb15-closeout-20261120-143656-281747/isolated-smoke.json": "89bc7e63eb80448cfef252799dc379372334f53ecf7cac116d6724bebf774545",
+    "artifacts/wb15-closeout-20261120-143656-281747/protection.json": "cad309b96bda94cbb877d63597a7daf89a1ec9cb70c528eedea9a6649f7377b7",
+    "artifacts/wb15-closeout-20261120-143656-281747/pytest.txt": "d9c1a9ad8a97dfd2ca1ca7354ce9071535b205a0a89e373cf58045099e0d2246",
+    "artifacts/wb15-closeout-20261120-143656-281747/release.json": "06c3b6e77d19968a0358dc7686d11191416de61d0f18699c924f8c4db6df3e58",
+    "artifacts/wb15-closeout-20261120-143656-281747/ruff-format.txt": "7ea26dcf24cd7c1f9e57df608af570fd7294996eaab13186f23c19d7b566ea0b",
+    "artifacts/wb15-closeout-20261120-143656-281747/ruff.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  "predeployment_restore": {
+    "path": "artifacts/wb15-closeout-20261120-143656-281747/before-bundle.zip",
+    "sha256": "72975064a6e8beb7b699f44ed4d659b7273295bf6a40a18b3cc9076c1785717f",
+    "missing": [],
+    "files": 82,
+    "sources": {
+      "docs/Cat_AI_next_stage_execution_draft_20261120.md": "fbf8d46221083e6d467cd67322dc9841d71afb5462ff087cc196f98f22574547",
+      "docs/architecture/project_workbench_plan.md": "618619e1c88057cae6d0381fe5d007a73f275dcd4d8df3ff6f4e43c3d03a9c79",
+      "docs/architecture/system_design.md": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+      "docs/feature_engineering_plan_v0.1.md": "4251db86aeb53052c9b5d8afd833d46453fa6c32aebc2e3fc12c3de46fbc86b3",
+      "docs/s2_implementation_plan.md": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651",
+      "docs/workbench/wb13_implementation_plan.md": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b",
+      "docs/workbench/wb14_implementation_plan.md": "cc59b6529ab06ab75f00e224a4c469d4b7f2045c1e59b140d36769bb3926f956",
+      "docs/workbench/wb15_implementation_plan.md": "46d9b8caf366ae6b6b3a6e488285dfb568dda3b6d397d731a5d94badc6a4ee3e"
+    },
+    "table_counts": {
+      "activity": 451,
+      "artifact": 81,
+      "artifact_location": 81,
+      "artifact_revision": 90,
+      "category_context": 1,
+      "category_context_revision": 2,
+      "category_recent_task": 1,
+      "category_recent_task_revision": 2,
+      "criterion": 87,
+      "decision": 0,
+      "decision_revision": 0,
+      "dependency": 46,
+      "document_purpose": 4,
+      "document_purpose_revision": 4,
+      "evidence": 90,
+      "foundation_import": 0,
+      "foundation_record": 0,
+      "index_observation": 1163,
+      "index_scan": 32,
+      "index_workspace": 1,
+      "model_run": 4,
+      "model_run_revision": 5,
+      "prediction_event": 9,
+      "prediction_job": 3,
+      "project": 1,
+      "published_index": 1,
+      "request_log": 394,
+      "research_node": 14,
+      "research_node_revision": 28,
+      "research_record": 8,
+      "review": 60,
+      "task": 34,
+      "task_category_revision": 10,
+      "task_decision": 0,
+      "task_node_link": 10,
+      "task_node_link_revision": 10,
+      "task_plan_reference": 24,
+      "task_plan_reference_revision": 24,
+      "task_plan_verification": 24,
+      "workbench_delivery": 12,
+      "workbench_delivery_revision": 24
+    },
+    "rows_equal_except_relocated_workspace": true,
+    "integrity": "ok",
+    "foreign_key_errors": 0
+  },
+  "integration_report": "docs/workbench/wb15_04_report.md"
+}

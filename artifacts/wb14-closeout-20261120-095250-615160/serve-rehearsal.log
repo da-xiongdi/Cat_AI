@@ -1,0 +1,19 @@
+INFO:     Started server process [34464]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:55939 (Press CTRL+C to quit)
+INFO:     127.0.0.1:55940 - "GET /roadmap HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55943 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55944 - "GET /roadmap HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55945 - "GET /roadmap?view=tree HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55946 - "GET /tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55947 - "GET /tasks/S1A-01 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55948 - "GET /tasks/WB-13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55949 - "GET /artifacts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55950 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55951 - "GET /decisions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55952 - "GET /predictions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55953 - "GET /foundation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55954 - "GET /api/workbench/v1/prediction-jobs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55955 - "GET /api/workbench/v1/roadmap/nodes/cat-ai%3Astage%3AC/children HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55956 - "GET /api/workbench/v1/query?category=workbench HTTP/1.1" 200 OK

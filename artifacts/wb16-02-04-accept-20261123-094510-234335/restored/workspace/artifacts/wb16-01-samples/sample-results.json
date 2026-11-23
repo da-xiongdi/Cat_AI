@@ -1,0 +1,554 @@
+{
+  "valid": {
+    "WB16-SAMPLE-R": {
+      "reference": {
+        "id": "WB16-SAMPLE-REF-R",
+        "project_id": "cat-ai",
+        "task_id": "WB16-SAMPLE-R",
+        "document_id": "WB16-SAMPLE-DOC-R",
+        "path": "R.md",
+        "section_locator": "科研计划",
+        "purpose": "execution_plan",
+        "is_primary": 1,
+        "revision": 1,
+        "active": 1
+      },
+      "status": "valid",
+      "current_sha256": "059509d12828c02112a4b9377dde6f64e706968073afb38447d8ffe705c87f40",
+      "last_verification": {
+        "id": "7c64179d73fc46a6b415918f8884dcf0",
+        "project_id": "cat-ai",
+        "reference_id": "WB16-SAMPLE-REF-R",
+        "file_sha256": "059509d12828c02112a4b9377dde6f64e706968073afb38447d8ffe705c87f40",
+        "actor": "Codex",
+        "created_at": "2026-11-20T07:13:34.776996+00:00",
+        "reference_revision": 1
+      }
+    },
+    "WB16-SAMPLE-W": {
+      "reference": {
+        "id": "WB16-SAMPLE-REF-W",
+        "project_id": "cat-ai",
+        "task_id": "WB16-SAMPLE-W",
+        "document_id": "WB16-SAMPLE-DOC-W",
+        "path": "W.md",
+        "section_locator": "建设计划",
+        "purpose": "execution_plan",
+        "is_primary": 1,
+        "revision": 1,
+        "active": 1
+      },
+      "status": "valid",
+      "current_sha256": "c0f3af1ae0ffe7659c7a0ec8eb579f89fb2f9d0660437a3c40172797759e3d45",
+      "last_verification": {
+        "id": "d0d2d70ff93845c2992add3dd8af69a1",
+        "project_id": "cat-ai",
+        "reference_id": "WB16-SAMPLE-REF-W",
+        "file_sha256": "c0f3af1ae0ffe7659c7a0ec8eb579f89fb2f9d0660437a3c40172797759e3d45",
+        "actor": "Codex",
+        "created_at": "2026-11-20T07:13:35.843127+00:00",
+        "reference_revision": 1
+      }
+    }
+  },
+  "no_primary": null,
+  "changed": {
+    "reference": {
+      "id": "WB16-SAMPLE-REF-R",
+      "project_id": "cat-ai",
+      "task_id": "WB16-SAMPLE-R",
+      "document_id": "WB16-SAMPLE-DOC-R",
+      "path": "R.md",
+      "section_locator": "科研计划",
+      "purpose": "execution_plan",
+      "is_primary": 1,
+      "revision": 1,
+      "active": 1
+    },
+    "status": "changed",
+    "current_sha256": "901f151324d82bf26cbb9fb6c31972180691ef2723a0718315c8fd7e92e682eb",
+    "last_verification": {
+      "id": "7c64179d73fc46a6b415918f8884dcf0",
+      "project_id": "cat-ai",
+      "reference_id": "WB16-SAMPLE-REF-R",
+      "file_sha256": "059509d12828c02112a4b9377dde6f64e706968073afb38447d8ffe705c87f40",
+      "actor": "Codex",
+      "created_at": "2026-11-20T07:13:34.776996+00:00",
+      "reference_revision": 1
+    }
+  },
+  "section_missing": {
+    "reference": {
+      "id": "WB16-SAMPLE-REF-R",
+      "project_id": "cat-ai",
+      "task_id": "WB16-SAMPLE-R",
+      "document_id": "WB16-SAMPLE-DOC-R",
+      "path": "R.md",
+      "section_locator": "科研计划",
+      "purpose": "execution_plan",
+      "is_primary": 1,
+      "revision": 1,
+      "active": 1
+    },
+    "status": "section_missing",
+    "current_sha256": "bfe19e2f0fbaed38dd634650b2f97198521c6e7cc61ccfa36e8b6c328558988d",
+    "last_verification": {
+      "id": "7c64179d73fc46a6b415918f8884dcf0",
+      "project_id": "cat-ai",
+      "reference_id": "WB16-SAMPLE-REF-R",
+      "file_sha256": "059509d12828c02112a4b9377dde6f64e706968073afb38447d8ffe705c87f40",
+      "actor": "Codex",
+      "created_at": "2026-11-20T07:13:34.776996+00:00",
+      "reference_revision": 1
+    }
+  },
+  "blocked_task": {
+    "id": "WB16-SAMPLE-W",
+    "project_id": "cat-ai",
+    "title": "WB16-SAMPLE-W",
+    "goal": "隔离样本",
+    "deliverables": [
+      "样本结果"
+    ],
+    "milestone": null,
+    "stages": [],
+    "primary_stage": null,
+    "status": "blocked",
+    "priority": "normal",
+    "owner": null,
+    "planned_date": null,
+    "criteria_version": 1,
+    "revision": 4,
+    "blocker": "科研前置任务尚未完成",
+    "recovery_condition": "完成科研前置任务",
+    "recovery_date": null,
+    "category": "workbench",
+    "criteria": [
+      {
+        "task_id": "WB16-SAMPLE-W",
+        "version": 1,
+        "criterion_id": "check",
+        "description": "检查样本",
+        "required": 1
+      }
+    ],
+    "dependencies": [
+      "WB16-SAMPLE-R"
+    ],
+    "dependents": [],
+    "reviews": [],
+    "evidence_needs_review": false,
+    "activity": [
+      {
+        "id": 484,
+        "project_id": "cat-ai",
+        "task_id": "WB16-SAMPLE-W",
+        "action": "created",
+        "actor": "Codex",
+        "created_at": "2026-11-20T07:13:33.294653+00:00",
+        "summary": "{\"category\":\"workbench\",\"criteria\":[{\"description\":\"检查样本\",\"id\":\"check\",\"required\":true}],\"deliverables\":[\"样本结果\"],\"goal\":\"隔离样本\",\"id\":\"WB16-SAMPLE-W\",\"milestone\":null,\"owner\":null,\"planned_date\":null,\"primary_stage\":null,\"priority\":\"normal\",\"project_id\":\"cat-ai\",\"stages\":[],\"title\":\"WB16-SAMPLE-W\"}",
+        "revision": 1
+      },
+      {
+        "id": 486,
+        "project_id": "cat-ai",
+        "task_id": "WB16-SAMPLE-W",
+        "action": "transition",
+        "actor": "Codex",
+        "created_at": "2026-11-20T07:13:34.129461+00:00",
+        "summary": "{\"reason\":null,\"recovery_condition\":null,\"recovery_date\":null,\"resolution\":null,\"target\":\"ready\"}",
+        "revision": 2
+      },
+      {
+        "id": 487,
+        "project_id": "cat-ai",
+        "task_id": "WB16-SAMPLE-W",
+        "action": "transition",
+        "actor": "Codex",
+        "created_at": "2026-11-20T07:13:34.278917+00:00",
+        "summary": "{\"reason\":\"科研前置任务尚未完成\",\"recovery_condition\":\"完成科研前置任务\",\"recovery_date\":null,\"resolution\":null,\"target\":\"blocked\"}",
+        "revision": 3
+      },
+      {
+        "id": 488,
+        "project_id": "cat-ai",
+        "task_id": "WB16-SAMPLE-W",
+        "action": "dependency_added",
+        "actor": "Codex",
+        "created_at": "2026-11-20T07:13:34.379082+00:00",
+        "summary": "{\"prerequisite_id\":\"WB16-SAMPLE-R\"}",
+        "revision": 4
+      },
+      {
+        "id": 495,
+        "project_id": "cat-ai",
+        "task_id": "WB16-SAMPLE-W",
+        "action": "task_plan_reference_saved",
+        "actor": "Codex",
+        "created_at": "2026-11-20T07:13:35.356104+00:00",
+        "summary": "{\"id\":\"WB16-SAMPLE-REF-W\",\"reason\":\"隔离样本\",\"revision\":1}",
+        "revision": null
+      },
+      {
+        "id": 496,
+        "project_id": "cat-ai",
+        "task_id": "WB16-SAMPLE-W",
+        "action": "plan_verified",
+        "actor": "Codex",
+        "created_at": "2026-11-20T07:13:35.843503+00:00",
+        "summary": "{\"actor\":\"Codex\",\"created_at\":\"2026-11-20T07:13:35.843127+00:00\",\"file_sha256\":\"c0f3af1ae0ffe7659c7a0ec8eb579f89fb2f9d0660437a3c40172797759e3d45\",\"id\":\"d0d2d70ff93845c2992add3dd8af69a1\",\"project_id\":\"cat-ai\",\"reference_id\":\"WB16-SAMPLE-REF-W\",\"reference_revision\":1}",
+        "revision": null
+      },
+      {
+        "id": 498,
+        "project_id": "cat-ai",
+        "task_id": "WB16-SAMPLE-W",
+        "action": "category_recent_task_saved",
+        "actor": "Codex",
+        "created_at": "2026-11-20T07:13:36.096327+00:00",
+        "summary": "{\"id\":\"431019924dd94e8394d2adee6ee1bb5d\",\"reason\":\"隔离样本\",\"revision\":1}",
+        "revision": null
+      }
+    ]
+  },
+  "contexts": {
+    "research": {
+      "context": {
+        "id": "d240b81771ef49838338a68a40348dd4",
+        "project_id": "cat-ai",
+        "category": "research",
+        "focus_task_id": "WB16-SAMPLE-R",
+        "revision": 1
+      },
+      "recent": [
+        {
+          "id": "f21dc00072994897bd7085e2db555a9d",
+          "project_id": "cat-ai",
+          "context_id": "d240b81771ef49838338a68a40348dd4",
+          "task_id": "WB16-SAMPLE-R",
+          "sort_order": 0,
+          "revision": 1,
+          "active": 1,
+          "title": "WB16-SAMPLE-R",
+          "status": "planned",
+          "category": "research",
+          "priority": "normal",
+          "planned_date": null,
+          "needs_review": false
+        }
+      ],
+      "default_order": [
+        {
+          "id": "S2-01",
+          "title": "训练配置与参数契约",
+          "status": "done",
+          "priority": "high",
+          "planned_date": null
+        },
+        {
+          "id": "S2-02",
+          "title": "增强训练与预测集成",
+          "status": "done",
+          "priority": "high",
+          "planned_date": null
+        },
+        {
+          "id": "S2-04",
+          "title": "F1/F2特征适配与折内转换",
+          "status": "done",
+          "priority": "high",
+          "planned_date": null
+        },
+        {
+          "id": "S2-05",
+          "title": "可配置训练与R2评价框架",
+          "status": "done",
+          "priority": "high",
+          "planned_date": null
+        },
+        {
+          "id": "S2-06",
+          "title": "增强模型包与独立预测",
+          "status": "done",
+          "priority": "high",
+          "planned_date": null
+        },
+        {
+          "id": "S4-01",
+          "title": "铜基分类与重复实验核查",
+          "status": "done",
+          "priority": "high",
+          "planned_date": null
+        },
+        {
+          "id": "S4-02",
+          "title": "全体系与铜基数据集冻结",
+          "status": "done",
+          "priority": "high",
+          "planned_date": null
+        },
+        {
+          "id": "S1A-01",
+          "title": "属性、映射与资格",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "S1B-01",
+          "title": "物化特征构建验收",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "S2-03",
+          "title": "家族对照资格检查",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "S3-01",
+          "title": "R2共同子集正式比较",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "S3-02",
+          "title": "训练预测端到端整体验收",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB16-SAMPLE-NONE",
+          "title": "WB16-SAMPLE-NONE",
+          "status": "planned",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB16-SAMPLE-R",
+          "title": "WB16-SAMPLE-R",
+          "status": "planned",
+          "priority": "normal",
+          "planned_date": null
+        }
+      ],
+      "focus_needs_review": false,
+      "legacy_focus_task_id": "WB16-SAMPLE-W",
+      "legacy_needs_review": false,
+      "legacy_needs_migration": false
+    },
+    "workbench": {
+      "context": {
+        "id": "f3719c6f21a84861a58c08dc2c4dcf90",
+        "project_id": "cat-ai",
+        "category": "workbench",
+        "focus_task_id": "WB16-SAMPLE-W",
+        "revision": 3
+      },
+      "recent": [
+        {
+          "id": "431019924dd94e8394d2adee6ee1bb5d",
+          "project_id": "cat-ai",
+          "context_id": "f3719c6f21a84861a58c08dc2c4dcf90",
+          "task_id": "WB16-SAMPLE-W",
+          "sort_order": 0,
+          "revision": 1,
+          "active": 1,
+          "title": "WB16-SAMPLE-W",
+          "status": "blocked",
+          "category": "workbench",
+          "priority": "normal",
+          "planned_date": null,
+          "needs_review": false
+        },
+        {
+          "id": "040e407d80f64859a081984c0e59bcd1",
+          "project_id": "cat-ai",
+          "context_id": "f3719c6f21a84861a58c08dc2c4dcf90",
+          "task_id": "WB-13-08",
+          "sort_order": 0,
+          "revision": 2,
+          "active": 0,
+          "title": "专项验收与部署收口",
+          "status": "done",
+          "category": "workbench",
+          "priority": "urgent",
+          "planned_date": null,
+          "needs_review": true
+        }
+      ],
+      "default_order": [
+        {
+          "id": "WB-13",
+          "title": "管理分类与关联基础",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-01",
+          "title": "基线盘点与数据契约",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-02",
+          "title": "增量迁移与任务分类",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-03",
+          "title": "历史建设交付承接",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-04",
+          "title": "科研节点与任务关联",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-05",
+          "title": "执行计划与文档引用",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-06",
+          "title": "分类焦点与近期安排",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-07",
+          "title": "共用查询与兼容接入",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-13-08",
+          "title": "专项验收与部署收口",
+          "status": "done",
+          "priority": "urgent",
+          "planned_date": null
+        },
+        {
+          "id": "WB-14",
+          "title": "科研路线图",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB-14-01",
+          "title": "基线与页面数据契约",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB-14-02",
+          "title": "只读页面与树形列表",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB-14-03",
+          "title": "路线画布与交互",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB-14-04",
+          "title": "焦点与任务双向定位",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB-14-05",
+          "title": "节点与关联维护",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB-14-06",
+          "title": "专项验收与交付",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB-15",
+          "title": "下一步工作与计划交接",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB-15-01",
+          "title": "基线与展示规则",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB-15-02",
+          "title": "分类近期任务视图",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB-15-03",
+          "title": "任务节点与计划章节关联",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB-15-04",
+          "title": "页面联调与异常复核",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB-15-05",
+          "title": "专项验收与交付",
+          "status": "done",
+          "priority": "normal",
+          "planned_date": null
+        },
+        {
+          "id": "WB16-SAMPLE-W",
+          "title": "WB16-SAMPLE-W",
+          "status": "blocked",
+          "priority": "normal",
+          "planned_date": null
+        }
+      ],
+      "focus_needs_review": false,
+      "legacy_focus_task_id": "WB16-SAMPLE-W",
+      "legacy_needs_review": false,
+      "legacy_needs_migration": false
+    }
+  }
+}

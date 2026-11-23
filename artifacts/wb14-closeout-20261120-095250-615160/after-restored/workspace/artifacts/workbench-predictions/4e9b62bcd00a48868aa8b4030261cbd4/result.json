@@ -1,0 +1,56 @@
+{
+  "job_id": "4e9b62bcd00a48868aa8b4030261cbd4",
+  "input_sha256": "db271231c70ab47aa2cd10887e9773da058311bcd9938546560ad352ca80a093",
+  "model_version": "627947a76735fc8a9b6e95638004116b42ea22040ec1b2c4d409761f4f180304",
+  "implementation": {
+    "modeling/predictor.py": "651176127dc4f77fc5ffac44d0c70df8cbfbddccae67766c72e15ff29f51ae7e",
+    "features/pipeline.py": "d002691eb1db7ec53ea3ef7b49f419d4976c3b7a865ccd9ecddd5dc2889c502b",
+    "features/design.py": "d967836a52725df31d91bd47af14b12103a344d9e3830f288e52fbf448579b57",
+    "workbench/predictions.py": "8f8aba75b9aaa15c66bafc3a6a363d1efce5551ff9cfc80cc76eae4173f22b18"
+  },
+  "environment": {
+    "python": "3.14.3",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1"
+  },
+  "rows": [
+    {
+      "row": 1,
+      "status": "ok",
+      "co2_conversion_pct": 10.102696581196575,
+      "raw_prediction": 10.102696581196575,
+      "target_definition": "100 * (CO2 inlet molar flow - CO2 outlet molar flow) / CO2 inlet molar flow",
+      "unit": "%",
+      "model_id": "r1-b8bb65a0a44054918d3e85a5ff168723ea891ef51eaec796c22abce260dedd5a",
+      "feature_set_id": "F_base",
+      "validation": [],
+      "unseen_species_roles": [],
+      "out_of_range": [],
+      "limitations": [
+        "Source acceptance does not imply row-by-row verification.",
+        "Pressure is assumed absolute.",
+        "Training ranges do not establish a validated applicability domain; extrapolation is limited."
+      ]
+    },
+    {
+      "row": 2,
+      "status": "invalid_input",
+      "co2_conversion_pct": null,
+      "raw_prediction": null,
+      "target_definition": "100 * (CO2 inlet molar flow - CO2 outlet molar flow) / CO2 inlet molar flow",
+      "unit": "%",
+      "model_id": "r1-b8bb65a0a44054918d3e85a5ff168723ea891ef51eaec796c22abce260dedd5a",
+      "feature_set_id": "F_base",
+      "validation": [
+        "expected components and four condition fields"
+      ],
+      "unseen_species_roles": [],
+      "out_of_range": [],
+      "limitations": [
+        "Source acceptance does not imply row-by-row verification.",
+        "Pressure is assumed absolute.",
+        "Training ranges do not establish a validated applicability domain; extrapolation is limited."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "empty_total": 0,
+  "unclassified": [
+    "u"
+  ],
+  "shared_document": "shared",
+  "purpose_categories": [
+    "research",
+    "workbench"
+  ],
+  "shared_evidence_sha256": "7663d86fb958a7970c06c67e308a3fb3212fa68cd9f9fa1d561887df1b8021fa",
+  "evidence_review_tasks": [
+    "r",
+    "w"
+  ],
+  "pending_delivery": [
+    {
+      "id": "94be2329-7f44-4379-bb20-e487ba07d1f3",
+      "project_id": "sample",
+      "original_wb_id": "WB-01",
+      "delivered_scope": "delivered",
+      "remaining_scope": "remaining",
+      "source_path": "shared.md",
+      "source_section": "Shared",
+      "source_sha256": "7663d86fb958a7970c06c67e308a3fb3212fa68cd9f9fa1d561887df1b8021fa",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-20T07:19:56.034657+00:00",
+      "task_id": null,
+      "revision": 1,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "historical_pending_task_registration"
+    }
+  ],
+  "linked_delivery": [
+    {
+      "id": "94be2329-7f44-4379-bb20-e487ba07d1f3",
+      "project_id": "sample",
+      "original_wb_id": "WB-01",
+      "delivered_scope": "delivered",
+      "remaining_scope": "remaining",
+      "source_path": "shared.md",
+      "source_section": "Shared",
+      "source_sha256": "7663d86fb958a7970c06c67e308a3fb3212fa68cd9f9fa1d561887df1b8021fa",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-20T07:19:56.034657+00:00",
+      "task_id": "w",
+      "revision": 2,
+      "active": 1,
+      "source_status": "valid",
+      "registration_status": "registered"
+    }
+  ],
+  "changed_delivery": [
+    {
+      "id": "94be2329-7f44-4379-bb20-e487ba07d1f3",
+      "project_id": "sample",
+      "original_wb_id": "WB-01",
+      "delivered_scope": "delivered",
+      "remaining_scope": "remaining",
+      "source_path": "shared.md",
+      "source_section": "Shared",
+      "source_sha256": "7663d86fb958a7970c06c67e308a3fb3212fa68cd9f9fa1d561887df1b8021fa",
+      "original_delivered_at": null,
+      "registered_at": "2026-11-20T07:19:56.034657+00:00",
+      "task_id": "w",
+      "revision": 2,
+      "active": 1,
+      "source_status": "changed",
+      "registration_status": "registered"
+    }
+  ],
+  "changed_plans": {
+    "r": "changed",
+    "w": "changed"
+  },
+  "changed_file_sha256": "ac869cd788c2cab42d193df3c0da5e905de3d6fffdcec1dfe411c8287578e65f"
+}

@@ -1,0 +1,24 @@
+{
+  "cross_project_parent": {
+    "error": "invalid parent or stage",
+    "changed_tables": []
+  },
+  "cross_stage_parent": {
+    "error": "invalid parent or stage",
+    "changed_tables": []
+  },
+  "primary_plus_two_references": {
+    "task": "S2-01",
+    "links": 3,
+    "roadmap_count": 1,
+    "stage_count": 1,
+    "valid_completed": 8
+  },
+  "shared_tree_detail_and_canvas_payload_summary": [
+    "已验收有效 1/1",
+    "已完成 1",
+    "范围待补充"
+  ],
+  "wrong_project_get": 404,
+  "existing_workbench_task_has_no_invalid_research_link": true
+}

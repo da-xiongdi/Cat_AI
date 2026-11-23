@@ -1,0 +1,14 @@
+{
+  "changed_tables": [
+    "activity",
+    "request_log",
+    "research_node",
+    "research_node_revision"
+  ],
+  "tables_compared": 41,
+  "index_workspace": "root relocated by restore",
+  "integrity": "ok",
+  "foreign_key_errors": 0,
+  "bundle_sha256": "c70b69cb83fe905dafc84794939bac7d5c89ccf50ad67604065bd2da46afc95c",
+  "missing": []
+}

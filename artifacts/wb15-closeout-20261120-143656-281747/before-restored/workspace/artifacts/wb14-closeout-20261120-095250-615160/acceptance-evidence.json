@@ -1,0 +1,194 @@
+{
+  "matrix": [
+    {
+      "check": "实际结构、空项目、多层分支",
+      "status": "passed",
+      "files": [
+        "baseline.json",
+        "pytest.txt",
+        "edge.json"
+      ]
+    },
+    {
+      "check": "状态、去重与证据失效",
+      "status": "passed",
+      "files": [
+        "baseline.json",
+        "pytest.txt",
+        "edge.json"
+      ]
+    },
+    {
+      "check": "路线画布、键盘和窄屏",
+      "status": "passed",
+      "files": [
+        "edge.json",
+        "edge-1366.png",
+        "edge-1920.png",
+        "edge-390.png"
+      ]
+    },
+    {
+      "check": "互定位与深链接",
+      "status": "passed",
+      "files": [
+        "edge.json",
+        "pytest.txt"
+      ]
+    },
+    {
+      "check": "组织操作与并发",
+      "status": "passed",
+      "files": [
+        "edge.json",
+        "pytest.txt",
+        "protection.json"
+      ]
+    },
+    {
+      "check": "旧能力与科研数据隔离",
+      "status": "passed",
+      "files": [
+        "pytest.txt",
+        "ruff.txt",
+        "ruff-format.txt",
+        "protection.json"
+      ]
+    }
+  ],
+  "release_manifest_sha256": "cbdb3cf67c2aad25e51043c44f6cc93e8cf0be79cd4fef27a866ac84c2768195",
+  "management_backup_and_restore": {
+    "path": "artifacts/wb14-closeout-20261120-095250-615160/before-bundle.zip",
+    "sha256": "223f49829c03f232a29a6073086410eae6ba5e6cc887d627d03b3319d98c1704",
+    "missing": [],
+    "files": 65,
+    "sources": {
+      "docs/architecture/project_workbench_plan.md": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "docs/architecture/system_design.md": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+      "docs/feature_engineering_plan_v0.1.md": "4251db86aeb53052c9b5d8afd833d46453fa6c32aebc2e3fc12c3de46fbc86b3",
+      "docs/s2_implementation_plan.md": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651",
+      "docs/workbench/wb13_implementation_plan.md": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b"
+    },
+    "table_counts": {
+      "activity": 313,
+      "artifact": 59,
+      "artifact_location": 59,
+      "artifact_revision": 68,
+      "category_context": 1,
+      "category_context_revision": 2,
+      "category_recent_task": 1,
+      "category_recent_task_revision": 2,
+      "criterion": 56,
+      "decision": 0,
+      "decision_revision": 0,
+      "dependency": 25,
+      "document_purpose": 1,
+      "document_purpose_revision": 1,
+      "evidence": 68,
+      "foundation_import": 0,
+      "foundation_record": 0,
+      "index_observation": 802,
+      "index_scan": 27,
+      "index_workspace": 1,
+      "model_run": 4,
+      "model_run_revision": 5,
+      "prediction_event": 9,
+      "prediction_job": 3,
+      "project": 1,
+      "published_index": 1,
+      "request_log": 260,
+      "research_node": 14,
+      "research_node_revision": 28,
+      "research_record": 8,
+      "review": 40,
+      "task": 19,
+      "task_category_revision": 10,
+      "task_decision": 0,
+      "task_node_link": 8,
+      "task_node_link_revision": 8,
+      "task_plan_reference": 9,
+      "task_plan_reference_revision": 9,
+      "task_plan_verification": 9,
+      "workbench_delivery": 12,
+      "workbench_delivery_revision": 24
+    },
+    "rows_equal_except_relocated_workspace": true,
+    "integrity": "ok",
+    "foreign_key_errors": 0
+  },
+  "route_edit_backup_and_restore": {
+    "path": "artifacts/wb14-closeout-20261120-095250-615160/route-edits-bundle.zip",
+    "sha256": "a6e811a267720df89341d444516adee382fb0113344677bdc65228d05d259d0d",
+    "missing": [],
+    "files": 65,
+    "sources": {
+      "docs/architecture/project_workbench_plan.md": "406f9253f401d1a77160255dab5d60947d7587fef602e9890a8ddb299d2d9bc7",
+      "docs/architecture/system_design.md": "c5eb4f0ab4bde4aabd3fae5e01fd3e571c10a3c9141887e994fe2653b7458b09",
+      "docs/feature_engineering_plan_v0.1.md": "4251db86aeb53052c9b5d8afd833d46453fa6c32aebc2e3fc12c3de46fbc86b3",
+      "docs/s2_implementation_plan.md": "a47537aaa50095d1cd6351e98ba2b7bc5351cb2448b47726d97d81193f616651",
+      "docs/workbench/wb13_implementation_plan.md": "028af8227b19c900a8475a8b142c79396aeef12767aa4c0c7e51f1cb7b36bc2b"
+    },
+    "table_counts": {
+      "activity": 317,
+      "artifact": 59,
+      "artifact_location": 59,
+      "artifact_revision": 68,
+      "category_context": 1,
+      "category_context_revision": 2,
+      "category_recent_task": 1,
+      "category_recent_task_revision": 2,
+      "criterion": 56,
+      "decision": 0,
+      "decision_revision": 0,
+      "dependency": 25,
+      "document_purpose": 1,
+      "document_purpose_revision": 1,
+      "evidence": 68,
+      "foundation_import": 0,
+      "foundation_record": 0,
+      "index_observation": 802,
+      "index_scan": 27,
+      "index_workspace": 1,
+      "model_run": 4,
+      "model_run_revision": 5,
+      "prediction_event": 9,
+      "prediction_job": 3,
+      "project": 1,
+      "published_index": 1,
+      "request_log": 265,
+      "research_node": 16,
+      "research_node_revision": 31,
+      "research_record": 8,
+      "review": 40,
+      "task": 19,
+      "task_category_revision": 10,
+      "task_decision": 0,
+      "task_node_link": 9,
+      "task_node_link_revision": 9,
+      "task_plan_reference": 9,
+      "task_plan_reference_revision": 9,
+      "task_plan_verification": 9,
+      "workbench_delivery": 12,
+      "workbench_delivery_revision": 24
+    },
+    "rows_equal_except_relocated_workspace": true,
+    "integrity": "ok",
+    "foreign_key_errors": 0
+  },
+  "isolated_runtime_before_registration": {
+    "/": 200,
+    "/roadmap": 200,
+    "/roadmap?view=tree": 200,
+    "/tasks": 200,
+    "/tasks/S1A-01": 200,
+    "/tasks/WB-13": 200,
+    "/artifacts": 200,
+    "/documents": 200,
+    "/decisions": 200,
+    "/predictions": 200,
+    "/foundation": 200,
+    "/api/workbench/v1/prediction-jobs": 200,
+    "/api/workbench/v1/roadmap/nodes/cat-ai:stage:C/children": 200,
+    "/api/workbench/v1/query?category=workbench": 200
+  }
+}

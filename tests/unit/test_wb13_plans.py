@@ -6,11 +6,12 @@ from catalyst_ai.workbench.plans import (
     _inspect,
     inspect_task_plan_reference,
     list_plan_verifications,
+    open_task_plan,
     save_document_purpose,
     save_task_plan_reference,
     verify_task_plan_reference,
 )
-from catalyst_ai.workbench.service import Conflict, create_project, create_task
+from catalyst_ai.workbench.service import Conflict, Missing, create_project, create_task
 
 
 @pytest.mark.parametrize("fence", ["```", "~~~~"])
@@ -56,10 +57,39 @@ def test_plan_verification_and_conflicts(tmp_path):
         save_task_plan_reference(db, "p", "r2", data, 0, "initial", request_id="r2", actor="a")
     inspection = inspect_task_plan_reference(db, "p", "r")
     assert inspection["status"] == "unverified"
-    verify_task_plan_reference(
+    verified = verify_task_plan_reference(
         db, "p", "r", 1, inspection["current_sha256"], request_id="v", actor="a"
     )
+    assert (
+        verify_task_plan_reference(
+            db, "p", "r", 1, inspection["current_sha256"], request_id="v", actor="a"
+        )
+        == verified
+    )
+    opened = open_task_plan(db, "p", "t", "r")
+    assert opened["status"] == "valid" and opened["line"] == 1
+    assert opened["content"].splitlines() == ["# Plan", "text"]
+    with pytest.raises(Missing):
+        open_task_plan(db, "p", "wrong", "r")
+    with pytest.raises(Missing):
+        open_task_plan(db, "another-project", "t", "r")
+    with pytest.raises(ValueError, match="relative to the workspace"):
+        save_task_plan_reference(
+            db,
+            "p",
+            "r",
+            {**data, "path": "../plan.md"},
+            1,
+            "out of workspace",
+            request_id="outside",
+            actor="a",
+        )
+    with pytest.raises(Conflict):
+        save_task_plan_reference(db, "p", "r", data, 0, "stale", request_id="v0", actor="a")
     f.write_text("# Plan\nchanged", encoding="utf-8")
+    opened = open_task_plan(db, "p", "t", "r")
+    assert opened["status"] == "changed" and opened["content"].splitlines() == ["# Plan", "changed"]
+    assert len(opened["history"]) == 1
     assert inspect_task_plan_reference(db, "p", "r")["status"] == "changed"
     with pytest.raises(Conflict):
         verify_task_plan_reference(
@@ -67,6 +97,7 @@ def test_plan_verification_and_conflicts(tmp_path):
         )
     f.write_text("# Plan\n# Plan\n", encoding="utf-8")
     assert inspect_task_plan_reference(db, "p", "r")["status"] == "section_ambiguous"
+    assert open_task_plan(db, "p", "t", "r")["content"] is None
     f.unlink()
     assert inspect_task_plan_reference(db, "p", "r")["status"] == "missing_or_invalid"
     assert len(list_plan_verifications(db, "p", "r")) == 1

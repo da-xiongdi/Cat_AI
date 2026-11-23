@@ -35,3 +35,35 @@ def test_query_scopes_counts_and_focus(tmp_path):
         query(path, "p", "invalid")
     with pytest.raises(Missing):
         query(path, "unknown")
+
+
+def test_next_work_orders_deduplicates_and_shows_history(tmp_path):
+    from catalyst_ai.storage.workbench import transaction
+    from catalyst_ai.workbench.category_context import save_recent_task
+
+    path = tmp_path / "work.sqlite"
+    migrate(path)
+    create_project(path, "p", "P", request_id="p", actor="a")
+    for task, priority in (("a", "low"), ("b", "urgent"), ("c", "high"), ("h", "normal")):
+        create_task(
+            path,
+            {
+                "id": task,
+                "project_id": "p",
+                "title": task,
+                "goal": "g",
+                "category": "research",
+                "priority": priority,
+            },
+            request_id=task,
+            actor="a",
+        )
+    set_category_focus(path, "p", "research", "a", 0, "focus", request_id="focus", actor="a")
+    save_recent_task(path, "p", "research", "a", 2, 1, 0, "add", request_id="recent-a", actor="a")
+    save_recent_task(path, "p", "research", "c", 1, 1, 0, "add", request_id="recent-c", actor="a")
+    with transaction(path) as db:
+        db.execute("UPDATE task SET status='done' WHERE id='h'")
+    view = query(path, "p", "research")["next_work"]["research"]
+    assert [t["id"] for t in view["active"]] == ["c", "a", "b"]
+    assert [t["id"] for t in view["history"]] == ["h"]
+    assert all(t["ready_reason"] for t in view["active"])
