@@ -1,0 +1,32 @@
+{
+  "metrics": {
+    "mae": 5.679365720809865,
+    "rmse": 7.828505491719772,
+    "r2": -0.7840964373557466,
+    "r2_unavailable_reason": null,
+    "records": 108,
+    "papers": 8
+  },
+  "model_sha256": "b434bfb193fae636647784c0316e5f5af0b3de2863658b503505b40ec9f2bd09",
+  "availability": {
+    "total_records": 108,
+    "available_records": 88,
+    "available_fraction": 0.8148148148148148,
+    "available_papers": 8,
+    "total_papers": 8,
+    "rejected_records": 20,
+    "rejection_reasons": {
+      "unsupported_species_role": 20
+    },
+    "available_metrics": {
+      "mae": 6.039008571110474,
+      "rmse": 8.383712350913292,
+      "r2": -0.8627117454989894,
+      "r2_unavailable_reason": null,
+      "paper_equal_mae": 6.380305074043839,
+      "records": 88,
+      "papers": 8
+    },
+    "unavailable_metrics_reason": null
+  }
+}

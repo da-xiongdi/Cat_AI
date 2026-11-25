@@ -41,7 +41,7 @@ class Features(StrictModel):
 
 
 class Model(StrictModel):
-    name: Literal["dummy", "ridge", "extra_trees"]
+    name: Literal["dummy", "ridge", "extra_trees", "random_forest", "gradient_boosting", "xgboost"]
     params: dict = Field(default_factory=dict)
 
     @model_validator(mode="after")
@@ -56,18 +56,24 @@ class Model(StrictModel):
                 "max_features",
                 "n_jobs",
             },
+            "random_forest": {"n_estimators", "min_samples_leaf", "max_depth", "max_features", "n_jobs"},
+            "gradient_boosting": {"n_estimators", "max_depth", "learning_rate"},
+            "xgboost": {"n_estimators", "max_depth", "learning_rate"},
         }
         if set(self.params) - allowed[self.name]:
             raise ValueError("unknown or forbidden model parameter")
         for key, value in self.params.items():
             if key in {"n_estimators", "min_samples_leaf", "n_jobs", "max_depth"}:
-                if key == "max_depth" and value is None:
+                if key == "max_depth" and value is None and self.name != "xgboost":
                     continue
                 if type(value) is not int or value < 1 or (key == "n_jobs" and value > 8):
                     raise ValueError(f"invalid {key}")
             elif key == "alpha":
                 if type(value) not in (int, float) or not math.isfinite(value) or value < 0:
                     raise ValueError("alpha must be finite and nonnegative")
+            elif key == "learning_rate":
+                if type(value) not in (int, float) or not math.isfinite(value) or not 0 < value <= 1:
+                    raise ValueError("learning_rate must be finite and in (0, 1]")
             elif key == "max_features":
                 if value is None or value in ("sqrt", "log2"):
                     continue
@@ -107,6 +113,8 @@ class TrainingConfig(StrictModel):
     @model_validator(mode="after")
     def check_mode(self):
         names = [m.name for m in self.models]
+        if "xgboost" in names:
+            raise ValueError("xgboost is only available in S5 research schema version 2")
         if not names or len(names) != len(set(names)):
             raise ValueError("models must be nonempty and unique")
         if self.mode == "baseline_compare":

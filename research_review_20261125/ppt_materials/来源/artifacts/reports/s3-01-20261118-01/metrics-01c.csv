@@ -1,0 +1,73 @@
+﻿run,feature,model,partition,records,dois,paper_equal_mae,available_records,available_dois,available_fraction,available_paper_equal_mae,statuses
+r1,F_cond,dummy,oof,493,26,5.905646548359365,493,26,1.0,5.905646548359365,"{""ok"": 364, ""caution"": 129}"
+r1,F_cond,extra_trees,oof,493,26,5.863875519864649,493,26,1.0,5.863875519864649,"{""ok"": 364, ""caution"": 129}"
+r1,F_cond,ridge,oof,493,26,6.515394421533669,468,25,0.949290060851927,6.207463502337925,"{""ok"": 344, ""caution"": 124, ""caution+output_out_of_range"": 5, ""output_out_of_range"": 20}"
+r1,F_base,dummy,oof,493,26,5.905646548359365,274,23,0.5557809330628803,6.194607298074907,"{""caution"": 130, ""unsupported_species_role"": 219, ""ok"": 144}"
+r1,F_base,extra_trees,oof,493,26,5.5463560614355565,274,23,0.5557809330628803,5.895754634420014,"{""caution"": 130, ""unsupported_species_role"": 219, ""ok"": 144}"
+r1,F_base,ridge,oof,493,26,7.300749807010091,218,21,0.4421906693711968,7.468549524991458,"{""caution"": 87, ""unsupported_species_role"": 170, ""caution+output_out_of_range"": 43, ""ok"": 131, ""unsupported_species_role+output_out_of_range"": 49, ""output_out_of_range"": 13}"
+r1,F_cond,dummy,validation,47,6,6.425069178820954,47,6,1.0,6.425069178820954,"{""ok"": 47}"
+r1,F_cond,extra_trees,validation,47,6,6.959588192515999,47,6,1.0,6.959588192515999,"{""ok"": 47}"
+r1,F_cond,ridge,validation,47,6,6.168543574909737,47,6,1.0,6.168543574909737,"{""ok"": 47}"
+r1,F_base,dummy,validation,47,6,6.425069178820954,29,5,0.6170212765957447,7.255410818120351,"{""ok"": 27, ""unsupported_species_role"": 18, ""caution"": 2}"
+r1,F_base,extra_trees,validation,47,6,4.381486417363243,29,5,0.6170212765957447,5.130055459383753,"{""ok"": 27, ""unsupported_species_role"": 18, ""caution"": 2}"
+r1,F_base,ridge,validation,47,6,7.72844503502865,29,5,0.6170212765957447,9.164449306053474,"{""ok"": 27, ""unsupported_species_role"": 16, ""caution"": 2, ""unsupported_species_role+output_out_of_range"": 2}"
+r1,F_cond,dummy,test,53,5,5.018004073438395,53,5,1.0,5.018004073438395,"{""ok"": 52, ""caution"": 1}"
+r1,F_cond,extra_trees,test,53,5,3.95984561282606,53,5,1.0,3.95984561282606,"{""ok"": 52, ""caution"": 1}"
+r1,F_cond,ridge,test,53,5,5.295547473984832,53,5,1.0,5.295547473984832,"{""ok"": 52, ""caution"": 1}"
+r1,F_base,dummy,test,53,5,5.018004073438395,32,4,0.6037735849056604,5.174492718572841,"{""unsupported_species_role"": 21, ""ok"": 31, ""caution"": 1}"
+r1,F_base,extra_trees,test,53,5,2.4974171447893356,32,4,0.6037735849056604,2.5996035489732585,"{""unsupported_species_role"": 21, ""ok"": 31, ""caution"": 1}"
+r1,F_base,ridge,test,53,5,3.4928354200189995,32,4,0.6037735849056604,4.248953084789613,"{""unsupported_species_role"": 21, ""ok"": 31, ""caution"": 1}"
+r2,F_base,dummy,oof,454,26,6.64023930872939,274,23,0.6035242290748899,6.730353242729883,"{""caution"": 172, ""unsupported_species_role"": 180, ""ok"": 102}"
+r2,F_base,extra_trees,oof,454,26,5.373463976413471,274,23,0.6035242290748899,5.736837553104146,"{""caution"": 172, ""unsupported_species_role"": 180, ""ok"": 102}"
+r2,F_base,ridge,oof,454,26,8.450833022235601,226,22,0.4977973568281938,10.220374416674593,"{""caution"": 130, ""unsupported_species_role"": 134, ""caution+output_out_of_range"": 42, ""unsupported_species_role+output_out_of_range"": 46, ""ok"": 96, ""output_out_of_range"": 6}"
+r2,F1,dummy,oof,454,26,6.64023930872939,274,23,0.6035242290748899,6.730353242729883,"{""caution"": 172, ""unsupported_species_role"": 180, ""ok"": 102}"
+r2,F1,extra_trees,oof,454,26,5.9310232407606645,274,23,0.6035242290748899,6.373934472769978,"{""caution"": 172, ""unsupported_species_role"": 180, ""ok"": 102}"
+r2,F1,ridge,oof,454,26,9.23830653061333,207,21,0.45594713656387664,8.334355169496158,"{""caution"": 114, ""unsupported_species_role"": 136, ""caution+output_out_of_range"": 58, ""ok"": 93, ""output_out_of_range"": 9, ""unsupported_species_role+output_out_of_range"": 44}"
+r2,F2,dummy,oof,454,26,6.64023930872939,274,23,0.6035242290748899,6.730353242729883,"{""caution"": 172, ""unsupported_species_role"": 180, ""ok"": 102}"
+r2,F2,extra_trees,oof,454,26,5.887604445035417,274,23,0.6035242290748899,6.308313234955472,"{""caution"": 172, ""unsupported_species_role"": 180, ""ok"": 102}"
+r2,F2,ridge,oof,454,26,8.709528140858302,219,22,0.48237885462555063,9.72287935304346,"{""caution"": 129, ""unsupported_species_role"": 162, ""caution+output_out_of_range"": 43, ""ok"": 90, ""unsupported_species_role+output_out_of_range"": 18, ""output_out_of_range"": 12}"
+r2,F_base,dummy,validation,47,6,6.422939540941193,28,5,0.5957446808510638,7.184475183553597,"{""ok"": 26, ""unsupported_species_role"": 19, ""caution"": 2}"
+r2,F_base,extra_trees,validation,47,6,4.439055999334919,28,5,0.5957446808510638,5.008971364519139,"{""ok"": 26, ""unsupported_species_role"": 19, ""caution"": 2}"
+r2,F_base,ridge,validation,47,6,7.6551517578323995,27,5,0.574468085106383,9.27177234867295,"{""ok"": 25, ""output_out_of_range"": 1, ""unsupported_species_role"": 17, ""caution"": 2, ""unsupported_species_role+output_out_of_range"": 2}"
+r2,F1,dummy,validation,47,6,6.422939540941193,28,5,0.5957446808510638,7.184475183553597,"{""ok"": 26, ""unsupported_species_role"": 19, ""caution"": 2}"
+r2,F1,extra_trees,validation,47,6,4.517590954391551,28,5,0.5957446808510638,5.334603559757237,"{""ok"": 26, ""unsupported_species_role"": 19, ""caution"": 2}"
+r2,F1,ridge,validation,47,6,7.057718108879052,27,5,0.574468085106383,8.101052882776864,"{""ok"": 25, ""output_out_of_range"": 1, ""unsupported_species_role"": 15, ""unsupported_species_role+output_out_of_range"": 4, ""caution"": 2}"
+r2,F2,dummy,validation,47,6,6.422939540941193,28,5,0.5957446808510638,7.184475183553597,"{""ok"": 26, ""unsupported_species_role"": 19, ""caution"": 2}"
+r2,F2,extra_trees,validation,47,6,4.581260582705304,28,5,0.5957446808510638,5.30739734346046,"{""ok"": 26, ""unsupported_species_role"": 19, ""caution"": 2}"
+r2,F2,ridge,validation,47,6,10.314798028400451,27,5,0.574468085106383,10.542819741520786,"{""ok"": 25, ""output_out_of_range"": 1, ""unsupported_species_role"": 11, ""unsupported_species_role+output_out_of_range"": 8, ""caution"": 2}"
+r2,F_base,dummy,test,52,4,5.140784502428555,26,4,0.5,5.21265900985945,"{""unsupported_species_role"": 26, ""ok"": 25, ""caution"": 1}"
+r2,F_base,extra_trees,test,52,4,3.005896516440261,26,4,0.5,1.8688273690344428,"{""unsupported_species_role"": 26, ""ok"": 25, ""caution"": 1}"
+r2,F_base,ridge,test,52,4,3.3959583471158385,26,4,0.5,3.5624879324466447,"{""unsupported_species_role"": 26, ""ok"": 25, ""caution"": 1}"
+r2,F1,dummy,test,52,4,5.140784502428555,26,4,0.5,5.21265900985945,"{""unsupported_species_role"": 26, ""ok"": 25, ""caution"": 1}"
+r2,F1,extra_trees,test,52,4,3.024408635652748,26,4,0.5,2.270187992636448,"{""unsupported_species_role"": 26, ""ok"": 25, ""caution"": 1}"
+r2,F1,ridge,test,52,4,3.3166635544352863,26,4,0.5,2.659494227549331,"{""unsupported_species_role"": 26, ""ok"": 25, ""caution"": 1}"
+r2,F2,dummy,test,52,4,5.140784502428555,26,4,0.5,5.21265900985945,"{""unsupported_species_role"": 26, ""ok"": 25, ""caution"": 1}"
+r2,F2,extra_trees,test,52,4,2.9461567662358075,26,4,0.5,2.2992600934502594,"{""unsupported_species_role"": 26, ""ok"": 25, ""caution"": 1}"
+r2,F2,ridge,test,52,4,5.420327651685903,26,4,0.5,3.9746749545307356,"{""unsupported_species_role"": 26, ""ok"": 25, ""caution"": 1}"
+r2-common-nine,F_base,dummy,oof,197,20,7.133894570171303,197,20,1,7.133894570171303,common intersection
+r2-common-nine,F1,dummy,oof,197,20,7.133894570171303,197,20,1,7.133894570171303,common intersection
+r2-common-nine,F2,dummy,oof,197,20,7.133894570171303,197,20,1,7.133894570171303,common intersection
+r2-common-nine,F_base,extra_trees,oof,197,20,6.1605454940591375,197,20,1,6.1605454940591375,common intersection
+r2-common-nine,F1,extra_trees,oof,197,20,6.9741482110512365,197,20,1,6.9741482110512365,common intersection
+r2-common-nine,F2,extra_trees,oof,197,20,6.764180389162027,197,20,1,6.764180389162027,common intersection
+r2-common-nine,F_base,ridge,oof,197,20,8.638158815738112,197,20,1,8.638158815738112,common intersection
+r2-common-nine,F1,ridge,oof,197,20,8.39829377571939,197,20,1,8.39829377571939,common intersection
+r2-common-nine,F2,ridge,oof,197,20,7.791467448890752,197,20,1,7.791467448890752,common intersection
+r2-common-nine,F_base,dummy,validation,27,5,7.15088349066499,27,5,1,7.15088349066499,common intersection
+r2-common-nine,F1,dummy,validation,27,5,7.15088349066499,27,5,1,7.15088349066499,common intersection
+r2-common-nine,F2,dummy,validation,27,5,7.15088349066499,27,5,1,7.15088349066499,common intersection
+r2-common-nine,F_base,extra_trees,validation,27,5,5.051967443884219,27,5,1,5.051967443884219,common intersection
+r2-common-nine,F1,extra_trees,validation,27,5,5.379020477524344,27,5,1,5.379020477524344,common intersection
+r2-common-nine,F2,extra_trees,validation,27,5,5.351659707606118,27,5,1,5.351659707606118,common intersection
+r2-common-nine,F_base,ridge,validation,27,5,9.27177234867295,27,5,1,9.27177234867295,common intersection
+r2-common-nine,F1,ridge,validation,27,5,8.101052882776864,27,5,1,8.101052882776864,common intersection
+r2-common-nine,F2,ridge,validation,27,5,10.542819741520786,27,5,1,10.542819741520786,common intersection
+r2-common-nine,F_base,dummy,test,26,4,5.21265900985945,26,4,1,5.21265900985945,common intersection
+r2-common-nine,F1,dummy,test,26,4,5.21265900985945,26,4,1,5.21265900985945,common intersection
+r2-common-nine,F2,dummy,test,26,4,5.21265900985945,26,4,1,5.21265900985945,common intersection
+r2-common-nine,F_base,extra_trees,test,26,4,1.8688273690344428,26,4,1,1.8688273690344428,common intersection
+r2-common-nine,F1,extra_trees,test,26,4,2.270187992636448,26,4,1,2.270187992636448,common intersection
+r2-common-nine,F2,extra_trees,test,26,4,2.2992600934502594,26,4,1,2.2992600934502594,common intersection
+r2-common-nine,F_base,ridge,test,26,4,3.5624879324466447,26,4,1,3.5624879324466447,common intersection
+r2-common-nine,F1,ridge,test,26,4,2.659494227549331,26,4,1,2.659494227549331,common intersection
+r2-common-nine,F2,ridge,test,26,4,3.9746749545307356,26,4,1,3.9746749545307356,common intersection

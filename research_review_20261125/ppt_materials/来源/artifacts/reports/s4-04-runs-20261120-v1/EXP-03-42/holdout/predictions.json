@@ -1,0 +1,1583 @@
+[
+  {
+    "record_id": "04111a4b82ad4e4c9f089ab409fdc26a:1",
+    "doi": "10.1016/j.jscs.2019.09.002",
+    "observed": 2.37,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 17.0,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.9,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 132.0,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 83.0,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.65,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 122.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.25,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 10.0,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 2.3317249999999996
+  },
+  {
+    "record_id": "16a3b98d4b7044d09a45ff907efa07c3:1",
+    "doi": "10.1016/j.jcat.2007.04.003",
+    "observed": 6.2,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 67.0,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.8488805970149254,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 129.955223880597,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 33.0,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.33,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 175.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.5188805970149253,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": -45.044776119403,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 6.80766666666667
+  },
+  {
+    "record_id": "1798d5ada19541c5a9fb2dd83cc48f57:1",
+    "doi": "10.1016/j.jcat.2007.04.003",
+    "observed": 1.2,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 73.0,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.779794520547945,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 127.1917808219178,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 27.0,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.6100000000000003,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.16979452054794475,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 6.191780821917803,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 1.9232166666666686
+  },
+  {
+    "record_id": "27a69bd82005471ebdcb0d8e4644754c:1",
+    "doi": "10.1016/s1002-0721(09)60193-9",
+    "observed": 3.94,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "LaMn0.7Cu0.3O3"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 100.0,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.3775,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 175.8,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 0,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 0,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": null,
+        "state": "not_applicable"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": null,
+        "state": "not_applicable"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": null,
+        "state": "not_applicable"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": null,
+        "state": "not_applicable"
+      }
+    },
+    "raw_prediction": 5.760933333333336
+  },
+  {
+    "record_id": "2d74cb3bf4c948c4ab6717ef72ad0983:1",
+    "doi": "10.1016/s1002-0721(09)60193-9",
+    "observed": 3.79,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "LaMn0.3Cu0.7O3"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 100.0,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.4475,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 172.2,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 0,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 0,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": null,
+        "state": "not_applicable"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": null,
+        "state": "not_applicable"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": null,
+        "state": "not_applicable"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": null,
+        "state": "not_applicable"
+      }
+    },
+    "raw_prediction": 5.760933333333336
+  },
+  {
+    "record_id": "2d9fbb87ee414136905592c804b291c2:1",
+    "doi": "10.1016/j.jcat.2019.09.024",
+    "observed": 6.8,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 50.3,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.9,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 132.0,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 49.7,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.78,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 142.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.11999999999999988,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": -10.0,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 9.508859999999986
+  },
+  {
+    "record_id": "32cc390049ee4be480fb98be06c66deb:1",
+    "doi": "10.1016/j.apcata.2013.09.026",
+    "observed": 23.3,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 86.0,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.8186046511627905,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 128.74418604651163,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 14.0,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.5735714285714286,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 127.14285714285714,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.24503322259136184,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 1.6013289036544904,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 21.459490000000013
+  },
+  {
+    "record_id": "33b26cac11d24749a2882c5afc0e57e0:1",
+    "doi": "10.1016/j.jcat.2007.04.003",
+    "observed": 3.9,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 68.7,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.9,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 132.0,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 31.3,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.33,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 175.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.5699999999999998,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": -43.0,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 5.9829666666666625
+  },
+  {
+    "record_id": "41b26a003eb141d481560c573f5b0738:1",
+    "doi": "10.1039/c2cy20604h",
+    "observed": 0.7,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 26.0,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.9,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 132.0,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 74.0,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.2899999999999998,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 11.0,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 1.7349999999999992
+  },
+  {
+    "record_id": "45f1fe1527fc4a1cb42098cdaff59714:1",
+    "doi": "10.1016/j.jcat.2007.04.003",
+    "observed": 17.6,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 68.7,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.9,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 132.0,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 31.3,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.33,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 175.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.5699999999999998,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": -43.0,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 10.606709523809524
+  },
+  {
+    "record_id": "4dc2512de9dc4bf6bc6b3e3bddc7019e:1",
+    "doi": "10.1039/c2cy20604h",
+    "observed": 4.7,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 28.599999999999998,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.7799300699300697,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 141.86713286713288,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 71.4,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.00000000000001,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.16993006993006965,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 20.867132867132867,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 3.4671666666666634
+  },
+  {
+    "record_id": "516ffa961ad54cf58a3208326ed4c1ed:1",
+    "doi": "10.1016/j.jcat.2007.04.003",
+    "observed": 11.5,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 73.0,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.779794520547945,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 127.1917808219178,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 27.0,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.6100000000000003,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.16979452054794475,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 6.191780821917803,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 11.67208333333334
+  },
+  {
+    "record_id": "541a0f47a9904fbcb7f40a9c462fca10:1",
+    "doi": "10.1016/j.fuel.2015.09.082",
+    "observed": 3.2,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 92.5,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.8256756756756756,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 129.02702702702703,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 7.5,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.21567567567567547,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 8.027027027027032,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 9.73223333333334
+  },
+  {
+    "record_id": "5a35cc56df1045888fa70e06ef262f16:1",
+    "doi": "10.1016/j.fuel.2015.09.082",
+    "observed": 16.2,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 92.5,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.8256756756756756,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 129.02702702702703,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 7.5,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.21567567567567547,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 8.027027027027032,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 9.73223333333334
+  },
+  {
+    "record_id": "5dd962de3fd046d08171bfa85ab0c326:1",
+    "doi": "10.1016/0926-860x(95)00049-6",
+    "observed": 11.7,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h",
+      [
+        "support",
+        "ZnO"
+      ]
+    ],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 12.5,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.9,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 132.0,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 87.5,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.65,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 122.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.25,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 10.0,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 7.861199999999996
+  },
+  {
+    "record_id": "6052607f49014f36913de6bca91eafae:1",
+    "doi": "10.1016/j.apcata.2013.09.026",
+    "observed": 26.9,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "support",
+        "Y2O3"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 86.0,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.8215116279069765,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 128.86046511627907,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 14.0,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.582142857142857,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 125.92857142857143,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.23936877076411944,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 2.9318936877076425,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 21.218866666666685
+  },
+  {
+    "record_id": "74f2751e191744788d4dd6a8b9b4d02c:1",
+    "doi": "10.1039/c2cy20604h",
+    "observed": 11.8,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 28.599999999999998,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.7799300699300697,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 141.86713286713288,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 71.4,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.00000000000001,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.16993006993006965,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 20.867132867132867,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 10.550833333333323
+  },
+  {
+    "record_id": "7db3b55a1d9d4f20addd8ac31ae2f72e:1",
+    "doi": "10.1039/c2cy20604h",
+    "observed": 8.9,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 34.2,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.3743362831858406,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 166.5575221238938,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 65.8,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": -0.23566371681415954,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 45.55752212389379,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 5.950500000000006
+  },
+  {
+    "record_id": "887e4bcdde5f4f64bf876e1d7055c676:1",
+    "doi": "10.1016/j.matchemphys.2018.08.038",
+    "observed": 12.8,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 76.0,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.581842105263158,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 161.3684210526316,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 24.0,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.33,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 175.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.25184210526315787,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": -13.63157894736841,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 10.099661904761911
+  },
+  {
+    "record_id": "8bbad60b1c674a24b60615ab0fba81fb:1",
+    "doi": "10.1039/c2cy20604h",
+    "observed": 1.4,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 34.2,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.3743362831858406,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 166.5575221238938,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 65.8,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": -0.23566371681415954,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 45.55752212389379,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 1.8284499999999977
+  },
+  {
+    "record_id": "9afd562912f04264bd415ae7d9b8139f:1",
+    "doi": "10.1016/j.jcat.2019.09.024",
+    "observed": 5.3,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 50.3,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.9,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 132.0,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 49.7,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.78,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 142.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.11999999999999988,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": -10.0,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 6.414499999999989
+  },
+  {
+    "record_id": "b4a8963b54d345b99f0382843119dd32:1",
+    "doi": "10.1016/j.jcou.2016.11.015",
+    "observed": 18.3,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 54.0,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.8259259259259257,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 129.03703703703704,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 46.0,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.21592592592592563,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 8.037037037037038,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 17.068853333333333
+  },
+  {
+    "record_id": "b59e2b9006f4493e811d8921dcfa3119:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 18.6,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 91.5,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.823224043715847,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 128.92896174863387,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 8.5,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.2132240437158468,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 7.928961748633867,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 28.76916666666664
+  },
+  {
+    "record_id": "c4230c418f094a86a6849f3197a6520b:1",
+    "doi": "10.1039/c2cy20604h",
+    "observed": 10.7,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 34.2,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.3743362831858406,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 166.5575221238938,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 65.8,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": -0.23566371681415954,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 45.55752212389379,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 12.169666666666672
+  },
+  {
+    "record_id": "c512f83876044ea59599ce09df63e467:1",
+    "doi": "10.1016/j.jcat.2007.04.003",
+    "observed": 13.3,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 66.8,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.717365269461078,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 124.69461077844309,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 33.2,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.33,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 175.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.38736526946107785,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": -50.30538922155691,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 14.963383333333324
+  },
+  {
+    "record_id": "d30784f5106a4df08c00fac821c67130:1",
+    "doi": "10.1039/c2cy20604h",
+    "observed": 25.2,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 28.599999999999998,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.7799300699300697,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 141.86713286713288,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 71.4,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.00000000000001,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.16993006993006965,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 20.867132867132867,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 19.93999999999998
+  },
+  {
+    "record_id": "d78e94100d2f46bc85bcbf755f69f490:1",
+    "doi": "10.1016/j.cattod.2016.02.004",
+    "observed": 9.0,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 83.0,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.8186746987951805,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 128.74698795180723,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 17.0,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.5925000000000002,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 124.375,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.22617469879518026,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 4.3719879518072275,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 8.84912666666666
+  },
+  {
+    "record_id": "da9abc51060d41aea3b56e9067bfb333:1",
+    "doi": "10.1039/c2cy20604h",
+    "observed": 3.6,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 34.2,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.3743362831858406,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 166.5575221238938,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 65.8,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": -0.23566371681415954,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 45.55752212389379,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 2.724283333333332
+  },
+  {
+    "record_id": "ee31655a54c8451f9dc6e98c8bc0091a:1",
+    "doi": "10.1039/c2cy20604h",
+    "observed": 4.0,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 26.0,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.9,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 132.0,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 74.0,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.0,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.2899999999999998,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 11.0,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 4.454666666666662
+  },
+  {
+    "record_id": "f9d64d91257b41c9993728bd2ef7b2a5:1",
+    "doi": "10.1039/c2cy20604h",
+    "observed": 0.6,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "derived": {
+      "reported_active_material_mol_pct": {
+        "value": 28.599999999999998,
+        "state": "available"
+      },
+      "reported_active_species_count": {
+        "value": 2,
+        "state": "available"
+      },
+      "reported_active_mean_pauling_electronegativity": {
+        "value": 1.7799300699300697,
+        "state": "available"
+      },
+      "reported_active_mean_covalent_radius": {
+        "value": 141.86713286713288,
+        "state": "available"
+      },
+      "reported_support_material_mol_pct": {
+        "value": 71.4,
+        "state": "available"
+      },
+      "reported_support_species_count": {
+        "value": 1,
+        "state": "available"
+      },
+      "reported_support_mean_pauling_electronegativity": {
+        "value": 1.61,
+        "state": "available"
+      },
+      "reported_support_mean_covalent_radius": {
+        "value": 121.00000000000001,
+        "state": "available"
+      },
+      "active_minus_support_pauling_electronegativity": {
+        "value": 0.16993006993006965,
+        "state": "available"
+      },
+      "active_minus_support_covalent_radius": {
+        "value": 20.867132867132867,
+        "state": "available"
+      }
+    },
+    "raw_prediction": 1.2209333333333339
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "schema_version": 2,
+  "view": "artifacts/reports/s4-02-20261120-v1/cu-view.json",
+  "snapshot": "data/snapshots/snapshot-76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da.json",
+  "split": "artifacts/reports/s5-03-start-20261124/projection-46.json",
+  "split_sha256": "95532f2f2b4051fee8134044bcfa02267afca35e4b15ef34f2315986f28138c1",
+  "target": "co2_conversion",
+  "catalog_database": "data/catalog.sqlite",
+  "candidates": [
+    {
+      "feature": "F_base",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F_cond",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F1",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F2",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F3-P",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F3-H",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F3-I",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    }
+  ],
+  "model_seed": 42,
+  "metrics": [
+    "mae",
+    "rmse",
+    "availability"
+  ],
+  "outputs": [
+    "predictions"
+  ],
+  "selection_rule": "s5-paired-v1"
+}

@@ -1,0 +1,1562 @@
+[
+  {
+    "record_id": "00dfbd51b3ea4357b4f3320222f4a100:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 2.6,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 8.333506666666661
+  },
+  {
+    "record_id": "0452d89508d14a99a2199626916aa38c:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 42.1,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.62720714285713
+  },
+  {
+    "record_id": "048f1ca8c0cc4cf8852b1dec675404a4:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 7.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 11.475883333333329
+  },
+  {
+    "record_id": "0524377e755c4e0780117eda07ddd82f:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 8.6,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.792183333333329
+  },
+  {
+    "record_id": "106a146127984db3beda09c520b916ba:1",
+    "doi": "10.1016/j.apcatb.2019.118367",
+    "observed": 14.2,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 4.538834677871144
+  },
+  {
+    "record_id": "12bb43a4aba240639ffb5bff5fe1a878:1",
+    "doi": "10.1016/j.cattod.2016.02.004",
+    "observed": 10.7,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 10.353436666666664
+  },
+  {
+    "record_id": "13eeddca564049388224e201b2a51692:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 9.2,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.792183333333329
+  },
+  {
+    "record_id": "14cf794c6d5c47e8a51b9726ecada322:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 14.8,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 12.563083333333333
+  },
+  {
+    "record_id": "1540a750bdc4421b8cade0d71810149c:1",
+    "doi": "10.1016/j.molcata.2011.05.019",
+    "observed": 5.8,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "support",
+        "La2O3"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 7.917911904761901
+  },
+  {
+    "record_id": "17f06d327f734d439f43006305714742:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 59.6,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 12.757169047619037
+  },
+  {
+    "record_id": "18e57791233d4a0d967121c069e56d73:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 1.4,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.957649999999994
+  },
+  {
+    "record_id": "1e39ff02b7ef4640ab64300e8a559611:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 1.3,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 5.94308095238095
+  },
+  {
+    "record_id": "1ec27891e38441c197542efcfdeb325a:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 7.8,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.792183333333329
+  },
+  {
+    "record_id": "22a0a5049da440f4bbb96960fc0b45c8:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 7.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.417049999999994
+  },
+  {
+    "record_id": "24c208a468c54e0fa7c2fecfce5fa2a5:1",
+    "doi": "10.1016/s0926-860x(98)00079-9",
+    "observed": 18.5,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 11.81159523809523
+  },
+  {
+    "record_id": "2693e03ac24b40298f4b1c54ed37953c:1",
+    "doi": "10.1016/j.jcat.2020.01.014",
+    "observed": 1.2,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 1.3945983333333325
+  },
+  {
+    "record_id": "2b3d644c943c46b1bd8c20dc28173f54:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 49.3,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.285752380952367
+  },
+  {
+    "record_id": "2b623af58f9945aba657848350ad9fe9:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 5.7,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 11.519433333333332
+  },
+  {
+    "record_id": "2d6a2e20064f45fdbf73160ea0970aef:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 12.3,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 11.482749999999996
+  },
+  {
+    "record_id": "31919a38b55f4b47b1ccd1e455fbe380:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 3.1,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.792183333333329
+  },
+  {
+    "record_id": "31f4568980404365b4cb17ec8c7e71f4:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 51.4,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 12.757169047619037
+  },
+  {
+    "record_id": "33662c5ed3f24beebc9c7b4c79494ec8:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 33.9,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.874109523809516
+  },
+  {
+    "record_id": "3797e91f6bcf4b68ac8c5b820b6d59d6:1",
+    "doi": "10.1016/j.molcata.2011.05.019",
+    "observed": 5.8,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "support",
+        "La2O3"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 7.843269047619043
+  },
+  {
+    "record_id": "3a3d19df6a5c49c795f0a5e6ab75cbb9:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 52.7,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.285752380952367
+  },
+  {
+    "record_id": "3f1d1e2ebc654ace86c7925cd0c1c22b:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 8.9,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 9.649816666666664
+  },
+  {
+    "record_id": "437356d952f14f0c96e1a4c92a6be4d5:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 16.8,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 12.429066666666666
+  },
+  {
+    "record_id": "46edd72083074b8890326de21687556d:1",
+    "doi": "10.1016/j.jcou.2016.11.015",
+    "observed": 11.8,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 9.990645238095244
+  },
+  {
+    "record_id": "4b201ff819584196b2a21f7559c02145:1",
+    "doi": "10.1016/j.jcou.2016.11.015",
+    "observed": 17.4,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 12.26659642857143
+  },
+  {
+    "record_id": "52d97c0df8454cdf82346ab1f0227270:1",
+    "doi": "10.1016/j.jcou.2016.11.015",
+    "observed": 15.0,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 11.442809523809524
+  },
+  {
+    "record_id": "57d07b1708374c5b8fcef7d6efab5c9c:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 32.7,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.62720714285713
+  },
+  {
+    "record_id": "59dd6734e1dd4272959c66dee8ec22a6:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 0.7,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 6.4614476190476156
+  },
+  {
+    "record_id": "5c0bcccf3a404f5b908cc66f78cf83aa:1",
+    "doi": "10.1016/j.jcou.2016.11.015",
+    "observed": 10.4,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 7.2658214285714315
+  },
+  {
+    "record_id": "65b9ed301074432c803d21047be636a2:1",
+    "doi": "10.1016/j.molcata.2011.05.019",
+    "observed": 5.5,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 7.669529047619044
+  },
+  {
+    "record_id": "675717e911ca49d381e6f52d794ff4be:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 30.3,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.343716666666651
+  },
+  {
+    "record_id": "6c09ace6d39743ce86cfc96b34ca155d:1",
+    "doi": "10.1016/j.jcou.2016.11.015",
+    "observed": 14.1,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 7.95542761904762
+  },
+  {
+    "record_id": "6e074f0106e1466aa5c224e0c568bcc3:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 0.7,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 4.487028333333333
+  },
+  {
+    "record_id": "7401aede65da4d2b9a6c93daeab80489:1",
+    "doi": "10.1016/j.apcatb.2019.118367",
+    "observed": 10.8,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 4.672857483660127
+  },
+  {
+    "record_id": "74c56c85e8a9423a94b3127148757fb6:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 2.2,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 9.792183333333329
+  },
+  {
+    "record_id": "76379fbfbe28447c9f45fd854e4271ce:1",
+    "doi": "10.1016/j.molcata.2011.05.019",
+    "observed": 6.2,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "support",
+        "La2O3"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 7.763769047619044
+  },
+  {
+    "record_id": "76a5e62244814114971291730f25993c:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 40.1,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.285752380952367
+  },
+  {
+    "record_id": "778334925bac490499f8abe47a3b05eb:1",
+    "doi": "10.1016/j.cattod.2016.02.004",
+    "observed": 6.9,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 10.353436666666664
+  },
+  {
+    "record_id": "7c1f8b34d718444c88fe904f37780c63:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 39.7,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 11.079516666666656
+  },
+  {
+    "record_id": "7d91be9a062343e6b61912c6c18db65c:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 1.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.957649999999994
+  },
+  {
+    "record_id": "823dc34191034ae4a3282798ff72bbde:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 53.0,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 11.079516666666656
+  },
+  {
+    "record_id": "85b84d03269e41308423553162e2ab21:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 6.9,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.792183333333329
+  },
+  {
+    "record_id": "8698e084b91d4d3c9597d25186d40f31:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 11.0,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 10.81198333333333
+  },
+  {
+    "record_id": "8729ee2fb08e4fa6ada3953a1c73a52a:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 25.2,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.62720714285713
+  },
+  {
+    "record_id": "89781fbb357f4a979fc33187be76cb6c:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 3.4,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.957649999999994
+  },
+  {
+    "record_id": "8f0c4050660d4951a0b6ac537d25061d:1",
+    "doi": "10.1016/s0926-860x(98)00079-9",
+    "observed": 17.53,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 11.81159523809523
+  },
+  {
+    "record_id": "9092759ccc5940b1b4257bc0b42009f0:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 4.6,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 11.519433333333332
+  },
+  {
+    "record_id": "90bcf4eac4f642bf9a2495b172d84b35:1",
+    "doi": "10.1016/j.apcatb.2019.118367",
+    "observed": 11.7,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 3.7288372922502306
+  },
+  {
+    "record_id": "930fa0ba2fd6415cb73c8bd44a8d1af9:1",
+    "doi": "10.1016/j.molcata.2011.05.019",
+    "observed": 5.7,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "support",
+        "La2O3"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 7.669529047619044
+  },
+  {
+    "record_id": "93944a1da2ff4e87bd6ff28f0b0e4fcb:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 9.6,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 10.99353333333333
+  },
+  {
+    "record_id": "968e4804b32c42b1979c81396bd1df87:1",
+    "doi": "10.1016/j.apcatb.2019.118367",
+    "observed": 12.3,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 3.9233264612511642
+  },
+  {
+    "record_id": "98469383ec0640dca7a585478a438400:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 2.3,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 7.439016666666664
+  },
+  {
+    "record_id": "99a7f42ae2074565a7d81015c6d5f47a:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 1.6,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.957649999999994
+  },
+  {
+    "record_id": "9c3cd97e499943139782c863408e2c15:1",
+    "doi": "10.1016/j.jcou.2016.11.015",
+    "observed": 12.7,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.533000000000001
+  },
+  {
+    "record_id": "a8fbf6e3f5f04245bc0bf846463b1493:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 50.0,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.285752380952367
+  },
+  {
+    "record_id": "abb36464bcfc47eba83b3d5a2aabb284:1",
+    "doi": "10.1016/j.molcata.2011.05.019",
+    "observed": 5.3,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 7.593929047619045
+  },
+  {
+    "record_id": "ad28949c09e4417d976856d9a16e6c82:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 6.4,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 9.286266666666666
+  },
+  {
+    "record_id": "aeaff3541b2443e2b5711745eab0b600:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 0.3,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 4.040891666666666
+  },
+  {
+    "record_id": "b023786712ff4efd93b179a07629a3f2:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 4.6,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.792183333333329
+  },
+  {
+    "record_id": "b1e2ec6957c1464cb9e42b71f69c8daa:1",
+    "doi": "10.1016/j.cattod.2016.02.004",
+    "observed": 2.6,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 9.463496190476187
+  },
+  {
+    "record_id": "b411ffc1793a4e05ac0a7d4b0ceaf7a4:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 1.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.957649999999994
+  },
+  {
+    "record_id": "b4a8963b54d345b99f0382843119dd32:1",
+    "doi": "10.1016/j.jcou.2016.11.015",
+    "observed": 18.3,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 12.78674642857143
+  },
+  {
+    "record_id": "b4e2807931f1485ab7ffb58114485238:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 4.0,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 10.273433333333333
+  },
+  {
+    "record_id": "b59e2b9006f4493e811d8921dcfa3119:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 18.6,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.874109523809516
+  },
+  {
+    "record_id": "b6de842251b340cd93e4057ec1f1e24f:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 34.9,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.888697619047605
+  },
+  {
+    "record_id": "b77d486c484146ee8fd975aa0be0ada9:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 18.8,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 12.941966666666668
+  },
+  {
+    "record_id": "b7ebb0f602d84df2a0eb7a463fc91bff:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 46.1,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.888697619047605
+  },
+  {
+    "record_id": "b838b7b2917b4ef09da426d4b2be532d:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 9.9,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.792183333333329
+  },
+  {
+    "record_id": "b89005ad504c4fd3bfd1445fce6938be:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 7.4,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 11.462833333333332
+  },
+  {
+    "record_id": "bc40253694d04b519b30ce1a77c1e7ae:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 24.4,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.343716666666651
+  },
+  {
+    "record_id": "bd23e6e5f6a044ea94c118fd7ade7b69:1",
+    "doi": "10.1016/s0926-860x(98)00079-9",
+    "observed": 17.1,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 11.81159523809523
+  },
+  {
+    "record_id": "be9466d81ccb4314b7d7a52fac8aeb2e:1",
+    "doi": "10.1016/s0926-860x(98)00079-9",
+    "observed": 12.3,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 13.65746428571429
+  },
+  {
+    "record_id": "c071f9a9016f4e87b2ab1b2d4d37c6ae:1",
+    "doi": "10.1016/s0926-860x(98)00079-9",
+    "observed": 13.1,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 13.65746428571429
+  },
+  {
+    "record_id": "c126fc96c06c4c3797dd662aa055f844:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 2.6,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.792183333333329
+  },
+  {
+    "record_id": "c1ae37ccb53a4b56b7906c65d71fb9dd:1",
+    "doi": "10.1016/j.jcat.2020.01.014",
+    "observed": 2.3,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 0.9324535714285715
+  },
+  {
+    "record_id": "c61031e74b03403bb4a961659e84ebd1:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 58.4,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 11.079516666666656
+  },
+  {
+    "record_id": "c63c2ff0fb944ac5839593dd6f2f70b9:1",
+    "doi": "10.1016/s0926-860x(98)00079-9",
+    "observed": 9.5,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 13.65746428571429
+  },
+  {
+    "record_id": "c645d159d44649e692b4dd4e4727824e:1",
+    "doi": "10.1016/s0926-860x(98)00079-9",
+    "observed": 18.5,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 11.81159523809523
+  },
+  {
+    "record_id": "c658fd9ac0124211af604560b32a1323:1",
+    "doi": "10.1016/j.apcatb.2019.118367",
+    "observed": 10.6,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 3.365161802054153
+  },
+  {
+    "record_id": "c6a9df1cce584ffa8295dc5c3c78fb26:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 8.9,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 11.505099999999997
+  },
+  {
+    "record_id": "c7f961ca6dc84b00be8bb53fc12a200a:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 10.0,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.970399999999994
+  },
+  {
+    "record_id": "ca875727ddc64b428c611e6b48ca1fae:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 54.0,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.888697619047605
+  },
+  {
+    "record_id": "ce750b0a8c1943a58bd9c7bc52f2ad20:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 14.2,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 11.343399999999997
+  },
+  {
+    "record_id": "d33afc7dcb144afd93379dc4ad5701c2:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 12.6,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 10.810099999999995
+  },
+  {
+    "record_id": "d59b43abaea3433880d5061b9deb1ab2:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 24.0,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.874109523809516
+  },
+  {
+    "record_id": "d76f57a9b78d443f976ced355d712907:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 39.9,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 10.343716666666651
+  },
+  {
+    "record_id": "d78e94100d2f46bc85bcbf755f69f490:1",
+    "doi": "10.1016/j.cattod.2016.02.004",
+    "observed": 9.0,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 9.654103333333332
+  },
+  {
+    "record_id": "d7e39f4805b2497dabc3fcad4412da3a:1",
+    "doi": "10.1016/j.apcatb.2019.118367",
+    "observed": 5.8,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 4.680246372549015
+  },
+  {
+    "record_id": "d8349513e42446fb8f5401f5146463db:1",
+    "doi": "10.1016/s0926-860x(98)00079-9",
+    "observed": 18.7,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 11.81159523809523
+  },
+  {
+    "record_id": "df6b6a1578eb44f18d0b5948fa57dffd:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 0.8,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 9.736450000000001
+  },
+  {
+    "record_id": "e18d2c1f3d064e9bb505d54d84272eb9:1",
+    "doi": "10.1016/s0926-860x(98)00079-9",
+    "observed": 9.62,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 13.65746428571429
+  },
+  {
+    "record_id": "e7bb43c4d7ad4ec98272a74bc4909b4c:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 17.2,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 13.022083333333333
+  },
+  {
+    "record_id": "f14440496cfa4d03997bb112c11f32c3:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 5.3,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 9.109433333333328
+  },
+  {
+    "record_id": "f41c6ea3bf5343faa4d905d1274e62de:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 5.4,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 8.073583333333328
+  },
+  {
+    "record_id": "f7a848bbf85541b9ae1075f464fe232e:1",
+    "doi": "10.1016/j.jcou.2016.11.015",
+    "observed": 15.6,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 11.539801190476194
+  },
+  {
+    "record_id": "f7ff964250a142d6b71ad34f94cb1d90:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 8.1,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 10.975633333333333
+  },
+  {
+    "record_id": "f88c6bd234bf4926ae55ad1b83eb43ed:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 0.1,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 4.789725000000001
+  },
+  {
+    "record_id": "f8a6bb57eed8400d921ce983d61550a6:1",
+    "doi": "10.1021/acs.iecr.7b01464",
+    "observed": 41.3,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "reactants_flow_nl_g_h"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 12.757169047619037
+  },
+  {
+    "record_id": "faa1328479d44163bf231cf544d3ef78:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 0.3,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 4.749045000000001
+  },
+  {
+    "record_id": "fc56f4c946094353a0ac9be0f946432b:1",
+    "doi": "10.1126/sciadv.1701290",
+    "observed": 0.9,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "ZrO2"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Zn"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 8.074429999999994
+  },
+  {
+    "record_id": "fe02ffe6b63640ce883c19138cafde51:1",
+    "doi": "10.1016/s0926-860x(98)00079-9",
+    "observed": 14.0,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 13.65746428571429
+  }
+]

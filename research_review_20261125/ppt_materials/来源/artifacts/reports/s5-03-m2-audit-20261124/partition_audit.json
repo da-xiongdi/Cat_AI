@@ -1,0 +1,1726 @@
+{
+  "45": {
+    "all": {
+      "n": 211,
+      "doi_n": 16,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 60,
+        "10.1016/j.molcata.2011.05.019": 6,
+        "10.1016/j.fuel.2015.09.082": 7,
+        "10.1016/j.jcat.2019.09.024": 22,
+        "10.1021/acs.iecr.7b01464": 22,
+        "10.1016/S1002-0721(09)60193-9": 4,
+        "10.1016/j.jcat.2007.04.003": 36,
+        "10.1016/j.matchemphys.2018.08.038": 7,
+        "10.1016/j.molcata.2016.09.032": 9,
+        "10.1016/j.apcata.2013.09.026": 4,
+        "10.1016/j.jscs.2019.09.002": 7,
+        "10.1016/S0926-860X(98)00079-9": 10,
+        "10.1016/j.jcou.2016.11.015": 8,
+        "10.1016/j.cattod.2016.02.004": 4,
+        "10.1016/0926-860X(95)00049-6": 1,
+        "10.1039/C6RA28305E": 4
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 211,
+        "reported_active_cu_center_fraction": 211,
+        "reported_active_cu_zn_ratio": 85,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 206,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 126,
+          "available_same_role": 85
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 211
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 211
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 211
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 211
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 211
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 1.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 18.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 17,
+      "allocation_groups": 211
+    },
+    "train": {
+      "n": 170,
+      "doi_n": 16,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 47,
+        "10.1016/j.molcata.2011.05.019": 6,
+        "10.1016/j.fuel.2015.09.082": 4,
+        "10.1016/j.jcat.2019.09.024": 16,
+        "10.1021/acs.iecr.7b01464": 19,
+        "10.1016/S1002-0721(09)60193-9": 3,
+        "10.1016/j.jcat.2007.04.003": 31,
+        "10.1016/j.matchemphys.2018.08.038": 5,
+        "10.1016/j.molcata.2016.09.032": 8,
+        "10.1016/j.apcata.2013.09.026": 3,
+        "10.1016/S0926-860X(98)00079-9": 9,
+        "10.1016/j.jscs.2019.09.002": 4,
+        "10.1016/j.jcou.2016.11.015": 6,
+        "10.1016/j.cattod.2016.02.004": 4,
+        "10.1016/0926-860X(95)00049-6": 1,
+        "10.1039/C6RA28305E": 4
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 170,
+        "reported_active_cu_center_fraction": 170,
+        "reported_active_cu_zn_ratio": 71,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 166,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 99,
+          "available_same_role": 71
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 170
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 170
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 170
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 170
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 170
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 18.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 15,
+      "allocation_groups": 170
+    },
+    "test": {
+      "n": 41,
+      "doi_n": 12,
+      "doi_counts": {
+        "10.1016/j.matchemphys.2018.08.038": 2,
+        "10.1039/C2CY20604H": 13,
+        "10.1016/j.fuel.2015.09.082": 3,
+        "10.1016/S0926-860X(98)00079-9": 1,
+        "10.1021/acs.iecr.7b01464": 3,
+        "10.1016/j.jcat.2019.09.024": 6,
+        "10.1016/j.jscs.2019.09.002": 3,
+        "10.1016/j.jcat.2007.04.003": 5,
+        "10.1016/j.jcou.2016.11.015": 2,
+        "10.1016/j.apcata.2013.09.026": 1,
+        "10.1016/j.molcata.2016.09.032": 1,
+        "10.1016/S1002-0721(09)60193-9": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 41,
+        "reported_active_cu_center_fraction": 41,
+        "reported_active_cu_zn_ratio": 14,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 40,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 27,
+          "available_same_role": 14
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 41
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 41
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 41
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 41
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 41
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 1.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 12.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 2,
+      "allocation_groups": 41
+    },
+    "fold_0": {
+      "n": 32,
+      "doi_n": 13,
+      "doi_counts": {
+        "10.1016/j.jcat.2019.09.024": 3,
+        "10.1039/C2CY20604H": 9,
+        "10.1016/j.fuel.2015.09.082": 1,
+        "10.1016/j.jscs.2019.09.002": 1,
+        "10.1016/j.jcat.2007.04.003": 4,
+        "10.1016/j.matchemphys.2018.08.038": 2,
+        "10.1016/j.molcata.2016.09.032": 1,
+        "10.1016/j.apcata.2013.09.026": 1,
+        "10.1021/acs.iecr.7b01464": 3,
+        "10.1016/j.jcou.2016.11.015": 2,
+        "10.1016/j.molcata.2011.05.019": 2,
+        "10.1039/C6RA28305E": 2,
+        "10.1016/j.cattod.2016.02.004": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 32,
+        "reported_active_cu_center_fraction": 32,
+        "reported_active_cu_zn_ratio": 11,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 31,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 21,
+          "available_same_role": 11
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 32
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 32
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 32
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 32
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 32
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 12.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 3,
+      "allocation_groups": 32
+    },
+    "fold_1": {
+      "n": 37,
+      "doi_n": 11,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 12,
+        "10.1016/j.jcat.2019.09.024": 6,
+        "10.1016/j.fuel.2015.09.082": 1,
+        "10.1016/j.molcata.2011.05.019": 2,
+        "10.1016/j.molcata.2016.09.032": 5,
+        "10.1016/S1002-0721(09)60193-9": 1,
+        "10.1016/j.jcat.2007.04.003": 3,
+        "10.1016/j.jcou.2016.11.015": 2,
+        "10.1021/acs.iecr.7b01464": 3,
+        "10.1016/S0926-860X(98)00079-9": 1,
+        "10.1016/j.apcata.2013.09.026": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 37,
+        "reported_active_cu_center_fraction": 37,
+        "reported_active_cu_zn_ratio": 10,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 36,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 27,
+          "available_same_role": 10
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 37
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 37
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 37
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 37
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 37
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 12.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 4,
+      "allocation_groups": 37
+    },
+    "fold_2": {
+      "n": 38,
+      "doi_n": 11,
+      "doi_counts": {
+        "10.1021/acs.iecr.7b01464": 6,
+        "10.1016/j.jcou.2016.11.015": 1,
+        "10.1016/j.apcata.2013.09.026": 1,
+        "10.1016/j.jcat.2007.04.003": 8,
+        "10.1039/C2CY20604H": 13,
+        "10.1016/S0926-860X(98)00079-9": 2,
+        "10.1016/j.molcata.2011.05.019": 1,
+        "10.1016/0926-860X(95)00049-6": 1,
+        "10.1016/j.jcat.2019.09.024": 3,
+        "10.1016/j.molcata.2016.09.032": 1,
+        "10.1016/j.cattod.2016.02.004": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 38,
+        "reported_active_cu_center_fraction": 38,
+        "reported_active_cu_zn_ratio": 18,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 38,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "available_same_role": 18,
+          "no_positive_denominator_in_role": 20
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 38
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 38
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 38
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 38
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 38
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 18.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 4,
+      "allocation_groups": 38
+    },
+    "fold_3": {
+      "n": 28,
+      "doi_n": 10,
+      "doi_counts": {
+        "10.1016/j.jscs.2019.09.002": 3,
+        "10.1016/j.jcat.2019.09.024": 3,
+        "10.1016/j.jcat.2007.04.003": 8,
+        "10.1039/C2CY20604H": 6,
+        "10.1016/j.matchemphys.2018.08.038": 3,
+        "10.1016/S0926-860X(98)00079-9": 1,
+        "10.1016/j.cattod.2016.02.004": 1,
+        "10.1016/j.molcata.2016.09.032": 1,
+        "10.1021/acs.iecr.7b01464": 1,
+        "10.1016/S1002-0721(09)60193-9": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 28,
+        "reported_active_cu_center_fraction": 28,
+        "reported_active_cu_zn_ratio": 10,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 27,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 18,
+          "available_same_role": 10
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 28
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 28
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 28
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 28
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 28
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 443.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 3.0,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 10.6
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 3,
+      "allocation_groups": 28
+    },
+    "fold_4": {
+      "n": 35,
+      "doi_n": 11,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 7,
+        "10.1016/S0926-860X(98)00079-9": 5,
+        "10.1016/j.fuel.2015.09.082": 2,
+        "10.1016/j.jcat.2007.04.003": 8,
+        "10.1039/C6RA28305E": 2,
+        "10.1016/j.molcata.2011.05.019": 1,
+        "10.1021/acs.iecr.7b01464": 6,
+        "10.1016/S1002-0721(09)60193-9": 1,
+        "10.1016/j.cattod.2016.02.004": 1,
+        "10.1016/j.jcou.2016.11.015": 1,
+        "10.1016/j.jcat.2019.09.024": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 35,
+        "reported_active_cu_center_fraction": 35,
+        "reported_active_cu_zn_ratio": 22,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 34,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 13,
+          "available_same_role": 22
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 35
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 35
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 35
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 35
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 35
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 443.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 10.6
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 1,
+      "allocation_groups": 35
+    }
+  },
+  "46": {
+    "all": {
+      "n": 211,
+      "doi_n": 16,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 60,
+        "10.1016/j.molcata.2011.05.019": 6,
+        "10.1016/j.fuel.2015.09.082": 7,
+        "10.1016/j.jcat.2019.09.024": 22,
+        "10.1021/acs.iecr.7b01464": 22,
+        "10.1016/S1002-0721(09)60193-9": 4,
+        "10.1016/j.jcat.2007.04.003": 36,
+        "10.1016/j.matchemphys.2018.08.038": 7,
+        "10.1016/j.molcata.2016.09.032": 9,
+        "10.1016/j.apcata.2013.09.026": 4,
+        "10.1016/j.jscs.2019.09.002": 7,
+        "10.1016/S0926-860X(98)00079-9": 10,
+        "10.1016/j.jcou.2016.11.015": 8,
+        "10.1016/j.cattod.2016.02.004": 4,
+        "10.1016/0926-860X(95)00049-6": 1,
+        "10.1039/C6RA28305E": 4
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 211,
+        "reported_active_cu_center_fraction": 211,
+        "reported_active_cu_zn_ratio": 85,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 206,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 126,
+          "available_same_role": 85
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 211
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 211
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 211
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 211
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 211
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 1.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 18.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 17,
+      "allocation_groups": 211
+    },
+    "train": {
+      "n": 162,
+      "doi_n": 16,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 46,
+        "10.1016/j.fuel.2015.09.082": 5,
+        "10.1016/j.jcat.2019.09.024": 15,
+        "10.1021/acs.iecr.7b01464": 18,
+        "10.1016/S1002-0721(09)60193-9": 4,
+        "10.1016/j.jcat.2007.04.003": 30,
+        "10.1016/j.matchemphys.2018.08.038": 6,
+        "10.1016/j.apcata.2013.09.026": 3,
+        "10.1016/j.jscs.2019.09.002": 6,
+        "10.1016/S0926-860X(98)00079-9": 7,
+        "10.1016/j.molcata.2011.05.019": 3,
+        "10.1016/j.jcou.2016.11.015": 6,
+        "10.1016/j.cattod.2016.02.004": 4,
+        "10.1016/j.molcata.2016.09.032": 7,
+        "10.1016/0926-860X(95)00049-6": 1,
+        "10.1039/C6RA28305E": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 162,
+        "reported_active_cu_center_fraction": 162,
+        "reported_active_cu_zn_ratio": 69,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 157,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 93,
+          "available_same_role": 69
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 162
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 162
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 162
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 162
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 162
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 18.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 13,
+      "allocation_groups": 162
+    },
+    "test": {
+      "n": 49,
+      "doi_n": 13,
+      "doi_counts": {
+        "10.1016/j.molcata.2011.05.019": 3,
+        "10.1021/acs.iecr.7b01464": 4,
+        "10.1016/j.matchemphys.2018.08.038": 1,
+        "10.1016/j.jcat.2019.09.024": 7,
+        "10.1016/j.jcat.2007.04.003": 6,
+        "10.1016/j.fuel.2015.09.082": 2,
+        "10.1039/C2CY20604H": 14,
+        "10.1039/C6RA28305E": 3,
+        "10.1016/S0926-860X(98)00079-9": 3,
+        "10.1016/j.molcata.2016.09.032": 2,
+        "10.1016/j.jcou.2016.11.015": 2,
+        "10.1016/j.apcata.2013.09.026": 1,
+        "10.1016/j.jscs.2019.09.002": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 49,
+        "reported_active_cu_center_fraction": 49,
+        "reported_active_cu_zn_ratio": 16,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 49,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 33,
+          "available_same_role": 16
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 49
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 49
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 49
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 49
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 49
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 453.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 1.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 12.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 4,
+      "allocation_groups": 49
+    },
+    "fold_0": {
+      "n": 32,
+      "doi_n": 11,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 10,
+        "10.1016/j.jcat.2019.09.024": 3,
+        "10.1016/j.fuel.2015.09.082": 1,
+        "10.1016/j.molcata.2016.09.032": 2,
+        "10.1016/j.jcat.2007.04.003": 7,
+        "10.1016/S0926-860X(98)00079-9": 1,
+        "10.1016/j.matchemphys.2018.08.038": 1,
+        "10.1021/acs.iecr.7b01464": 4,
+        "10.1016/j.apcata.2013.09.026": 1,
+        "10.1016/j.cattod.2016.02.004": 1,
+        "10.1016/j.jcou.2016.11.015": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 32,
+        "reported_active_cu_center_fraction": 32,
+        "reported_active_cu_zn_ratio": 14,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 31,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 18,
+          "available_same_role": 14
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 32
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 32
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 32
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 32
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 32
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 443.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 12.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 3,
+      "allocation_groups": 32
+    },
+    "fold_1": {
+      "n": 29,
+      "doi_n": 10,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 6,
+        "10.1016/j.fuel.2015.09.082": 2,
+        "10.1016/j.jscs.2019.09.002": 2,
+        "10.1016/S0926-860X(98)00079-9": 3,
+        "10.1016/j.jcat.2007.04.003": 6,
+        "10.1016/j.molcata.2011.05.019": 1,
+        "10.1021/acs.iecr.7b01464": 5,
+        "10.1016/j.jcat.2019.09.024": 2,
+        "10.1016/j.apcata.2013.09.026": 1,
+        "10.1016/j.cattod.2016.02.004": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 29,
+        "reported_active_cu_center_fraction": 29,
+        "reported_active_cu_zn_ratio": 16,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 29,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 13,
+          "available_same_role": 16
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 29
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 29
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 29
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 29
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 29
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 12.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 2,
+      "allocation_groups": 29
+    },
+    "fold_2": {
+      "n": 39,
+      "doi_n": 13,
+      "doi_counts": {
+        "10.1016/j.jcat.2019.09.024": 5,
+        "10.1016/j.fuel.2015.09.082": 2,
+        "10.1016/j.apcata.2013.09.026": 1,
+        "10.1039/C2CY20604H": 7,
+        "10.1016/S1002-0721(09)60193-9": 3,
+        "10.1016/j.jcat.2007.04.003": 8,
+        "10.1016/j.jscs.2019.09.002": 2,
+        "10.1016/j.jcou.2016.11.015": 4,
+        "10.1016/j.molcata.2016.09.032": 2,
+        "10.1021/acs.iecr.7b01464": 2,
+        "10.1016/j.molcata.2011.05.019": 1,
+        "10.1016/j.cattod.2016.02.004": 1,
+        "10.1016/j.matchemphys.2018.08.038": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 39,
+        "reported_active_cu_center_fraction": 39,
+        "reported_active_cu_zn_ratio": 18,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 36,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 21,
+          "available_same_role": 18
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 39
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 39
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 39
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 39
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 39
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 543.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 12.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 0,
+      "allocation_groups": 39
+    },
+    "fold_3": {
+      "n": 36,
+      "doi_n": 11,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 11,
+        "10.1016/j.matchemphys.2018.08.038": 4,
+        "10.1016/j.molcata.2016.09.032": 1,
+        "10.1016/j.jcat.2007.04.003": 7,
+        "10.1016/j.jcat.2019.09.024": 3,
+        "10.1016/j.cattod.2016.02.004": 1,
+        "10.1021/acs.iecr.7b01464": 5,
+        "10.1016/0926-860X(95)00049-6": 1,
+        "10.1016/j.molcata.2011.05.019": 1,
+        "10.1016/S0926-860X(98)00079-9": 1,
+        "10.1016/j.jscs.2019.09.002": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 36,
+        "reported_active_cu_center_fraction": 36,
+        "reported_active_cu_zn_ratio": 14,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 36,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 22,
+          "available_same_role": 14
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 36
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 36
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 36
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 36
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 36
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 18.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 4,
+      "allocation_groups": 36
+    },
+    "fold_4": {
+      "n": 26,
+      "doi_n": 10,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 12,
+        "10.1016/j.jcou.2016.11.015": 1,
+        "10.1016/j.jscs.2019.09.002": 1,
+        "10.1021/acs.iecr.7b01464": 2,
+        "10.1016/S0926-860X(98)00079-9": 2,
+        "10.1016/j.jcat.2019.09.024": 2,
+        "10.1016/j.jcat.2007.04.003": 2,
+        "10.1016/j.molcata.2016.09.032": 2,
+        "10.1016/S1002-0721(09)60193-9": 1,
+        "10.1039/C6RA28305E": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 26,
+        "reported_active_cu_center_fraction": 26,
+        "reported_active_cu_zn_ratio": 7,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 25,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 19,
+          "available_same_role": 7
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 26
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 26
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 26
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 26
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 26
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 443.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 45.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 10.6
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 4,
+      "allocation_groups": 26
+    }
+  },
+  "47": {
+    "all": {
+      "n": 211,
+      "doi_n": 16,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 60,
+        "10.1016/j.molcata.2011.05.019": 6,
+        "10.1016/j.fuel.2015.09.082": 7,
+        "10.1016/j.jcat.2019.09.024": 22,
+        "10.1021/acs.iecr.7b01464": 22,
+        "10.1016/S1002-0721(09)60193-9": 4,
+        "10.1016/j.jcat.2007.04.003": 36,
+        "10.1016/j.matchemphys.2018.08.038": 7,
+        "10.1016/j.molcata.2016.09.032": 9,
+        "10.1016/j.apcata.2013.09.026": 4,
+        "10.1016/j.jscs.2019.09.002": 7,
+        "10.1016/S0926-860X(98)00079-9": 10,
+        "10.1016/j.jcou.2016.11.015": 8,
+        "10.1016/j.cattod.2016.02.004": 4,
+        "10.1016/0926-860X(95)00049-6": 1,
+        "10.1039/C6RA28305E": 4
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 211,
+        "reported_active_cu_center_fraction": 211,
+        "reported_active_cu_zn_ratio": 85,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 206,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 126,
+          "available_same_role": 85
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 211
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 211
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 211
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 211
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 211
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 1.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 18.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 17,
+      "allocation_groups": 211
+    },
+    "train": {
+      "n": 166,
+      "doi_n": 16,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 54,
+        "10.1016/j.fuel.2015.09.082": 4,
+        "10.1016/j.jcat.2019.09.024": 18,
+        "10.1021/acs.iecr.7b01464": 15,
+        "10.1016/S1002-0721(09)60193-9": 3,
+        "10.1016/j.matchemphys.2018.08.038": 4,
+        "10.1016/j.molcata.2016.09.032": 8,
+        "10.1016/j.apcata.2013.09.026": 4,
+        "10.1016/j.jscs.2019.09.002": 6,
+        "10.1016/j.jcat.2007.04.003": 24,
+        "10.1016/S0926-860X(98)00079-9": 9,
+        "10.1016/j.cattod.2016.02.004": 3,
+        "10.1016/j.jcou.2016.11.015": 6,
+        "10.1016/0926-860X(95)00049-6": 1,
+        "10.1016/j.molcata.2011.05.019": 4,
+        "10.1039/C6RA28305E": 3
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 166,
+        "reported_active_cu_center_fraction": 166,
+        "reported_active_cu_zn_ratio": 60,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 162,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 106,
+          "available_same_role": 60
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 166
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 166
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 166
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 166
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 166
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 1.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 18.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 15,
+      "allocation_groups": 166
+    },
+    "test": {
+      "n": 45,
+      "doi_n": 14,
+      "doi_counts": {
+        "10.1016/j.molcata.2011.05.019": 2,
+        "10.1039/C2CY20604H": 6,
+        "10.1016/j.matchemphys.2018.08.038": 3,
+        "10.1016/j.fuel.2015.09.082": 3,
+        "10.1021/acs.iecr.7b01464": 7,
+        "10.1016/j.jcat.2007.04.003": 12,
+        "10.1016/S0926-860X(98)00079-9": 1,
+        "10.1016/j.cattod.2016.02.004": 1,
+        "10.1016/j.jcat.2019.09.024": 4,
+        "10.1039/C6RA28305E": 1,
+        "10.1016/j.jscs.2019.09.002": 1,
+        "10.1016/j.jcou.2016.11.015": 2,
+        "10.1016/j.molcata.2016.09.032": 1,
+        "10.1016/S1002-0721(09)60193-9": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 45,
+        "reported_active_cu_center_fraction": 45,
+        "reported_active_cu_zn_ratio": 25,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 44,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 20,
+          "available_same_role": 25
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 45
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 45
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 45
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 45
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 45
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 10.6
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 2,
+      "allocation_groups": 45
+    },
+    "fold_0": {
+      "n": 30,
+      "doi_n": 7,
+      "doi_counts": {
+        "10.1021/acs.iecr.7b01464": 5,
+        "10.1016/j.jcat.2019.09.024": 4,
+        "10.1016/S0926-860X(98)00079-9": 2,
+        "10.1016/j.molcata.2016.09.032": 2,
+        "10.1016/j.jcat.2007.04.003": 8,
+        "10.1039/C2CY20604H": 8,
+        "10.1016/S1002-0721(09)60193-9": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 30,
+        "reported_active_cu_center_fraction": 30,
+        "reported_active_cu_zn_ratio": 13,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 29,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "available_same_role": 13,
+          "no_positive_denominator_in_role": 17
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 30
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 30
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 30
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 30
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 30
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 443.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 36.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 10.6
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 4,
+      "allocation_groups": 30
+    },
+    "fold_1": {
+      "n": 34,
+      "doi_n": 11,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 12,
+        "10.1016/j.jcat.2019.09.024": 3,
+        "10.1016/j.jcat.2007.04.003": 5,
+        "10.1016/S1002-0721(09)60193-9": 1,
+        "10.1016/j.fuel.2015.09.082": 1,
+        "10.1016/j.molcata.2016.09.032": 3,
+        "10.1016/S0926-860X(98)00079-9": 3,
+        "10.1016/j.matchemphys.2018.08.038": 2,
+        "10.1021/acs.iecr.7b01464": 1,
+        "10.1016/j.apcata.2013.09.026": 1,
+        "10.1016/j.jcou.2016.11.015": 2
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 34,
+        "reported_active_cu_center_fraction": 34,
+        "reported_active_cu_zn_ratio": 13,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 32,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 21,
+          "available_same_role": 13
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 34
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 34
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 34
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 34
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 34
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 443.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 12.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 2,
+      "allocation_groups": 34
+    },
+    "fold_2": {
+      "n": 34,
+      "doi_n": 11,
+      "doi_counts": {
+        "10.1039/C2CY20604H": 16,
+        "10.1016/j.jcat.2019.09.024": 3,
+        "10.1016/j.jcou.2016.11.015": 1,
+        "10.1016/j.apcata.2013.09.026": 1,
+        "10.1016/j.jcat.2007.04.003": 4,
+        "10.1016/S0926-860X(98)00079-9": 1,
+        "10.1016/j.jscs.2019.09.002": 1,
+        "10.1016/j.molcata.2011.05.019": 2,
+        "10.1021/acs.iecr.7b01464": 3,
+        "10.1039/C6RA28305E": 1,
+        "10.1016/j.cattod.2016.02.004": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 34,
+        "reported_active_cu_center_fraction": 34,
+        "reported_active_cu_zn_ratio": 10,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 34,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 24,
+          "available_same_role": 10
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 34
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 34
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 34
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 34
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 34
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 443.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 12.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 3,
+      "allocation_groups": 34
+    },
+    "fold_3": {
+      "n": 33,
+      "doi_n": 13,
+      "doi_counts": {
+        "10.1016/j.matchemphys.2018.08.038": 2,
+        "10.1016/j.jcat.2019.09.024": 4,
+        "10.1039/C2CY20604H": 8,
+        "10.1039/C6RA28305E": 1,
+        "10.1016/j.jcat.2007.04.003": 4,
+        "10.1021/acs.iecr.7b01464": 4,
+        "10.1016/j.molcata.2016.09.032": 1,
+        "10.1016/j.fuel.2015.09.082": 1,
+        "10.1016/j.jcou.2016.11.015": 2,
+        "10.1016/0926-860X(95)00049-6": 1,
+        "10.1016/j.jscs.2019.09.002": 2,
+        "10.1016/S0926-860X(98)00079-9": 2,
+        "10.1016/j.cattod.2016.02.004": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 33,
+        "reported_active_cu_center_fraction": 33,
+        "reported_active_cu_zn_ratio": 13,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 33,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "no_positive_denominator_in_role": 20,
+          "available_same_role": 13
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 33
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 33
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 33
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 33
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 33
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 433.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 1.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 18.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 4,
+      "allocation_groups": 33
+    },
+    "fold_4": {
+      "n": 35,
+      "doi_n": 14,
+      "doi_counts": {
+        "10.1016/j.fuel.2015.09.082": 2,
+        "10.1016/j.jscs.2019.09.002": 3,
+        "10.1039/C2CY20604H": 10,
+        "10.1016/j.molcata.2016.09.032": 2,
+        "10.1016/j.jcat.2007.04.003": 3,
+        "10.1016/j.jcat.2019.09.024": 4,
+        "10.1016/S0926-860X(98)00079-9": 1,
+        "10.1016/j.molcata.2011.05.019": 2,
+        "10.1021/acs.iecr.7b01464": 2,
+        "10.1016/j.apcata.2013.09.026": 2,
+        "10.1016/S1002-0721(09)60193-9": 1,
+        "10.1016/j.jcou.2016.11.015": 1,
+        "10.1039/C6RA28305E": 1,
+        "10.1016/j.cattod.2016.02.004": 1
+      },
+      "descriptors_applicable": {
+        "cu_species_material_mol_pct": 35,
+        "reported_active_cu_center_fraction": 35,
+        "reported_active_cu_zn_ratio": 11,
+        "reported_active_cu_zr_ratio": 0,
+        "reported_active_cu_al_ratio": 0,
+        "reported_support_cu_center_fraction": 34,
+        "reported_support_cu_zn_ratio": 0,
+        "reported_support_cu_zr_ratio": 0,
+        "reported_support_cu_al_ratio": 0
+      },
+      "ratio_status": {
+        "reported_active_cu_zn_ratio": {
+          "available_same_role": 11,
+          "no_positive_denominator_in_role": 24
+        },
+        "reported_active_cu_zr_ratio": {
+          "no_positive_denominator_in_role": 35
+        },
+        "reported_active_cu_al_ratio": {
+          "no_positive_denominator_in_role": 35
+        },
+        "reported_support_cu_zn_ratio": {
+          "no_cu_in_role": 35
+        },
+        "reported_support_cu_zr_ratio": {
+          "no_cu_in_role": 35
+        },
+        "reported_support_cu_al_ratio": {
+          "no_cu_in_role": 35
+        }
+      },
+      "conditions": {
+        "temperature_k": {
+          "min": 443.0,
+          "max": 553.0
+        },
+        "pressure_bar_abs": {
+          "min": 0.4,
+          "max": 50.0
+        },
+        "h2_co2_ratio": {
+          "min": 3.0,
+          "max": 3.8
+        },
+        "reactants_flow_nl_g_h": {
+          "min": 0.87,
+          "max": 12.0
+        }
+      },
+      "temperature_gt_553": 0,
+      "temperature_eq_553": 2,
+      "allocation_groups": 35
+    }
+  }
+}

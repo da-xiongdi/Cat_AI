@@ -1,0 +1,10 @@
+﻿import json,sqlite3,hashlib,subprocess,datetime
+from pathlib import Path
+root=Path(__file__).resolve().parents[1]; out=root/'artifacts/reports/s5-04-remediation-20261124-v1'; old=root/'artifacts/reports/s5-04-e02-20261124-v1'
+files=[old/'preregistration.md',old/'preregistration-sha256.json',old/'training-trace.json',root/'scripts/s5_04_execute.py',root/'tests/unit/test_s5_estimators.py',old/'regression-tests.log',old/'evidence-sha256-final.json']
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+con=sqlite3.connect(root/'data/workbench.sqlite');activities=[dict(zip(('id','action','created_at','summary'),x)) for x in con.execute("select id,action,created_at,summary from activity where task_id='S5-04' order by id")]; con.close()
+log=subprocess.run(['git','log','--all','--format=%H %aI %s','--','scripts/s5_04_execute.py','tests/unit/test_s5_estimators.py'],cwd=root,capture_output=True,text=True,encoding='utf8')
+obj={'searched_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'S5-04 task activity, frozen preregistration, script, estimator test and test log, relevant git history','activity':activities,'files':[{'path':p.relative_to(root).as_posix(),'sha256':sha(p),'creation_time_utc':datetime.datetime.fromtimestamp(p.stat().st_ctime,datetime.timezone.utc).isoformat(),'modified_time_utc':datetime.datetime.fromtimestamp(p.stat().st_mtime,datetime.timezone.utc).isoformat()} for p in files],'git_log_returncode':log.returncode,'git_log':log.stdout,'assessment':'Pre-registration specifies substitute; no independent prior approval located. Unit test exercises synthetic training and pickle using a substitute transformer; no contemporaneous evidence of full synthetic preflight/lock/score/reload before real run located. File timestamps are mutable and are not independent approval or proof of execution. Absence means not located in searched sources, not proof no event occurred.'}
+(out/'provenance-final.json').write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+print('trace saved')

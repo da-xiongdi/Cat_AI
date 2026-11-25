@@ -1,0 +1,1502 @@
+[
+  {
+    "record_id": "001345cabca645418a70868dcfefa649:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 3.0,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 1.5736708333333338
+  },
+  {
+    "record_id": "00326c4c9b054833be58736ba04d2225:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 7.9,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 5.851711064425768
+  },
+  {
+    "record_id": "0108f9e2af3442529e0a44e8fd420e65:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.68,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 3.5360365079365064
+  },
+  {
+    "record_id": "04111a4b82ad4e4c9f089ab409fdc26a:1",
+    "doi": "10.1016/j.jscs.2019.09.002",
+    "observed": 2.37,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 8.769666349206348
+  },
+  {
+    "record_id": "0796e38adfe7484ea25edf175bb5e6a9:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 17.1,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 8.585233137254901
+  },
+  {
+    "record_id": "079968216c614148a44d736aa214da28:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 8.1,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 5.761366666666664
+  },
+  {
+    "record_id": "088a1d6b6f7345a79f368e76452bf7f4:1",
+    "doi": "10.1016/j.jscs.2019.09.002",
+    "observed": 1.04,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 8.168646349206346
+  },
+  {
+    "record_id": "0acf0d006c70490abc20144df8ebfa5f:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 12.2,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.274703333333334
+  },
+  {
+    "record_id": "0c24c0b0b214496db0054f594cf7ccc3:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.01,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "support",
+        "CeO2"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.050949999999998
+  },
+  {
+    "record_id": "0cdde27d00fb45ff873da83ceb151c2a:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 11.8,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.008133333333332
+  },
+  {
+    "record_id": "10997ea3797b4126b4399aa8f51aa80c:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 14.0,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 5.39517882352941
+  },
+  {
+    "record_id": "11a59cc07f1b4767b2a802e1b51866ed:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 16.0,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 8.133729166666672
+  },
+  {
+    "record_id": "1957529fd2ff4801a74e5b3a97899ca7:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 8.0,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 3.2866208333333327
+  },
+  {
+    "record_id": "1bb567698fa34c159d5b1cd6f04f4e53:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 0.2,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 1.4828421568627466
+  },
+  {
+    "record_id": "1df753806cbd414d872b0cac01fe1eda:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.01,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "support",
+        "CeO2"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 7.706349999999998
+  },
+  {
+    "record_id": "1e5eb53711fe4c2db84c3436ab1e4461:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 15.7,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.558612156862745
+  },
+  {
+    "record_id": "22aa68ad86eb4471aee26029d865a1fc:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 1.84,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 3.952128412698412
+  },
+  {
+    "record_id": "2330a930e2d34785871f963eceec34ae:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 3.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 1.7243921568627456
+  },
+  {
+    "record_id": "249833cad69e4aa19ae9e522f86068a7:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.01,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "support",
+        "CeO2"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 7.706349999999998
+  },
+  {
+    "record_id": "281cd4d471f047d1a97d27823efe42ac:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.18,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "support",
+        "CeO2"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 3.5542079365079355
+  },
+  {
+    "record_id": "31eb41ae44f4479ea7108cda9fe07cd3:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 8.4,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 3.393641704374058
+  },
+  {
+    "record_id": "32cc390049ee4be480fb98be06c66deb:1",
+    "doi": "10.1016/j.apcata.2013.09.026",
+    "observed": 23.3,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 12.71397214285714
+  },
+  {
+    "record_id": "358933fa6c7d4604af6503b13e9c03d8:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 0.0,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 0.24944999999999967
+  },
+  {
+    "record_id": "382b206a63ba49f0801265afcadb9435:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.6,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 5.206366666666667
+  },
+  {
+    "record_id": "3e3ab40574204713b0d69503b3f3f395:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 6.0,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 2.4229939102564106
+  },
+  {
+    "record_id": "42463fd844b44be98901e54376db503f:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 8.6,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.534922156862746
+  },
+  {
+    "record_id": "42d607a5defb418f887ddb00d0d434e4:1",
+    "doi": "10.1016/j.jscs.2019.09.002",
+    "observed": 2.25,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      "h2_co2_ratio"
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 8.183633015873017
+  },
+  {
+    "record_id": "48fae295f7604d53835aaa3f21f0e65b:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 15.9,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.569762156862745
+  },
+  {
+    "record_id": "496019afe37b47c5bba93b1e9bd6aec9:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 10.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 5.516326470588234
+  },
+  {
+    "record_id": "49f653ffdfa64679a734e6ff7b44619e:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 17.7,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 8.955758823529411
+  },
+  {
+    "record_id": "4bc43550567e431eb230715738497805:1",
+    "doi": "10.1016/j.apcata.2013.09.026",
+    "observed": 24.7,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 12.206257857142855
+  },
+  {
+    "record_id": "4d08ec541413457ea88f4bfb5add2d80:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.01,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "support",
+        "CeO2"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 3.5542079365079355
+  },
+  {
+    "record_id": "5067c231289f485ea4498036bf3210f5:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 0.2,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 0.5662499999999995
+  },
+  {
+    "record_id": "50ca34656d5241dfb34f1b34598f2e82:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 15.5,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 5.537051960784312
+  },
+  {
+    "record_id": "517657ace2dc40e9bd828c1b34d73472:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 5.4,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 5.977901666666665
+  },
+  {
+    "record_id": "51d66d4116404c39b1086229f699b909:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.42,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 3.4221198412698404
+  },
+  {
+    "record_id": "559d83de70f94db6b3230591c7931d73:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 16.0,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 7.576791666666672
+  },
+  {
+    "record_id": "5a7edeec80444a0695f8555c5de426ec:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 10.4,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.292739075630251
+  },
+  {
+    "record_id": "5b4aa7ede4aa435c90bd55d6707dfc22:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 14.4,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.435133333333335
+  },
+  {
+    "record_id": "5dd962de3fd046d08171bfa85ab0c326:1",
+    "doi": "10.1016/0926-860x(95)00049-6",
+    "observed": 11.7,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 4.39920009337068
+  },
+  {
+    "record_id": "5e60b6db996a4b19bfb9c1003e9a2bd1:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 15.0,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 8.801908823529411
+  },
+  {
+    "record_id": "6052607f49014f36913de6bca91eafae:1",
+    "doi": "10.1016/j.apcata.2013.09.026",
+    "observed": 26.9,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "support",
+        "Y2O3"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 11.269305476190473
+  },
+  {
+    "record_id": "6761859936af48f9aef94f7bb07452d9:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 8.2,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 7.490366666666673
+  },
+  {
+    "record_id": "6774ec1690cc4099aa9691e5fe043325:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 6.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 2.3905730769230775
+  },
+  {
+    "record_id": "68efb9c90e9041cc951eeb28107556a9:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 2.8,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 5.504499999999998
+  },
+  {
+    "record_id": "6a17684cfedf4faa89af09166d0c825b:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 12.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 4.980149999999997
+  },
+  {
+    "record_id": "6cbac10885f648b9bd742a835e9a1cda:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 4.0,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 1.4863333333333337
+  },
+  {
+    "record_id": "6e843df27eaf4e0f997480f96138c49f:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 7.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 1.996716666666666
+  },
+  {
+    "record_id": "73438331e04842d58f55bb4e7243e2ba:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 14.4,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.356636666666667
+  },
+  {
+    "record_id": "75ce9ba9c34e4b059b8ec1289ce68502:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 10.1,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 5.660169607843137
+  },
+  {
+    "record_id": "7678bb958d6d442fb20dbc8951fce6d6:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 3.1,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 1.845058823529412
+  },
+  {
+    "record_id": "774ae7d49af94f3789129b5358a9a8cc:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 12.8,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 7.577133333333332
+  },
+  {
+    "record_id": "778168711a9f4744afcdf3c2c14de7fc:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 1.2,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 1.5208333333333328
+  },
+  {
+    "record_id": "78b862b988b24925a9755d5b16f89652:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 11.9,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.223878823529409
+  },
+  {
+    "record_id": "7a975e46bada466389eb98ce331ec237:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 11.1,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 5.942403333333332
+  },
+  {
+    "record_id": "7b75908e52b34d3aa389d7664d3250c8:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 14.2,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.402117647058823
+  },
+  {
+    "record_id": "80573989b24a4a4c8ac966a13a04caa5:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.01,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 2.8751880952380953
+  },
+  {
+    "record_id": "830b4fbefe47441683136348e92d9248:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 3.5,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 3.405866666666663
+  },
+  {
+    "record_id": "862e22e5242e4d5787e07f7794bcf38d:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 14.2,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.367786666666667
+  },
+  {
+    "record_id": "8752fee2d54d4dfb9195f5943b31190f:1",
+    "doi": "10.1016/j.jscs.2019.09.002",
+    "observed": 3.29,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 8.288349682539684
+  },
+  {
+    "record_id": "89f66be4e47e41589f3d3acc20ddec71:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 4.95,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 1.2526666666666664
+  },
+  {
+    "record_id": "89f6eea93cf9410d8eebda8ae0feaa86:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.2,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 5.971783333333332
+  },
+  {
+    "record_id": "8d28d14791cc40e0b3013d218cd96c9c:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.25,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 7.410633333333331
+  },
+  {
+    "record_id": "8ed7f8dba3df4828ad80bd877e835485:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 16.9,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 8.105668627450973
+  },
+  {
+    "record_id": "8ff6b8f8b3a44b9e8af9a07289712e18:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 3.0,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 0.5109999999999996
+  },
+  {
+    "record_id": "947d377f53884bf2b1968c42abc5a28b:1",
+    "doi": "10.1016/0926-860x(95)00049-6",
+    "observed": 3.4,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Al2O3"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 9.74178033613446
+  },
+  {
+    "record_id": "94a54871f08e43e98269f666c2f0684f:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 12.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 4.974904166666664
+  },
+  {
+    "record_id": "975f5986318947f7899f525e8af110c9:1",
+    "doi": "10.1016/j.jscs.2019.09.002",
+    "observed": 4.57,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 8.183633015873017
+  },
+  {
+    "record_id": "991996da92d44f1aa36e5f6c186fbb19:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 20.5,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 8.21317598039216
+  },
+  {
+    "record_id": "9d1d51cdce5c4775a52a7027cdd16d58:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 5.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 2.8780240573152343
+  },
+  {
+    "record_id": "9d82d2b776e74a77bbc419b356266d2f:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 17.8,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 8.955758823529411
+  },
+  {
+    "record_id": "9e47cf0448454d948a5bf1048e0467a0:1",
+    "doi": "10.1016/0926-860x(95)00049-6",
+    "observed": 19.6,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ga2O3"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 5.641130271493213
+  },
+  {
+    "record_id": "9ff7bada272d4cac81be1fb8abf7b08a:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 2.5,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 1.6863921568627456
+  },
+  {
+    "record_id": "a1578903ec43451c91b58b622995b664:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.01,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "support",
+        "CeO2"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.050949999999998
+  },
+  {
+    "record_id": "a535f1998e184d9d94867e94780726bb:1",
+    "doi": "10.1016/0926-860x(95)00049-6",
+    "observed": 13.8,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 7.217206956115777
+  },
+  {
+    "record_id": "a786fd28018e4b7e9179e367009deee4:1",
+    "doi": "10.1016/j.jscs.2019.09.002",
+    "observed": 6.36,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 8.336310158730159
+  },
+  {
+    "record_id": "a89dd063252c4df3b762d9df6469dcea:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 14.1,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 7.804544117647052
+  },
+  {
+    "record_id": "a9762e10500d40f1bb159b32ce2e65c5:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 17.3,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 8.955758823529411
+  },
+  {
+    "record_id": "aad0308fcc32471f8cf15b95ce4294fa:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 17.1,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 8.105668627450973
+  },
+  {
+    "record_id": "b13132db80b447b79ffca4959dda66ed:1",
+    "doi": "10.1016/0926-860x(95)00049-6",
+    "observed": 0.4,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 5.983579487179487
+  },
+  {
+    "record_id": "b8ce1ee6378d45ae9b9a225ddd81ea2c:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 16.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 8.071791666666671
+  },
+  {
+    "record_id": "baa294f45258499fb962105c537fcd78:1",
+    "doi": "10.1016/0926-860x(95)00049-6",
+    "observed": 0.05,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "support",
+        "SiO2"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 5.749646938159877
+  },
+  {
+    "record_id": "bb2dc45e5b504bd6836e7b7d67f03170:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 7.0,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 4.114695098039216
+  },
+  {
+    "record_id": "bcc8ba0eb4434902b10f31f0718b7906:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 4.65,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 5.010163333333333
+  },
+  {
+    "record_id": "bffde63cc0524fc6b0b9028db022a4e3:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 15.0,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 8.267776960784317
+  },
+  {
+    "record_id": "c00804f9a49e442aa333bd647ae53d55:1",
+    "doi": "10.1016/j.apcata.2013.09.026",
+    "observed": 19.7,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 12.620329285714284
+  },
+  {
+    "record_id": "c301708af7e342d9971b2c11f08f7def:1",
+    "doi": "10.1016/j.jscs.2019.09.002",
+    "observed": 1.68,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 8.168646349206346
+  },
+  {
+    "record_id": "c34bf74fd994413b8b2bef98eb8dc2cf:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 1.1,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 7.703291666666668
+  },
+  {
+    "record_id": "c60a1c95e98e43f3833ef984d9828cbc:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.01,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 3.522035714285713
+  },
+  {
+    "record_id": "c6af58bb77c847b79c82703aa3c3358a:1",
+    "doi": "10.1016/0926-860x(95)00049-6",
+    "observed": 2.1,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "support",
+        "Cr2O3"
+      ]
+    ],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ]
+    ],
+    "fully_encoded": false,
+    "raw_prediction": 5.641130271493213
+  },
+  {
+    "record_id": "c76cefdea34449789bafe0f140d0f772:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 2.5,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.466155490196079
+  },
+  {
+    "record_id": "c83d38d6918b4423a8f61b3246f7ea9f:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 13.3,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 6.552512156862746
+  },
+  {
+    "record_id": "cb7a9a3e6abf468b8a6c59f1600bf0ba:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 0.8,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 1.5208421568627466
+  },
+  {
+    "record_id": "d1d056ba95e44cc0a30f9c1c02123839:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 8.0,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 4.011459803921569
+  },
+  {
+    "record_id": "d3c8ef4eacb34ce589bb0a17dc761aef:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 9.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 3.3186999999999993
+  },
+  {
+    "record_id": "d69d174917c54975805d5e2a9767e07c:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 14.0,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 5.712579803921565
+  },
+  {
+    "record_id": "d9f49b33514641d48aa5aa87806db1ca:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 4.7,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 3.4938181749622936
+  },
+  {
+    "record_id": "da378683195640c986fcdfa1d773d090:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 14.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 8.21967598039216
+  },
+  {
+    "record_id": "db80380b39564e089b48912144008023:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 4.9,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 2.999592684766215
+  },
+  {
+    "record_id": "df068fedeb58482390a1938a83849976:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 5.63,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 7.410633333333331
+  },
+  {
+    "record_id": "dfd4bcf3e42f4fc986beb98000477147:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.21,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 5.504499999999998
+  },
+  {
+    "record_id": "e71893aedf42429d83077fddc2cba51b:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 11.2,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 5.647336274509803
+  },
+  {
+    "record_id": "e71e86f8f93346eca3b334bea80f26ce:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 1.6,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 1.8430588235294119
+  },
+  {
+    "record_id": "e97cb6f20fb743c6a6bfb49bf184f5ee:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.22,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 7.6523499999999975
+  },
+  {
+    "record_id": "ee934f39e4e6469487c1eabcbd9a01fa:1",
+    "doi": "10.1016/j.cej.2024.149370",
+    "observed": 10.5,
+    "status": "unsupported_species_role",
+    "unseen_species_roles": [
+      [
+        "compound",
+        "Pt"
+      ]
+    ],
+    "out_of_range": [],
+    "fully_encoded": false,
+    "raw_prediction": 3.6193333333333286
+  },
+  {
+    "record_id": "f0f98b9576274560afb807b9382776aa:1",
+    "doi": "10.1016/j.fuel.2022.125878",
+    "observed": 0.17,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 3.4197865079365073
+  },
+  {
+    "record_id": "f1297d15e73541ea90fce39715e2e2a2:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 16.2,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 7.059187058823531
+  },
+  {
+    "record_id": "f6c1cc859e76435f9b491d67f186f3a6:1",
+    "doi": "10.1016/0926-860x(95)00049-6",
+    "observed": 15.5,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "support",
+        "TiO2"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 5.731796938159879
+  },
+  {
+    "record_id": "fc9e329ab7aa4ae7ae9c0aa1338d82a5:1",
+    "doi": "10.1016/j.fuel.2023.127927",
+    "observed": 15.7,
+    "status": "caution",
+    "unseen_species_roles": [],
+    "out_of_range": [
+      [
+        "compound",
+        "Pd"
+      ],
+      [
+        "support",
+        "Ca"
+      ]
+    ],
+    "fully_encoded": true,
+    "raw_prediction": 8.105668627450973
+  },
+  {
+    "record_id": "ff826dae181549c19b2f7344a328d0ab:1",
+    "doi": "10.1016/j.apcatb.2017.06.069",
+    "observed": 18.4,
+    "status": "ok",
+    "unseen_species_roles": [],
+    "out_of_range": [],
+    "fully_encoded": true,
+    "raw_prediction": 8.267776960784317
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "metrics": {
+    "mae": 2.899570472319008,
+    "rmse": 4.46740082860986,
+    "r2_unavailable_reason": null,
+    "records": 41,
+    "papers": 12
+  },
+  "model_sha256": "37c69844adaebd12626430e0e2368fe66c97117325afe45029ded2f6a1f498fd",
+  "availability": {
+    "total_records": 41,
+    "diagnostic_records": 41,
+    "available_records": 39,
+    "available_fraction": 0.9512195121951219,
+    "null_prediction_records": 0,
+    "statuses": {
+      "caution": 1,
+      "ok": 38,
+      "unsupported_species_role": 2
+    },
+    "diagnostic_metrics": {
+      "mae": 2.899570472319008,
+      "rmse": 4.46740082860986,
+      "r2": 0.873847825467036,
+      "r2_unavailable_reason": null,
+      "paper_equal_mae": 3.559881725800435,
+      "records": 41,
+      "papers": 12
+    },
+    "available_metrics": {
+      "mae": 2.654148231583231,
+      "rmse": 4.235415438912503,
+      "r2": 0.8880346631508984,
+      "r2_unavailable_reason": null,
+      "paper_equal_mae": 2.7347972376271876,
+      "records": 39,
+      "papers": 10
+    }
+  }
+}

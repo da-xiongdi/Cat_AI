@@ -14,8 +14,8 @@ from catalyst_ai.reporting.evidence import digest
 
 class Candidate(BaseModel):
     model_config = ConfigDict(extra="forbid", strict=True)
-    feature: Literal["F_cond", "F_base", "F1", "F2"]
-    model: Literal["dummy", "ridge", "extra_trees"]
+    feature: Literal["F_cond", "F_base", "F1", "F2", "F3-P", "F3-H", "F3-I", "F_base+Cu", "F1+Cu", "F2+Cu", "F3-P+Cu", "F3-H+Cu", "F3-I+Cu"]
+    model: Literal["dummy", "ridge", "extra_trees", "random_forest", "gradient_boosting", "xgboost"]
     params: dict = Field(default_factory=dict)
 
     @model_validator(mode="after")
@@ -26,7 +26,7 @@ class Candidate(BaseModel):
 
 class ResearchConfig(BaseModel):
     model_config = ConfigDict(extra="forbid", strict=True)
-    schema_version: Literal[1] = 1
+    schema_version: Literal[1, 2] = 1
     view: str
     snapshot: str
     split: str
@@ -42,8 +42,30 @@ class ResearchConfig(BaseModel):
         default_factory=lambda: ["predictions", "plots"]
     )
 
+    selection_rule: Literal["legacy", "s5-paired-v1"] = "legacy"
+
     @model_validator(mode="after")
     def unique_options(self):
+        if self.schema_version == 1 and any(c.model in ("random_forest", "gradient_boosting", "xgboost") for c in self.candidates):
+            raise ValueError("new estimators require schema version 2")
+        if any(c.model == "random_forest" and c.params.get("n_jobs", 1) != 1 for c in self.candidates):
+            raise ValueError("S5 random forest requires one worker")
+        if self.schema_version == 1 and any((c.feature.startswith("F3-") or c.feature.endswith("+Cu")) for c in self.candidates):
+            raise ValueError("F3 requires schema version 2")
+        if (self.schema_version == 1) != (self.selection_rule == "legacy"):
+            raise ValueError("selection rule requires matching schema version")
+        if self.schema_version == 2:
+            from catalyst_ai.modeling.config import DEFAULT_PARAMS
+
+            baseline = self.candidates[0]
+            params = {**DEFAULT_PARAMS["extra_trees"], **baseline.params}
+            if (
+                baseline.feature != "F_base"
+                or baseline.model != "extra_trees"
+                or params != DEFAULT_PARAMS["extra_trees"]
+                or self.model_seed != 42
+            ):
+                raise ValueError("S5 requires the fixed F_base/extra_trees baseline and seed 42")
         if len(self.metrics) != len(set(self.metrics)) or len(self.outputs) != len(
             set(self.outputs)
         ):
@@ -73,6 +95,11 @@ def preflight(config_path, *, root):
     """Check data lineage, locked split, grouping and candidates without fitting."""
     root = Path(root).resolve()
     config = ResearchConfig.model_validate(read_json(Path(config_path)))
+    if any(c.model == "xgboost" for c in config.candidates):
+        try:
+            from xgboost import XGBRegressor  # noqa: F401
+        except ImportError as error:
+            raise ValueError("xgboost requires xgboost-cpu==3.4.1; install catalyst-ai[xgboost]") from error
     view_path, snapshot_path, split_path = [
         (root / name).resolve() for name in (config.view, config.snapshot, config.split)
     ]
@@ -146,6 +173,8 @@ def preflight(config_path, *, root):
     ):
         raise ValueError("invalid train/test membership")
     folds = split["validation_folds"]
+    if config.schema_version == 2 and len(folds) != 5:
+        raise ValueError("S5 requires five training folds")
     flat = [x for fold in folds for x in fold]
     if (
         len(folds) != split["folds"]
@@ -190,7 +219,9 @@ def preflight(config_path, *, root):
             if {doi[i] for i in held} & {doi[i] for i in train - held}:
                 raise ValueError("DOI fold leakage")
     return {
-        "config": config.model_dump(),
+        "config": config.model_dump(
+            exclude={"selection_rule"} if config.schema_version == 1 else set()
+        ),
         "view": view,
         "snapshot": snapshot,
         "split": split,

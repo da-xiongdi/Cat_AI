@@ -1,0 +1,383 @@
+{
+  "45": {
+    "replay_arm_record_counts": [
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108
+    ],
+    "train_n": 434,
+    "train_conditions": {
+      "temperature_k": {
+        "min": 433.0,
+        "max": 673.0
+      },
+      "pressure_bar_abs": {
+        "min": 0.4,
+        "max": 50.0
+      },
+      "h2_co2_ratio": {
+        "min": 3.0,
+        "max": 5.0
+      },
+      "reactants_flow_nl_g_h": {
+        "min": 0.87,
+        "max": 40.0
+      }
+    },
+    "train_species_roles": {
+      "compound:Au": 8,
+      "compound:BaCO3": 17,
+      "compound:CeO2": 4,
+      "compound:Co3O4": 5,
+      "compound:Cr2O3": 15,
+      "compound:Cu": 167,
+      "compound:In2O3": 75,
+      "compound:Ir": 21,
+      "compound:K2CO3": 14,
+      "compound:La2O3": 3,
+      "compound:LaMn0.1Cu0.9O3": 1,
+      "compound:LaMn0.3Cu0.7O3": 1,
+      "compound:LaMn0.7Cu0.3O3": 1,
+      "compound:LaMnO3": 1,
+      "compound:Pd": 103,
+      "compound:Pt": 17,
+      "compound:Y2O3": 10,
+      "compound:Zn": 64,
+      "compound:ZnO": 71,
+      "compound:ZrO2": 33,
+      "support:Al2O3": 105,
+      "support:Ca": 24,
+      "support:CeO2": 32,
+      "support:Cr2O3": 1,
+      "support:Fe3O4": 1,
+      "support:Ga2O3": 1,
+      "support:In2O3": 101,
+      "support:K": 1,
+      "support:La2O3": 6,
+      "support:MgO": 10,
+      "support:SiO2": 5,
+      "support:TiO2": 9,
+      "support:ZnO": 28,
+      "support:ZrO2": 93
+    },
+    "holdout_statuses": {
+      "ok": 101,
+      "caution": 5,
+      "unsupported_species_role": 2
+    },
+    "holdout_out_of_range_n": 5,
+    "holdout_unseen_species_role_n": 2,
+    "permutation": {
+      "members": "available selected-arm holdout; fixed full-training model, post-hoc exploratory",
+      "n": 106,
+      "baseline_mae": 2.084556374477354,
+      "seed": 20261124,
+      "block": {
+        "conditions": {
+          "mean_increase_mae": 3.265209154501576,
+          "sd": 0.1792826987617757,
+          "repeats": [
+            3.2428936122292833,
+            3.356617373617413,
+            3.2193345086706664,
+            3.4463976940764867,
+            3.0768449662749395,
+            3.2488188878902267,
+            3.1110769537528693,
+            3.102454040295327,
+            3.689647077104207,
+            3.1580064311043423
+          ],
+          "columns": 4
+        },
+        "composition": {
+          "mean_increase_mae": 4.239682188209097,
+          "sd": 0.2599909743640644,
+          "repeats": [
+            4.5325470495534494,
+            3.577842890587645,
+            4.087365808733905,
+            4.53231304382678,
+            4.416624573646387,
+            4.259677590166648,
+            4.198185611878719,
+            4.1908697289242784,
+            4.306176556249892,
+            4.295219028523271
+          ],
+          "columns": 34
+        }
+      }
+    },
+    "model_lock": "5237fade8b425ccc3b7d9872affe808e34d4112d340108f5e298fc4bd80149c9"
+  },
+  "46": {
+    "replay_arm_record_counts": [
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108
+    ],
+    "train_n": 434,
+    "train_conditions": {
+      "temperature_k": {
+        "min": 433.0,
+        "max": 673.0
+      },
+      "pressure_bar_abs": {
+        "min": 0.4,
+        "max": 50.0
+      },
+      "h2_co2_ratio": {
+        "min": 3.0,
+        "max": 5.0
+      },
+      "reactants_flow_nl_g_h": {
+        "min": 0.87,
+        "max": 51.84
+      }
+    },
+    "train_species_roles": {
+      "compound:Au": 10,
+      "compound:BaCO3": 17,
+      "compound:CeO2": 5,
+      "compound:Co3O4": 5,
+      "compound:Cr2O3": 14,
+      "compound:Cu": 158,
+      "compound:In2O3": 79,
+      "compound:Ir": 28,
+      "compound:K2CO3": 15,
+      "compound:La2O3": 4,
+      "compound:LaMn0.1Cu0.9O3": 1,
+      "compound:LaMn0.3Cu0.7O3": 1,
+      "compound:LaMn0.5Cu0.5O3": 1,
+      "compound:LaMn0.7Cu0.3O3": 1,
+      "compound:LaMnO3": 1,
+      "compound:Pd": 109,
+      "compound:Pt": 18,
+      "compound:Y2O3": 12,
+      "compound:Zn": 65,
+      "compound:ZnO": 69,
+      "compound:ZrO2": 31,
+      "support:Al2O3": 105,
+      "support:Ca": 24,
+      "support:CeO2": 34,
+      "support:Cr2O3": 1,
+      "support:Fe3O4": 1,
+      "support:Ga2O3": 1,
+      "support:In2O3": 106,
+      "support:La2O3": 3,
+      "support:MgO": 7,
+      "support:SiO2": 7,
+      "support:TiO2": 7,
+      "support:Y2O3": 1,
+      "support:ZnO": 31,
+      "support:ZrO2": 88
+    },
+    "holdout_statuses": {
+      "ok": 99,
+      "caution": 8,
+      "unsupported_species_role": 1
+    },
+    "holdout_out_of_range_n": 8,
+    "holdout_unseen_species_role_n": 1,
+    "permutation": {
+      "members": "available selected-arm holdout; fixed full-training model, post-hoc exploratory",
+      "n": 107,
+      "baseline_mae": 2.0716682051761843,
+      "seed": 20261124,
+      "block": {
+        "conditions": {
+          "mean_increase_mae": 3.462985752036774,
+          "sd": 0.3459357545669781,
+          "repeats": [
+            3.6614961565705837,
+            3.443436174015496,
+            3.4820163335107255,
+            3.2098280737253395,
+            3.9689040429547098,
+            2.9699167860968214,
+            3.4623858444112994,
+            3.0776558051372294,
+            4.097364081821605,
+            3.2568542221239305
+          ],
+          "columns": 4
+        },
+        "composition": {
+          "mean_increase_mae": 4.694184934097964,
+          "sd": 0.4530771582044204,
+          "repeats": [
+            5.148768349032849,
+            5.325535320355918,
+            5.162982066245023,
+            4.262857743658212,
+            4.198172784564865,
+            4.213087098702181,
+            4.099732110792895,
+            4.810440786256838,
+            4.593422094394443,
+            5.12685098697642
+          ],
+          "columns": 35
+        }
+      }
+    },
+    "model_lock": "7524b815452ce9312e8b88bc02d8369a66fb3b955d04697072149ea2187699a0"
+  },
+  "47": {
+    "replay_arm_record_counts": [
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108
+    ],
+    "train_n": 434,
+    "train_conditions": {
+      "temperature_k": {
+        "min": 433.0,
+        "max": 673.0
+      },
+      "pressure_bar_abs": {
+        "min": 0.4,
+        "max": 50.0
+      },
+      "h2_co2_ratio": {
+        "min": 1.0,
+        "max": 5.0
+      },
+      "reactants_flow_nl_g_h": {
+        "min": 0.87,
+        "max": 51.84
+      }
+    },
+    "train_species_roles": {
+      "compound:Au": 11,
+      "compound:BaCO3": 17,
+      "compound:CeO2": 3,
+      "compound:Co3O4": 4,
+      "compound:Cr2O3": 13,
+      "compound:Cu": 163,
+      "compound:In2O3": 70,
+      "compound:Ir": 31,
+      "compound:K2CO3": 19,
+      "compound:La2O3": 3,
+      "compound:LaMn0.1Cu0.9O3": 1,
+      "compound:LaMn0.5Cu0.5O3": 1,
+      "compound:LaMn0.7Cu0.3O3": 1,
+      "compound:Pd": 113,
+      "compound:Pt": 16,
+      "compound:Y2O3": 11,
+      "compound:Zn": 75,
+      "compound:ZnO": 60,
+      "compound:ZrO2": 35,
+      "support:Al2O3": 102,
+      "support:Ca": 29,
+      "support:CeO2": 35,
+      "support:Cr2O3": 1,
+      "support:Fe3O4": 1,
+      "support:Ga2O3": 2,
+      "support:In2O3": 108,
+      "support:La2O3": 4,
+      "support:MgO": 9,
+      "support:SiO2": 4,
+      "support:TiO2": 9,
+      "support:Y2O3": 1,
+      "support:ZnO": 27,
+      "support:ZrO2": 84
+    },
+    "holdout_statuses": {
+      "ok": 102,
+      "unsupported_species_role": 3,
+      "caution": 3
+    },
+    "holdout_out_of_range_n": 3,
+    "holdout_unseen_species_role_n": 3,
+    "permutation": {
+      "members": "available selected-arm holdout; fixed full-training model, post-hoc exploratory",
+      "n": 105,
+      "baseline_mae": 2.3032401287336994,
+      "seed": 20261124,
+      "block": {
+        "conditions": {
+          "mean_increase_mae": 4.08094914948567,
+          "sd": 0.3086533596424794,
+          "repeats": [
+            3.9304302122242847,
+            4.241097279191709,
+            3.831227894536681,
+            4.286483382934838,
+            4.368147090451877,
+            3.490406993836851,
+            4.4238288777882575,
+            3.8425608523566384,
+            3.9087754813173157,
+            4.486533430218243
+          ],
+          "columns": 4
+        },
+        "composition": {
+          "mean_increase_mae": 6.226582267836181,
+          "sd": 0.4220426488882741,
+          "repeats": [
+            6.789813465515656,
+            6.404223623418913,
+            6.246875099212959,
+            5.776279019988261,
+            6.272672353481877,
+            5.9776250472761,
+            6.2387122889720015,
+            5.389245163151354,
+            6.9066289598966275,
+            6.263747657448064
+          ],
+          "columns": 33
+        }
+      }
+    },
+    "model_lock": "9ac4a2f15ae8d41b1e5756e14392bff5cb6f8e5acf369ce1cb6e7dfd0be74df4"
+  }
+}

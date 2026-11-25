@@ -44,7 +44,11 @@ def fit(config_path, output, *, root):
     output.mkdir(parents=True, exist_ok=False)
     try:
         return _fit(config_path, output, root=root)
-    except Exception:
+    except Exception as exc:
+        from catalyst_ai.modeling.s5_selection import SelectionUnavailable
+
+        if isinstance(exc, SelectionUnavailable):
+            write_json(output / "selection_failure.json", exc.decision)
         write_new(output / "failure.log", traceback.format_exc().encode("utf-8"))
         raise
 
@@ -104,12 +108,21 @@ def _fit(config_path, output, *, root):
         seed=config["model_seed"],
         properties=properties,
         species=species,
+        selection_rule=config.get("selection_rule", "legacy"),
     )
     write_json(output / "config.json", config)
     write_json(output / "split.json", split)
     write_json(
         output / "cross_validation.json",
-        {"selected_index": result["selected_index"], "results": result["results"]},
+        {
+            "selected_index": result["selected_index"],
+            "results": result["results"],
+            **(
+                {"selection_decision": result["selection_decision"]}
+                if config.get("selection_rule") == "s5-paired-v1"
+                else {}
+            ),
+        },
     )
     write_new(
         output / "run.log",
@@ -117,7 +130,8 @@ def _fit(config_path, output, *, root):
     )
     write_new(
         output / "model.pkl",
-        pickle.dumps({"model": result["model"], "transformer": result["transformer"]}, protocol=5),
+        pickle.dumps({"model": result["model"], "transformer": result["transformer"],
+                      "packages": result["packages"]}, protocol=5),
     )
     lock = {
         "schema_version": 1,
@@ -162,7 +176,13 @@ def predict_payloads(run, payloads):
         raise ValueError("prediction inputs are empty")
     lock, package = load_locked_model(run)
     rows = [{"record_id": str(i), "payload": item} for i, item in enumerate(payloads)]
-    results = _predict(package["transformer"], package["model"], rows, range(len(rows)))
+    config = read_json(Path(run) / "config.json")
+    if config.get("selection_rule") == "s5-paired-v1":
+        from catalyst_ai.modeling.s5_selection import predict
+
+        results = predict(package["transformer"], package["model"], rows)
+    else:
+        results = _predict(package["transformer"], package["model"], rows, range(len(rows)))
     return {
         "model_sha256": lock["artifacts"]["model.pkl"],
         "semantics": "diagnostic raw predictions; only ok or caution are available",
@@ -202,7 +222,13 @@ def _score_holdout(checked, lock, package, output):
     content, split = checked["snapshot"]["content"], checked["split"]
     test_ids = set(split["test"])
     rows = [r for r in content["records"] if r["record_id"] in test_ids]
-    predicted = _predict(package["transformer"], package["model"], rows, range(len(rows)))
+    s5 = checked["config"].get("selection_rule") == "s5-paired-v1"
+    if s5:
+        from catalyst_ai.modeling.s5_selection import predict
+
+        predicted = predict(package["transformer"], package["model"], rows)
+    else:
+        predicted = _predict(package["transformer"], package["model"], rows, range(len(rows)))
     predictions = [
         {
             "record_id": r["record_id"],
@@ -212,7 +238,25 @@ def _score_holdout(checked, lock, package, output):
         }
         for r, p in zip(rows, predicted, strict=True)
     ]
-    full_metrics = _score(predictions)
+    if s5 and "packages" in package:
+        arms = []
+        for arm in package["packages"]:
+            arm_predictions = predict(arm["transformer"], arm["model"], rows)
+            joined = [
+                {"record_id": r["record_id"],
+                 "doi": normalize_doi(r["payload"]["source"]["doi"]),
+                 "observed": float(target_value(r, content)), **p}
+                for r, p in zip(rows, arm_predictions, strict=True)
+            ]
+            arms.append({"candidate_index": arm["candidate_index"], "predictions": joined})
+        write_json(output / "all_arms.json", arms)
+    if s5:
+        from catalyst_ai.modeling.s5_selection import diagnostics
+
+        report = diagnostics(predictions)
+        full_metrics = report["diagnostic_metrics"] or {}
+    else:
+        full_metrics = _score(predictions)
     chosen = checked["config"].get("metrics", ["mae", "rmse", "r2", "availability"])
     metrics = {
         "metrics": {
@@ -223,13 +267,17 @@ def _score_holdout(checked, lock, package, output):
         "model_sha256": lock["artifacts"]["model.pkl"],
     }
     if "availability" in chosen:
-        metrics["availability"] = _availability(predictions)
+        metrics["availability"] = report if s5 else _availability(predictions)
     selected_outputs = checked["config"].get("outputs", ["predictions", "plots"])
     if "predictions" in selected_outputs:
         write_json(output / "predictions.json", predictions)
     write_json(output / "metrics.json", metrics)
     if "plots" in selected_outputs:
-        write_plots(output, predictions)
+        plottable = (
+            [p for p in predictions if p.get("raw_prediction") is not None] if s5 else predictions
+        )
+        if plottable:
+            write_plots(output, plottable)
     write_json(
         output / "manifest.json",
         {"files": {p.name: sha(p) for p in sorted(output.iterdir()) if p.is_file()}},

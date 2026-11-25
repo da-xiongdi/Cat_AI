@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "view": "artifacts/reports/s4-02-20261120-v1/cu-view.json",
+  "snapshot": "data/snapshots/snapshot-76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da.json",
+  "split": "artifacts/reports/s5-01-m0-20261123-v1/copper_projection.json",
+  "split_sha256": "aed14eef0898bed30bea7ca77a911deb5bd2814bc969e8a33e3c0a0825a0cfd5",
+  "target": "co2_conversion",
+  "catalog_database": "data/catalog.sqlite",
+  "candidates": [
+    {
+      "feature": "F_base",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F_base+Cu",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    }
+  ],
+  "model_seed": 42,
+  "metrics": [
+    "mae",
+    "rmse",
+    "availability"
+  ],
+  "outputs": [
+    "predictions"
+  ],
+  "selection_rule": "s5-paired-v1"
+}

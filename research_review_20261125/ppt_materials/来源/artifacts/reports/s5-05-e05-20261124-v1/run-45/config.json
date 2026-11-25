@@ -1,0 +1,208 @@
+{
+  "schema_version": 2,
+  "view": "artifacts/reports/s4-02-20261120-v1/all-view.json",
+  "snapshot": "data/snapshots/snapshot-76c42099edd134fca92e0ade54a919995e541b947e0bb0b264de67791a4d61da.json",
+  "split": "artifacts/reports/s5-01-m0-20261123-v1/split.json",
+  "split_sha256": "7e1d8131c94e134fce9339c4c3746dc84e214053d803e636923e62e001d67bbd",
+  "target": "co2_conversion",
+  "catalog_database": "data/catalog.sqlite",
+  "candidates": [
+    {
+      "feature": "F_base",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_depth": null,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F_base",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_depth": 8,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F_base",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 4,
+        "max_depth": null,
+        "max_features": 0.7,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F_base",
+      "model": "random_forest",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_depth": null,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F_base",
+      "model": "random_forest",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_depth": 8,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F_base",
+      "model": "random_forest",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 4,
+        "max_depth": null,
+        "max_features": 0.7,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F_base",
+      "model": "xgboost",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      }
+    },
+    {
+      "feature": "F_base",
+      "model": "xgboost",
+      "params": {
+        "n_estimators": 150,
+        "max_depth": 2,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "feature": "F_base",
+      "model": "xgboost",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 2,
+        "learning_rate": 0.1
+      }
+    },
+    {
+      "feature": "F3-P",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_depth": null,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F3-P",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_depth": 8,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F3-P",
+      "model": "extra_trees",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 4,
+        "max_depth": null,
+        "max_features": 0.7,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F3-P",
+      "model": "random_forest",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_depth": null,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F3-P",
+      "model": "random_forest",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 2,
+        "max_depth": 8,
+        "max_features": 1.0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F3-P",
+      "model": "random_forest",
+      "params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 4,
+        "max_depth": null,
+        "max_features": 0.7,
+        "n_jobs": 1
+      }
+    },
+    {
+      "feature": "F3-P",
+      "model": "xgboost",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      }
+    },
+    {
+      "feature": "F3-P",
+      "model": "xgboost",
+      "params": {
+        "n_estimators": 150,
+        "max_depth": 2,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "feature": "F3-P",
+      "model": "xgboost",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 2,
+        "learning_rate": 0.1
+      }
+    }
+  ],
+  "model_seed": 42,
+  "metrics": [
+    "mae",
+    "rmse",
+    "r2",
+    "availability"
+  ],
+  "outputs": [
+    "predictions"
+  ],
+  "selection_rule": "s5-paired-v1"
+}
